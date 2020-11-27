@@ -20,7 +20,7 @@ namespace CRM
         #region Konstruktory
         public OsobaKontakt():base()
         {
-           Telefon=Mail=Notatki= String.Empty;
+            Telefon = Mail = Notatki = null;
         }
         public OsobaKontakt(string imie, string nazwisko, Plcie plec) : base(imie, nazwisko,plec)
         { }
@@ -81,7 +81,10 @@ namespace CRM
         #endregion
         public override string ToString()
         {
-            return base.ToString() + $" nr telefonu: {Telefon}, email: {Mail}"+$"\nNotatki:\n{Notatki}";
+            string napis = Telefon == null ? "" : $", nr telefonu: {Telefon}";
+            napis += Mail == null ? null : $", email: {Mail}";
+            napis+= Notatki==null?null:$"\nNotatki:\n{Notatki}";
+            return base.ToString() + napis;
         }
     }
 }

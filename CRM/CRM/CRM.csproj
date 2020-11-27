@@ -43,14 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Equatable.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="OsobaKontakt.cs" />
     <Compile Include="Pracownicy.cs" />
     <Compile Include="Pracownik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WrongNumberException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

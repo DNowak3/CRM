@@ -23,7 +23,7 @@ namespace CRM
         #region Konstruktory
         protected Osoba()
         {
-            Imie = Nazwisko = String.Empty;
+            Imie = Nazwisko = null;
             Plec = Plcie.Nieznana;
             Stanowisko = Stanowiska.inne;
         }
@@ -42,7 +42,7 @@ namespace CRM
         string FormatZWielkiej(string s)
         {
             string wynik = null;
-            if (!(s==""))
+            if (!(s==null))
             {
                 wynik += Char.ToUpper(s[0]);
                 for (int i = 1; i < s.Length; ++i)

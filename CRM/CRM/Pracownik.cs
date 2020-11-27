@@ -9,12 +9,17 @@ namespace CRM
     class Pracownik:OsobaKontakt
     {
         DateTime _dataRozpoczeciaPracy;
+        public DateTime DataRozpoczeciaPracy { get => _dataRozpoczeciaPracy; set => _dataRozpoczeciaPracy = value; }
+
         #region Konstruktory
         public Pracownik() : base()
         {
             Telefon = Mail = Notatki = String.Empty;
+            DataRozpoczeciaPracy = DateTime.Today;
         }
-        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia) : base(imie, nazwisko, plec, stanowisko)
+        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko) : base(imie, nazwisko, plec, stanowisko)
+        { }
+        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia) : this(imie, nazwisko, plec, stanowisko)
         {
             DateTime.TryParseExact(dataRozpoczecia, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out _dataRozpoczeciaPracy);
         }
@@ -30,11 +35,11 @@ namespace CRM
         {
             Notatki = notatki;
         }
-        #endregion
 
+        #endregion
         public override string ToString()
         {
-            return "Data rozpoczecia pracy: "+_dataRozpoczeciaPracy.ToString("dd-MM-yyyy")+" "+base.ToString();
+            return base.ToString()+$" ({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")})";
         }
     }
 }

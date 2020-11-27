@@ -4,3 +4,9 @@ C:\Users\dagma\source\repos\Kolo\CRM\CRM\bin\Debug\CRM.pdb
 C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
 C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.config
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.exe
+D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.pdb
