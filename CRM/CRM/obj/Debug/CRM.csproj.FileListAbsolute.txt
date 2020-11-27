@@ -1,6 +1,0 @@
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\bin\Debug\CRM.exe.config
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\bin\Debug\CRM.exe
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\bin\Debug\CRM.pdb
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.exe
-C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.pdb
