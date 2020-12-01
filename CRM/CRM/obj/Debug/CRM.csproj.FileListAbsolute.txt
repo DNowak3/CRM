@@ -10,3 +10,10 @@ D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.pdb
 D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
 D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.exe
 D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\bin\Debug\CRM.exe.config
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\bin\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\bin\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\obj\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\obj\Debug\CRM.pdb
