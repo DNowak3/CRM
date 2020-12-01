@@ -12,7 +12,6 @@ namespace CRM
         Regex wzorNip = new Regex(@"^\d{3}-\d{3}-\d{2}-\d{2}$");
         public enum Branże { IT, Finanse, Elektronika, Telekomunikacja, Motoryzacja, Media, Energetyka, Inne }
 
-
         string nazwa;
         Branże branza;
         string nip;
