@@ -24,6 +24,16 @@ namespace CRM
             Console.WriteLine(Pracownicy.ToString());
             Pracownicy.ZnajdzWszystkichNaStanowisku(Stanowiska.dyrekcja).ForEach(p => Console.WriteLine(p));
 
+            Console.WriteLine();
+
+            //Tworzenie obiektów klasy Konkurent
+            Konkurent k = new Konkurent("IBM", Organizacja.Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
+            Konkurent k2 = new Konkurent("Nokia", Organizacja.Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
+            Console.WriteLine(k);
+            Console.WriteLine(k2);
+            //Przypadek w którym nr NIP jest podany w niepoprawnym formacie
+            k2.Nip = "123456789";
+            Console.WriteLine(k2.Nip);
 
             Console.ReadKey();
         }
