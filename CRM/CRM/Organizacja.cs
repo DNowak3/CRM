@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class Organizacja : IComparable<Organizacja>, IEquatable<Organizacja>, ICloneable
+    abstract class Organizacja : IComparable<Organizacja>, IEquatable<Organizacja>, ICloneable
     {
         Regex wzorNip = new Regex(@"^\d{3}-\d{3}-\d{2}-\d{2}$");
         public enum Branże { IT, Finanse, Elektronika, Telekomunikacja, Motoryzacja, Media, Energetyka, Inne }
