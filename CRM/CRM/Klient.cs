@@ -16,17 +16,25 @@ namespace CRM
         //Stack<Umowa> _transakcje;
         string _uwagi;
 
-        public Klient() : base() ///Dopisz do base()!!!
+        public Klient(string nazwa, Branże branza) : base(nazwa, branza)
+        {
+            _listaKontaktow = new List<OsobaKontakt>();
+            _dzialania = new Stack<Dzialanie>();
+        }
+
+        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia) : base(nazwa, branza, nip, kraj, miasto, dataZalozenia)
         {
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
             //_transakcje = new Stack<Umowa>();
         }
 
-        public Klient(DateTime dataPlanowanegoKontaktu, string uwagi, Status status = Status.potencjalny) : this()
+        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia, string dataPlanowKontaktu, string uwagi, Status status = Status.potencjalny) : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
         {
+            string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
+            DateTime.TryParseExact(dataPlanowKontaktu, formatyDaty, null, System.Globalization.DateTimeStyles.None, out DateTime d);
             _uwagi = uwagi;
-            _dataPlanowanegoKontaktu = dataPlanowanegoKontaktu;
+            _dataPlanowanegoKontaktu = d;
             _status = status;
         }
 
@@ -110,6 +118,18 @@ namespace CRM
             _listaKontaktow.Clear();
         }
 
+        public OsobaKontakt ZwrocKontakt(string imie, string nazwisko)
+        {
+            foreach(OsobaKontakt o in _listaKontaktow)
+            {
+                if(o.Imie == imie && o.Nazwisko == nazwisko)
+                {
+                    return o;
+                }
+            }
+            throw new NonOrganizationMemberException();
+        }
+
         /*public void DodajTransakcje(Umowa umowa) //sprawdzic czy umowa juz jest
         {
             _transakcje.Push(umowa);
@@ -156,7 +176,9 @@ namespace CRM
         public void WypiszDzialania()
         {
             Console.WriteLine($"Działania wobec firmy {Nazwa}:");
-            foreach (Dzialanie d in _dzialania)
+            List < Dzialanie > dzialaniaLista = _dzialania.ToList();
+            dzialaniaLista.Reverse();
+            foreach (Dzialanie d in dzialaniaLista)
             {
                 Console.WriteLine(d);
             }
@@ -165,8 +187,8 @@ namespace CRM
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Status: {Status}");
-            sb.AppendLine($"\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}");
+            sb.AppendLine($"\n\nStatus: {Status}");
+            sb.AppendLine($"Data planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}");
             sb.AppendLine("ListaKontaktow:");
 
             int i = 0;

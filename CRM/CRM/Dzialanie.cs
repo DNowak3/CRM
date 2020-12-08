@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
+    //sortowanie wg daty?
     enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
     class Dzialanie
     {
@@ -45,7 +46,16 @@ namespace CRM
 
         public override string ToString()
         {
-            return $"{Nazwa} ({Data.ToString("dd.MM.yyyy")})\nPracownik: {Pracownik.ToString()}\nSkontaktowano z: {OsobaKontaktowa.ToString()}\nOpis: {Opis}\nWynik: {Wynik}";
+            string napis = $"{Data.ToString("dd.MM.yyyy")} - {Nazwa}";
+            if(Pracownik == null)
+            {
+                return napis;
+            }
+            napis += Pracownik == null ? null : $"\n             Pracownik: {Pracownik.ToString()}";
+            napis += OsobaKontaktowa == null ? null : $"\n             Skontaktowano z: {OsobaKontaktowa.ToString()}";
+            napis += Opis == null ? null : $"\n             Opis: {Opis}";
+            napis += $"\n             Wynik: {Wynik}";
+            return napis;
         }
     }
 }

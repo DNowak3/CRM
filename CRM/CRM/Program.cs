@@ -12,7 +12,8 @@ namespace CRM
     {
         static void Main()
         {
-            Pracownicy.Dodaj(new Pracownik("adam", "kowalski",Plcie.M,Stanowiska.konsultant,"21-11-2020","0000"));
+            Pracownik p1 = new Pracownik("adam", "kowalski", Plcie.M, Stanowiska.konsultant, "21-11-2020");
+            Pracownicy.Dodaj(p1);
             Pracownicy.Dodaj(new Pracownik("adam", "nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020"));
             Pracownicy.Dodaj(new Pracownik("adam", "jan", Plcie.M, Stanowiska.konsultant, "21-11-2020"));
             Pracownicy.Dodaj(new Pracownik("lewy", "kowalski",Plcie.M,Stanowiska.konsultant,"21 - 11 - 2020"));
@@ -34,6 +35,26 @@ namespace CRM
             //Przypadek w którym nr NIP jest podany w niepoprawnym formacie
             k2.Nip = "123456789";
             Console.WriteLine(k2.Nip);
+
+            //tworzenie osoby kontaktowej do naszego klienta - firmy LG
+            OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");
+
+            Klient LG = new Klient("LG", Organizacja.Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
+            LG.DodajKontakt(ok1);
+
+            Dzialanie d1 = new Dzialanie("Umówienie na spotkanie", "08.12.2020", p1, LG.ZwrocKontakt("Anna", "Wiatr"), WynikDzialania.umowiono, " ");
+            Dzialanie d2 = new Dzialanie("dzialanie2", "01.12.2020");
+            Dzialanie d3 = new Dzialanie("dzialanie3", "28.12.2020");
+
+            LG.DodajDzialanie(d1);
+            LG.DodajDzialanie(d2);
+            LG.DodajDzialanie(d3);
+
+            Console.WriteLine("\nKlient LG:");
+            Console.WriteLine(LG);
+
+            Console.WriteLine("\nDziałania z LG:");
+            LG.WypiszDzialania();
 
             Console.ReadKey();
         }

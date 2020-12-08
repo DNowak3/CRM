@@ -47,6 +47,7 @@
     <Compile Include="Dzialanie.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="Konkurent.cs" />
+    <Compile Include="NonOrganizationMemberException.cs" />
     <Compile Include="Organizacja.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="OsobaKontakt.cs" />
