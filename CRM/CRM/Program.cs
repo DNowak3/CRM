@@ -35,6 +35,8 @@ namespace CRM
             //Przypadek w którym nr NIP jest podany w niepoprawnym formacie
             k2.Nip = "123456789";
             Console.WriteLine(k2.Nip);
+            //Metoda sprawdzająca czy dwa obiekty klasy Konkurent są równe
+            Console.WriteLine(Konkurent.CzyToTeSameFirmy(k,k2));
 
             //tworzenie osoby kontaktowej do naszego klienta - firmy LG
             OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");

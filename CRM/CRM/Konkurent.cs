@@ -20,6 +20,13 @@ namespace CRM
             Zagrozenie = zagrozenie;
         }
 
+        public static bool CzyToTeSameFirmy(Konkurent k1, Konkurent k2)
+        {
+            if (k1.Equals(k2))
+                return true;
+            return false;
+        }
+
         public override string ToString()
         {
             return base.ToString() + $" (stopień zagrożenia: {Zagrozenie})";
