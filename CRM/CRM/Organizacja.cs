@@ -35,8 +35,7 @@ namespace CRM
                 else
                     nip = "000-000-00-00";
             }
-        }
-
+        }     
         public string Nazwa { get => nazwa; set => nazwa = value; }
         private Branże Branza { get => branza; set => branza = value; }
         public string Kraj { get => kraj; set => kraj = value; }
@@ -48,6 +47,8 @@ namespace CRM
 
         public Organizacja()
         {
+            Nazwa = string.Empty;
+            Branza = Branże.Inne;
             Adres = string.Empty;
             KodPocztowy = string.Empty;
             Notatki = string.Empty;

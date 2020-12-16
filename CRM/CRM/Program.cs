@@ -35,6 +35,8 @@ namespace CRM
             //Przypadek w którym nr NIP jest podany w niepoprawnym formacie
             k2.Nip = "123456789";
             Console.WriteLine(k2.Nip);
+            //Metoda sprawdzająca czy dwa obiekty klasy Konkurent są równe
+            Console.WriteLine(Konkurent.CzyToTeSameFirmy(k,k2));
 
             //tworzenie osoby kontaktowej do naszego klienta - firmy LG
             OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");
@@ -55,6 +57,36 @@ namespace CRM
 
             Console.WriteLine("\nDziałania z LG:");
             LG.WypiszDzialania();
+
+            //Tworzenie obiektow klasy Produkt
+            Produkt pr1 = new Produkt("Papier kancelaryjny", 10.50, Jednostki.kg);
+            Produkt pr2 = new Produkt("Materiały biurowe", 5.60);
+            Produkt pr3 = new Produkt("Komputer", 1000);
+            
+            Console.WriteLine("\nProdukty:");
+            Console.WriteLine(pr1);
+            Console.WriteLine(pr2);
+            Console.WriteLine(pr3);
+            //Tworzenie obiektow klasy Umowa
+            Umowa u1 = new Umowa(p1);
+            u1.DodajProdukt(pr1, 5);
+            u1.DodajProdukt(pr2, 2);
+            u1.DodajProdukt(pr3, 1);
+            
+            Console.WriteLine("\nUmowa:");
+            Console.WriteLine(u1);
+
+            u1.DodajProdukt(pr2, 4.6);
+            u1.UsunProdukt(pr1);
+            u1.ZmienIloscKod("K20203", 2);
+            Console.WriteLine("\nUmowa po modyfikacji:");
+            Console.WriteLine(u1);
+
+            u1.UsunProduktKod("M20202");
+            u1.ZmienIlosc(pr3, 4);
+            Console.WriteLine("\nUmowa po modyfikacji:");
+            Console.WriteLine(u1);
+
 
             Console.ReadKey();
         }
