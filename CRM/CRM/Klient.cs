@@ -26,7 +26,7 @@ namespace CRM
         {
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
-            //_transakcje = new Stack<Umowa>();
+            _transakcje = new Stack<Umowa>();
         }
 
         public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia, string dataPlanowKontaktu, string uwagi, Status status = Status.potencjalny) : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
@@ -69,13 +69,13 @@ namespace CRM
 
         public List<Dzialanie> ZnajdzDzialania(Pracownik pracownik)
         {
-            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.Pracownik.Equals(pracownik))); //wymaga Equal!!!
+            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.Pracownik.Equals(pracownik)));
             return dzialania.Count() == 0 ? null : dzialania;
         }
 
         public List<Dzialanie> ZnajdzDzialania(OsobaKontakt osobaKontaktowa) //odwroc
         {
-            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.OsobaKontaktowa.Equals(osobaKontaktowa))); //wymaga Equal!!!
+            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.OsobaKontaktowa.Equals(osobaKontaktowa)));
             return dzialania.Count() == 0 ? null : dzialania;
         }
 
@@ -86,6 +86,7 @@ namespace CRM
                 if (d.Nazwa == nazwa)
                 {
                     _dzialania = new Stack<Dzialanie>(_dzialania.Where(x => x.Nazwa != nazwa));
+                    _dzialania.Reverse();
                     return true;
                 }
             }
@@ -130,14 +131,23 @@ namespace CRM
             throw new NonOrganizationMemberException();
         }
 
-        public void DodajTransakcje(Umowa umowa) //sprawdzic czy umowa juz jest
+        public void DodajTransakcje(Umowa umowa)
         { 
             _transakcje.Push(umowa);
         }
 
-        public void UsunTransakcje(string numer) //Napisz jak będziesz znać kod do umowy
+        public bool UsunTransakcje(string numer) //Napisz jak będziesz znać kod do umowy
         {
-            //_transakcje = new Stack<Umowa>(_transakcje.Where(x = > x.NrUmowy == numer);
+            foreach (Umowa u in _transakcje)
+            {
+                if (u.NrUmowy == numer)
+                {
+                    _transakcje = new Stack<Umowa>(_transakcje.Where(x => x.NrUmowy != numer));
+                    _transakcje.Reverse();
+                    return true;
+                }
+            }
+            return false;
         }
 
         public List<Umowa> ZnajdzTransakcje(string data)
@@ -148,13 +158,13 @@ namespace CRM
             return transakcje.Count() == 0 ? null : transakcje;
         }
 
-        /*public void AktualizujStatus() //nwm czy się przyda
+        public void AktualizujStatus()
         {
             if (_transakcje.Count() == 0)
             {
                 Status = Status.potencjalny;
             }
-            else if (_transakcje.Peek().DataUmowy.Year().CompareTo(DateTime.Today) > 0)
+            else if (_transakcje.Peek().DataUmowy.AddYears(1).CompareTo(DateTime.Today) > 0)
             {
                 if (_transakcje.Count() < 3)
                 {
@@ -169,9 +179,18 @@ namespace CRM
             {
                 Status = Status.były;
             }
-        }*/
+        }
 
-        public void WypiszTransakcje() { }
+        public void WypiszTransakcje()
+        {
+            Console.WriteLine($"Transakcje z firma {Nazwa}:");
+            List<Umowa> umowy = _transakcje.ToList();
+            umowy.Reverse();
+            foreach (Umowa u in umowy)
+            {
+                Console.WriteLine(u);
+            }
+        }
 
         public void WypiszDzialania()
         {

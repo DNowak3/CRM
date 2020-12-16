@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace CRM
 {
     //sortowanie wg daty?
+    //klonowanie
     enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
     class Dzialanie
     {
