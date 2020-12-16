@@ -13,7 +13,7 @@ namespace CRM
         DateTime _dataPlanowanegoKontaktu;
         Status _status;
         Stack<Dzialanie> _dzialania;
-        //Stack<Umowa> _transakcje;
+        Stack<Umowa> _transakcje;
         string _uwagi;
 
         public Klient(string nazwa, Branże branza) : base(nazwa, branza)
@@ -130,8 +130,8 @@ namespace CRM
             throw new NonOrganizationMemberException();
         }
 
-        /*public void DodajTransakcje(Umowa umowa) //sprawdzic czy umowa juz jest
-        {
+        public void DodajTransakcje(Umowa umowa) //sprawdzic czy umowa juz jest
+        { 
             _transakcje.Push(umowa);
         }
 
@@ -144,17 +144,17 @@ namespace CRM
         {
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
             DateTime.TryParseExact(data, formatyDaty, null, System.Globalization.DateTimeStyles.None, out DateTime d);
-            List<Umowa> transakcje = new List<Umowa>(_transakcje.Where(x => x.Data == d));
+            List<Umowa> transakcje = new List<Umowa>(_transakcje.Where(x => x.DataUmowy == d));
             return transakcje.Count() == 0 ? null : transakcje;
         }
 
-        public void AktualizujStatus() //nwm czy się przyda
+        /*public void AktualizujStatus() //nwm czy się przyda
         {
             if (_transakcje.Count() == 0)
             {
                 Status = Status.potencjalny;
             }
-            else if (_transakcje.Peek().Data.AddYear().CompareTo(DateTime.Today) > 0)
+            else if (_transakcje.Peek().DataUmowy.Year().CompareTo(DateTime.Today) > 0)
             {
                 if (_transakcje.Count() < 3)
                 {
