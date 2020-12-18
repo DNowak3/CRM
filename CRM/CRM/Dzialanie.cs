@@ -9,7 +9,7 @@ namespace CRM
     //sortowanie wg daty?
     //klonowanie
     enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
-    class Dzialanie
+    class Dzialanie : ICloneable, IComparable<Dzialanie>
     {
         string _nazwa;
         DateTime _data;
@@ -58,5 +58,28 @@ namespace CRM
             napis += $"\n             Wynik: {Wynik}";
             return napis;
         }
+
+        public object Clone()
+        {
+            Dzialanie d = new Dzialanie(Nazwa, Data.ToString("dd.MM.yyyy"));
+            if (Pracownik == null) { }
+            else
+            {
+                d.Pracownik = (Pracownik)Pracownik.Clone();
+                d.OsobaKontaktowa = (OsobaKontakt)OsobaKontaktowa.Clone();
+                d.Wynik = Wynik;
+                if(Opis != null)
+                {
+                    d.Opis = Opis;
+                }
+            }
+            return d;
+        }
+
+        public int CompareTo(Dzialanie other)
+        {
+            return Data.CompareTo(other.Data);
+        }
+
     }
 }

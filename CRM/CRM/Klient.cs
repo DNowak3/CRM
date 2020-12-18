@@ -203,6 +203,37 @@ namespace CRM
             }
         }
 
+        public void SortujKontakty(bool malejaco = false)
+        {
+            if (malejaco)
+            {
+                _listaKontaktow.Sort((x, y) => y.Nazwisko.CompareTo(x.Nazwisko));
+            }
+            else
+            {
+                _listaKontaktow.Sort((x, y) => x.Nazwisko.CompareTo(y.Nazwisko));
+            }
+        }
+
+        public void SortujDzialania(bool malejaco = false)
+        {
+            List<Dzialanie> temp = _dzialania.ToList();
+            if (malejaco)
+            {
+                temp.Sort((x, y) => x.Data.CompareTo(y.Data));
+            }
+            else
+            {
+                temp.Sort((x, y) => y.Data.CompareTo(x.Data));
+            }
+
+            _dzialania.Clear();
+            foreach (Dzialanie d in temp)
+            {
+                _dzialania.Push(d);
+            }
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

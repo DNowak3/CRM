@@ -18,6 +18,10 @@ namespace CRM
             Pracownicy.Dodaj(new Pracownik("adam", "jan", Plcie.M, Stanowiska.konsultant, "21-11-2020"));
             Pracownicy.Dodaj(new Pracownik("lewy", "kowalski",Plcie.M,Stanowiska.konsultant,"21 - 11 - 2020"));
 
+            Pracownik p2 = (Pracownik)p1.Clone();
+            p2.Imie = "Patryk";
+            p2.DataRozpoczeciaPracy = new DateTime(2000, 12, 2);
+
             Console.WriteLine(Pracownicy.ToString());
             Pracownicy.Sortuj();
             Console.WriteLine(Pracownicy.ToString());
@@ -40,22 +44,33 @@ namespace CRM
 
             //tworzenie osoby kontaktowej do naszego klienta - firmy LG
             OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");
+            OsobaKontakt ok2 = (OsobaKontakt)ok1.Clone();
+            ok2.Nazwisko = "Lis";
+            ok1.Mail = "awiatr@gmail.com"; //nie dziala regex??? bo nie wypisuje maila
+            ok2.Mail = "alis@onet.pl";
 
             Klient LG = new Klient("LG", Organizacja.Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
             LG.DodajKontakt(ok1);
+            LG.DodajKontakt(ok2);
+            LG.SortujKontakty();
 
             Dzialanie d1 = new Dzialanie("Umówienie na spotkanie", "08.12.2020", p1, LG.ZwrocKontakt("Anna", "Wiatr"), WynikDzialania.umowiono, " ");
-            Dzialanie d2 = new Dzialanie("dzialanie2", "01.12.2020");
-            Dzialanie d3 = new Dzialanie("dzialanie3", "28.12.2020");
+            Dzialanie d2 = new Dzialanie("Negocjacje", "01.12.2020");
+            Dzialanie d3 = new Dzialanie("Wpłata za zamówienie", "28.12.2020");
+            Dzialanie d4 = (Dzialanie)d1.Clone();
+            d4.Nazwa = "Sprzedaż towarów";
+            d4.Wynik = WynikDzialania.ukonczono;
 
             LG.DodajDzialanie(d1);
             LG.DodajDzialanie(d2);
             LG.DodajDzialanie(d3);
+            LG.DodajDzialanie(d4);
+            LG.SortujDzialania();
 
             Console.WriteLine("\nKlient LG:");
             Console.WriteLine(LG);
 
-            Console.WriteLine("\nDziałania z LG:");
+            Console.WriteLine("\nDziałania z LG (posortowane):");
             LG.WypiszDzialania();
 
             //Tworzenie obiektow klasy Produkt

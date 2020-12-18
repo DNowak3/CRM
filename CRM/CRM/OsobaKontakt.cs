@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>
+    class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>, ICloneable
     {
         string _telefon;
         string _mail;
@@ -85,6 +85,11 @@ namespace CRM
             napis += Mail == null ? null : $", email: {Mail}";
             napis+= Notatki==null?null:$"\nNotatki:\n{Notatki}";
             return base.ToString() + napis;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 }

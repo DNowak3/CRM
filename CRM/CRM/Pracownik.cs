@@ -41,5 +41,6 @@ namespace CRM
         {
             return base.ToString()+$" ({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")})";
         }
+
     }
 }
