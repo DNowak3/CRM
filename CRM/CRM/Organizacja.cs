@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
-    abstract class Organizacja : IComparable<Organizacja>, IEquatable<Organizacja>, ICloneable
+    public abstract class Organizacja : IComparable<Organizacja>, IEquatable<Organizacja>, ICloneable, IZapisywalna
     {
         Regex wzorNip = new Regex(@"^\d{3}-\d{3}-\d{2}-\d{2}$");
         public enum Branże { IT, Finanse, Elektronika, Telekomunikacja, Motoryzacja, Media, Energetyka, Inne }
@@ -84,6 +86,15 @@ namespace CRM
         public object Clone()
         {
             return MemberwiseClone();
+        }
+
+        public virtual void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Organizacja));
+                xml.Serialize(sw, this);
+            }
         }
 
         public override string ToString()

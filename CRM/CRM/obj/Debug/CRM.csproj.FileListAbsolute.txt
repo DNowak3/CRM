@@ -38,3 +38,10 @@ F:\Justyna\PO 2020\Projekt\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
 F:\Justyna\PO 2020\Projekt\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
 F:\Justyna\PO 2020\Projekt\CRM\CRM\obj\Debug\CRM.exe
 F:\Justyna\PO 2020\Projekt\CRM\CRM\obj\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\bin\Debug\CRM.exe.config
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\bin\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\bin\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\obj\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\CRM5\CRM\CRM\obj\Debug\CRM.pdb

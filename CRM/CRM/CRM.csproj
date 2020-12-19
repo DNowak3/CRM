@@ -46,6 +46,7 @@
     <Compile Include="ActionNotFoundException.cs" />
     <Compile Include="Dzialanie.cs" />
     <Compile Include="ITworzyUmowy.cs" />
+    <Compile Include="IZapisywalna.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="Konkurent.cs" />
     <Compile Include="NonOrganizationMemberException.cs" />

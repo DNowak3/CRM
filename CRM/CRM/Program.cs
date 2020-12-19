@@ -41,6 +41,11 @@ namespace CRM
             Console.WriteLine(k2.Nip);
             //Metoda sprawdzająca czy dwa obiekty klasy Konkurent są równe
             Console.WriteLine(Konkurent.CzyToTeSameFirmy(k,k2));
+            
+            //Zapis obiektu klasy Konkurent do pliku XML oraz odczyt z pliku XML
+            k.ZapiszXML("konkurent.xml");
+            Console.WriteLine("Odczyt z pliku XML:");
+            Console.WriteLine(Konkurent.OdczytajXML("konkurent.xml"));
 
             //tworzenie osoby kontaktowej do naszego klienta - firmy LG
             OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");

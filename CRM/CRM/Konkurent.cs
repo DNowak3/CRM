@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
-    class Konkurent : Organizacja
+    public class Konkurent : Organizacja
     {
         public enum StopienZagrozenia { Niski, BardzoNiski, Średni, Wysoki, BardzoWysoki }
         StopienZagrozenia zagrozenie;
@@ -26,6 +28,29 @@ namespace CRM
                 return true;
             return false;
         }
+
+        public override void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Konkurent));
+                xml.Serialize(sw, this);
+            }
+        }
+
+        public static Konkurent OdczytajXML(string nazwa) 
+        {
+            if (!File.Exists(nazwa))
+            {
+                return null;
+            }
+            using (StreamReader sr = new StreamReader(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Konkurent));
+                return (Konkurent)xml.Deserialize(sr);
+            }
+        }
+
 
         public override string ToString()
         {
