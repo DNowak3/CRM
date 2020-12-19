@@ -1,21 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
-    class OrgProwadzacaCRM:Organizacja
+    [Serializable]
+    public class OrgProwadzacaCRM:Organizacja,IZapisywalna
     {
         List<Pracownik> _listaPracownikow;
         List<Produkt> _listaProduktow;
         List<Konkurent> _listaKonkurentow;
         List<Klient> _listaKlientow;
 
+        public List<Pracownik> ListaPracownikow { get => _listaPracownikow;}
+        public List<Produkt> ListaProduktow { get => _listaProduktow;  }
+        public List<Konkurent> ListaKonkurentow { get => _listaKonkurentow; }
+        public List<Klient> ListaKlientow { get => _listaKlientow;}
+
         public OrgProwadzacaCRM()
         {
-            Console.WriteLine("wykonalem sie");
             _listaPracownikow = new List<Pracownik>();
             _listaProduktow = new List<Produkt>();
             _listaKlientow = new List<Klient>();
@@ -313,6 +320,31 @@ namespace CRM
         {
             _listaKlientow.Sort((x, y) => y.OstatniKontakt().CompareTo(x.OstatniKontakt()));
         }
+        #endregion
+        #region Zapis/Odczyt
+        public override void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
+                xml.Serialize(sw, this);
+            }
+        }
+
+        public static OrgProwadzacaCRM OdczytajXML(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+            {
+                return null;
+            }
+            using (StreamReader sr = new StreamReader(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
+                return (OrgProwadzacaCRM)xml.Deserialize(sr);
+            }
+        }
+
+
         #endregion
         #region Funkcje wypisujace
         public string WypiszProdukty()

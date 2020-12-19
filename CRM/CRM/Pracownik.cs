@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
-    public class Pracownik:OsobaKontakt
+    [Serializable]
+    public class Pracownik:OsobaKontakt,IZapisywalna
     {
         DateTime _dataRozpoczeciaPracy;
         public DateTime DataRozpoczeciaPracy { get => _dataRozpoczeciaPracy; set => _dataRozpoczeciaPracy = value; }
@@ -35,6 +38,31 @@ namespace CRM
         {
             Notatki = notatki;
         }
+
+        #endregion
+        #region Zapis/Odczyt
+        public override void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Pracownik));
+                xml.Serialize(sw, this);
+            }
+        }
+
+        public static Pracownik OdczytajXML(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+            {
+                return null;
+            }
+            using (StreamReader sr = new StreamReader(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Pracownik));
+                return (Pracownik)xml.Deserialize(sr);
+            }
+        }
+
 
         #endregion
         public override string ToString()

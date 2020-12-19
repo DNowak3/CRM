@@ -15,7 +15,17 @@ namespace CRM
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
             OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Organizacja.Branże.Inne,"123","Polska","miasto","2000-12-12");
-
+            //Zapis obiektu klasy Pracownik do pliku XML oraz odczyt z pliku XML
+            try
+            {
+                nasza.ZapiszXML("OrganizacjaCRM.xml");
+                Console.WriteLine("Odczyt z pliku XML:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("OrganizacjaCRM.xml"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
             //Stworzenie pracownikow
             #region Pracownicy
             Console.WriteLine("\t\t\tPRACOWNICY");
@@ -26,6 +36,19 @@ namespace CRM
             Pracownik p2 = (Pracownik)p1.Clone();
             p2.Imie = "Patryk";
             p2.DataRozpoczeciaPracy = new DateTime(2000, 12, 2);
+
+            //Zapis obiektu klasy Pracownik do pliku XML oraz odczyt z pliku XML
+            try
+            {
+                p2.ZapiszXML("pracownik.xml");
+                Console.WriteLine("Odczyt z pliku XML:");
+                Console.WriteLine(Pracownik.OdczytajXML("pracownik.xml"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
+            
 
             //Dodawanie pracownikow
             nasza.DodajPracownika(p1);
@@ -122,7 +145,7 @@ namespace CRM
             #region Klienci
             Console.WriteLine("\t\t\tKLIENCI");
             //Tworzenie osoby kontaktowej do naszego klienta - firmy LG
-            OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789");
+            OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789","anna.wiatr@onet.com");
 
             //Klonowanie osoby kontaktowej
             OsobaKontakt ok2 = (OsobaKontakt)ok1.Clone();

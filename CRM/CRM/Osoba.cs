@@ -8,6 +8,7 @@ namespace CRM
 {
     public enum Stanowiska { sekretariat, dyrekcja, konsultant, sprzedawca, inne};
     public enum Plcie { K, M,Nieznana };
+    [Serializable]
     public abstract class Osoba: IComparable<Osoba>
     {
         string _imie;

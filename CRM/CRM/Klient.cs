@@ -14,6 +14,7 @@ namespace CRM
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
+    public enum Status { potencjalny, nowy, stały, były }
     public class Klient:Organizacja
     {
         List<OsobaKontakt> _listaKontaktow;
@@ -22,7 +23,10 @@ namespace CRM
         Stack<Dzialanie> _dzialania;
         Stack<Umowa> _transakcje;
         string _uwagi;
-
+        public Klient() { //Musiałam dodać ten konstruktor żeby móc do xmla zapsać :Daga
+            _listaKontaktow = new List<OsobaKontakt>();
+            _dzialania = new Stack<Dzialanie>();
+        }
         public Klient(string nazwa, Branże branza) : base(nazwa, branza)
         {
             _listaKontaktow = new List<OsobaKontakt>();

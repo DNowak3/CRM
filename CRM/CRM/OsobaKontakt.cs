@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
     public class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>, ICloneable
+    [Serializable]
+    public class OsobaKontakt :Osoba,IEquatable<OsobaKontakt>, ICloneable,IZapisywalna
     {
         string _telefon;
         string _mail;
@@ -26,12 +30,11 @@ namespace CRM
         { }
         public OsobaKontakt(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko) : base(imie, nazwisko, plec, stanowisko)
         { }
-        public OsobaKontakt(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string telefon) : this(imie, nazwisko, plec, stanowisko)
+
+        public OsobaKontakt(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string telefon, string mail) : this(imie, nazwisko, plec, stanowisko)
         {
             Telefon = telefon;
-        }
-        public OsobaKontakt(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string telefon, string mail) : this(imie, nazwisko, plec, stanowisko, telefon)
-        {
+
             Mail = mail;
         }
         public OsobaKontakt(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko,string telefon, string mail, string notatki):this(imie, nazwisko, plec, stanowisko,telefon, mail)
@@ -65,10 +68,14 @@ namespace CRM
                 }
             return null;
         }
-        bool PoprawnoscRegex(string telefon, string maska)
+        bool PoprawnoscRegex(string napis, string maska)
         {
+            if (napis == null)
+            {
+                return false;
+            }
             Regex wyrReg = new Regex(maska);
-            return wyrReg.IsMatch(telefon);
+            return wyrReg.IsMatch(napis);
         }
         public bool Equals(OsobaKontakt other)
         {
@@ -83,6 +90,31 @@ namespace CRM
         {
             return MemberwiseClone();
         }
+        #endregion
+        #region Zapis/Odczyt
+        public virtual void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(OsobaKontakt));
+                xml.Serialize(sw, this);
+            }
+        }
+
+        public static OsobaKontakt OdczytajXML(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+            {
+                return null;
+            }
+            using (StreamReader sr = new StreamReader(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(OsobaKontakt));
+                return (OsobaKontakt)xml.Deserialize(sr);
+            }
+        }
+
+
         #endregion
         public override string ToString()
         {
