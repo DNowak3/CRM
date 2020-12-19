@@ -6,18 +6,44 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    //sortowanie wg daty?
-    //klonowanie
+    /// <summary>
+    /// Typ wyliczeniowy, zawiera stale wartosci bedace wynikiem dzialania z klientem.
+    /// </summary>
     enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
+   
+    /// <summary>
+    /// Klasa definiujaca dzialania wobec klientow.
+    /// </summary>
     class Dzialanie : ICloneable, IComparable<Dzialanie>
     {
+        /// <summary>
+        /// Nazwa dzialania.
+        /// </summary>
         string _nazwa;
+        /// <summary>
+        /// Data dzialania.
+        /// </summary>
         DateTime _data;
+        /// <summary>
+        /// Praciwnik, ktory wykonal dzialanie.
+        /// </summary>
         Pracownik _pracownik;
+        /// <summary>
+        /// Osoba reprezentujaca klienta, z ktora sie skontaktowano.
+        /// </summary>
         OsobaKontakt _osobaKontaktowa;
+        /// <summary>
+        /// Ogolny rezultat podjetego dzialania.
+        /// </summary>
         WynikDzialania _wynik;
+        /// <summary>
+        /// Opis dzialania.
+        /// </summary>
         string _opis;
 
+        /// <summary>
+        /// Wlasciwosci.
+        /// </summary>
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
         public DateTime Data { get => _data; set => _data = value; }
         public string Opis { get => _opis; set => _opis = value; }
@@ -25,6 +51,11 @@ namespace CRM
         internal OsobaKontakt OsobaKontaktowa { get => _osobaKontaktowa; set => _osobaKontaktowa = value; }
         internal WynikDzialania Wynik { get => _wynik; set => _wynik = value; }
 
+        /// <summary>
+        /// Podstawowy konstruktor parametryczny.
+        /// </summary>
+        /// <param name="nazwa">Nazwa dzialania</param>
+        /// <param name="data">Data dzialania</param>
         public Dzialanie(string nazwa, string data)
         {
             Nazwa = nazwa;
@@ -33,6 +64,14 @@ namespace CRM
             Data = d;
         }
 
+        /// <summary>
+        /// Bardziej szczegolowy konstruktor, wywoluje poprzedni.
+        /// </summary>
+        /// <param name="nazwa">Nazwa dzialania</param>
+        /// <param name="data">Data dzialania</param>
+        /// <param name="pracownik">Pracownik, ktory wykonal dzialanie</param>
+        /// <param name="osobaKontaktowa">Osoba, z ktora skontaktowal sie pracownik</param>
+        /// <param name="wynik">Ogolny rezultat dzialania</param>
         public Dzialanie(string nazwa, string data, Pracownik pracownik, OsobaKontakt osobaKontaktowa, WynikDzialania wynik) : this(nazwa, data)
         {
             Pracownik = pracownik;
@@ -40,11 +79,24 @@ namespace CRM
             Wynik = wynik;
         }
 
+        /// <summary>
+        /// Konstruktor, ktory ustawia wartosci dla wszystkich pol i wywoluje poprzedni konstruktor.
+        /// </summary>
+        /// <param name="nazwa">Nazwa dzialania</param>
+        /// <param name="data">Data dzialania</param>
+        /// <param name="pracownik">Pracownik, ktory wykonal dzialanie</param>
+        /// <param name="osobaKontaktowa">Osoba, z ktora skontaktowal sie pracownik</param>
+        /// <param name="wynik">Ogolny rezultat dzialania</param>
+        /// <param name="opis">Opis dzialania</param>
         public Dzialanie(string nazwa, string data, Pracownik pracownik, OsobaKontakt osobaKontaktowa, WynikDzialania wynik, string opis) : this(nazwa, data, pracownik, osobaKontaktowa, wynik)
         {
             Opis = opis;
         }
 
+        /// <summary>
+        /// Meotda tworzy czytelna, tekstowa reprezentacje dzialania.
+        /// </summary>
+        /// <returns>Zwraca ciag opisujacy biezace dzialanie</returns>
         public override string ToString()
         {
             string napis = $"{Data.ToString("dd.MM.yyyy")} - {Nazwa}";
@@ -59,6 +111,10 @@ namespace CRM
             return napis;
         }
 
+        /// <summary>
+        /// Metoda tworzy obiekt klasy dzialanie bedacy kopia biezacego dzialania.
+        /// </summary>
+        /// <returns>Zwraca nowe dzialanie bedace kopia danego dzialania</returns>
         public object Clone()
         {
             Dzialanie d = new Dzialanie(Nazwa, Data.ToString("dd.MM.yyyy"));
@@ -76,6 +132,16 @@ namespace CRM
             return d;
         }
 
+        /// <summary>
+        /// Metoda porownuje dwa obiekty klasy dzialanie na podsatwie dat wykonania.
+        /// </summary>
+        /// <param name="other">Drugie dzialanie, ktore ma zostac porownane z biezacym obiektem</param>
+        /// <returns>
+        /// Zwraca liczbe ze znakiem, wskazujaca na kolejnosc porownywanych dzialan.
+        ///  Wartosc < 0 oznacza, ze dzialanie other nastapilo po biezacym dzialaniu.
+        ///  Wartosc = 0 oznacza, ze dzialania maja te sama date.
+        ///  Wartosc > 0 oznacza, ze dzialanie other poprzedzilo biezace dzialanie.
+        /// </returns>
         public int CompareTo(Dzialanie other)
         {
             return Data.CompareTo(other.Data);
