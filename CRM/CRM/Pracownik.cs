@@ -9,8 +9,14 @@ using System.Xml.Serialization;
 namespace CRM
 {
     [Serializable]
+    /// <summary>
+    /// Klasa definiująca pracownika firmy, która prowadzi CRM. Dziedziczy po klasie OsobaKontakt.
+    /// </summary>
     public class Pracownik:OsobaKontakt,IZapisywalna
     {
+        /// <summary>
+        /// Data, kiedy pracownik zaczął pracę w firmie, którra prowadzi CRM.
+        /// </summary>
         DateTime _dataRozpoczeciaPracy;
         public DateTime DataRozpoczeciaPracy { get => _dataRozpoczeciaPracy; set => _dataRozpoczeciaPracy = value; }
 
@@ -26,12 +32,10 @@ namespace CRM
         {
             DateTime.TryParseExact(dataRozpoczecia, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out _dataRozpoczeciaPracy);
         }
-        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia, string telefon) : this(imie, nazwisko, plec, stanowisko, dataRozpoczecia)
+        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia, string telefon, string mail) : this(imie, nazwisko, plec, stanowisko, dataRozpoczecia)
         {
             Telefon = telefon;
-        }
-        public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia, string telefon, string mail) : this(imie, nazwisko, plec, stanowisko, dataRozpoczecia, telefon)
-        {
+
             Mail = mail;
         }
         public Pracownik(string imie, string nazwisko, Plcie plec, Stanowiska stanowisko, string dataRozpoczecia, string telefon, string mail, string notatki) : this(imie, nazwisko, plec, stanowisko, dataRozpoczecia, telefon, mail)
@@ -41,6 +45,10 @@ namespace CRM
 
         #endregion
         #region Zapis/Odczyt
+        /// <summary>
+        /// Funkcja zapisuje dane pracownika do pliku XML.
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
         public override void ZapiszXML(string nazwa)
         {
             using (StreamWriter sw = new StreamWriter(nazwa))
@@ -49,7 +57,11 @@ namespace CRM
                 xml.Serialize(sw, this);
             }
         }
-
+        /// <summary>
+        /// Funkcja odczytująca dane pracownika z pliku XML.
+        /// </summary>
+        /// <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
+        /// <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
         public static Pracownik OdczytajXML(string nazwa)
         {
             if (!File.Exists(nazwa))
@@ -65,6 +77,10 @@ namespace CRM
 
 
         #endregion
+        /// <summary>
+        /// Funkcja tworzy i zwraca napis z danymi pracownika.
+        /// </summary>
+        /// <returns>Napis zawierający dane pracownika</returns>
         public override string ToString()
         {
             return $"({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")}) "+base.ToString();

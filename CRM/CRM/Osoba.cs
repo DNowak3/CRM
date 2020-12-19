@@ -6,14 +6,35 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
+    /// <summary>
+    /// Typ wyliczeniowy, zawiera stanowiska, na jakim są osoby kontaktowe.
+    /// </summary>
     public enum Stanowiska { sekretariat, dyrekcja, konsultant, sprzedawca, inne};
+    /// <summary>
+    /// Typ wyliczeniowy, zawiera rodzaje plci.
+    /// </summary>
     public enum Plcie { K, M,Nieznana };
     [Serializable]
+    /// <summary>
+    /// Klasa abstrakcyjna definiująca osobę.
+    /// </summary>
     public abstract class Osoba: IComparable<Osoba>
     {
+        /// <summary>
+        /// Imie osoby.
+        /// </summary>
         string _imie;
+        /// <summary>
+        /// Nazwisko osoby.
+        /// </summary>
         string _nazwisko;
+        /// <summary>
+        /// Płeć osoby.
+        /// </summary>
         Plcie _plec;
+        /// <summary>
+        /// Stanowisko jakie piastuje osoba.
+        /// </summary>
         Stanowiska _stanowisko;
 
         public string Imie { get => _imie; set => _imie = FormatZWielkiej(value); }
@@ -40,19 +61,34 @@ namespace CRM
         }
         #endregion
         #region Funkcje
-        protected string FormatZWielkiej(string s)
+        /// <summary>
+        /// Funkcja gwarantująca, że wpisany napis będzie zaczynał się z wielkiej litery, a wszystkie następujące litery będą małe.
+        /// </summary>
+        /// <param name="napis">Napis, który chcemy zmienić.</param>
+        /// <returns>Podany napis zaczynający się z wielkiej litery, a wszystkie litery potem są małe</returns>
+        protected string FormatZWielkiej(string napis)
         {
             string wynik = null;
-            if (!(s==null))
+            if (!(napis==null))
             {
-                wynik += Char.ToUpper(s[0]);
-                for (int i = 1; i < s.Length; ++i)
+                wynik += Char.ToUpper(napis[0]);
+                for (int i = 1; i < napis.Length; ++i)
                 {
-                    wynik += Char.ToLower(s[i]);
+                    wynik += Char.ToLower(napis[i]);
                 }
             }
             return wynik;
         }
+        /// <summary>
+        /// Porównuje dwie osoby ze sobą, najpierw po nazwisku, potem po imieniu. 
+        /// </summary>
+        /// <param name="other">Osoba, z którą porównujemy.</param>
+        /// <returns>
+        /// Zwraca waryość porównania nazwisk:
+        /// 0 jeżeli nazwiska obydwu osób są równe
+        /// mniej niż 0 jeżeli nazwisko obecnej osoby jest mniejsze niż nazwisko porównywanej osoby
+        /// więcej niż 0 jeżeli nazwisko obecnej osoby jest większe niż nazwisko porównywanej osoby
+        ///  Jeśli dwa nazwiska są równe zwraca wartość porównania imion.</returns>
         public int CompareTo(Osoba other)
         {
             int wynik = Nazwisko.CompareTo(other.Nazwisko);
@@ -63,6 +99,10 @@ namespace CRM
             return wynik;
         }
         #endregion
+        /// <summary>
+        /// Funkcja tworzy i zwraca napis z danymi osoby.
+        /// </summary>
+        /// <returns>Napis zawierający dane osoby</returns>
         public override string ToString()
         {
             return $"{Imie} {Nazwisko} {Plec} {Stanowisko}";

@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 namespace CRM
 {
     [Serializable]
+    
     public class OrgProwadzacaCRM:Organizacja,IZapisywalna
     {
         List<Pracownik> _listaPracownikow;
@@ -343,8 +344,6 @@ namespace CRM
                 return (OrgProwadzacaCRM)xml.Deserialize(sr);
             }
         }
-
-
         #endregion
         #region Funkcje wypisujace
         public string WypiszProdukty()
