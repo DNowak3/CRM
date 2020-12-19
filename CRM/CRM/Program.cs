@@ -71,11 +71,18 @@ namespace CRM
             Konkurent k2 = new Konkurent("Nokia", Organizacja.Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
             Console.WriteLine(k);
             Console.WriteLine(k2);
+
             //Przypadek w którym nr NIP jest podany w niepoprawnym formacie
             k2.Nip = "123456789";
             Console.WriteLine(k2.Nip);
+
             //Metoda sprawdzająca czy dwa obiekty klasy Konkurent są równe
             Console.WriteLine(Konkurent.CzyToTeSameFirmy(k, k2));
+
+            //Zapis obiektu klasy Konkurent do pliku XML oraz odczyt z pliku XML
+            k.ZapiszXML("konkurent.xml");
+            Console.WriteLine("Odczyt z pliku XML:");
+            Console.WriteLine(Konkurent.OdczytajXML("konkurent.xml"));
 
             //Dodawanie konkurentow
             nasza.DodajKonkurenta(k);
@@ -87,10 +94,7 @@ namespace CRM
             Console.WriteLine(nasza.WypiszKonkurentow());
             Console.WriteLine(Konkurent.CzyToTeSameFirmy(k,k2));
             
-            //Zapis obiektu klasy Konkurent do pliku XML oraz odczyt z pliku XML
-            k.ZapiszXML("konkurent.xml");
-            Console.WriteLine("Odczyt z pliku XML:");
-            Console.WriteLine(Konkurent.OdczytajXML("konkurent.xml"));
+
 
             //Sprawdzanie czy jest konkurentem
             Console.WriteLine(nasza.JestKonkurentem(k));
