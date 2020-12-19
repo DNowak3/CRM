@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionNotFoundException.cs" />
+    <Compile Include="AlreadyInListException.cs" />
     <Compile Include="Dzialanie.cs" />
     <Compile Include="ITworzyUmowy.cs" />
     <Compile Include="IZapisywalna.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Konkurent.cs" />
     <Compile Include="NonOrganizationMemberException.cs" />
     <Compile Include="Organizacja.cs" />
+    <Compile Include="OrgProwadzacaCRM.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="OsobaKontakt.cs" />
     <Compile Include="Pracownicy.cs" />

@@ -65,7 +65,11 @@ namespace CRM
             }
             throw new ActionNotFoundException();
         }
-
+        public DateTime OstatniKontakt()
+        {
+            SortujDzialania();
+            return _dzialania.Count()==0?DateTime.MaxValue:_dzialania.Peek().Data;
+        }
         public List<Dzialanie> ZnajdzDzialania(string dataOd)
         {
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };

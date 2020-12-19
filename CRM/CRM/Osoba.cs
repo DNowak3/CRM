@@ -39,7 +39,7 @@ namespace CRM
         }
         #endregion
         #region Funkcje
-        string FormatZWielkiej(string s)
+        protected string FormatZWielkiej(string s)
         {
             string wynik = null;
             if (!(s==null))

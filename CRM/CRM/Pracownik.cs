@@ -39,7 +39,7 @@ namespace CRM
         #endregion
         public override string ToString()
         {
-            return base.ToString()+$" ({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")})";
+            return $"({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")}) "+base.ToString();
         }
 
     }

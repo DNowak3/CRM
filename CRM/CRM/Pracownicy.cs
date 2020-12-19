@@ -16,7 +16,7 @@ namespace CRM
             _listaPracownikow = new List<Pracownik>();
             _iloscPracownikow = 0;
         }
-        #region Funkcje
+        #region Funkcje Pracownicy
         public static void Dodaj(Pracownik p)
         {
             _listaPracownikow.Add(p);

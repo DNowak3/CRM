@@ -56,9 +56,9 @@ namespace CRM
             //[\w.%-_+]+ - dopasowuje ktorys z tych znakow tyle razy ile trzeba
             //@ - dopasowuje malpke w srodku maila
             //\. - dopasowuje kropke
-            //[a-zA-Z]{2,4} - dopasowuje od 2 do 4 liter
+            //https://stackoverflow.com/questions/5342375/regex-email-validation
 
-            string maska = @"^[\w.%-_+]+@[\w.-]\.[a-zA-Z]{2,4}$";
+            string maska = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             if (PoprawnoscRegex(email, maska))
                 {
                     return email;
@@ -77,19 +77,21 @@ namespace CRM
                 return false;
             }
             return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko) && Telefon.Equals(other.Telefon) && Mail.Equals(other.Mail));
+
+        }
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
         #endregion
         public override string ToString()
         {
             string napis = Telefon == null ? "" : $", nr telefonu: {Telefon}";
             napis += Mail == null ? null : $", email: {Mail}";
-            napis+= Notatki==null?null:$"\nNotatki:\n{Notatki}";
+            napis+= Notatki==null?null:$"\n\tNotatki: {Notatki}";
             return base.ToString() + napis;
         }
 
-        public object Clone()
-        {
-            return MemberwiseClone();
-        }
+
     }
 }

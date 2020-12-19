@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CRM
 {
     public enum Jednostki { szt, kg, m}
-    public class Produkt
+    class Produkt:IComparable<Produkt>
     {
             static int _aktualnyNumer;
             string _nazwa;
@@ -48,8 +48,10 @@ namespace CRM
             {
                 return $"{Kod} {Nazwa} {Cena:C} za {Jednostka}";
             }
-
-
-        
+        //Dodałam na szybko bo potrzebowałam do sortowania w liście: Daga
+        public int CompareTo(Produkt other)
+        {
+            return Nazwa.CompareTo(other.Nazwa);
+        }
     }
 }
