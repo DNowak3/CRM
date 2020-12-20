@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>, ICloneable
+    public class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>, ICloneable
     {
         string _telefon;
         string _mail;

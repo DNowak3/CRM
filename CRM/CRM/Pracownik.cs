@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class Pracownik:OsobaKontakt
+    public class Pracownik:OsobaKontakt
     {
         DateTime _dataRozpoczeciaPracy;
         public DateTime DataRozpoczeciaPracy { get => _dataRozpoczeciaPracy; set => _dataRozpoczeciaPracy = value; }

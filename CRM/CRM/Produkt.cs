@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CRM
 {
     public enum Jednostki { szt, kg, m}
-    class Produkt
+    public class Produkt
     {
             static int _aktualnyNumer;
             string _nazwa;

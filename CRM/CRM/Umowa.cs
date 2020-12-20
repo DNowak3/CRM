@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class Umowa :ITworzyUmowy
+    public class Umowa :ITworzyUmowy
     {
         string _nrUmowy;
         DateTime _dataUmowy;

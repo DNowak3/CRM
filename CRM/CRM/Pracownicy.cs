@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    static class Pracownicy
+    public static class Pracownicy
     {
         static List<Pracownik> _listaPracownikow;
         static int _iloscPracownikow;

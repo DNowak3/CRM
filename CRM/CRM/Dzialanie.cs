@@ -9,12 +9,12 @@ namespace CRM
     /// <summary>
     /// Typ wyliczeniowy, zawiera stale wartosci bedace wynikiem dzialania z klientem.
     /// </summary>
-    enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
+    public enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
    
     /// <summary>
     /// Klasa definiujaca dzialania wobec klientow.
     /// </summary>
-    class Dzialanie : ICloneable, IComparable<Dzialanie>
+    public class Dzialanie : ICloneable, IComparable<Dzialanie>
     {
         /// <summary>
         /// Nazwa dzialania.

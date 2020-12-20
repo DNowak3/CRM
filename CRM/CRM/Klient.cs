@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    enum Status { potencjalny, nowy, stały, były }
-    class Klient:Organizacja
+    /// <summary>
+    /// Enumeracja, zawiera mozliwe wartosci statusu klienta.
+    /// </summary>
+    public enum Status { potencjalny, nowy, stały, były }
+
+    /// <summary>
+    /// Klasa definiujaca klientow firmy.
+    /// </summary>
+    public class Klient:Organizacja
     {
         List<OsobaKontakt> _listaKontaktow;
         DateTime _dataPlanowanegoKontaktu;
