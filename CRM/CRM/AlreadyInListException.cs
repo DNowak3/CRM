@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class AlreadyInListException:Exception
+    public class AlreadyInListException:Exception
     {
         public AlreadyInListException() : base() { }
         public AlreadyInListException( string komunikat) : base(komunikat) { }

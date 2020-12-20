@@ -1,0 +1,16 @@
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\TestyJednostkowe.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\TestyJednostkowe.pdb
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\CRM.exe
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\CRM.exe.config
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\GitFork\CRM\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.csprojAssemblyReference.cache
+D:\GitFork\CRM\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.csproj.CopyComplete
+D:\GitFork\CRM\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.dll
+D:\GitFork\CRM\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.pdb

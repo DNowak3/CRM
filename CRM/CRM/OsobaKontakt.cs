@@ -9,11 +9,10 @@ using System.Xml.Serialization;
 
 namespace CRM
 {
-    public class OsobaKontakt:Osoba,IEquatable<OsobaKontakt>, ICloneable
-    [Serializable]
     /// <summary>
     /// Klasa definiująca osobę, z którą się kontaktujemy. Dziedziczy po klasie Osoba.
     /// </summary>
+    [Serializable]
     public class OsobaKontakt :Osoba,IEquatable<OsobaKontakt>, ICloneable,IZapisywalna
     {
         /// <summary>

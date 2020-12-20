@@ -14,7 +14,6 @@ namespace CRM
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
-    public enum Status { potencjalny, nowy, stały, były }
     public class Klient:Organizacja
     {
         List<OsobaKontakt> _listaKontaktow;

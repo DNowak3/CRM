@@ -12,7 +12,21 @@ namespace TestyJednostkowe
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
             int licznik = 1;
-            temp.DodajPracownika(new Pracownik());
+            Pracownik p1 = new Pracownik("Mateusz", "Nowak", Plcie.M, Stanowiska.sprzedawca);
+            temp.DodajPracownika(p1);
+            Assert.AreEqual(licznik, temp.PodajIloscPracownikow());
+            try
+            {
+                temp.DodajPracownika(p1);
+                Assert.Fail(); // If it gets to this line, no exception was thrown
+            }
+            catch (AlreadyInListException) { }
+        }
+        public void DodawaniePracownikow1()
+        {
+            OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
+            int licznik = 1;
+            temp.DodajPracownika(new Pracownik("Mateusz", "Nowak", Plcie.M, Stanowiska.sprzedawca));
             Assert.AreEqual(licznik, temp.PodajIloscPracownikow());
         }
         [TestMethod]
