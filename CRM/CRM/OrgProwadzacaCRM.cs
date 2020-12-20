@@ -337,6 +337,10 @@ namespace CRM
         #endregion
 
         #region Funkcje Konkurenci
+        /// <summary>
+        /// Funkcja dodająca obiekt Konkurent do listy konkurentów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// </summary>
+        /// <param name="k">Obiekt Konkurent</param>
         public void DodajKonkurenta(Konkurent k)
         {
             if (JestKonkurentem(k))
@@ -345,6 +349,12 @@ namespace CRM
             }
             _listaKonkurentow.Add(k);
         }
+        /// <summary>
+        /// Funkcja usuwająca konkurenta z listy konkurentów organizacji.
+        /// </summary>
+        /// <param name="nazwa">Nazwa organizacji przeznaczonej do usunięcia z listy konkurentów.</param>
+        /// <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
+        /// Fałsz, jeśli takiego konkurenta nie było.</returns>
         public bool UsunKonkurenta(string nazwa)
         {
             if (_listaKonkurentow.Count() != 0 && JestKonkurentem(nazwa))
@@ -354,6 +364,12 @@ namespace CRM
             }
             return false;
         }
+        /// <summary>
+        /// Funkcja usuwając konkurenta z listy konkurentów organizacji.
+        /// </summary>
+        /// <param name="k">Obiekt Konkurent przeznaczony do usunięcia.</param>
+        /// <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
+        /// Fałsz, jeśli takiego pracownika nie było.</returns>
         public bool UsunKonkurenta(Konkurent k)
         {
             if (_listaKonkurentow.Count() != 0 && JestKonkurentem(k))
@@ -363,10 +379,17 @@ namespace CRM
             }
             return false; 
         }
+        /// <summary>
+        /// Funkcja usuwa wszystkich konkurentoów z listy konkurentów organizacji.
+        /// </summary>
         public void UsunWszystkichKonkurentow()
         {
             _listaKonkurentow.Clear();
         }
+        /// <summary>
+        /// Podaje liczbę konkurentów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <returns>Zwraca liczbę konkurentów.</returns>
         public int PodajIloscKonkurentow()
         {
             if (_listaPracownikow is null)
@@ -375,18 +398,38 @@ namespace CRM
             }
             return _listaKonkurentow.Count();
         }
+        /// <summary>
+        /// Funkcja sprawdza, czy podany obiekt Konkurent znajduje się na liście konkurentów.
+        /// </summary>
+        /// <param name="k">Obiekt Konkurent, którego szukamy na liście konkurentów.</param>
+        /// <returns>Prawdę, jeśli obiekt Konkurent jest konkurentem oraganizacji prowadzącej CRM,
+        /// Fałsz, jeśli nie jest.</returns>
         public bool JestKonkurentem(Konkurent k)
         {
             return _listaKonkurentow.Contains(k);
         }
+        /// <summary>
+        /// Funkcja sprawdza, czy konkurent o podanej nazwie znajduje się na liście konkurentów.
+        /// </summary>
+        /// <param name="nazwa">Nazwa szukanej konkurencyjnej organizacji.</param>
+        /// <returns>Prawdę, jeśli obiekt o takich parametrach jest konkurentem oraganizacji prowadzącej CRM,
+        /// Fałsz, jeśli nie jest.</returns>
         public bool JestKonkurentem(string nazwa)
         {
             return _listaKonkurentow.Exists(k => k.Nazwa == nazwa);
         }
+        /// <summary>
+        /// Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym stopiu zagrożenia.
+        /// </summary>
+        /// <param name="zagrozenie">Stopień zagrożenia szukanych konkurentów.</param>
+        /// <returns>Listę konkurentów, o podanym stopniu zagrożenia.</returns>
         public List<Konkurent> ZnajdzWszystkichKonkurentowZagrozenie(Konkurent.StopienZagrozenia zagrozenie)
         {
             return _listaKonkurentow.FindAll(k => k.Zagrozenie == zagrozenie);
         }
+        /// <summary>
+        /// Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
+        /// </summary>
         public void KonkurenciSortujAlfabetycznie()
         {
             _listaKonkurentow.Sort();
@@ -394,6 +437,10 @@ namespace CRM
         #endregion
 
         #region Funkcje Klienci
+        /// <summary>
+        /// Funkcja dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// </summary>
+        /// <param name="k">Obiekt Klient</param>
         public void DodajKlienta(Klient k)
         {
             if (JestKlientem(k))
@@ -402,6 +449,12 @@ namespace CRM
             }
             _listaKlientow.Add(k);
         }
+        /// <summary>
+        /// Funkcja usuwająca klient z listy klientów organizacji.
+        /// </summary>
+        /// <param name="nazwa">Nazwa organizacji klienta przeznaczonej do usunięcia z listy klientoów.</param>
+        /// <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
+        /// Fałsz, jeśli takiego konkurenta nie było.</returns>
         public bool UsunKlienta(string nazwa)
         {
             if (_listaKlientow.Count() != 0 && JestKlientem(nazwa))
@@ -411,6 +464,12 @@ namespace CRM
             }
             return false;
         }
+        /// <summary>
+        /// Funkcja usuwająca klienta z listy klientów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <param name="k">Obiekt Klient przeznaczony do usunięcia.</param>
+        /// <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
+        /// Fałsz, jeśli takiego pracownika nie było.</returns>
         public bool UsunKlienta(Klient k)
         {
             if (_listaKlientow.Count() != 0 && JestKlientem(k))
@@ -420,10 +479,17 @@ namespace CRM
             }
             return false;
         }
+        /// <summary>
+        /// Funkcja usuwa wszystkich klientów z listy klientów organizacji.
+        /// </summary>
         public void UsunWszystkichKlientow()
         {
             _listaKlientow.Clear();
         }
+        /// <summary>
+        /// Podaje liczbę klientów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <returns>Zwraca liczbę klientów.</returns>
         public int PodajIloscKlientow()
         {
             if (_listaPracownikow is null)
@@ -432,40 +498,80 @@ namespace CRM
             }
             return _listaKlientow.Count();
         }
+        /// <summary>
+        /// Funkcja sprawdza, czy podany obiekt Klient znajduje się na liście klientów organizcji prowadzącej CRM.
+        /// </summary>
+        /// <param name="k">Obiekt Klient, którego szukamy na liście klientów.</param>
+        /// <returns>Prawdę, jeśli obiekt Klient jest klientem oraganizacji prowadzącej CRM,
+        /// Fałsz, jeśli nie jest.</returns>
         public bool JestKlientem(Klient k)
         {
             return _listaKlientow.Contains(k);
         }
+        /// <summary>
+        /// Funkcja sprawdza, czy klient o podanej nazwie organizacji znajduje się na liście klientów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <param name="nazwa">Nazwa szukanego klienta.</param>
+        /// <returns>Prawdę, jeśli obiekt o takiej nazwie jest klientem oraganizacji prowadzącej CRM,
+        /// Fałsz, jeśli nie jest.</returns>
         public bool JestKlientem(string nazwa)
         {
             return _listaKlientow.Exists(k => k.Nazwa == nazwa);
         }
+        /// <summary>
+        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi planowany kontakt ma odbyć się za podaną liczbę dni. Domyślnie wyszukuje klientów, z którymi planowany kontakt jest ustawiony na dzisiaj.
+        /// </summary>
+        /// <param name="ZaIleDni">Liczba dni, za którą ma się odbyć planowany kontakt z klientem.</param>
+        /// <returns>Listę klientów, z którymi planowany kontakt jest ustawiony za podaną liczbę dni.</returns>
         public List<Klient> ZnajdzWszystkichKlientowPlanowanyKontakt(int ZaIleDni=0)
         { 
             return _listaKlientow.FindAll(k => k.DataPlanowanegoKontaktu == DateTime.Today.AddDays(ZaIleDni));
         }
+        /// <summary>
+        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi ostatnio kontaktowano się podaną liczbę dni temu. Domyślnie wyszukuje klientów, z którymi osatnio kontaktowano się 2 tygodnie temu.
+        /// </summary>
+        /// <param name="IleDniTemu">Liczba dni jaka minęła odkąd kontaktowano się z klientem.</param>
+        /// <returns>Listę klientów, z którymi kontaktowano się ustaloną liczbę dni temu.</returns>
         public List<Klient> ZnajdzWszystkichKlientowOstatniKontakt(int IleDniTemu=14)
         {
             return _listaKlientow.FindAll(k => k.OstatniKontakt()<=DateTime.Today.AddDays(-IleDniTemu));
         }
+        /// <summary>
+        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
+        /// </summary>
+        /// <param name="status">Status wyszukiwanych klientów.</param>
+        /// <returns>Listę klientów, o podanym statusie.</returns>
         public List<Klient> ZnajdzWszystkichKlientowStatus(Status status)
         {
             return _listaKlientow.FindAll(k => k.Status == status);
         }
+        /// <summary>
+        /// Funkcja sortuje wszystkich klientów alfabetycznie po nazwie organizacji.
+        /// </summary>
         public void KlienciSortujAlfabetycznie()
         {
             _listaKlientow.Sort();
         }
+        /// <summary>
+        /// Funkcja sortuje wszystkich klientów według daty planowanego kontaktu.
+        /// </summary>
         public void KlienciSortujDataPlanowanegoKontaktu()
         {
             _listaKlientow.Sort((x,y)=>y.DataPlanowanegoKontaktu.CompareTo(x.DataPlanowanegoKontaktu));
         }
+        /// <summary>
+        /// Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
+        /// </summary>
         public void KlienciSortujDataOstatniegoKontaktu()
         {
             _listaKlientow.Sort((x, y) => y.OstatniKontakt().CompareTo(x.OstatniKontakt()));
         }
         #endregion
         #region Zapis/Odczyt
+        /// <summary>
+        /// Funkcja zapisuje dane dane organizacji, która prowadzi CRM do pliku XML.
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
         public override void ZapiszXML(string nazwa)
         {
             using (StreamWriter sw = new StreamWriter(nazwa))
@@ -474,7 +580,11 @@ namespace CRM
                 xml.Serialize(sw, this);
             }
         }
-
+        /// <summary>
+        /// Funkcja odczytująca dane organizacji, która prowadzi CRM z pliku XML.
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
+        /// <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM</returns>
         public static OrgProwadzacaCRM OdczytajXML(string nazwa)
         {
             if (!File.Exists(nazwa))
@@ -489,6 +599,10 @@ namespace CRM
         }
         #endregion
         #region Funkcje wypisujace
+        /// <summary>
+        /// Funkcja wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
+        /// </summary>
+        /// <returns>Napis zawierający informacje o wszystkich produktach z listy produktów organizacji.</returns>
         public string WypiszProdukty()
         {
             StringBuilder napis = new StringBuilder();
@@ -503,6 +617,10 @@ namespace CRM
             }
             return napis.ToString();
         }
+        /// <summary>
+        /// Funkcja wypisująca na konsolę wszystkich pracowników organizacji prowadzącej CRM.
+        /// </summary>
+        /// <returns>Napis zawierający informacje o wszystkich pracownikach organizacji.</returns>
         public string WypiszPracownikow()
         {
             StringBuilder napis = new StringBuilder();
@@ -517,6 +635,10 @@ namespace CRM
             }
             return napis.ToString();
         }
+        /// <summary>
+        /// Funkcja wypisująca na konsolę wszystkich konkurentów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <returns>Napis zawierający informacje o wszystkich konkurentach organizacji.</returns>
         public string WypiszKonkurentow()
         {
             StringBuilder napis = new StringBuilder();
@@ -531,6 +653,10 @@ namespace CRM
             }
             return napis.ToString();
         }
+        /// <summary>
+        /// Funkcja wypisująca na konsolę wszystkich klientów organizacji prowadzącej CRM.
+        /// </summary>
+        /// <returns>Napis zawierający informacje o wszystkich klientach organizacji.</returns>
         public string WypiszKlientow()
         {
             StringBuilder napis = new StringBuilder();
@@ -545,6 +671,10 @@ namespace CRM
             }
             return napis.ToString();
         }
+        /// <summary>
+        /// Funkcja wypisująca na konsolę wszystkie informacje o organizacji prowadzącej CRM oraz jej pracowników, konkurentów, klientów oraz produkty, które oferuje.
+        /// </summary>
+        /// <returns>Napis zawierający informacje o całej organizacji prowadzącej CRM.</returns>
         public override string ToString()
         {
             StringBuilder napis = new StringBuilder();
