@@ -14,32 +14,87 @@ namespace CRM
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
-    public class Klient:Organizacja
+    public class Klient : Organizacja
     {
+        /// <summary>
+        /// Lista osob w firmie, z ktorymi mozemy sie kontaktowac.
+        /// </summary>
         List<OsobaKontakt> _listaKontaktow;
+        /// <summary>
+        /// Data planowanego kontaktu.
+        /// </summary>
         DateTime _dataPlanowanegoKontaktu;
+        /// <summary>
+        /// Aktualny status klienta.
+        /// </summary>
         Status _status;
+        /// <summary>
+        /// Historia kontaktow i dzialan podjetych wobec klienta.
+        /// </summary>
         Stack<Dzialanie> _dzialania;
+        /// <summary>
+        /// Transakcje zawarte z klientem.
+        /// </summary>
         Stack<Umowa> _transakcje;
+        /// <summary>
+        /// Uwagi dotyczace klienta.
+        /// </summary>
         string _uwagi;
-        public Klient() { //Musiałam dodać ten konstruktor żeby móc do xmla zapsać :Daga
-            _listaKontaktow = new List<OsobaKontakt>();
-            _dzialania = new Stack<Dzialanie>();
-        }
-        public Klient(string nazwa, Branże branza) : base(nazwa, branza)
+
+        /// <summary>
+        /// Podstawowy konstruktor nieparametryczny.
+        /// </summary>
+        public Klient()
         {
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
         }
 
-        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia) : base(nazwa, branza, nip, kraj, miasto, dataZalozenia)
+        /// <summary>
+        /// Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+        /// </summary>
+        /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
+        /// <param name="branza">Branza w jakiej dziala firma</param>
+        public Klient(string nazwa, Branże branza) : base(nazwa, branza)
         {
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
             _transakcje = new Stack<Umowa>();
         }
 
-        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia, string dataPlanowKontaktu, string uwagi, Status status = Status.potencjalny) : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
+        /// <summary>
+        /// Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+        /// </summary>
+        /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
+        /// <param name="branza">Branza w jakiej dziala firma</param>
+        /// <param name="nip">NIP firmy</param>
+        /// <param name="kraj">Kraj, w ktorym dzia firma</param>
+        /// <param name="miasto">Miasto, w ktorym dzia firma</param>
+        /// <param name="dataZalozenia">Data zalozenia firmy</param>
+        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia)
+            : base(nazwa, branza, nip, kraj, miasto, dataZalozenia)
+        {
+            _listaKontaktow = new List<OsobaKontakt>();
+            _dzialania = new Stack<Dzialanie>();
+            _transakcje = new Stack<Umowa>();
+        }
+
+
+        /// <summary>
+        /// Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
+        /// </summary>
+        /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
+        /// <param name="branza">Branza w jakiej dziala firma</param>
+        /// <param name="nip">NIP firmy</param>
+        /// <param name="kraj">Kraj, w ktorym dzia firma</param>
+        /// <param name="miasto">Miasto, w ktorym dzia firma</param>
+        /// <param name="dataZalozenia">Data zalozenia firmy</param>
+        /// <param name="dataPlanowKontaktu">Planowany kontakt z klientem</param>
+        /// <param name="uwagi">Uwagi dotyczace firmy</param>
+        /// <param name="status">Aktualny status klienta</param>
+        public Klient(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia,
+            string dataPlanowKontaktu, string uwagi, Status status = Status.potencjalny)
+            : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
         {
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
             DateTime.TryParseExact(dataPlanowKontaktu, formatyDaty, null, System.Globalization.DateTimeStyles.None, out DateTime d);
@@ -48,31 +103,64 @@ namespace CRM
             _status = status;
         }
 
+        /// <summary>
+        /// Wlasciwosci.
+        /// </summary>
         public DateTime DataPlanowanegoKontaktu { get => _dataPlanowanegoKontaktu; set => _dataPlanowanegoKontaktu = value; }
         public string Uwagi { get => _uwagi; set => _uwagi = value; }
-        internal Status Status { get => _status; set => _status = value; }
+        public Status Status { get => _status; set => _status = value; }
 
+        /// <summary>
+        /// Dodaje dzialanie do listy dzialan.
+        /// </summary>
+        /// <param name="dzialanie">Dzialanie, ktore ma sie znalezc na liscie dzialan</param>
         public void DodajDzialanie(Dzialanie dzialanie)
         {
             _dzialania.Push(dzialanie);
         }
 
+        /// <summary>
+        /// Metoda szukajaca ostatniego wystapienia dzialania o podanej nazwie
+        /// </summary>
+        /// <param name="nazwa">Nazwa szukanego dzialania</param>
+        /// <returns>
+        /// Zwraca pierwsze wystapienie dzialania o podanej nazwie.
+        /// Jesli dzialania o podanej nazwie nie ma na liscie, wyrzuca wyjatek.
+        /// </returns>
         public Dzialanie ZnajdzDzialanie(string nazwa)
         {
             foreach (Dzialanie d in _dzialania)
             {
-                if (d.Nazwa == nazwa)
+                if (d.Nazwa.ToLower() == nazwa.ToLower())
                 {
                     return d;
                 }
             }
             throw new ActionNotFoundException();
         }
+
+        /// <summary>
+        /// Oblicza ile dzialan ogolem podjeto wobec klienta.
+        /// </summary>
+        /// <returns>Zwraca liczbe dzialan podjetych wobec klienta</returns>
+        public int IleDzialan()
+        {
+            return _dzialania.Count();
+        }
+        /// <summary>
+        /// Wyszukuje date ostatniego kontaktu z klientem
+        /// </summary>
+        /// <returns>Zwraca date ostatniego kontaktu</returns>
         public DateTime OstatniKontakt()
         {
             SortujDzialania();
-            return _dzialania.Count()==0?DateTime.MaxValue:_dzialania.Peek().Data;
+            return IleDzialan() == 0 ? DateTime.MaxValue : _dzialania.Peek().Data;
         }
+        /// <summary>
+        /// Wyszukuje wszystkie dzialania od podanej daty do dzisiaj
+        /// </summary>
+        /// <param name="dataOd">Data, od ktorej zaczynaja byc szukane dzialania</param>
+        /// <returns>Lista dzialan od podanej daty do dziś</returns>
         public List<Dzialanie> ZnajdzDzialania(string dataOd)
         {
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
@@ -81,18 +169,22 @@ namespace CRM
             return dzialania.Count() == 0 ? null : dzialania;
         }
 
+        /// <summary>
+        /// Wyszukuje wszystkie kontakty danego pracownika z klientem.
+        /// </summary>
+        /// <param name="pracownik">Pracownik, ktorego kontaktow z klientem szukamy</param>
+        /// <returns>Lista kontaktow danego pracownika z klientem</returns>
         public List<Dzialanie> ZnajdzDzialania(Pracownik pracownik)
         {
             List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.Pracownik.Equals(pracownik)));
             return dzialania.Count() == 0 ? null : dzialania;
         }
 
-        public List<Dzialanie> ZnajdzDzialania(OsobaKontakt osobaKontaktowa) //odwroc
-        {
-            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.OsobaKontaktowa.Equals(osobaKontaktowa)));
-            return dzialania.Count() == 0 ? null : dzialania;
-        }
-
+        /// <summary>
+        /// Usuwa pierwsze wystapienie dzialania o podanej nazwie z listy dzialan.
+        /// </summary>
+        /// <param name="nazwa">Nazwa dzialania, ktore ma zostac usuniete</param>
+        /// <returns>Zwraca prawde, jesli usuniecie powiodlo sie, w przeciwnym wypadku falsz</returns>
         public bool UsunDzialanie(string nazwa)
         {
             foreach (Dzialanie d in _dzialania)
@@ -107,6 +199,11 @@ namespace CRM
             return false;
         }
 
+        /// <summary>
+        /// Dodaje osobe do listy kontaktow z firma.
+        /// </summary>
+        /// <param name="o">Osoba do kontaktu</param>
+        /// <returns>Zwraca prawde, jesli dodanie powiodlo sie, w przeciwnym wypadku falsz</returns>
         public bool DodajKontakt(OsobaKontakt o)
         {
             if (_listaKontaktow.Contains(o))
@@ -118,6 +215,11 @@ namespace CRM
             return true;
         }
 
+        /// <summary>
+        /// Usuwa dana osobe z listy kontaktow.
+        /// </summary>
+        /// <param name="o">Osoba do usuniecia z listy kontaktow</param>
+        /// <returns>Zwraca prawde, jesli usuniecie powiodlo sie, w przeciwnym wypadku falsz</returns>
         public bool UsunKontakt(OsobaKontakt o)
         {
             if (_listaKontaktow.Contains(o))
@@ -128,16 +230,47 @@ namespace CRM
             Console.WriteLine($"Osoby nie ma na liście kontaktów");
             return false;
         }
+
+        /// <summary>
+        /// Metoda usuwa wszystkie kontakty z listy kontaktow
+        /// </summary>
         public void UsunWszystkieKontakty()
         {
             _listaKontaktow.Clear();
         }
 
+        /// <summary>
+        /// Metoda sparwdza czy dana osoba jest juz w liscie kontaktow.
+        /// </summary>
+        /// <param name="imie">Imie sprawdzanej osoby</param>
+        /// <param name="nazwisko">Nazwisko sprawdzanej osoby</param>
+        /// <returns>Zwraca prawde jesli osoba jest na liscie kontaktow, w przeciwnym wypadku falsz</returns>
+        public bool PosiadaKontakt(string imie, string nazwisko)
+        {
+            foreach (OsobaKontakt o in _listaKontaktow)
+            {
+                if (o.Imie == imie && o.Nazwisko == nazwisko)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Metoda wyszukuje osobe kotaktowa o podanym imieniu i nazwisku.
+        /// </summary>
+        /// <param name="imie">Imie szukanej osoby</param>
+        /// <param name="nazwisko">Nazwisko szukanej osoby</param>
+        /// <returns>
+        /// Zwraca osobe kontaktowa o podanym imieniu i nazwisku.
+        /// Jesli osoba nie zostala znaleziona zostaje wyrzucony wyjatek NonOrganizationMemberException.
+        /// </returns>
         public OsobaKontakt ZwrocKontakt(string imie, string nazwisko)
         {
-            foreach(OsobaKontakt o in _listaKontaktow)
+            foreach (OsobaKontakt o in _listaKontaktow)
             {
-                if(o.Imie == imie && o.Nazwisko == nazwisko)
+                if (o.Imie == imie && o.Nazwisko == nazwisko)
                 {
                     return o;
                 }
@@ -145,11 +278,20 @@ namespace CRM
             throw new NonOrganizationMemberException();
         }
 
+        /// <summary>
+        /// Metoda dodaje umowe do listy transakcji z klientem.
+        /// </summary>
+        /// <param name="umowa">Umowa, ktora ma zostac dodana do listy transakcji</param>
         public void DodajTransakcje(Umowa umowa)
-        { 
+        {
             _transakcje.Push(umowa);
         }
 
+        /// <summary>
+        /// Metoda, ktora usuwa dana umowe z listy transakcji.
+        /// </summary>
+        /// <param name="numer">Numer umowy, ktora ma zostac usunieta</param>
+        /// <returns>Zwraca prawde, jesli usuniecie umowy powiodlo sie, w przeciwnym wypadku falsz</returns>
         public bool UsunTransakcje(string numer) //Napisz jak będziesz znać kod do umowy
         {
             foreach (Umowa u in _transakcje)
@@ -164,6 +306,11 @@ namespace CRM
             return false;
         }
 
+        /// <summary>
+        /// Metoda wyszukuje wszystkie transakcje podpisane z klientem od podanej daty do dzis
+        /// </summary>
+        /// <param name="data">Data, od ktorej maja zaczac byc szukane transakcje</param>
+        /// <returns>Zwraca liste znalezionych traksakcji lub null jesli zadna nie zostala znaleziona</returns>
         public List<Umowa> ZnajdzTransakcje(string data)
         {
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
@@ -172,6 +319,21 @@ namespace CRM
             return transakcje.Count() == 0 ? null : transakcje;
         }
 
+        public Umowa ZwrocTransakcje(string numer)
+        {
+            foreach (Umowa u in _transakcje)
+            {
+                if (u.NrUmowy == numer)
+                {
+                    return u;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Metoda ktualizujaca status klienta
+        /// </summary>
         public void AktualizujStatus()
         {
             if (_transakcje.Count() == 0)
@@ -194,7 +356,9 @@ namespace CRM
                 Status = Status.były;
             }
         }
-
+        /// <summary>
+        /// Meotda tworzy czytelna, tekstowa reprezentacje wszystkich transakcji z klientem i wypisuje je na konsoli.
+        /// </summary>
         public void WypiszTransakcje()
         {
             Console.WriteLine($"Transakcje z firma {Nazwa}:");
@@ -206,10 +370,13 @@ namespace CRM
             }
         }
 
+        /// <summary>
+        /// Metoda wypisuje na konsoli w czytelny sposob wszystkie kontakty i dzialania podjete wobec klienta.
+        /// </summary>
         public void WypiszDzialania()
         {
             Console.WriteLine($"Działania wobec firmy {Nazwa}:");
-            List < Dzialanie > dzialaniaLista = _dzialania.ToList();
+            List<Dzialanie> dzialaniaLista = _dzialania.ToList();
             dzialaniaLista.Reverse();
             foreach (Dzialanie d in dzialaniaLista)
             {
@@ -217,6 +384,14 @@ namespace CRM
             }
         }
 
+        /// <summary>
+        /// Metoda sortujaca malejaco lub rosnaco liste kontaktow wg nazwisk.
+        /// </summary>
+        /// <param name="malejaco">
+        /// Jesli parametr przyjmie wartosc falsz, to kontakty sa sortowane nazwiskami od A do Z.
+        /// Jesli otrzyma wartosc prawda, to kontakty sa sortowane od Z do A.
+        /// Domyslnie falsz.
+        /// </param>
         public void SortujKontakty(bool malejaco = false)
         {
             if (malejaco)
@@ -229,10 +404,18 @@ namespace CRM
             }
         }
 
-        public void SortujDzialania(bool malejaco = false)
+        /// <summary>
+        /// Metoda sortujaca malejaco lub rosnaco liste dzialan wg dat.
+        /// </summary>
+        /// <param name="odNajblizszego">
+        /// Jesli parametr przyjmie wartosc prawda, to dzialania sa sortowane od najnowszych do najstarszych.
+        /// Jesli otrzyma wartosc falsz, to dzialania sa sortowane od najstarszych do najnowszych.
+        /// Domyslnie prawda.
+        /// </param>
+        public void SortujDzialania(bool odNajblizszego = true)
         {
             List<Dzialanie> temp = _dzialania.ToList();
-            if (malejaco)
+            if (odNajblizszego)
             {
                 temp.Sort((x, y) => x.Data.CompareTo(y.Data));
             }
@@ -248,6 +431,10 @@ namespace CRM
             }
         }
 
+        /// <summary>
+        /// Tworzy czytelny dla czlowieka opis klienta.
+        /// </summary>
+        /// <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

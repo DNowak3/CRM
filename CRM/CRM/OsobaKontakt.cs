@@ -118,8 +118,11 @@ namespace CRM
             {
                 return false;
             }
-            return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko) && Telefon.Equals(other.Telefon) && Mail.Equals(other.Mail));
-
+            if (Telefon != null && Mail != null)
+            {
+                return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko) && Telefon.Equals(other.Telefon) && Mail.Equals(other.Mail));
+            }
+            return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko));
         }
         /// <summary>
         /// Funkcja tworzy kopię osoby, z którą się kontaktujemy.

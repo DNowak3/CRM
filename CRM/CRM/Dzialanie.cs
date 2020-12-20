@@ -10,7 +10,7 @@ namespace CRM
     /// Typ wyliczeniowy, zawiera stale wartosci bedace wynikiem dzialania z klientem.
     /// </summary>
     public enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
-   
+
     /// <summary>
     /// Klasa definiujaca dzialania wobec klientow.
     /// </summary>
@@ -100,7 +100,7 @@ namespace CRM
         public override string ToString()
         {
             string napis = $"{Data.ToString("dd.MM.yyyy")} - {Nazwa}";
-            if(Pracownik == null)
+            if (Pracownik == null)
             {
                 return napis;
             }
@@ -124,7 +124,7 @@ namespace CRM
                 d.Pracownik = (Pracownik)Pracownik.Clone();
                 d.OsobaKontaktowa = (OsobaKontakt)OsobaKontaktowa.Clone();
                 d.Wynik = Wynik;
-                if(Opis != null)
+                if (Opis != null)
                 {
                     d.Opis = Opis;
                 }
@@ -138,13 +138,13 @@ namespace CRM
         /// <param name="other">Drugie dzialanie, ktore ma zostac porownane z biezacym obiektem</param>
         /// <returns>
         /// Zwraca liczbe ze znakiem, wskazujaca na kolejnosc porownywanych dzialan.
-        ///  Wartosc < 0 oznacza, ze dzialanie other nastapilo po biezacym dzialaniu.
+        ///  Wartosc < 0 oznacza, ze biezace dzialanie bylo wczesniej niz other.
         ///  Wartosc = 0 oznacza, ze dzialania maja te sama date.
-        ///  Wartosc > 0 oznacza, ze dzialanie other poprzedzilo biezace dzialanie.
+        ///  Wartosc > 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
         /// </returns>
         public int CompareTo(Dzialanie other)
         {
-            return Data.CompareTo(other.Data);
+            return DateTime.Compare(Data, other.Data);
         }
 
     }
