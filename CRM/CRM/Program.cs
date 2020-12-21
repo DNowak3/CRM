@@ -15,12 +15,23 @@ namespace CRM
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
             OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Organizacja.Branże.Inne,"123","Polska","miasto","2000-12-12");
-            //Zapis obiektu klasy Pracownik do pliku XML oraz odczyt z pliku XML
+            //Zapis obiektu klasy OrgProwadzacaCRM do pliku XML oraz odczyt z pliku XML
             try
             {
                 nasza.ZapiszXML("OrganizacjaCRM.xml");
                 Console.WriteLine("Odczyt z pliku XML:");
                 Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("OrganizacjaCRM.xml"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
+            //Zapis obiektu klasy OrgProwadzacaCRM do pliku JSON oraz odczyt z pliku JSON
+            try
+            {
+                nasza.ZapiszJSON("OrganizacjaCRM.json");
+                Console.WriteLine("Odczyt z pliku JSON:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajJSON("OrganizacjaCRM.json"));
             }
             catch (Exception ex)
             {
