@@ -104,8 +104,14 @@ namespace CRM
 
             //Zapis obiektu klasy Konkurent do pliku XML oraz odczyt z pliku XML
             k.ZapiszXML("konkurent.xml");
-            Console.WriteLine("Odczyt z pliku XML:");
+            Console.WriteLine("\nOdczyt z pliku XML:");
             Console.WriteLine(Konkurent.OdczytajXML("konkurent.xml"));
+
+            //Zapis obiektu klasy Konkurent do pliku JSON oraz odczyt z pliku JSON
+            k.ZapiszJSON("konkurent.json");
+            Console.WriteLine("Odczyt z pliku JSON:");
+            Console.WriteLine(Konkurent.OdczytajJSON("konkurent.json"));
+            Console.WriteLine();
 
             //Dodawanie konkurentow
             nasza.DodajKonkurenta(k);

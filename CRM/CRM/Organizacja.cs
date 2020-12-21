@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -166,6 +167,15 @@ namespace CRM
             {
                 XmlSerializer xml = new XmlSerializer(typeof(Organizacja));
                 xml.Serialize(sw, this);
+            }
+        }
+
+        public virtual void ZapiszJSON(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                sw.WriteLine(json.Serialize(this));
             }
         }
 

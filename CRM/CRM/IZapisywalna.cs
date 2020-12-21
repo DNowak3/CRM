@@ -7,14 +7,19 @@ using System.Threading.Tasks;
 namespace CRM
 {
     /// <summary>
-    /// Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML
+    /// Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML oraz do pliku JSON
     /// </summary>
     interface IZapisywalna
     {
         /// <summary>
-        /// Wcześniej wspomniana metoda do zapisu w pliku XML
+        /// Metoda do zapisu w pliku XML
         /// </summary>
         /// <param name="nazwa"> parametrem jest nazwa pliku </param>
         void ZapiszXML(string nazwa);
+        /// <summary>
+        /// Metoda do zapisu w pliku JSON
+        /// </summary>
+        /// <param name="nazwa"></param>
+        void ZapiszJSON(string nazwa);
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -595,6 +596,30 @@ namespace CRM
             {
                 XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
                 return (OrgProwadzacaCRM)xml.Deserialize(sr);
+            }
+        }
+        /// <summary>
+        /// Funkcja zapisuje dane organizacji do pliku JSON
+        /// </summary>
+        /// <param name="nazwa"></param>
+        public override void ZapiszJSON(string nazwa)
+        {
+            base.ZapiszJSON(nazwa);
+        }
+        /// <summary>
+        /// Funkcja odczytująca dane organizacji z pliku JSON
+        /// </summary>
+        /// <param name="nazwa"></param>
+        /// <returns></returns>
+        public static OrgProwadzacaCRM OdczytajJSON(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+                return null;
+            using (StreamReader sw = new StreamReader(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                string z = sw.ReadToEnd();
+                return (OrgProwadzacaCRM)json.Deserialize(z, typeof(OrgProwadzacaCRM));
             }
         }
         #endregion

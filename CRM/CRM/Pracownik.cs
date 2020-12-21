@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -74,8 +75,34 @@ namespace CRM
                 return (Pracownik)xml.Deserialize(sr);
             }
         }
-
-
+        /// <summary>
+        /// Funckja zapisująca dane pracownika do pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        public void ZapiszJSON(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                sw.WriteLine(json.Serialize(this));
+            }
+        }
+        /// <summary>
+        /// Funkcja odczytująca dane pracownika z pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        /// <returns></returns>
+        public static Pracownik OdczytajJSON(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+                return null;
+            using (StreamReader sw = new StreamReader(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                string z = sw.ReadToEnd();
+                return (Pracownik)json.Deserialize(z, typeof(Pracownik));
+            }
+        }
         #endregion
         /// <summary>
         /// Funkcja tworzy i zwraca napis z danymi pracownika.

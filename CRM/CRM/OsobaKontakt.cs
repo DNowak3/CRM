@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -161,6 +162,34 @@ namespace CRM
             {
                 XmlSerializer xml = new XmlSerializer(typeof(OsobaKontakt));
                 return (OsobaKontakt)xml.Deserialize(sr);
+            }
+        }
+        /// <summary>
+        /// Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        public void ZapiszJSON(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                sw.WriteLine(json.Serialize(this));
+            }
+        }
+        /// <summary>
+        /// Funkcja odczytująca dane osoby kontaktowej z pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku</param>
+        /// <returns></returns>
+        public static OsobaKontakt OdczytajJSON(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+                return null;
+            using (StreamReader sw = new StreamReader(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                string z = sw.ReadToEnd();
+                return (OsobaKontakt)json.Deserialize(z, typeof(OsobaKontakt));
             }
         }
         #endregion

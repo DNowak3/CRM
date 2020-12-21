@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -16,7 +17,7 @@ namespace CRM
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
-    public class Klient : Organizacja
+    public class Klient : Organizacja, IZapisywalna
     {
         /// <summary>
         /// Lista osob w firmie, z ktorymi mozemy sie kontaktowac.
@@ -505,7 +506,29 @@ namespace CRM
                 return (Klient)xml.Deserialize(sr);
             }
         }
-
-
+        /// <summary>
+        /// Metoda zapisująca dane klienta w pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        public override void ZapiszJSON(string nazwa)
+        {
+            base.ZapiszJSON(nazwa);
+        }
+        /// <summary>
+        /// Metoda odczytująca dane o kliencie z pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        /// <returns></returns>
+        public static Klient OdczytajJSON(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+                return null;
+            using (StreamReader sw = new StreamReader(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                string z = sw.ReadToEnd();
+                return (Klient)json.Deserialize(z, typeof(Klient));
+            }
+        }
     }
 }

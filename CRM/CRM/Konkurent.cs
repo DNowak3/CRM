@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
 namespace CRM
@@ -64,7 +65,7 @@ namespace CRM
         }
 
         /// <summary>
-        /// Metoda nadpisywana z klasy Organizacja, umożliwiająca zapis obiektu do pliku xml
+        /// Metoda  umożliwiająca zapis obiektu do pliku xml
         /// </summary>
         /// <param name="nazwa"> parametr jest nazwą pliku xml </param>
         public override void ZapiszXML(string nazwa)
@@ -91,6 +92,32 @@ namespace CRM
             {
                 XmlSerializer xml = new XmlSerializer(typeof(Konkurent));
                 return (Konkurent)xml.Deserialize(sr);
+            }
+        }
+
+        /// <summary>
+        /// Metoda zapisująca dane o konkurencie w pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        public override void ZapiszJSON(string nazwa)
+        {
+            base.ZapiszJSON(nazwa);
+        }
+
+        /// <summary>
+        /// Metoda odczytująca dane o konkurencie z pliku JSON
+        /// </summary>
+        /// <param name="nazwa"> nazwa pliku </param>
+        /// <returns></returns>
+        public static Konkurent OdczytajJSON(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+                return null;
+            using (StreamReader sw = new StreamReader(nazwa))
+            {
+                JavaScriptSerializer json = new JavaScriptSerializer();
+                string z = sw.ReadToEnd();
+                return (Konkurent)json.Deserialize(z, typeof(Konkurent));
             }
         }
 
