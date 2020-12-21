@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class ActionNotFoundException:Exception
+    /// <summary>
+    /// Klasa definiujaca wyjatek, oznaczajacy, ze dane dzialanie nie zostalo znalezione.
+    /// </summary>
+    public class ActionNotFoundException:Exception
     {
+        /// <summary>
+        /// Konstruktor wyjatku, wywolujacy konstruktor z klasy bazowej.
+        /// </summary>
         public ActionNotFoundException() : base() { }
     }
 }

@@ -138,9 +138,9 @@ namespace CRM
         /// <param name="other">Drugie dzialanie, ktore ma zostac porownane z biezacym obiektem</param>
         /// <returns>
         /// Zwraca liczbe ze znakiem, wskazujaca na kolejnosc porownywanych dzialan.
-        ///  Wartosc < 0 oznacza, ze biezace dzialanie bylo wczesniej niz other.
-        ///  Wartosc = 0 oznacza, ze dzialania maja te sama date.
-        ///  Wartosc > 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
+        ///  Wartosc mniejsza od 0 oznacza, ze biezace dzialanie bylo wczesniej niz other.
+        ///  Wartosc rowna 0 oznacza, ze dzialania maja te sama date.
+        ///  Wartosc wieksza od 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
         /// </returns>
         public int CompareTo(Dzialanie other)
         {

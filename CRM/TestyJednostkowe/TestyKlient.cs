@@ -78,6 +78,16 @@ namespace TestyJednostkowe
         }
 
         [TestMethod]
+        [ExpectedException(typeof(NonOrganizationMemberException))]
+        public void ZwrocKontakt()
+        {
+            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Toyota.ZwrocKontakt("Brad", "Pitt");
+            Assert.Fail();
+        }
+
+
+        [TestMethod]
         public void DodawanieUsuwanieKontaktu()
         {
             Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
@@ -85,7 +95,7 @@ namespace TestyJednostkowe
             Toyota.DodajKontakt(o);
 
             Assert.IsTrue(Toyota.PosiadaKontakt("Brad", "Pitt"));
-            Assert.IsTrue(Toyota.ZwrocKontakt("Brad", "Pitt").Imie == o.Imie && Toyota.ZwrocKontakt("Brad", "Pitt").Nazwisko == o.Nazwisko);
+            Assert.AreEqual(Toyota.ZwrocKontakt("Brad", "Pitt"), o);
             Assert.IsFalse(Toyota.DodajKontakt(o));
 
             Toyota.UsunKontakt(o);
@@ -105,6 +115,17 @@ namespace TestyJednostkowe
             Assert.IsTrue(Toyota.ZwrocTransakcje(nr).DataUmowy == u1.DataUmowy);
             Toyota.UsunTransakcje(u2.NrUmowy);
             Assert.IsTrue(Toyota.ZwrocTransakcje(u2.NrUmowy) == null);
+        }
+
+        [TestMethod]
+        public void ZapisOdczytXML()
+        {
+            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja, "123-456-78-91", "Japonia", "Toyota", "01.01.1920");
+            Toyota.ZapiszXML("Toyota.xml");
+            Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Nazwa, Toyota.Nazwa);
+            Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Nip, Toyota.Nip);
+            Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Kraj, Toyota.Kraj);
+            Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Miasto, Toyota.Miasto);
         }
 
     }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class NonOrganizationMemberException:Exception
+    /// <summary>
+    /// Klasa tworzaca wyjatek, oznaczajacy ze dana osoba nie jest czlonkiem organizacji.
+    /// </summary>
+    public class NonOrganizationMemberException:Exception
     {
+        /// <summary>
+        /// Konstruktor, wysolujacy konstruktor klasy bazowej.
+        /// </summary>
         public NonOrganizationMemberException() : base() { }
     }
 }

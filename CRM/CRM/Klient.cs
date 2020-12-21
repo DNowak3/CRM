@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CRM
 {
@@ -48,6 +50,7 @@ namespace CRM
         {
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
+            _transakcje = new Stack<Umowa>();
         }
 
         /// <summary>
@@ -319,6 +322,11 @@ namespace CRM
             return transakcje.Count() == 0 ? null : transakcje;
         }
 
+        /// <summary>
+        /// Metoda wyszukuje stransakcje o podanym numerze
+        /// </summary>
+        /// <param name="numer">Numer szukanej transakcji</param>
+        /// <returns>Zwraca transakcje o podanym numerze</returns>
         public Umowa ZwrocTransakcje(string numer)
         {
             foreach (Umowa u in _transakcje)
@@ -356,6 +364,23 @@ namespace CRM
                 Status = Status.były;
             }
         }
+
+        /// <summary>
+        /// Metoda aktualizuje date planowanego kontaktu:
+        /// Jesli data jest w przyszlosci, to pozostaje bez zmian.
+        /// Jesli data juz minela, to sa dwie mozliwosci:
+        /// Jesli ostatni kontakt z klientem byl mniej niz 2 tygodnie temu, to ustalana jest na dwa tygodnie po ostatnim kontakcie.
+        /// Jesli ostatni kontakt z klientem byl wiecej niz 2 tygodnie temu, to ustalana jest na dzien dzisiejszy.
+        /// </summary>
+        public void AktualizujDatePlanKontaktu()
+        {
+            if(DateTime.Compare(DataPlanowanegoKontaktu, DateTime.Today) < 0)
+            {
+                DateTime ostatniKontakt = OstatniKontakt();
+                DataPlanowanegoKontaktu = DateTime.Compare(OstatniKontakt().AddDays(14), DateTime.Today) < 0 ? DateTime.Today : OstatniKontakt().AddDays(14);
+            }
+        }
+
         /// <summary>
         /// Meotda tworzy czytelna, tekstowa reprezentacje wszystkich transakcji z klientem i wypisuje je na konsoli.
         /// </summary>
@@ -450,6 +475,37 @@ namespace CRM
             }
             return base.ToString() + sb.ToString();
         }
+
+        /// <summary>
+        /// Metoda zapisuje dane o kliencie do pliku XML.
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, zakonczona na ".xml"</param>
+        public override void ZapiszXML(string nazwa)
+        {
+            using (StreamWriter sw = new StreamWriter(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Klient));
+                xml.Serialize(sw, this);
+            }
+        }
+        /// <summary>
+        /// Metoda odczytująca dane klienta z pliku XML.
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
+        /// <returns>Zwraca odczytany plik jako obiekt klasy Klient</returns>
+        public static Klient OdczytajXML(string nazwa)
+        {
+            if (!File.Exists(nazwa))
+            {
+                return null;
+            }
+            using (StreamReader sr = new StreamReader(nazwa))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(Klient));
+                return (Klient)xml.Deserialize(sr);
+            }
+        }
+
 
     }
 }
