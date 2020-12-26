@@ -2,6 +2,7 @@
 <Konkurent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Nip>546-432-23-88</Nip>
   <Nazwa>IBM</Nazwa>
+  <Branza>IT</Branza>
   <Kraj>USA</Kraj>
   <Miasto>Nowy Jork</Miasto>
   <Adres />

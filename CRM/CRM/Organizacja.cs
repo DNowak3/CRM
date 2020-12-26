@@ -11,6 +11,10 @@ using System.Xml.Serialization;
 namespace CRM
 {
     /// <summary>
+    /// Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
+    /// </summary>
+    public enum Branże { IT, Finanse, Elektronika, Telekomunikacja, Motoryzacja, Media, Energetyka, Inne }
+    /// <summary>
     /// Klasa abstrakcyjna, po której dziedziczą klasy takiej jak Konkurent, Klient
     /// </summary>
     public abstract class Organizacja : IComparable<Organizacja>, IEquatable<Organizacja>, ICloneable, IZapisywalna
@@ -19,10 +23,7 @@ namespace CRM
         /// Wyrażenie regularne wskazujące na poprawny format numeru NIP
         /// </summary>
         Regex wzorNip = new Regex(@"^\d{3}-\d{3}-\d{2}-\d{2}$");
-        /// <summary>
-        /// Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
-        /// </summary>
-        public enum Branże { IT, Finanse, Elektronika, Telekomunikacja, Motoryzacja, Media, Energetyka, Inne }
+
 
         string nazwa;
         Branże branza;
@@ -58,7 +59,7 @@ namespace CRM
         /// <summary>
         /// Metoda akcesorowa do prywatnego pola: branza
         /// </summary>
-        private Branże Branza { get => branza; set => branza = value; }
+        public Branże Branza { get => branza; set => branza = value; }
         /// <summary>
         /// Metoda akcesorowa do prywatnego pola: kraj
         /// </summary>

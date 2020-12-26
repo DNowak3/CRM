@@ -1,0 +1,137 @@
+﻿<Window x:Name="windowPracownicy" x:Class="CRM_GUI.PracownicyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:CRM="clr-namespace:CRM;assembly=CRM"
+        xmlns:local="clr-namespace:CRM_GUI"
+        mc:Ignorable="d"
+        Title="Pracownicy" Height="487.333" Width="966.667">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="enumStanowiska" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="CRM:Stanowiska"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="enumPlcie" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="CRM:Plcie"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,-0.333">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF3EB2DE" Offset="0.007"/>
+                <GradientStop Color="#FF006CC7" Offset="1"/>
+                <GradientStop Color="#FF8FDBF7" Offset="0.522"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ListBox x:Name="lstPracownicy" HorizontalAlignment="Left" Height="297" Margin="27,50,0,0" VerticalAlignment="Top" Width="591" Background="#FFD1F7FF"/>
+        <Button x:Name="butDodajPrac" Content="Dodaj pracownika" HorizontalAlignment="Left" Height="30" Margin="623,282,0,0" VerticalAlignment="Top" Width="287" Click="butDodajPrac_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="butUsunPrac" Content="Usuń pracownika" HorizontalAlignment="Left" Height="30" Margin="623,317,0,0" VerticalAlignment="Top" Width="287" Click="butUsunPrac_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="butSortPrac" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="623,108,0,0" VerticalAlignment="Top" Width="287" Click="butSortPrac_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <ComboBox x:Name="cmbSortPrac" HorizontalAlignment="Left" Height="30" Margin="623,73,0,0" VerticalAlignment="Top" Width="287" RenderTransformOrigin="0.898,0.476" FontSize="14" Background="#FFD1F7FF">
+            <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="236"/>
+            <ComboBoxItem Content="Po dacie zatrudnienia malejąco" HorizontalAlignment="Left" Width="236"/>
+            <ComboBoxItem Content="Po dacie zatrudnienia rosnąco" HorizontalAlignment="Left" Width="236"/>
+        </ComboBox>
+        <Button x:Name="butWyszukajPracPo" Content="Wyszukaj" HorizontalAlignment="Left" Height="30" Margin="623,213,0,0" VerticalAlignment="Top" Width="287" Click="butWyszukajPracPo_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <ComboBox x:Name="cmbWyszukajPracPo" HorizontalAlignment="Left" Height="30" Margin="623,180,0,0" VerticalAlignment="Top" Width="287" FontSize="14" Background="#FFD1F7FF">
+            <ComboBoxItem Content="Po stanowisku" HorizontalAlignment="Left" Width="236"/>
+            <ComboBoxItem Content="Po płci" HorizontalAlignment="Left" Width="236"/>
+            <ComboBoxItem Content="Po dacie rozpoczęcia pracy" HorizontalAlignment="Left" Width="236"/>
+        </ComboBox>
+        <Label x:Name="labPracownicy" Content="Liczba wszystkich pracowników: " HorizontalAlignment="Left" Height="40" Margin="27,10,0,0" VerticalAlignment="Top" Width="265" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="butEdytujDane" Content="Edytuj dane pracowników" HorizontalAlignment="Left" Height="30" Margin="27,352,0,0" VerticalAlignment="Top" Width="265" Click="butEdytujDane_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="butPokazWszystkich" Content="Pokaż dane wszystkich pracowników" HorizontalAlignment="Left" Height="32" Margin="346,352,0,0" VerticalAlignment="Top" Width="272" Click="butPokazWszystkich_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Grid x:Name="InputBox" Visibility="Collapsed">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border
+            MinWidth="250"
+            Background="Orange" 
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Margin="5" Text="Input Box:" FontWeight="Bold" FontFamily="Cambria" />
+                    <StackPanel>
+                        <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"  Visibility="Collapsed"/>
+                        <ComboBox x:Name="cmbWyszPoStanowisku" MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"
+                                     ItemsSource="{Binding Source={StaticResource enumStanowiska}}"/>
+                        <ComboBox x:Name="cmbWyszPoPlci" MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center"   Visibility="Collapsed"
+                                     ItemsSource="{Binding Source={StaticResource enumPlcie}}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="butWyszukaj" Margin="5" Content="Wyszukaj" Background="{x:Null}" Click="butWyszukaj_Click"/>
+                        <Button x:Name="butAnuluj" Margin="5" Content="Anuluj" Background="{x:Null}" Click="butAnuluj_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <TextBlock x:Name="txtBlockJakSortowac" HorizontalAlignment="Left" Height="30" Margin="623,43,0,0" TextWrapping="Wrap" Text="Wybierz jak posortować pracowników" VerticalAlignment="Top" Width="286" FontSize="14" TextAlignment="Center" FontStretch="SemiExpanded" FontWeight="Bold"/>
+        <TextBlock x:Name="txtBlockJakWszukac" HorizontalAlignment="Left" Height="30" Margin="623,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="14" TextAlignment="Center" FontWeight="Bold"><Run Text="Wybierz"/><Run Text=" "/><Run Text="po czym wyszukać pracowników"/></TextBlock>
+        <Button x:Name="butUsunWszystkichPrac" Content="Usuń wszystkich pracowników" HorizontalAlignment="Left" Height="30" Margin="27,387,0,0" VerticalAlignment="Top" Width="591" Click="butUsunWszystkichPrac_Click" FontSize="14" BorderBrush="#FF5471FB">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE9F5FF" Offset="0"/>
+                    <GradientStop Color="#FF1B176D" Offset="1"/>
+                    <GradientStop Color="#FF5D97FF" Offset="0.734"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="txtBoxLiczbaPrac" HorizontalAlignment="Left" Height="35" Margin="290,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" FontSize="16" FontWeight="Bold" RenderTransformOrigin="2.028,0.571" TextAlignment="Center"/>
+    </Grid>
+</Window>

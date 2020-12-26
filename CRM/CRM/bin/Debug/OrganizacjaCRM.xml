@@ -2,13 +2,56 @@
 <OrgProwadzacaCRM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Nip>000-000-00-00</Nip>
   <Nazwa>Allegro</Nazwa>
+  <Branza>Inne</Branza>
   <Kraj>Polska</Kraj>
   <Miasto>miasto</Miasto>
   <Adres />
   <KodPocztowy />
   <Notatki />
   <DataZalozenia>2000-12-12T00:00:00</DataZalozenia>
-  <ListaPracownikow />
+  <ListaPracownikow>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <Telefon>999-999-999</Telefon>
+      <Mail>kowalski@student.agh.edu.pl.com</Mail>
+      <Notatki>Leniwy, nie lubi Agaty</Notatki>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Patryk</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <Telefon>999-999-999</Telefon>
+      <Mail>kowalski@student.agh.edu.pl.com</Mail>
+      <Notatki>Leniwy, nie lubi Agaty</Notatki>
+      <DataRozpoczeciaPracy>2000-12-02T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Nowak</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>dyrekcja</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Jan</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Lewa</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>K</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+  </ListaPracownikow>
   <ListaProduktow />
   <ListaKonkurentow />
   <ListaKlientow />

@@ -1,0 +1,52 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM_GUI"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:CRM="clr-namespace:CRM;assembly=CRM" x:Name="windowCRM" x:Class="CRM_GUI.MainWindow"
+        mc:Ignorable="d"
+        Title="CRM" Height="495" Width="800">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="CRM:Branże"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="labNazwa" Content="Nazwa organizacji" HorizontalAlignment="Left" Height="33" Margin="23,52,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labBranza" Content="Branża" HorizontalAlignment="Left" Height="33" Margin="23,90,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labNIP" Content="NIP" HorizontalAlignment="Left" Height="33" Margin="23,128,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labDataZal" Content="Data założenia" HorizontalAlignment="Left" Height="33" Margin="23,166,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labKraj" Content="Kraj" HorizontalAlignment="Left" Height="33" Margin="23,204,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labMiasto" Content="Miasto" HorizontalAlignment="Left" Height="33" Margin="23,242,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labAdres" Content="Adres" HorizontalAlignment="Left" Height="33" Margin="23,280,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labKodPoczt" Content="Kod pocztowy" HorizontalAlignment="Left" Height="33" Margin="23,318,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="33" Margin="23,356,0,0" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txtKodPoczt" HorizontalAlignment="Left" Height="33" Margin="158,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="33" Margin="158,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" Height="33" Margin="158,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" Height="33" Margin="158,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" Height="33" Margin="158,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" Height="33" Margin="158,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="33" Margin="159,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="97" Margin="158,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="625"/>
+        <Button x:Name="butProdukty" Content="Produkty" HorizontalAlignment="Left" Height="71" Margin="593,204,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="butPracownicy" Content="Pracownicy" HorizontalAlignment="Left" Height="71" Margin="593,128,0,0" VerticalAlignment="Top" Width="190" Click="butPracownicy_Click"/>
+        <Button x:Name="butKlienci" Content="Klienci" HorizontalAlignment="Left" Height="71" Margin="593,52,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="butKonkurenci" Content="Konkurenci" HorizontalAlignment="Left" Height="71" Margin="593,280,0,0" VerticalAlignment="Top" Width="190"/>
+        <Menu Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Menu" FontSize="16">
+                <MenuItem x:Name="Wczytaj" Header="Wczytaj z pliku"  Click="menuWczytaj_Click" />
+                <MenuItem x:Name="Zapisz" Header="Zapisz do pliku" Click="menuZapisz_Click"  />
+                <MenuItem x:Name="Wyjdz" Header="Wyjdź" Click="menuWyjdz_Click"  />
+            </MenuItem>
+        </Menu>
+        
+        <ComboBox x:Name="cmbBranza" HorizontalAlignment="Left" Height="33" Margin="159,90,0,0" VerticalAlignment="Top" Width="399"
+                  ItemsSource="{Binding Source={StaticResource dataFromEnum}}">
+        </ComboBox>
+    </Grid>
+</Window>
