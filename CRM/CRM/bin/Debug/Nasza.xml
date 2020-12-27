@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OrgProwadzacaCRM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nip>000-000-00-00</Nip>
+  <Nazwa>Allegro</Nazwa>
+  <Branza>Inne</Branza>
+  <Kraj>Polska</Kraj>
+  <Miasto>miasto</Miasto>
+  <Adres />
+  <KodPocztowy />
+  <Notatki />
+  <DataZalozenia>2000-12-12T00:00:00</DataZalozenia>
+  <ListaPracownikow>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <Telefon>999-999-999</Telefon>
+      <Mail>kowalski@student.agh.edu.pl.com</Mail>
+      <Notatki>Leniwy, nie lubi Agaty</Notatki>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Patryk</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <Telefon>999-999-999</Telefon>
+      <Mail>kowalski@student.agh.edu.pl.com</Mail>
+      <Notatki>Leniwy, nie lubi Agaty</Notatki>
+      <DataRozpoczeciaPracy>2000-12-02T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Nowak</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>dyrekcja</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Jan</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+    <Pracownik>
+      <Imie>Lewa</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>K</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+  </ListaPracownikow>
+  <ListaProduktow>
+    <Produkt>
+      <Nazwa>Papier kancelaryjny</Nazwa>
+      <Cena>10.5</Cena>
+      <Jednostka>kg</Jednostka>
+    </Produkt>
+    <Produkt>
+      <Nazwa>Materiały biurowe</Nazwa>
+      <Cena>5.6</Cena>
+      <Jednostka>szt</Jednostka>
+    </Produkt>
+    <Produkt>
+      <Nazwa>Komputer</Nazwa>
+      <Cena>1000</Cena>
+      <Jednostka>szt</Jednostka>
+    </Produkt>
+  </ListaProduktow>
+  <ListaKonkurentow>
+    <Konkurent>
+      <Nip>546-432-23-88</Nip>
+      <Nazwa>IBM</Nazwa>
+      <Branza>IT</Branza>
+      <Kraj>USA</Kraj>
+      <Miasto>Nowy Jork</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>2011-05-10T00:00:00</DataZalozenia>
+    </Konkurent>
+    <Konkurent>
+      <Nip>000-000-00-00</Nip>
+      <Nazwa>Nokia</Nazwa>
+      <Branza>Elektronika</Branza>
+      <Kraj>Finlandia</Kraj>
+      <Miasto>Espoo</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>1865-05-12T00:00:00</DataZalozenia>
+    </Konkurent>
+    <Konkurent>
+      <Nazwa>Motorola</Nazwa>
+      <Branza>Telekomunikacja</Branza>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>0001-01-01T00:00:00</DataZalozenia>
+    </Konkurent>
+  </ListaKonkurentow>
+  <ListaKlientow>
+    <Klient>
+      <Nip>456-456-56-56</Nip>
+      <Nazwa>Facebook</Nazwa>
+      <Branza>Media</Branza>
+      <Kraj>USA</Kraj>
+      <Miasto>New York</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>2003-05-20T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>2021-01-12T00:00:00</DataPlanowanegoKontaktu>
+      <Uwagi>Wazny klient</Uwagi>
+      <Status>stały</Status>
+    </Klient>
+    <Klient>
+      <Nip>456-457-56-56</Nip>
+      <Nazwa>Castorama</Nazwa>
+      <Branza>Inne</Branza>
+      <Kraj>Francja</Kraj>
+      <Miasto>Paryż</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>1996-05-20T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>2021-01-10T00:00:00</DataPlanowanegoKontaktu>
+      <Uwagi />
+      <Status>były</Status>
+    </Klient>
+    <Klient>
+      <Nip>121-252-15-14</Nip>
+      <Nazwa>LG</Nazwa>
+      <Branza>Elektronika</Branza>
+      <Kraj>Korea</Kraj>
+      <Miasto>Seul</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>1960-01-01T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>2020-12-15T00:00:00</DataPlanowanegoKontaktu>
+      <Uwagi />
+      <Status>nowy</Status>
+    </Klient>
+    <Klient>
+      <Nip>124-242-14-11</Nip>
+      <Nazwa>MoneyMoney</Nazwa>
+      <Branza>Finanse</Branza>
+      <Kraj>Polska</Kraj>
+      <Miasto>Katowice</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>1999-01-01T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>2020-12-01T00:00:00</DataPlanowanegoKontaktu>
+      <Uwagi />
+      <Status>stały</Status>
+    </Klient>
+    <Klient>
+      <Nazwa>Olek-Moto</Nazwa>
+      <Branza>Motoryzacja</Branza>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>0001-01-01T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>0001-01-01T00:00:00</DataPlanowanegoKontaktu>
+      <Status>potencjalny</Status>
+    </Klient>
+  </ListaKlientow>
+</OrgProwadzacaCRM>

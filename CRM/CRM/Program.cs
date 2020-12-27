@@ -14,7 +14,7 @@ namespace CRM
         {
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
-            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Organizacja.Branże.Inne,"123","Polska","miasto","2000-12-12");
+            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro", Branże.Inne,"123","Polska","miasto","2000-12-12");
             //Zapis obiektu klasy OrgProwadzacaCRM do pliku XML oraz odczyt z pliku XML
             try
             {
@@ -73,7 +73,6 @@ namespace CRM
             Console.WriteLine(nasza.WypiszPracownikow());
 
 
-
             //Sprawdzanie czy jest pracownikiem
             Console.WriteLine(nasza.JestPracownikiem(p1));
             Console.WriteLine(nasza.JestPracownikiem("Adam", "Jan", Stanowiska.konsultant));
@@ -101,8 +100,8 @@ namespace CRM
             //Stworzenie konkurentow
             #region Konkurenci    
             Console.WriteLine("\t\t\tKONKURENCI");
-            Konkurent k = new Konkurent("IBM", Organizacja.Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
-            Konkurent k2 = new Konkurent("Nokia", Organizacja.Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
+            Konkurent k = new Konkurent("IBM", Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
+            Konkurent k2 = new Konkurent("Nokia", Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
             Console.WriteLine(k);
             Console.WriteLine(k2);
 
@@ -127,15 +126,13 @@ namespace CRM
             //Dodawanie konkurentow
             nasza.DodajKonkurenta(k);
             nasza.DodajKonkurenta(k2);
-            nasza.DodajKonkurenta(new Konkurent("Motorola", Organizacja.Branże.Telekomunikacja));
+            nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
 
             //Sortowanie konkurentow
             nasza.KonkurenciSortujAlfabetycznie();
             Console.WriteLine(nasza.WypiszKonkurentow());
             Console.WriteLine(Konkurent.CzyToTeSameFirmy(k,k2));
             
-
-
             //Sprawdzanie czy jest konkurentem
             Console.WriteLine(nasza.JestKonkurentem(k));
             Console.WriteLine(nasza.JestKonkurentem(k2));
@@ -161,7 +158,7 @@ namespace CRM
             //Stworzenie klientow
             #region Klienci
             Console.WriteLine("\t\t\tKLIENCI");
-            //Tworzenie osoby kontaktowej do naszego klienta - firmy LG
+            //Tworzenie osoby kontaktowej do naszego klienta
             OsobaKontakt ok1 = new OsobaKontakt("Anna", "Wiatr", Plcie.K, Stanowiska.sekretariat, "123456789","anna.wiatr@onet.com");
 
             //Klonowanie osoby kontaktowej
@@ -171,8 +168,8 @@ namespace CRM
             ok2.Mail = "alis@onet.pl";
 
             //Stworzenie klientow
-            Klient LG = new Klient("LG", Organizacja.Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
-            Klient MoneyPL = new Klient("MoneyMoney", Organizacja.Branże.Finanse, "124-242-14-11", "Polska", "Katowice", "01.01.1999", "01.12.2020", "", Status.stały);
+            Klient LG = new Klient("LG", Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
+            Klient MoneyPL = new Klient("MoneyMoney", Branże.Finanse, "124-242-14-11", "Polska", "Katowice", "01.01.1999", "01.12.2020", "", Status.stały);
 
             //Dodanie osób kontaktowych do klientów
             LG.DodajKontakt(ok1);
@@ -180,6 +177,11 @@ namespace CRM
 
             //Posortowanie listy osób kontaktowych
             LG.SortujKontakty();
+
+            //Dodanie klientów do naszej organizacji
+            nasza.DodajKlienta(new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Wazny klient", Status.stały));
+            nasza.DodajKlienta(new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były));
+
 
             //Stworzenie działań
             Dzialanie d1 = new Dzialanie("Umówienie na spotkanie", "08.12.2020", p1, LG.ZwrocKontakt("Anna", "Wiatr"), WynikDzialania.umowiono, " ");
@@ -194,7 +196,7 @@ namespace CRM
             //Dodanie działań do klienta
             LG.DodajDzialanie(d1);
             LG.DodajDzialanie(d2);
-            LG.DodajDzialanie(d3);
+            MoneyPL.DodajDzialanie(d3);
             LG.DodajDzialanie(d4);
 
             //Posortowanie działań od najnowszych do najstarszych
@@ -211,7 +213,7 @@ namespace CRM
             //Dodanie klientow 
             nasza.DodajKlienta(LG);
             nasza.DodajKlienta(MoneyPL);
-            nasza.DodajKlienta(new Klient("Olek-Moto", Organizacja.Branże.Motoryzacja));
+            nasza.DodajKlienta(new Klient("Olek-Moto", Branże.Motoryzacja));
 
             //Sortowanie klientow
             Console.WriteLine("Klienci alfabetycznie:");
@@ -242,10 +244,10 @@ namespace CRM
             nasza.UsunKlienta(LG);
             nasza.UsunKlienta("Olek-Moto");
 
-            //Ilosc konkurentow
+            //Ilosc klientow
             Console.WriteLine(nasza.PodajIloscKlientow());
 
-            //Czyszczenie listy konkurentów
+            //Czyszczenie listy klientow
             nasza.UsunWszystkichKlientow();
             Console.WriteLine(nasza.WypiszKlientow());
             #endregion
@@ -329,6 +331,40 @@ namespace CRM
             nasza.UsunWszystkieProdukty();
             Console.WriteLine(nasza.WypiszProdukty());
             #endregion
+
+
+
+            //Stworzenie przykladowego pliku organizacji Nasza.xml ze wszystkimi informacjami
+            nasza.DodajPracownika(p1);
+            nasza.DodajPracownika(p2);
+            nasza.DodajPracownika(new Pracownik("adam", "nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020"));
+            nasza.DodajPracownika(new Pracownik("adam", "jan", Plcie.M, Stanowiska.konsultant, "21-11-2020"));
+            nasza.DodajPracownika(new Pracownik("lewa", "kowalski", Plcie.K, Stanowiska.konsultant, "21-11-2020"));
+
+            nasza.DodajKonkurenta(k);
+            nasza.DodajKonkurenta(k2);
+            nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
+
+            nasza.DodajKlienta(new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Wazny klient", Status.stały));
+            nasza.DodajKlienta(new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były));
+            nasza.DodajKlienta(LG);
+            nasza.DodajKlienta(MoneyPL);
+            nasza.DodajKlienta(new Klient("Olek-Moto", Branże.Motoryzacja));
+
+            nasza.DodajProdukt(pr1);
+            nasza.DodajProdukt(pr2);
+            nasza.DodajProdukt(pr3);
+
+            try
+            {
+                nasza.ZapiszXML("Nasza.xml");
+                Console.WriteLine("Odczyt z pliku XML:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("Nasza.xml"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
 
             Console.ReadKey();
         }

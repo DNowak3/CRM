@@ -173,14 +173,14 @@
             Podstawowy konstruktor nieparametryczny.
             </summary>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże)">
             <summary>
             Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
             Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
@@ -191,7 +191,7 @@
             <param name="miasto">Miasto, w ktorym dzia firma</param>
             <param name="dataZalozenia">Data zalozenia firmy</param>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
             <summary>
             Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
             </summary>
@@ -416,14 +416,14 @@
             Konstruktor domyślny, dziedziczący po konstruktorze domyślnym z klasy bazowej
             </summary>
         </member>
-        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Branże)">
             <summary>
             Konstruktor parametryczny, dziedziczący po konstruktorze z dwoma parametrami z klasy bazowej
             </summary>
             <param name="nazwa"></param>
             <param name="branza"></param>
         </member>
-        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String,CRM.Konkurent.StopienZagrozenia)">
+        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,CRM.Konkurent.StopienZagrozenia)">
             <summary>
             Konstruktor parametryczny, dziedziczący po kosntruktorze z dwoma parametrami z klasy bazowej
             </summary>
@@ -486,6 +486,11 @@
             Konstruktor, wysolujacy konstruktor klasy bazowej.
             </summary>
         </member>
+        <member name="T:CRM.Branże">
+            <summary>
+            Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
+            </summary>
+        </member>
         <member name="T:CRM.Organizacja">
             <summary>
             Klasa abstrakcyjna, po której dziedziczą klasy takiej jak Konkurent, Klient
@@ -494,11 +499,6 @@
         <member name="F:CRM.Organizacja.wzorNip">
             <summary>
             Wyrażenie regularne wskazujące na poprawny format numeru NIP
-            </summary>
-        </member>
-        <member name="T:CRM.Organizacja.Branże">
-            <summary>
-            Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
             </summary>
         </member>
         <member name="P:CRM.Organizacja.Nip">
@@ -551,14 +551,14 @@
             Konstruktor domyślny klasy
             </summary>
         </member>
-        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Branże)">
             <summary>
             Konstruktor parametryczny klasy dziedziczący po konstruktorze bazowym
             </summary>
             <param name="nazwa"> nazwa organizacji </param>
             <param name="branza"> nazwa branzy organizacji </param>
         </member>
-        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String)">
+        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
             Konstruktor z większą liczbą parametrów, dziedziczy po poprzednim konstruktorze parametrycznym
             </summary>

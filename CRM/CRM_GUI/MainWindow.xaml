@@ -35,7 +35,7 @@
         <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="97" Margin="158,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="625"/>
         <Button x:Name="butProdukty" Content="Produkty" HorizontalAlignment="Left" Height="71" Margin="593,204,0,0" VerticalAlignment="Top" Width="190"/>
         <Button x:Name="butPracownicy" Content="Pracownicy" HorizontalAlignment="Left" Height="71" Margin="593,128,0,0" VerticalAlignment="Top" Width="190" Click="butPracownicy_Click"/>
-        <Button x:Name="butKlienci" Content="Klienci" HorizontalAlignment="Left" Height="71" Margin="593,52,0,0" VerticalAlignment="Top" Width="190"/>
+        <Button x:Name="butKlienci" Content="Klienci" HorizontalAlignment="Left" Height="71" Margin="593,52,0,0" VerticalAlignment="Top" Width="190" Click="butKlienci_Click"/>
         <Button x:Name="butKonkurenci" Content="Konkurenci" HorizontalAlignment="Left" Height="71" Margin="593,280,0,0" VerticalAlignment="Top" Width="190"/>
         <Menu Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Top">
             <MenuItem Header="Menu" FontSize="16">

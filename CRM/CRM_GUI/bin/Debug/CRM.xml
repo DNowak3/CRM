@@ -4,6 +4,16 @@
         <name>CRM</name>
     </assembly>
     <members>
+        <member name="T:CRM.ActionNotFoundException">
+            <summary>
+            Klasa definiujaca wyjatek, oznaczajacy, ze dane dzialanie nie zostalo znalezione.
+            </summary>
+        </member>
+        <member name="M:CRM.ActionNotFoundException.#ctor">
+            <summary>
+            Konstruktor wyjatku, wywolujacy konstruktor z klasy bazowej.
+            </summary>
+        </member>
         <member name="T:CRM.WynikDzialania">
             <summary>
             Typ wyliczeniowy, zawiera stale wartosci bedace wynikiem dzialania z klientem.
@@ -89,17 +99,34 @@
             </summary>
             <returns>Zwraca nowe dzialanie bedace kopia danego dzialania</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:CRM.Dzialanie.CompareTo(CRM.Dzialanie)" -->
+        <member name="M:CRM.Dzialanie.CompareTo(CRM.Dzialanie)">
+            <summary>
+            Metoda porownuje dwa obiekty klasy dzialanie na podsatwie dat wykonania.
+            </summary>
+            <param name="other">Drugie dzialanie, ktore ma zostac porownane z biezacym obiektem</param>
+            <returns>
+            Zwraca liczbe ze znakiem, wskazujaca na kolejnosc porownywanych dzialan.
+             Wartosc mniejsza od 0 oznacza, ze biezace dzialanie bylo wczesniej niz other.
+             Wartosc rowna 0 oznacza, ze dzialania maja te sama date.
+             Wartosc wieksza od 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
+            </returns>
+        </member>
         <member name="T:CRM.IZapisywalna">
             <summary>
-            Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML
+            Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML oraz do pliku JSON
             </summary>
         </member>
         <member name="M:CRM.IZapisywalna.ZapiszXML(System.String)">
             <summary>
-            Wcześniej wspomniana metoda do zapisu w pliku XML
+            Metoda do zapisu w pliku XML
             </summary>
             <param name="nazwa"> parametrem jest nazwa pliku </param>
+        </member>
+        <member name="M:CRM.IZapisywalna.ZapiszJSON(System.String)">
+            <summary>
+            Metoda do zapisu w pliku JSON
+            </summary>
+            <param name="nazwa"></param>
         </member>
         <member name="T:CRM.Status">
             <summary>
@@ -290,9 +317,25 @@
             <param name="data">Data, od ktorej maja zaczac byc szukane transakcje</param>
             <returns>Zwraca liste znalezionych traksakcji lub null jesli zadna nie zostala znaleziona</returns>
         </member>
+        <member name="M:CRM.Klient.ZwrocTransakcje(System.String)">
+            <summary>
+            Metoda wyszukuje stransakcje o podanym numerze
+            </summary>
+            <param name="numer">Numer szukanej transakcji</param>
+            <returns>Zwraca transakcje o podanym numerze</returns>
+        </member>
         <member name="M:CRM.Klient.AktualizujStatus">
             <summary>
             Metoda ktualizujaca status klienta
+            </summary>
+        </member>
+        <member name="M:CRM.Klient.AktualizujDatePlanKontaktu">
+            <summary>
+            Metoda aktualizuje date planowanego kontaktu:
+            Jesli data jest w przyszlosci, to pozostaje bez zmian.
+            Jesli data juz minela, to sa dwie mozliwosci:
+            Jesli ostatni kontakt z klientem byl mniej niz 2 tygodnie temu, to ustalana jest na dwa tygodnie po ostatnim kontakcie.
+            Jesli ostatni kontakt z klientem byl wiecej niz 2 tygodnie temu, to ustalana jest na dzien dzisiejszy.
             </summary>
         </member>
         <member name="M:CRM.Klient.WypiszTransakcje">
@@ -330,6 +373,32 @@
             Tworzy czytelny dla czlowieka opis klienta.
             </summary>
             <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
+        </member>
+        <member name="M:CRM.Klient.ZapiszXML(System.String)">
+            <summary>
+            Metoda zapisuje dane o kliencie do pliku XML.
+            </summary>
+            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, zakonczona na ".xml"</param>
+        </member>
+        <member name="M:CRM.Klient.OdczytajXML(System.String)">
+            <summary>
+            Metoda odczytująca dane klienta z pliku XML.
+            </summary>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
+            <returns>Zwraca odczytany plik jako obiekt klasy Klient</returns>
+        </member>
+        <member name="M:CRM.Klient.ZapiszJSON(System.String)">
+            <summary>
+            Metoda zapisująca dane klienta w pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Klient.OdczytajJSON(System.String)">
+            <summary>
+            Metoda odczytująca dane o kliencie z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+            <returns></returns>
         </member>
         <member name="T:CRM.Konkurent">
             <summary>
@@ -377,7 +446,7 @@
         </member>
         <member name="M:CRM.Konkurent.ZapiszXML(System.String)">
             <summary>
-            Metoda nadpisywana z klasy Organizacja, umożliwiająca zapis obiektu do pliku xml
+            Metoda  umożliwiająca zapis obiektu do pliku xml
             </summary>
             <param name="nazwa"> parametr jest nazwą pliku xml </param>
         </member>
@@ -388,11 +457,34 @@
             <param name="nazwa"> parametr jest nazwą pliku xml </param>
             <returns></returns>
         </member>
+        <member name="M:CRM.Konkurent.ZapiszJSON(System.String)">
+            <summary>
+            Metoda zapisująca dane o konkurencie w pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Konkurent.OdczytajJSON(System.String)">
+            <summary>
+            Metoda odczytująca dane o konkurencie z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+            <returns></returns>
+        </member>
         <member name="M:CRM.Konkurent.ToString">
             <summary>
             Metoda nadpisywana z klasy Organizacja, wypisuje czytelny opis obiektów klasy Konkurent
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:CRM.NonOrganizationMemberException">
+            <summary>
+            Klasa tworzaca wyjatek, oznaczajacy ze dana osoba nie jest czlonkiem organizacji.
+            </summary>
+        </member>
+        <member name="M:CRM.NonOrganizationMemberException.#ctor">
+            <summary>
+            Konstruktor, wysolujacy konstruktor klasy bazowej.
+            </summary>
         </member>
         <member name="T:CRM.Branże">
             <summary>
@@ -850,6 +942,19 @@
             <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM</returns>
         </member>
+        <member name="M:CRM.OrgProwadzacaCRM.ZapiszJSON(System.String)">
+            <summary>
+            Funkcja zapisuje dane organizacji do pliku JSON
+            </summary>
+            <param name="nazwa"></param>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane organizacji z pliku JSON
+            </summary>
+            <param name="nazwa"></param>
+            <returns></returns>
+        </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszProdukty">
             <summary>
             Funkcja wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
@@ -1007,6 +1112,19 @@
             <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy OsobaKontaktowa</returns>
         </member>
+        <member name="M:CRM.OsobaKontakt.ZapiszJSON(System.String)">
+            <summary>
+            Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.OsobaKontakt.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane osoby kontaktowej z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku</param>
+            <returns></returns>
+        </member>
         <member name="M:CRM.OsobaKontakt.ToString">
             <summary>
             Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
@@ -1030,6 +1148,19 @@
             </summary>
             <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
+        </member>
+        <member name="M:CRM.Pracownik.ZapiszJSON(System.String)">
+            <summary>
+            Funckja zapisująca dane pracownika do pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Pracownik.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane pracownika z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+            <returns></returns>
         </member>
         <member name="M:CRM.Pracownik.ToString">
             <summary>

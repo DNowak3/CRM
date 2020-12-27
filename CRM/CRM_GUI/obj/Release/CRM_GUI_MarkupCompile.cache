@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\
+C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Release\
 CRM_GUI
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\App.xaml
 5-818875268
 
-10869565186
-14-596846046
+91711924553
+14920804526
 KlienciWindow.xaml;KlientWindow.xaml;MainWindow.xaml;PracownicyWindow.xaml;PracownikWindow.xaml;
 
 True

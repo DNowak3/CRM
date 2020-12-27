@@ -94,5 +94,14 @@ namespace CRM_GUI
 
             }
         }
+
+        private void butKlienci_Click(object sender, RoutedEventArgs e)
+        {
+            if (_orgCRM is OrgProwadzacaCRM)
+            {
+                KlienciWindow okno = new KlienciWindow(_orgCRM);
+                okno.ShowDialog();
+            }
+        }
     }
 }
