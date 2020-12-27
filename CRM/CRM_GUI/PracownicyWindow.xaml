@@ -132,6 +132,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="txtBoxLiczbaPrac" HorizontalAlignment="Left" Height="35" Margin="290,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" FontSize="16" FontWeight="Bold" RenderTransformOrigin="2.028,0.571" TextAlignment="Center"/>
+        <TextBlock x:Name="txtBoxLiczbaPrac" HorizontalAlignment="Left" Height="35" Margin="290,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="Bold" RenderTransformOrigin="2.028,0.571" TextAlignment="Center"/>
     </Grid>
 </Window>

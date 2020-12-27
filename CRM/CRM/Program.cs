@@ -14,6 +14,7 @@ namespace CRM
         {
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
+            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Branże.Inne,"123","Polska","miasto","2000-12-12");
             OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro", Branże.Inne,"123","Polska","miasto","2000-12-12");
             //Zapis obiektu klasy OrgProwadzacaCRM do pliku XML oraz odczyt z pliku XML
             try
@@ -100,6 +101,7 @@ namespace CRM
             //Stworzenie konkurentow
             #region Konkurenci    
             Console.WriteLine("\t\t\tKONKURENCI");
+            Konkurent k = new Konkurent("IBM",Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
             Konkurent k = new Konkurent("IBM", Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
             Konkurent k2 = new Konkurent("Nokia", Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
             Console.WriteLine(k);
@@ -126,6 +128,7 @@ namespace CRM
             //Dodawanie konkurentow
             nasza.DodajKonkurenta(k);
             nasza.DodajKonkurenta(k2);
+            nasza.DodajKonkurenta(new Konkurent("Motorola",Branże.Telekomunikacja));
             nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
 
             //Sortowanie konkurentow
@@ -168,6 +171,7 @@ namespace CRM
             ok2.Mail = "alis@onet.pl";
 
             //Stworzenie klientow
+            Klient LG = new Klient("LG",Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
             Klient LG = new Klient("LG", Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
             Klient MoneyPL = new Klient("MoneyMoney", Branże.Finanse, "124-242-14-11", "Polska", "Katowice", "01.01.1999", "01.12.2020", "", Status.stały);
 
@@ -213,6 +217,7 @@ namespace CRM
             //Dodanie klientow 
             nasza.DodajKlienta(LG);
             nasza.DodajKlienta(MoneyPL);
+            nasza.DodajKlienta(new Klient("Olek-Moto",Branże.Motoryzacja));
             nasza.DodajKlienta(new Klient("Olek-Moto", Branże.Motoryzacja));
 
             //Sortowanie klientow
