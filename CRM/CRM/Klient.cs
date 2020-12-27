@@ -431,6 +431,18 @@ namespace CRM
         }
 
         /// <summary>
+        /// Metoda wypisuje na konsoli liste osob kontaktowych z klientem:
+        /// </summary>
+        public void WypiszKontakty()
+        {
+            Console.WriteLine($"Lista kontaktów:");
+            foreach (OsobaKontakt o in _listaKontaktow)
+            {
+                Console.WriteLine(o);
+            }
+        }
+
+        /// <summary>
         /// Metoda sortujaca malejaco lub rosnaco liste dzialan wg dat.
         /// </summary>
         /// <param name="odNajblizszego">
@@ -481,18 +493,7 @@ namespace CRM
         /// <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"\n\nStatus: {Status}");
-            sb.AppendLine($"Data planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}");
-            sb.AppendLine("ListaKontaktow:");
-
-            int i = 0;
-            foreach (OsobaKontakt o in _listaKontaktow)
-            {
-                i++;
-                sb.AppendLine($"{i}. {o.ToString()}");
-            }
-            return base.ToString() + sb.ToString();
+            return base.ToString() + $"\nStatus: {Status}\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}\n";
         }
 
         /// <summary>

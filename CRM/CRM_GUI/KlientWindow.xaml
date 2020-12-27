@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Dodaj klienta" Height="464.7" Width="651.2">
+        Title="Dodaj/edytuj klienta" Height="464.7" Width="651.2">
     <Grid Margin="0,0,-0.2,0" Height="442" VerticalAlignment="Top">
         <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="33,16,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
         <Label x:Name='labBranza' Content="Branża:" HorizontalAlignment="Left" Height="32" Margin="33,53,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />

@@ -97,5 +97,71 @@ namespace CRM_GUI
             _orgCRM.AktualizujStatusKlientow();
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
         }
+
+        private void buttonSortuj_Click(object sender, RoutedEventArgs e)
+        {
+            string opcja = cmbboxSortuj.Text;
+
+            switch (opcja)
+            {
+                case "Alfabetycznie":
+                    _orgCRM.KlienciSortujAlfabetycznie();
+                    break;
+
+                case "Data planowanego kontaktu":
+                    _orgCRM.KlienciSortujDataPlanowanegoKontaktu();
+                    break;
+
+                case "Data ostatniego kontaktu":
+                    _orgCRM.KlienciSortujDataOstatniegoKontaktu();
+                    break;
+
+                default:
+                    MessageBox.Show("Sortowanie zakończyło się niepowodzeniem.");
+                    break;
+            }
+            lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
+        }
+
+        private void buttonWyszukaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonSzczegoly_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstKlienci.SelectedIndex > -1)
+            {
+                string opcja = cmbboxSzczegoly.Text;
+
+                Klient k = (Klient)lstKlienci.SelectedItem;
+                switch (opcja)
+                {
+                    case "Działania":
+                        DzialaniaWindow okno_1 = new DzialaniaWindow(k);
+                        bool? ret_1 = okno_1.ShowDialog();
+                        if (ret_1 == true)
+                        {
+                        }
+                        break;
+
+                    case "Osoby do kontaktu":
+                        OsobyKontaktoweWindow okno_2 = new OsobyKontaktoweWindow(k);
+                        bool? ret_2 = okno_2.ShowDialog();
+                        if (ret_2 == true)
+                        {
+                        }
+                        break;
+
+                    case "Transakcje":
+                        
+                        break;
+
+                    default:
+                        MessageBox.Show("Nie wybrano żadnej opcji.");
+                        break;
+                }
+            }
+        }
     }
 }

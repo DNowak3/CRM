@@ -49,3 +49,7 @@ C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlienciWindow.g.cs
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlienciWindow.baml
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlientWindow.g.cs
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlientWindow.baml
+C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.g.cs
+C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.g.cs
+C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.baml
+C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.baml

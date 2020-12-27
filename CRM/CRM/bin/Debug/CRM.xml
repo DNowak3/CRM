@@ -358,6 +358,11 @@
             Domyslnie falsz.
             </param>
         </member>
+        <member name="M:CRM.Klient.WypiszKontakty">
+            <summary>
+            Metoda wypisuje na konsoli liste osob kontaktowych z klientem:
+            </summary>
+        </member>
         <member name="M:CRM.Klient.SortujDzialania(System.Boolean)">
             <summary>
             Metoda sortujaca malejaco lub rosnaco liste dzialan wg dat.
