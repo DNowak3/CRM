@@ -35,3 +35,6 @@ C:\Users\Magda\Desktop\POProjekt\CRM\TestyJednostkowe\bin\Debug\CRM.exe.config
 C:\Users\Magda\Desktop\POProjekt\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\Magda\Desktop\POProjekt\CRM\TestyJednostkowe\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\Magda\Desktop\POProjekt\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.csproj.CopyComplete
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\CRM.xml
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\TestyJednostkowe.dll.CodeAnalysisLog.xml
+D:\GitFork\CRM\CRM\TestyJednostkowe\bin\Debug\TestyJednostkowe.dll.lastcodeanalysissucceeded

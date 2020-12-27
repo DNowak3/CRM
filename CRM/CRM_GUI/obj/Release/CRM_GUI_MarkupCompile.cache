@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Release\
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\
 CRM_GUI
 none
 false
 TRACE
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\App.xaml
+D:\GitFork\CRM\CRM\CRM_GUI\App.xaml
 7266251464
 
 111402324967
-14920804526
+14-1247616417
 DzialaniaWindow.xaml;KlienciWindow.xaml;KlientWindow.xaml;MainWindow.xaml;OsobyKontaktoweWindow.xaml;PracownicyWindow.xaml;PracownikWindow.xaml;
 
-True
+False
 

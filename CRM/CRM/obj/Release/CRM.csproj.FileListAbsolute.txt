@@ -1,0 +1,6 @@
+D:\GitFork\CRM\CRM\CRM\bin\Release\CRM.exe.config
+D:\GitFork\CRM\CRM\CRM\bin\Release\CRM.exe
+D:\GitFork\CRM\CRM\CRM\bin\Release\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\obj\Release\CRM.csprojAssemblyReference.cache
+D:\GitFork\CRM\CRM\CRM\obj\Release\CRM.exe
+D:\GitFork\CRM\CRM\CRM\obj\Release\CRM.pdb

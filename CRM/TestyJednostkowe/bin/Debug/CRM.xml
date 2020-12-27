@@ -113,14 +113,20 @@
         </member>
         <member name="T:CRM.IZapisywalna">
             <summary>
-            Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML
+            Interfejs definiujący metodę, która umożliwia zapis danych do pliku XML oraz do pliku JSON
             </summary>
         </member>
         <member name="M:CRM.IZapisywalna.ZapiszXML(System.String)">
             <summary>
-            Wcześniej wspomniana metoda do zapisu w pliku XML
+            Metoda do zapisu w pliku XML
             </summary>
             <param name="nazwa"> parametrem jest nazwa pliku </param>
+        </member>
+        <member name="M:CRM.IZapisywalna.ZapiszJSON(System.String)">
+            <summary>
+            Metoda do zapisu w pliku JSON
+            </summary>
+            <param name="nazwa"></param>
         </member>
         <member name="T:CRM.Status">
             <summary>
@@ -167,14 +173,14 @@
             Podstawowy konstruktor nieparametryczny.
             </summary>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże)">
             <summary>
             Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
             Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
@@ -185,7 +191,7 @@
             <param name="miasto">Miasto, w ktorym dzia firma</param>
             <param name="dataZalozenia">Data zalozenia firmy</param>
         </member>
-        <member name="M:CRM.Klient.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
+        <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
             <summary>
             Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
             </summary>
@@ -352,6 +358,11 @@
             Domyslnie falsz.
             </param>
         </member>
+        <member name="M:CRM.Klient.WypiszKontakty">
+            <summary>
+            Metoda wypisuje na konsoli liste osob kontaktowych z klientem:
+            </summary>
+        </member>
         <member name="M:CRM.Klient.SortujDzialania(System.Boolean)">
             <summary>
             Metoda sortujaca malejaco lub rosnaco liste dzialan wg dat.
@@ -381,6 +392,19 @@
             <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Zwraca odczytany plik jako obiekt klasy Klient</returns>
         </member>
+        <member name="M:CRM.Klient.ZapiszJSON(System.String)">
+            <summary>
+            Metoda zapisująca dane klienta w pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Klient.OdczytajJSON(System.String)">
+            <summary>
+            Metoda odczytująca dane o kliencie z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+            <returns></returns>
+        </member>
         <member name="T:CRM.Konkurent">
             <summary>
             Klasa dziedzicząca po klasie Organizacja, poza polami i metodami z klasy Organizacja dodatkowo niesie
@@ -397,14 +421,14 @@
             Konstruktor domyślny, dziedziczący po konstruktorze domyślnym z klasy bazowej
             </summary>
         </member>
-        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Branże)">
             <summary>
             Konstruktor parametryczny, dziedziczący po konstruktorze z dwoma parametrami z klasy bazowej
             </summary>
             <param name="nazwa"></param>
             <param name="branza"></param>
         </member>
-        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String,CRM.Konkurent.StopienZagrozenia)">
+        <member name="M:CRM.Konkurent.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,CRM.Konkurent.StopienZagrozenia)">
             <summary>
             Konstruktor parametryczny, dziedziczący po kosntruktorze z dwoma parametrami z klasy bazowej
             </summary>
@@ -427,7 +451,7 @@
         </member>
         <member name="M:CRM.Konkurent.ZapiszXML(System.String)">
             <summary>
-            Metoda nadpisywana z klasy Organizacja, umożliwiająca zapis obiektu do pliku xml
+            Metoda  umożliwiająca zapis obiektu do pliku xml
             </summary>
             <param name="nazwa"> parametr jest nazwą pliku xml </param>
         </member>
@@ -436,6 +460,19 @@
             Metoda pozwalająca na odczyt danych z pliku xml o podanej nazwie
             </summary>
             <param name="nazwa"> parametr jest nazwą pliku xml </param>
+            <returns></returns>
+        </member>
+        <member name="M:CRM.Konkurent.ZapiszJSON(System.String)">
+            <summary>
+            Metoda zapisująca dane o konkurencie w pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Konkurent.OdczytajJSON(System.String)">
+            <summary>
+            Metoda odczytująca dane o konkurencie z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
             <returns></returns>
         </member>
         <member name="M:CRM.Konkurent.ToString">
@@ -454,6 +491,11 @@
             Konstruktor, wysolujacy konstruktor klasy bazowej.
             </summary>
         </member>
+        <member name="T:CRM.Branże">
+            <summary>
+            Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
+            </summary>
+        </member>
         <member name="T:CRM.Organizacja">
             <summary>
             Klasa abstrakcyjna, po której dziedziczą klasy takiej jak Konkurent, Klient
@@ -462,11 +504,6 @@
         <member name="F:CRM.Organizacja.wzorNip">
             <summary>
             Wyrażenie regularne wskazujące na poprawny format numeru NIP
-            </summary>
-        </member>
-        <member name="T:CRM.Organizacja.Branże">
-            <summary>
-            Typ wyliczeniowy, zawiera rodzaje branży w których specjalizują się organizacje
             </summary>
         </member>
         <member name="P:CRM.Organizacja.Nip">
@@ -519,14 +556,14 @@
             Konstruktor domyślny klasy
             </summary>
         </member>
-        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Organizacja.Branże)">
+        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Branże)">
             <summary>
             Konstruktor parametryczny klasy dziedziczący po konstruktorze bazowym
             </summary>
             <param name="nazwa"> nazwa organizacji </param>
             <param name="branza"> nazwa branzy organizacji </param>
         </member>
-        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Organizacja.Branże,System.String,System.String,System.String,System.String)">
+        <member name="M:CRM.Organizacja.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
             Konstruktor z większą liczbą parametrów, dziedziczy po poprzednim konstruktorze parametrycznym
             </summary>
@@ -897,6 +934,11 @@
             Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
             </summary>
         </member>
+        <member name="M:CRM.OrgProwadzacaCRM.AktualizujStatusKlientow">
+            <summary>
+            Metoda aktualizuje statusy wszystkich klientów organizacji
+            </summary>
+        </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszXML(System.String)">
             <summary>
             Funkcja zapisuje dane dane organizacji, która prowadzi CRM do pliku XML.
@@ -909,6 +951,19 @@
             </summary>
             <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM</returns>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.ZapiszJSON(System.String)">
+            <summary>
+            Funkcja zapisuje dane organizacji do pliku JSON
+            </summary>
+            <param name="nazwa"></param>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane organizacji z pliku JSON
+            </summary>
+            <param name="nazwa"></param>
+            <returns></returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszProdukty">
             <summary>
@@ -1067,6 +1122,19 @@
             <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy OsobaKontaktowa</returns>
         </member>
+        <member name="M:CRM.OsobaKontakt.ZapiszJSON(System.String)">
+            <summary>
+            Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.OsobaKontakt.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane osoby kontaktowej z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku</param>
+            <returns></returns>
+        </member>
         <member name="M:CRM.OsobaKontakt.ToString">
             <summary>
             Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
@@ -1090,6 +1158,19 @@
             </summary>
             <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
             <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
+        </member>
+        <member name="M:CRM.Pracownik.ZapiszJSON(System.String)">
+            <summary>
+            Funckja zapisująca dane pracownika do pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+        </member>
+        <member name="M:CRM.Pracownik.OdczytajJSON(System.String)">
+            <summary>
+            Funkcja odczytująca dane pracownika z pliku JSON
+            </summary>
+            <param name="nazwa"> nazwa pliku </param>
+            <returns></returns>
         </member>
         <member name="M:CRM.Pracownik.ToString">
             <summary>

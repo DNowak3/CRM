@@ -7,7 +7,6 @@ C:\Users\dagma\source\repos\Kolo\CRM\CRM\obj\Debug\CRM.pdb
 D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.config
 D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe
 D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.pdb
-D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
 D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.exe
 D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.pdb
 C:\Users\kycia\Source\Repos\DNowak3\CRM\CRM\CRM\bin\Debug\CRM.exe.config
@@ -78,3 +77,5 @@ C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.xml
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.exe
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.pdb
 D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.xml
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.CodeAnalysisLog.xml
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.lastcodeanalysissucceeded

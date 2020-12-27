@@ -11,7 +11,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void DodawanieDzialania()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja);
             Dzialanie d = new Dzialanie("Podpisanie umowy", "12.10.2020");
             Toyota.DodajDzialanie(d);
             Assert.AreEqual(Toyota.IleDzialan(), 1);
@@ -20,7 +20,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void UsuwanieDzialania()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja);
             Dzialanie d = new Dzialanie("Podpisanie umowy", "12.10.2020");
             Toyota.DodajDzialanie(d);
             Toyota.UsunDzialanie(d.Nazwa);
@@ -30,7 +30,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void ZnajdzDzialaniePoNazwie()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Dzialanie d1 = new Dzialanie("Podpisanie umowy", "12.10.2020");
             Dzialanie d2 = new Dzialanie("Podpisanie umowy", "14.11.2020");
             Toyota.DodajDzialanie(d1);
@@ -42,7 +42,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void ZnajdzOstatniKontakt()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Dzialanie d1 = new Dzialanie("Podpisanie umowy", "12.10.2020");
             Dzialanie d2 = new Dzialanie("Podpisanie umowy", "14.11.2020");
             Dzialanie d3 = new Dzialanie("Podpisanie umowy", "01.09.2020");
@@ -55,7 +55,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void ZnajdzDzialaniePoDacie()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Dzialanie d1 = new Dzialanie("Podpisanie umowy", "12.10.2020");
             Dzialanie d2 = new Dzialanie("Podpisanie umowy", "14.11.2020");
             Dzialanie d3 = new Dzialanie("Podpisanie umowy", "01.09.2020");
@@ -72,7 +72,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void AktualizacjaStatusu()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Toyota.AktualizujStatus();
             Assert.IsTrue(Toyota.Status == 0);
         }
@@ -81,7 +81,7 @@ namespace TestyJednostkowe
         [ExpectedException(typeof(NonOrganizationMemberException))]
         public void ZwrocKontakt()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Toyota.ZwrocKontakt("Brad", "Pitt");
             Assert.Fail();
         }
@@ -90,7 +90,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void DodawanieUsuwanieKontaktu()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja);
             OsobaKontakt o = new OsobaKontakt("Brad", "Pitt", Plcie.M);
             Toyota.DodajKontakt(o);
 
@@ -105,7 +105,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void DodawanieUsuwanieTransakcji()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja);
+            Klient Toyota = new Klient("Toyota S.A.", Branże.Motoryzacja);
             Pracownik p = new Pracownik();
             Umowa u1 = new Umowa(p, "02-06-2020");
             Umowa u2 = new Umowa(p, "12-08-2020");
@@ -120,7 +120,7 @@ namespace TestyJednostkowe
         [TestMethod]
         public void ZapisOdczytXML()
         {
-            Klient Toyota = new Klient("Toyota S.A.", Organizacja.Branże.Motoryzacja, "123-456-78-91", "Japonia", "Toyota", "01.01.1920");
+            Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja, "123-456-78-91", "Japonia", "Toyota", "01.01.1920");
             Toyota.ZapiszXML("Toyota.xml");
             Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Nazwa, Toyota.Nazwa);
             Assert.AreEqual(Klient.OdczytajXML("Toyota.xml").Nip, Toyota.Nip);

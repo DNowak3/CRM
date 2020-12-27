@@ -53,3 +53,5 @@ D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlienciWindow.baml
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlientWindow.baml
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.g.cs
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.baml

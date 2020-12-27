@@ -43,7 +43,7 @@ namespace TestyJednostkowe
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
             int licznik = 1;
-            Konkurent konk1 = new Konkurent("Biedronka", Organizacja.Branże.Inne);
+            Konkurent konk1 = new Konkurent("Biedronka", Branże.Inne);
             temp.DodajKonkurenta(konk1);
             Assert.AreEqual(licznik, temp.PodajIloscKonkurentow());
             try
@@ -58,7 +58,7 @@ namespace TestyJednostkowe
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
             int licznik = 1;
-            Klient kl1 = new Klient("Amazon", Organizacja.Branże.Inne);
+            Klient kl1 = new Klient("Amazon", Branże.Inne);
             temp.DodajKlienta(kl1);
             Assert.AreEqual(licznik, temp.PodajIloscKlientow());
             try
@@ -120,9 +120,9 @@ namespace TestyJednostkowe
         public void UsuwanieKonkurentow()
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
-            Konkurent k1 = new Konkurent("BudEx", Organizacja.Branże.Inne);
-            Konkurent k2 = new Konkurent("AdamEx", Organizacja.Branże.Motoryzacja);
-            Konkurent k3 = new Konkurent("AutoMoto", Organizacja.Branże.Motoryzacja);
+            Konkurent k1 = new Konkurent("BudEx", Branże.Inne);
+            Konkurent k2 = new Konkurent("AdamEx", Branże.Motoryzacja);
+            Konkurent k3 = new Konkurent("AutoMoto",Branże.Motoryzacja);
 
             temp.DodajKonkurenta(k1);
             temp.DodajKonkurenta(k2);
@@ -144,9 +144,9 @@ namespace TestyJednostkowe
         public void UsuwanieKlientow()
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
-            Klient k1 = new Klient("BudEx", Organizacja.Branże.Inne);
-            Klient k2 = new Klient("AdamEx", Organizacja.Branże.Motoryzacja);
-            Klient k3 = new Klient("AutoMoto", Organizacja.Branże.Motoryzacja);
+            Klient k1 = new Klient("BudEx", Branże.Inne);
+            Klient k2 = new Klient("AdamEx", Branże.Motoryzacja);
+            Klient k3 = new Klient("AutoMoto",Branże.Motoryzacja);
 
             temp.DodajKlienta(k1);
             temp.DodajKlienta(k2);
@@ -198,9 +198,9 @@ namespace TestyJednostkowe
         public void JestKonkurentem()
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
-            Konkurent k1 = new Konkurent("BudEx", Organizacja.Branże.Inne);
-            Konkurent k2 = new Konkurent("AdamEx", Organizacja.Branże.Motoryzacja);
-            Konkurent k3 = new Konkurent("AutoMoto", Organizacja.Branże.Motoryzacja);
+            Konkurent k1 = new Konkurent("BudEx", Branże.Inne);
+            Konkurent k2 = new Konkurent("AdamEx",Branże.Motoryzacja);
+            Konkurent k3 = new Konkurent("AutoMoto",Branże.Motoryzacja);
 
             temp.DodajKonkurenta(k1);
             temp.DodajKonkurenta(k2);
@@ -213,9 +213,9 @@ namespace TestyJednostkowe
         public void JestKlientem()
         {
             OrgProwadzacaCRM temp = new OrgProwadzacaCRM();
-            Klient k1 = new Klient("BudEx", Organizacja.Branże.Inne);
-            Klient k2 = new Klient("AdamEx", Organizacja.Branże.Motoryzacja);
-            Klient k3 = new Klient("AutoMoto", Organizacja.Branże.Motoryzacja);
+            Klient k1 = new Klient("BudEx", Branże.Inne);
+            Klient k2 = new Klient("AdamEx",Branże.Motoryzacja);
+            Klient k3 = new Klient("AutoMoto", Branże.Motoryzacja);
 
             temp.DodajKlienta(k1);
             temp.DodajKlienta(k2);
