@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CRM
 {
     public enum Jednostki { szt, kg, m}
-    public class Produkt:IComparable<Produkt>
+    public class Produkt:IComparable<Produkt>,ICloneable
     {
             static int _aktualnyNumer;
             string _nazwa;
@@ -52,6 +52,11 @@ namespace CRM
         public int CompareTo(Produkt other)
         {
             return Nazwa.CompareTo(other.Nazwa);
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 }

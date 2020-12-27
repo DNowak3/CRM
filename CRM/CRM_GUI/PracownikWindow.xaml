@@ -7,7 +7,7 @@
         xmlns:CRM="clr-namespace:CRM;assembly=CRM"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Pracownik" Height="450" Width="800">
+        Title="Pracownik" Height="452" Width="778">
     <Window.Resources>
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -15,31 +15,32 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </Window.Resources>
-    <Grid>
-        <Label x:Name="labImie" Content="Imię" HorizontalAlignment="Left" Height="33" Margin="28,40,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="labNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Height="33" Margin="28,78,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="labDatRozp" Content="Data rozpoczęcia pracy" HorizontalAlignment="Left" Height="33" Margin="28,116,0,0" VerticalAlignment="Top" Width="164"/>
-        <TextBox x:Name="txtDataRozp" HorizontalAlignment="Left" Height="33" Margin="197,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="33" Margin="197,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="33" Margin="197,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <Label x:Name="labPlec" Content="Płeć" HorizontalAlignment="Left" Height="33" Margin="28,154,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="labStanowisko" Content="Stanowisko" HorizontalAlignment="Left" Height="33" Margin="28,192,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="33" Margin="28,300,0,0" VerticalAlignment="Top" Width="164"/>
-        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="33" Margin="197,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <TextBox x:Name="txtAdres_Copy" HorizontalAlignment="Left" Height="33" Margin="197,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <Label x:Name="labTelefon" Content="Telefon" HorizontalAlignment="Left" Height="33" Margin="28,224,0,0" VerticalAlignment="Top" Width="164"/>
-        <Label x:Name="labMail" Content="Mail" HorizontalAlignment="Left" Height="33" Margin="28,262,0,0" VerticalAlignment="Top" Width="164"/>
-        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="33" Margin="197,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <TextBox x:Name="txtTelefon" HorizontalAlignment="Left" Height="33" Margin="197,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
-        <ComboBox x:Name="cmbPlec" HorizontalAlignment="Left" Height="33" Margin="197,154,0,0" VerticalAlignment="Top" Width="400">
+    <Grid Background="White">
+        <Label x:Name="labImie" Content="Imię" HorizontalAlignment="Left" Height="33" Margin="28,52,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <Label x:Name="labNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Height="33" Margin="28,90,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <Label x:Name="labDatRozp" Content="Data rozpoczęcia pracy" HorizontalAlignment="Left" Height="33" Margin="28,128,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <TextBox x:Name="txtDataRozp" HorizontalAlignment="Left" Height="33" Margin="206,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="33" Margin="206,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold"/>
+        <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="33" Margin="206,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold"/>
+        <Label x:Name="labPlec" Content="Płeć" HorizontalAlignment="Left" Height="33" Margin="28,166,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <Label x:Name="labStanowisko" Content="Stanowisko" HorizontalAlignment="Left" Height="33" Margin="28,204,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="33" Margin="28,312,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="82" Margin="206,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="547" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtAdres_Copy" HorizontalAlignment="Left" Height="33" Margin="206,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Label x:Name="labTelefon" Content="Telefon" HorizontalAlignment="Left" Height="33" Margin="28,236,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <Label x:Name="labMail" Content="Mail" HorizontalAlignment="Left" Height="33" Margin="28,274,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
+        <TextBox x:Name="txtMail" HorizontalAlignment="Left" Height="33" Margin="206,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtTelefon" HorizontalAlignment="Left" Height="33" Margin="206,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <ComboBox x:Name="cmbPlec" HorizontalAlignment="Left" Height="33" Margin="206,166,0,0" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold">
             <ComboBoxItem Content="Kobieta" HorizontalAlignment="Left" Width="397.333333333333"/>
             <ComboBoxItem Content="Mężczyzna" HorizontalAlignment="Left" Width="397.333333333333"/>
             <ComboBoxItem Content="Nieznana" HorizontalAlignment="Left" Width="397.333333333333"/>
         </ComboBox>
-        <ComboBox x:Name="cmbStanowisko" HorizontalAlignment="Left" Height="27" Margin="197,192,0,0" VerticalAlignment="Top" Width="400"
-        ItemsSource="{Binding Source={StaticResource dataFromEnum}}"/>
-        <Button x:Name="butZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="76" Margin="628,73,0,0" VerticalAlignment="Top" Width="125" Click="butZatwierdz_Click"/>
-        <Button x:Name="butAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="76" Margin="628,167,0,0" VerticalAlignment="Top" Width="125" Click="butAnuluj_Click"/>
+        <ComboBox x:Name="cmbStanowisko" HorizontalAlignment="Left" Height="27" Margin="206,204,0,0" VerticalAlignment="Top" Width="400"
+        ItemsSource="{Binding Source={StaticResource dataFromEnum}}" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold"/>
+        <Button x:Name="butZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="33" Margin="628,160,0,0" VerticalAlignment="Top" Width="125" Click="butZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Button x:Name="butAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="33" Margin="628,198,0,0" VerticalAlignment="Top" Width="125" Click="butAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

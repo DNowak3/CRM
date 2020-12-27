@@ -122,8 +122,16 @@ namespace CRM
             Nip = nip;
             Kraj = kraj;
             Miasto = miasto;
-            string[] formatDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
-            DataZalozenia = DateTime.ParseExact(dataZalozenia, formatDaty, null, System.Globalization.DateTimeStyles.None);
+            DateTime.TryParseExact(dataZalozenia, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime dt);
+            DataZalozenia = dt;
+
+        }
+
+        public Organizacja(string nazwa, Branże branza, string nip, string kraj, string miasto, string adres, string kodpocztowy, string notatki, string dataZalozenia) : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
+        {
+            Adres = adres;
+            KodPocztowy = kodpocztowy;
+            Notatki = notatki;
         }
 
         /// <summary>
@@ -153,7 +161,7 @@ namespace CRM
         /// Metoda, która umożliwia utworzenie kopii obiektu
         /// </summary>
         /// <returns></returns>
-        public object Clone()
+        public virtual object Clone()
         {
             return MemberwiseClone();
         }

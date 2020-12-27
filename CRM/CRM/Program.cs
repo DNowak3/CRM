@@ -15,29 +15,8 @@ namespace CRM
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
             OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Branże.Inne,"123","Polska","miasto","2000-12-12");
-            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro", Branże.Inne,"123","Polska","miasto","2000-12-12");
-            //Zapis obiektu klasy OrgProwadzacaCRM do pliku XML oraz odczyt z pliku XML
-            try
-            {
-                nasza.ZapiszXML("OrganizacjaCRM.xml");
-                Console.WriteLine("Odczyt z pliku XML:");
-                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("OrganizacjaCRM.xml"));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.GetBaseException());
-            }
-            //Zapis obiektu klasy OrgProwadzacaCRM do pliku JSON oraz odczyt z pliku JSON
-            try
-            {
-                nasza.ZapiszJSON("OrganizacjaCRM.json");
-                Console.WriteLine("Odczyt z pliku JSON:");
-                Console.WriteLine(OrgProwadzacaCRM.OdczytajJSON("OrganizacjaCRM.json"));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.GetBaseException());
-            }
+            OrgProwadzacaCRM klonowana1 = (OrgProwadzacaCRM)nasza.Clone();
+
             //Stworzenie pracownikow
             #region Pracownicy
             Console.WriteLine("\t\t\tPRACOWNICY");
@@ -68,6 +47,31 @@ namespace CRM
             nasza.DodajPracownika(new Pracownik("adam", "nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020"));
             nasza.DodajPracownika(new Pracownik("adam", "jan", Plcie.M, Stanowiska.konsultant, "21-11-2020"));
             nasza.DodajPracownika(new Pracownik("lewa", "kowalski", Plcie.K, Stanowiska.konsultant, "21-11-2020"));
+
+            //Zapis obiektu klasy OrgProwadzacaCRM do pliku XML oraz odczyt z pliku XML
+            try
+            {
+                nasza.ZapiszXML("OrganizacjaCRM.xml");
+                Console.WriteLine("Odczyt z pliku XML:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("OrganizacjaCRM.xml"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
+            //Zapis obiektu klasy OrgProwadzacaCRM do pliku JSON oraz odczyt z pliku JSON
+            try
+            {
+                nasza.ZapiszJSON("OrganizacjaCRM.json");
+                Console.WriteLine("Odczyt z pliku JSON:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajJSON("OrganizacjaCRM.json"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.GetBaseException());
+            }
+
+            OrgProwadzacaCRM klonowana=(OrgProwadzacaCRM)nasza.Clone();
 
             //Sortowanie pracownikow
             nasza.PracownicySortujAlfabetycznie();
@@ -102,7 +106,6 @@ namespace CRM
             #region Konkurenci    
             Console.WriteLine("\t\t\tKONKURENCI");
             Konkurent k = new Konkurent("IBM",Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
-            Konkurent k = new Konkurent("IBM", Branże.IT, "546-432-23-88", "USA", "Nowy Jork", "10.05.2011", Konkurent.StopienZagrozenia.Wysoki);
             Konkurent k2 = new Konkurent("Nokia", Branże.Elektronika, "732-412-93-87", "Finlandia", "Espoo", "12.05.1865", Konkurent.StopienZagrozenia.Niski);
             Console.WriteLine(k);
             Console.WriteLine(k2);
@@ -172,7 +175,6 @@ namespace CRM
 
             //Stworzenie klientow
             Klient LG = new Klient("LG",Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
-            Klient LG = new Klient("LG", Branże.Elektronika, "121-252-15-14", "Korea", "Seul", "01.01.1960", "15.12.2020", "", Status.nowy);
             Klient MoneyPL = new Klient("MoneyMoney", Branże.Finanse, "124-242-14-11", "Polska", "Katowice", "01.01.1999", "01.12.2020", "", Status.stały);
 
             //Dodanie osób kontaktowych do klientów

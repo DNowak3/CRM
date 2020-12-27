@@ -77,3 +77,4 @@ C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.exe.config
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.xml
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.exe
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.xml

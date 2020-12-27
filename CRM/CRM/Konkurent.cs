@@ -130,5 +130,11 @@ namespace CRM
             return base.ToString() + $" (stopień zagrożenia: {Zagrozenie})";
         }
 
+        public override object Clone()
+        {
+            Konkurent klonowany = (Konkurent)base.Clone();
+            klonowany.Zagrozenie=this.zagrozenie;
+            return klonowany;
+        }
     }
 }

@@ -43,7 +43,6 @@ namespace CRM_GUI
         {
             if (txtImie.Text != "" && txtNazwisko.Text != "" && cmbStanowisko.Text != "" && cmbPlec.Text!="")
             {
-                MessageBox.Show("Działa tutaj czy nie?");
                 p.Imie = txtImie.Text;
                 p.Nazwisko = txtNazwisko.Text;
                 DateTime.TryParseExact(txtDataRozp.Text, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime temp);

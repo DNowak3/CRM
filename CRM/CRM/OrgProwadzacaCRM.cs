@@ -13,7 +13,7 @@ namespace CRM
     /// <summary>
     /// Klasa definiująca organizację, która prowadzi dla siebie system CRM.
     /// </summary>
-    public class OrgProwadzacaCRM:Organizacja,IZapisywalna
+    public class OrgProwadzacaCRM:Organizacja,IZapisywalna,ICloneable
     {
         /// <summary>
         /// Lista zawierająca wszystkich pracowników organizacji.
@@ -54,12 +54,44 @@ namespace CRM
             _listaKonkurentow = new List<Konkurent>();
         }
 
-        public OrgProwadzacaCRM(string nazwa, Branże branza, string nip, string kraj, string miasto, string dataZalozenia): base(nazwa, branza, nip,  kraj,  miasto, dataZalozenia)
+        public OrgProwadzacaCRM(string nazwa, Branże branza, string nip, string kraj, string miasto,string dataZalozenia): base(nazwa, branza, nip,  kraj,  miasto, dataZalozenia)
         {
             _listaPracownikow = new List<Pracownik>();
             _listaProduktow = new List<Produkt>();
             _listaKlientow = new List<Klient>();
             _listaKonkurentow = new List<Konkurent>();
+        }
+        public OrgProwadzacaCRM(string nazwa, Branże branza, string nip, string kraj, string miasto, string adres, string kodpocztowy, string notatki, string dataZalozenia) : base(nazwa, branza, nip, kraj, miasto, adres,kodpocztowy,notatki, dataZalozenia)
+        {
+            _listaPracownikow = new List<Pracownik>();
+            _listaProduktow = new List<Produkt>();
+            _listaKlientow = new List<Klient>();
+            _listaKonkurentow = new List<Konkurent>();
+        }
+
+        public override object Clone()
+        {
+            OrgProwadzacaCRM klonowana = new OrgProwadzacaCRM(Nazwa, Branza,Nip,  Kraj, Miasto, Adres, KodPocztowy,Notatki, DataZalozenia.ToString());
+
+            _listaPracownikow.ForEach(p => klonowana.ListaPracownikow.Add((Pracownik)p.Clone()));
+            _listaProduktow.ForEach(p => klonowana.ListaProduktow.Add((Produkt)p.Clone()));
+            _listaKonkurentow.ForEach(k => klonowana.ListaKonkurentow.Add((Konkurent)k.Clone()));
+            _listaKlientow.ForEach(k => klonowana.ListaKlientow.Add((Klient)k.Clone()));
+            return klonowana;
+        }
+
+        public bool WprowadzonoZmiany(OrgProwadzacaCRM other)
+        {
+            if (_listaKlientow.FindAll(k=>other.JestKlientem(k)).Count()==this.PodajIloscKlientow() && 
+                _listaKonkurentow.FindAll(k => other.JestKonkurentem(k)).Count() == this.PodajIloscKonkurentow() &&
+                _listaPracownikow.FindAll(p => other.JestPracownikiem(p)).Count() == this.PodajIloscPracownikow() &&
+                _listaProduktow.FindAll(p => other.JestProduktem(p)).Count() == this.PodajIloscProduktow() &&
+                Nazwa==other.Nazwa && Branza==other.Branza && Nip==other.Nip && DataZalozenia==other.DataZalozenia &&
+                Kraj==other.Kraj && Miasto ==other.Miasto && Adres==other.Adres && KodPocztowy==other.KodPocztowy && Notatki==other.Notatki)
+            {
+                return false;
+            }
+            return true;
         }
         #endregion
         #region Funkcje Pracownicy

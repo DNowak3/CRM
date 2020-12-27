@@ -90,7 +90,7 @@ namespace CRM_GUI
             }
             else
             {
-                MessageBox.Show("Nie udało się posortować pracowników.");
+                MessageBox.Show("Nie udało się posortować pracowników.","Błąd!",MessageBoxButton.OK,MessageBoxImage.Error);
             }
             lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ListaPracownikow);
         }
@@ -99,32 +99,36 @@ namespace CRM_GUI
         {
             if (cmbWyszukajPracPo.Text == "Po stanowisku")
             {
+                txtStanowisko.Visibility = System.Windows.Visibility.Visible;
                 cmbWyszPoStanowisku.Visibility = System.Windows.Visibility.Visible;
             }
             else if (cmbWyszukajPracPo.Text == "Po płci")
             {
+                txtPlec.Visibility = System.Windows.Visibility.Visible;
                 cmbWyszPoPlci.Visibility = System.Windows.Visibility.Visible;
             }
             else if (cmbWyszukajPracPo.Text == "Po dacie rozpoczęcia pracy")
             {
-                InputTextBox.Visibility = System.Windows.Visibility.Visible;
+                txtData.Visibility = System.Windows.Visibility.Visible;
+                txtBoxData.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {
-                MessageBox.Show("Nie udało się wyszukać pracowników.");
+                MessageBox.Show("Nie udało się wyszukać pracowników.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             InputBox.Visibility = System.Windows.Visibility.Visible;
         }
         private void butWyszukaj_Click(object sender, RoutedEventArgs e)
         {
-            // YesButton Clicked! Let's hide our InputBox and handle the input text.
             InputBox.Visibility = System.Windows.Visibility.Collapsed;
             if (cmbWyszukajPracPo.Text == "Po stanowisku")
             {
                 Enum.TryParse<Stanowiska>(cmbWyszPoStanowisku.SelectedValue.ToString(), out Stanowiska pom);
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowStanowisko(pom));
                 cmbWyszPoStanowisku.Visibility = System.Windows.Visibility.Collapsed;
+                txtStanowisko.Visibility = System.Windows.Visibility.Collapsed;
+
                 cmbWyszPoStanowisku.Text = String.Empty;
             }
             else if (cmbWyszukajPracPo.Text == "Po płci")
@@ -132,19 +136,21 @@ namespace CRM_GUI
                 Enum.TryParse<Plcie>(cmbWyszPoPlci.SelectedValue.ToString(), out Plcie pom);
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPlec(pom));
                 cmbWyszPoPlci.Visibility = System.Windows.Visibility.Collapsed;
+                txtPlec.Visibility = System.Windows.Visibility.Collapsed;
+
                 cmbWyszPoPlci.Text = String.Empty;
             }
             else if (cmbWyszukajPracPo.Text == "Po dacie rozpoczęcia pracy")
             {
-                lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(InputTextBox.Text));
+                lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(txtBoxData.Text));
                 InputBox.Visibility = System.Windows.Visibility.Collapsed;
-                InputTextBox.Text = String.Empty;
+                txtData.Visibility = System.Windows.Visibility.Collapsed;
+                txtBoxData.Text = String.Empty;
             }
         }
 
         private void butAnuluj_Click(object sender, RoutedEventArgs e)
         {
-            // NoButton Clicked! Let's hide our InputBox.
             InputBox.Visibility = System.Windows.Visibility.Collapsed;
 
             if (cmbWyszukajPracPo.Text == "Po stanowisku")
@@ -159,8 +165,8 @@ namespace CRM_GUI
             }
             else if (cmbWyszukajPracPo.Text == "Po dacie rozpoczęcia pracy")
             {
-                InputTextBox.Visibility = System.Windows.Visibility.Collapsed;
-                InputTextBox.Text = String.Empty;
+                txtBoxData.Visibility = System.Windows.Visibility.Collapsed;
+                txtBoxData.Text = String.Empty;
 
             }
         }
@@ -172,7 +178,7 @@ namespace CRM_GUI
 
         private void butUsunWszystkichPrac_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult m = MessageBox.Show("Wszyscy pracownicy zostaną usunięci, kontynuować?", "Uwaga!", MessageBoxButton.YesNo);
+            MessageBoxResult m = MessageBox.Show("Wszyscy pracownicy zostaną usunięci, kontynuować?", "Uwaga!", MessageBoxButton.YesNo,MessageBoxImage.Warning);
             if (m == MessageBoxResult.Yes)
             {
                 _orgCRM.UsunWszystkichPracownikow();
@@ -181,7 +187,7 @@ namespace CRM_GUI
             }
             else if (m == MessageBoxResult.No)
             {
-                MessageBox.Show("Pracownicy nie zostali usunięci");
+                MessageBox.Show("Pracownicy nie zostali usunięci","***",MessageBoxButton.OK,MessageBoxImage.Information);
             }
         }
     }

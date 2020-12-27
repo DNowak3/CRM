@@ -21,13 +21,26 @@ namespace CRM_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        OrgProwadzacaCRM _orgCRM = new OrgProwadzacaCRM();
+        OrgProwadzacaCRM _orgCRM;
+        OrgProwadzacaCRM _orgZPliku;
         public MainWindow()
         {
             InitializeComponent();
         }
         private void menuWyjdz_Click(object sender, RoutedEventArgs e)
         {
+            if (_orgZPliku is OrgProwadzacaCRM)
+            {
+                if (_orgCRM.WprowadzonoZmiany(_orgZPliku))
+                {
+                    MessageBoxResult m = MessageBox.Show("Od ostatniego zapisu pliku wprowadzono zmiany, czy chcesz je zapisać?", "", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (m == MessageBoxResult.Yes)
+                    {
+                        menuZapisz_Click(sender, e);
+                    }
+                }
+            }
+            MessageBox.Show("Dziękujemy za używanie naszego programu, do zobaczenia!");
             Close();
         }
 
@@ -38,25 +51,41 @@ namespace CRM_GUI
             if (wynik == true)
             {
                 string nazwaPliku = dlg.FileName;
-                MessageBox.Show("Zaraz sprobujemy zapisać do pliku: " + nazwaPliku);
 
-                _orgCRM.Nazwa = txtNazwa.Text;
-                Enum.TryParse<Branże>(cmbBranza.SelectedValue.ToString(), out Branże pom);
-                _orgCRM.Branza = pom;
-                DateTime.TryParseExact(txtDataZal.Text, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime temp);
-                _orgCRM.DataZalozenia = temp;
-                _orgCRM.KodPocztowy = txtKodPoczt.Text;
-                _orgCRM.Kraj = txtKraj.Text;
-                _orgCRM.Miasto = txtMiasto.Text;
-                _orgCRM.Notatki = txtNotatki.Text;
-                _orgCRM.Nip = txtNIP.Text;
-                _orgCRM.Adres = txtAdres.Text;
-                //lstCzlonkowie.ItemsSource = new ObservableCollection<CzlonekZespolu>(_zespol.Czlonkowie);
-                _orgCRM.ZapiszXML(nazwaPliku);
-                MessageBox.Show("Teoretycznie udało się zaposać do pliku");
-                _orgCRM = OrgProwadzacaCRM.OdczytajXML(nazwaPliku);
-
-
+                if (txtNazwa.Text != "" && cmbBranza.Text != "")
+                {
+                    Enum.TryParse<Branże>(cmbBranza.Text, out Branże pom);
+                    _orgCRM = new OrgProwadzacaCRM(txtNazwa.Text, pom);
+                    
+                    DateTime.TryParseExact(txtDataZal.Text, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime temp);
+                    _orgCRM.DataZalozenia = temp;
+                    _orgCRM.KodPocztowy = txtKodPoczt.Text;
+                    _orgCRM.Kraj = txtKraj.Text;
+                    _orgCRM.Miasto = txtMiasto.Text;
+                    _orgCRM.Notatki = txtNotatki.Text;
+                    _orgCRM.Nip = txtNIP.Text;
+                    _orgCRM.Adres = txtAdres.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Aby zapisać organizację, należy podać co najmniej jej nazwę i branżę", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                try
+                {
+                    if (nazwaPliku.EndsWith(".xml") || nazwaPliku.EndsWith(".XML"))
+                    {
+                        _orgCRM.ZapiszXML(nazwaPliku);
+                    }
+                    else
+                    {
+                        _orgCRM.ZapiszJSON(nazwaPliku);
+                    }
+                    _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Nie udało się zapisać pliku...\nWpisz format .xml lub .json.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
         private void menuWczytaj_Click(object sender, RoutedEventArgs e)
@@ -66,7 +95,21 @@ namespace CRM_GUI
             if (wynik == true)
             {
                 string nazwaPliku = dlg.FileName;
-                _orgCRM = OrgProwadzacaCRM.OdczytajXML(nazwaPliku);
+                try
+                {
+                    if(nazwaPliku.EndsWith(".xml") || nazwaPliku.EndsWith(".XML"))
+                    {
+                        _orgCRM = OrgProwadzacaCRM.OdczytajXML(nazwaPliku);
+                    }
+                    else
+                    {
+                        _orgCRM = OrgProwadzacaCRM.OdczytajJSON(nazwaPliku);
+                    }
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Nie udało się wczytać pliku...\nWybierz format .xml lub .json.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 if (_orgCRM is OrgProwadzacaCRM)
                 {
                     txtNazwa.Text = _orgCRM.Nazwa;
@@ -78,9 +121,8 @@ namespace CRM_GUI
                     txtNotatki.Text = _orgCRM.Notatki;
                     txtNIP.Text = _orgCRM.Nip;
                     txtAdres.Text = _orgCRM.Adres;
-                    
-                    //lstCzlonkowie.ItemsSource = new ObservableCollection<CzlonekZespolu>(_zespol.Czlonkowie);
 
+                    _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
                 }
             }
         }
@@ -90,8 +132,11 @@ namespace CRM_GUI
             if (_orgCRM is OrgProwadzacaCRM)
             {
                 PracownicyWindow okno = new PracownicyWindow(_orgCRM);
-                bool? dodawac = okno.ShowDialog(); //boolpytajnik to nullable bool: true, fals i null
-
+                okno.ShowDialog(); 
+            }
+            else
+            {
+                MessageBox.Show("Tylko zapisane do pliku, lub z niego odczytane organizacje mają dostęp do listy pracowników.", "***", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 

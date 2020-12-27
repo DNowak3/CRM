@@ -47,9 +47,7 @@ C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCom
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlienciWindow.g.cs
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlienciWindow.baml
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlientWindow.g.cs
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\KlientWindow.baml
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.g.cs
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.g.cs
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.baml
-C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlienciWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlientWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlienciWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KlientWindow.baml
