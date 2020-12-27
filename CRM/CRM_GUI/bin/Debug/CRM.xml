@@ -929,6 +929,11 @@
             Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
             </summary>
         </member>
+        <member name="M:CRM.OrgProwadzacaCRM.AktualizujStatusKlientow">
+            <summary>
+            Metoda aktualizuje statusy wszystkich klientów organizacji
+            </summary>
+        </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszXML(System.String)">
             <summary>
             Funkcja zapisuje dane dane organizacji, która prowadzi CRM do pliku XML.

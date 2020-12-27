@@ -567,6 +567,17 @@ namespace CRM
         {
             _listaKlientow.Sort((x, y) => y.OstatniKontakt().CompareTo(x.OstatniKontakt()));
         }
+
+        /// <summary>
+        /// Metoda aktualizuje statusy wszystkich klientów organizacji
+        /// </summary>
+        public void AktualizujStatusKlientow()
+        {
+            foreach(Klient k in ListaKlientow)
+            {
+                k.AktualizujStatus();
+            }
+        }
         #endregion
         #region Zapis/Odczyt
         /// <summary>

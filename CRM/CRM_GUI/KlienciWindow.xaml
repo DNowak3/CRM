@@ -5,27 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Klienci" Height="450" Width="800">
-    <Grid>
-        <ListBox x:Name="lstKlienci" HorizontalAlignment="Left" Height="315" Margin="50,67,0,0" VerticalAlignment="Top" Width="505"/>
-        <Label x:Name="labelKlienci" Content="Lista klientów:" HorizontalAlignment="Left" Height="40" Margin="50,22,0,0" VerticalAlignment="Top" Width="221" FontSize="18"/>
+        Title="Klienci" Height="511.2" Width="792.8">
+    <Grid Margin="0,0,-6.6,-2.4">
+        <ListBox x:Name="lstKlienci" HorizontalAlignment="Left" Height="315" Margin="26,67,0,0" VerticalAlignment="Top" Width="529"/>
+        <Label x:Name="labelKlienci" Content="Lista klientów:" HorizontalAlignment="Left" Height="40" Margin="26,22,0,0" VerticalAlignment="Top" Width="163" FontSize="18"/>
         <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="590,102,0,0" VerticalAlignment="Top" Width="177" FontSize="16">
             <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
             <ComboBoxItem Content="Data planowanego kontaktu" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
             <ComboBoxItem Content="Data ostatniego kontaktu" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
         </ComboBox>
         <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="590,67,0,0" VerticalAlignment="Top" Width="177" FontSize="14"/>
-        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Margin="590,172,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14"/>
-        <ComboBox x:Name="cmbboxSzukaj" HorizontalAlignment="Left" Height="29" Margin="590,207,0,0" VerticalAlignment="Top" Width="177" FontSize="16">
+        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Margin="590,150,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14"/>
+        <ComboBox x:Name="cmbboxSzukaj" HorizontalAlignment="Left" Height="29" Margin="590,185,0,0" VerticalAlignment="Top" Width="177" FontSize="16">
             <ComboBoxItem Content="Planowany kontakt" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
             <ComboBoxItem Content="Ostatni kontakt" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
             <ComboBoxItem Content="Status" HorizontalAlignment="Left" Width="165.6" FontSize="12"/>
         </ComboBox>
         <Button x:Name="buttonDodaj" Content="Dodaj klienta" HorizontalAlignment="Left" Margin="590,282,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonDodaj_Click"/>
-        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,317,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14"/>
+        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,317,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" />
         <Button x:Name="buttonSzczegoly" Content="Pokaż szczegóły" HorizontalAlignment="Left" Margin="590,352,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14"/>
         <Label x:Name="labelLiczbaKlinetow" Content="W sumie:" HorizontalAlignment="Left" Height="40" Margin="412,22,0,0" VerticalAlignment="Top" Width="91" FontSize="18"/>
-        <TextBlock x:Name="textblockLiczbaKlientow" HorizontalAlignment="Left" Height="32" Margin="503,30,0,0" VerticalAlignment="Top" Width="52" FontSize="18" TextAlignment="Center"/>
+        <TextBlock x:Name="textblockLiczbaKlientow" HorizontalAlignment="Left" Height="40" Margin="503,22,0,0" VerticalAlignment="Top" Width="52" FontSize="18"/>
+        <Button x:Name="buttonEdytuj" Content="Edytuj klienta" HorizontalAlignment="Left" Margin="590,247,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonEdytuj_Click" />
+        <Button x:Name="buttonPokazWszystkich" Content="Pokaż wszystkich" HorizontalAlignment="Left" Margin="392,402,0,0" VerticalAlignment="Top" Width="163" Height="30" FontSize="14" Click="buttonPokazWszystkich_Click"/>
+        <Button x:Name="buttonUsunWszystkich" Content="Usuń wszystkich" HorizontalAlignment="Left" Margin="26,402,0,0" VerticalAlignment="Top" Width="163" Height="30" FontSize="14" Click="buttonUsunWszystkich_Click"/>
+        <Button x:Name="buttonAktualizuj" Content="Aktualizuj status" HorizontalAlignment="Left" Margin="210,402,0,0" VerticalAlignment="Top" Width="163" Height="30" FontSize="14" Click="buttonAktualizuj_Click"/>
 
     </Grid>
 </Window>

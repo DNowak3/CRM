@@ -17,7 +17,7 @@ namespace CRM
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
-    public class Klient : Organizacja, IZapisywalna
+    public class Klient : Organizacja, IZapisywalna, ICloneable
     {
         /// <summary>
         /// Lista osob w firmie, z ktorymi mozemy sie kontaktowac.
@@ -456,6 +456,24 @@ namespace CRM
                 _dzialania.Push(d);
             }
         }
+
+        /*public object Clone()
+        {
+            Klient klon = new Klient(Nazwa, Branza, Nip, Kraj, Miasto, DataZalozenia.ToString(), DataPlanowanegoKontaktu.ToString(), Uwagi, Status);
+            _listaKontaktow.ForEach(o => klon.DodajKontakt((OsobaKontakt)o.Clone()));
+
+            foreach(Dzialanie d in _dzialania)
+            {
+                klon.DodajDzialanie((Dzialanie)d.Clone());
+            }
+
+            foreach (Umowa u in _transakcje)
+            {
+                klon.DodajTransakcje((Umowa)u.Clone());
+            }
+            return null;
+        }*/
+
 
         /// <summary>
         /// Tworzy czytelny dla czlowieka opis klienta.
