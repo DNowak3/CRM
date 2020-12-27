@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\
+C:\Users\Magda\Desktop\PO_V4\CRM\CRM_GUI\obj\Debug\
 CRM_GUI
 none
 false
 DEBUG;TRACE
-D:\GitFork\CRM\CRM\CRM_GUI\App.xaml
+C:\Users\Magda\Desktop\PO_V4\CRM\CRM_GUI\App.xaml
 7266251464
 
 111402324967
-14-284196899
+14-2027207752
 DzialaniaWindow.xaml;KlienciWindow.xaml;KlientWindow.xaml;MainWindow.xaml;OsobyKontaktoweWindow.xaml;PracownicyWindow.xaml;PracownikWindow.xaml;
 
 False

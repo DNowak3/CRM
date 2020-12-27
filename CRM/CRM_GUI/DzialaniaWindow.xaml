@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="DzialaniaWindow" Height="450" Width="800">
+        Title="Działania" Height="450" Width="800">
     <Grid>
-        
+        <ListBox x:Name="lstDzialania" HorizontalAlignment="Left" Height="291" Margin="23,83,0,0" VerticalAlignment="Top" Width="500"/>
+        <Button x:Name="buttonDodajDzialanie" Content="Dodaj działanie" HorizontalAlignment="Left" Height="34" Margin="565,181,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <Button x:Name="buttonEdytujDzialanie" Content="Edytuj działanie" HorizontalAlignment="Left" Height="34" Margin="565,220,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <Button x:Name="buttonUsunDzialanie" Content="Usuń działanie" HorizontalAlignment="Left" Height="34" Margin="565,259,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <Button x:Name="buttonWszUsunDzialania" Content="Usuń wszystkie" HorizontalAlignment="Left" Height="34" Margin="565,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="565,118,0,0" VerticalAlignment="Top" Width="195" FontSize="13" >
+            <ComboBoxItem Content="Data: od najnowszych" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+            <ComboBoxItem Content="Data: od najstarszych" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        </ComboBox>
+        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="565,83,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="29" Margin="208,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="315" FontSize="16"/>
+        <Label Content="Lista działań:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="16"/>
+
     </Grid>
 </Window>

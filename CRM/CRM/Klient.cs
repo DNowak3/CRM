@@ -185,6 +185,19 @@ namespace CRM
         }
 
         /// <summary>
+        /// Usuwa podane dzialanie z listy dzialan.
+        /// </summary>
+        /// <param name="d">Dzialanie do usuniecia</param>
+        public void UsunDzialanie(Dzialanie d)
+        {
+            if (_dzialania.Contains(d))
+            {
+                _dzialania = new Stack<Dzialanie>(_dzialania.Where(x => x.Nazwa != d.Nazwa || !x.Data.Equals(d.Data)));
+                _dzialania.Reverse();
+            }
+        }
+
+        /// <summary>
         /// Usuwa pierwsze wystapienie dzialania o podanej nazwie z listy dzialan.
         /// </summary>
         /// <param name="nazwa">Nazwa dzialania, ktore ma zostac usuniete</param>
@@ -201,6 +214,14 @@ namespace CRM
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// Usuwa wszystkie dzialania z listy dzialan.
+        /// </summary>
+        public void UsunWszystkieDzialania()
+        {
+            _dzialania.Clear();
         }
 
         /// <summary>
