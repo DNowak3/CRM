@@ -28,8 +28,19 @@ namespace CRM_GUI
             InitializeComponent();
             _k = klient;
             textblockNazwaFirmy.Text = _k.Nazwa.ToUpper();
-            lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.ZwrocDzialania()); //??
+            lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.DzialaniaList);
         }
 
+        private void buttonDodajDzialanie_Click(object sender, RoutedEventArgs e)
+        {
+            Dzialanie d = new Dzialanie();
+            DzialanieWindow okno = new DzialanieWindow(d);
+            bool? ret = okno.ShowDialog();
+            if (ret == true)
+            {
+                _k.DodajDzialanie(d);
+                lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.DzialaniaList);
+            }
+        }
     }
 }

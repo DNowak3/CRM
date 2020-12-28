@@ -636,6 +636,10 @@ namespace CRM
         /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
         public override void ZapiszXML(string nazwa)
         {
+            foreach (Klient k in _listaKlientow)
+            {
+                k.StosDoListy();
+            }
             using (StreamWriter sw = new StreamWriter(nazwa))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
@@ -656,7 +660,12 @@ namespace CRM
             using (StreamReader sr = new StreamReader(nazwa))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
-                return (OrgProwadzacaCRM)xml.Deserialize(sr);
+                OrgProwadzacaCRM o = (OrgProwadzacaCRM)xml.Deserialize(sr);
+                foreach (Klient k in o.ListaKlientow)
+                {
+                    k.ListaDoStosu();
+                }
+                return o;
             }
         }
         /// <summary>

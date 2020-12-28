@@ -14,6 +14,7 @@ namespace CRM
     /// </summary>
     public enum Status { potencjalny, nowy, stały, były }
 
+    [Serializable]
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
@@ -43,6 +44,14 @@ namespace CRM
         /// Uwagi dotyczace klienta.
         /// </summary>
         string _uwagi;
+        /// <summary>
+        /// Zmienna pomocnicza, do serializacji transakcji.
+        /// </summary>
+        List<Umowa> _transakcjeList;
+        /// <summary>
+        /// Zmienna pomocnicza do serializacji dzialan.
+        /// </summary>
+        List<Dzialanie> _dzialaniaList;
 
         #region konstruktory i właściwości
         /// <summary>
@@ -53,6 +62,8 @@ namespace CRM
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
             _transakcje = new Stack<Umowa>();
+            _transakcjeList = new List<Umowa>();
+            _dzialaniaList = new List<Dzialanie>();
         }
 
         /// <summary>
@@ -65,6 +76,8 @@ namespace CRM
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
             _transakcje = new Stack<Umowa>();
+            _transakcjeList = new List<Umowa>();
+            _dzialaniaList = new List<Dzialanie>();
         }
 
         /// <summary>
@@ -82,6 +95,8 @@ namespace CRM
             _listaKontaktow = new List<OsobaKontakt>();
             _dzialania = new Stack<Dzialanie>();
             _transakcje = new Stack<Umowa>();
+            _transakcjeList = new List<Umowa>();
+            _dzialaniaList = new List<Dzialanie>();
         }
 
 
@@ -115,7 +130,8 @@ namespace CRM
         public string Uwagi { get => _uwagi; set => _uwagi = value; }
         public Status Status { get => _status; set => _status = value; }
         public List<OsobaKontakt> ListaKontaktow { get => _listaKontaktow; }
-
+        public List<Umowa> TransakcjeList { get => _transakcjeList; set => _transakcjeList = value; }
+        public List<Dzialanie> DzialaniaList { get => _dzialaniaList; set => _dzialaniaList = value; }
         #endregion
 
         /// <summary>
@@ -531,7 +547,24 @@ namespace CRM
         /// <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
         public override string ToString()
         {
-            return base.ToString() + $"\nStatus: {Status}\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}\n";
+            return base.ToString() + $"\nStatus: {Status}\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}\nLiczba dzialan: {_dzialania.Count()}\nLiczba transakcji: {_transakcje.Count()}\nLiczba kontaktów: {ListaKontaktow.Count()}\n";
+        }
+
+        /// <summary>
+        /// Metoda pomocnicza zapisujaca dane ze stosow do list po serializacji.
+        /// </summary>
+        public void StosDoListy()
+        {
+            TransakcjeList = _transakcje.ToList();
+            DzialaniaList = _dzialania.ToList();
+        }
+        /// <summary>
+        /// Metoda pomocnicza zapisujaca dane z list do stosow po deserializacji.
+        /// </summary>
+        public void ListaDoStosu()
+        {
+            _dzialania = new Stack<Dzialanie>(DzialaniaList);
+            _transakcje = new Stack<Umowa>(TransakcjeList);
         }
 
         /// <summary>
@@ -540,6 +573,7 @@ namespace CRM
         /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, zakonczona na ".xml"</param>
         public override void ZapiszXML(string nazwa)
         {
+            StosDoListy();
             using (StreamWriter sw = new StreamWriter(nazwa))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(Klient));
@@ -560,7 +594,9 @@ namespace CRM
             using (StreamReader sr = new StreamReader(nazwa))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(Klient));
-                return (Klient)xml.Deserialize(sr);
+                Klient k = (Klient)xml.Deserialize(sr);
+                k.ListaDoStosu();
+                return (Klient)k;
             }
         }
         /// <summary>

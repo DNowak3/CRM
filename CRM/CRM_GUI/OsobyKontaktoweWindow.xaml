@@ -13,11 +13,11 @@
             <ComboBoxItem Content="Alfabetycznie: od A do Z" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
             <ComboBoxItem Content="Alfabetycznie: od Z do A" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
         </ComboBox>
-        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="570,83,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
-        <Button x:Name="buttonDodajKontakt" Content="Dodaj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,181,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
-        <Button x:Name="buttonEdytujKontakt" Content="Edytuj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,220,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
-        <Button x:Name="buttonUsunKontakt" Content="Usuń kontakt" HorizontalAlignment="Left" Height="34" Margin="570,259,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
-        <Button x:Name="buttonUsunWszKontakty" Content="Usuń kontakty" HorizontalAlignment="Left" Height="34" Margin="570,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14"/>
+        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="570,83,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonSortuj_Click"/>
+        <Button x:Name="buttonDodajKontakt" Content="Dodaj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,181,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonDodajKontakt_Click"/>
+        <Button x:Name="buttonEdytujKontakt" Content="Edytuj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,220,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonEdytujKontakt_Click"/>
+        <Button x:Name="buttonUsunKontakt" Content="Usuń kontakt" HorizontalAlignment="Left" Height="34" Margin="570,259,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunKontakt_Click"/>
+        <Button x:Name="buttonUsunWszKontakty" Content="Usuń kontakty" HorizontalAlignment="Left" Height="34" Margin="570,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunWszKontakty_Click"/>
         <Label Content="Lista kontaktów" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="16"/>
 
     </Grid>

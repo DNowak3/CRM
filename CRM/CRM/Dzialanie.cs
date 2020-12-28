@@ -52,6 +52,14 @@ namespace CRM
         internal WynikDzialania Wynik { get => _wynik; set => _wynik = value; }
 
         /// <summary>
+        /// konstruktor nieparametryczny
+        /// </summary>
+        public Dzialanie()
+        {
+
+        }
+
+        /// <summary>
         /// Podstawowy konstruktor parametryczny.
         /// </summary>
         /// <param name="nazwa">Nazwa dzialania</param>

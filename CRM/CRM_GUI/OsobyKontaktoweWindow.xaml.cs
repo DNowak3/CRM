@@ -29,5 +29,35 @@ namespace CRM_GUI
             _k = klient;
             lstKontakty.ItemsSource = new ObservableCollection<OsobaKontakt>(_k.ListaKontaktow);
         }
+
+        private void buttonDodajKontakt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonEdytujKontakt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonUsunKontakt_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstKontakty.SelectedIndex > -1)
+            {
+                OsobaKontakt o = (OsobaKontakt)lstKontakty.SelectedItem;
+                _k.UsunKontakt(o);
+                lstKontakty.ItemsSource = new ObservableCollection<OsobaKontakt>(_k.ListaKontaktow);
+            }
+        }
+
+        private void buttonUsunWszKontakty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonSortuj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

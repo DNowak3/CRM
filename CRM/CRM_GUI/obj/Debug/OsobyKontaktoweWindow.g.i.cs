@@ -145,18 +145,48 @@ namespace CRM_GUI {
             return;
             case 4:
             this.buttonSortuj = ((System.Windows.Controls.Button)(target));
+            
+            #line 16 "..\..\OsobyKontaktoweWindow.xaml"
+            this.buttonSortuj.Click += new System.Windows.RoutedEventHandler(this.buttonSortuj_Click);
+            
+            #line default
+            #line hidden
             return;
             case 5:
             this.buttonDodajKontakt = ((System.Windows.Controls.Button)(target));
+            
+            #line 17 "..\..\OsobyKontaktoweWindow.xaml"
+            this.buttonDodajKontakt.Click += new System.Windows.RoutedEventHandler(this.buttonDodajKontakt_Click);
+            
+            #line default
+            #line hidden
             return;
             case 6:
             this.buttonEdytujKontakt = ((System.Windows.Controls.Button)(target));
+            
+            #line 18 "..\..\OsobyKontaktoweWindow.xaml"
+            this.buttonEdytujKontakt.Click += new System.Windows.RoutedEventHandler(this.buttonEdytujKontakt_Click);
+            
+            #line default
+            #line hidden
             return;
             case 7:
             this.buttonUsunKontakt = ((System.Windows.Controls.Button)(target));
+            
+            #line 19 "..\..\OsobyKontaktoweWindow.xaml"
+            this.buttonUsunKontakt.Click += new System.Windows.RoutedEventHandler(this.buttonUsunKontakt_Click);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.buttonUsunWszKontakty = ((System.Windows.Controls.Button)(target));
+            
+            #line 20 "..\..\OsobyKontaktoweWindow.xaml"
+            this.buttonUsunWszKontakty.Click += new System.Windows.RoutedEventHandler(this.buttonUsunWszKontakty_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;
