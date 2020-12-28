@@ -252,12 +252,23 @@
             <param name="pracownik">Pracownik, ktorego kontaktow z klientem szukamy</param>
             <returns>Lista kontaktow danego pracownika z klientem</returns>
         </member>
+        <member name="M:CRM.Klient.UsunDzialanie(CRM.Dzialanie)">
+            <summary>
+            Usuwa podane dzialanie z listy dzialan.
+            </summary>
+            <param name="d">Dzialanie do usuniecia</param>
+        </member>
         <member name="M:CRM.Klient.UsunDzialanie(System.String)">
             <summary>
             Usuwa pierwsze wystapienie dzialania o podanej nazwie z listy dzialan.
             </summary>
             <param name="nazwa">Nazwa dzialania, ktore ma zostac usuniete</param>
             <returns>Zwraca prawde, jesli usuniecie powiodlo sie, w przeciwnym wypadku falsz</returns>
+        </member>
+        <member name="M:CRM.Klient.UsunWszystkieDzialania">
+            <summary>
+            Usuwa wszystkie dzialania z listy dzialan.
+            </summary>
         </member>
         <member name="M:CRM.Klient.DodajKontakt(CRM.OsobaKontakt)">
             <summary>
@@ -847,6 +858,11 @@
         <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujAlfabetycznie">
             <summary>
             Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
+            </summary>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujDataZalozenia">
+            <summary>
+            Funkcja sortuje wszystkich konkurentów według daty założenia organizacji.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajKlienta(CRM.Klient)">

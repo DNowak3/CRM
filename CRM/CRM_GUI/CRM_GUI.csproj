@@ -67,6 +67,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="KonkurenciWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KonkurentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,6 +91,12 @@
     </Compile>
     <Compile Include="KlientWindow.xaml.cs">
       <DependentUpon>KlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KonkurenciWindow.xaml.cs">
+      <DependentUpon>KonkurenciWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KonkurentWindow.xaml.cs">
+      <DependentUpon>KonkurentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -148,5 +148,14 @@ namespace CRM_GUI
                 okno.ShowDialog();
             }
         }
+
+        private void butKonkurenci_Click(object sender, RoutedEventArgs e)
+        {
+            if (_orgCRM is OrgProwadzacaCRM)
+            {
+                KonkurenciWindow okno = new KonkurenciWindow(_orgCRM);
+                okno.ShowDialog();
+            }
+        }
     }
 }

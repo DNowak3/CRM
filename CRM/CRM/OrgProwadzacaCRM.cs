@@ -467,6 +467,13 @@ namespace CRM
         {
             _listaKonkurentow.Sort();
         }
+        /// <summary>
+        /// Funkcja sortuje wszystkich konkurentów według daty założenia organizacji.
+        /// </summary>
+        public void KonkurenciSortujDataZalozenia()
+        {
+            _listaKonkurentow.Sort((x, y) => y.DataZalozenia.CompareTo(x.DataZalozenia));
+        }
         #endregion
 
         #region Funkcje Klienci

@@ -1,0 +1,48 @@
+﻿<Window x:Class="CRM_GUI.KonkurentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM_GUI"
+        mc:Ignorable="d"
+        Title="Konkurent - edycja i dodawanie" Height="450" Width="700">
+    <Grid Margin="0,0,-0.2,0" Height="442" VerticalAlignment="Top">
+        <Label x:Name="labNazwa" Content="Nazwa" HorizontalAlignment="Left" Height="32" Margin="33,16,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labBranza" Content="Branża" HorizontalAlignment="Left" Height="32" Margin="33,53,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labNIP" Content="NIP" HorizontalAlignment="Left" Height="32" Margin="33,90,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labDataZal" Content="Data założenia" HorizontalAlignment="Left" Height="32" Margin="33,127,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labKraj" Content="Kraj" HorizontalAlignment="Left" Height="32" Margin="33,164,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labMiasto" Content="Miasto" HorizontalAlignment="Left" Height="32" Margin="33,201,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labZagrozenie" Content="Stopień zagrożenia" HorizontalAlignment="Left" Height="32" Margin="33,276,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labKodPocztowy" Content="Kod pocztowy" HorizontalAlignment="Left" Height="32" Margin="33,239,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="32" Margin="33,313,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="177,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" Height="32" Margin="177,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" Height="32" Margin="177,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" Height="32" Margin="177,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" Height="32" Margin="177,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="32" Margin="177,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <TextBox x:Name="txtKodPocztowy" HorizontalAlignment="Left" Height="32" Margin="177,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Background="Azure"/>
+        <Button x:Name="btnZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="35" Margin="307,362,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" Cursor="Hand" RenderTransformOrigin="0.493,0.5"/>
+        <Button x:Name="btnAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="35" Margin="405,362,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" Cursor="Hand"/>
+        <ComboBox x:Name="comboBoxBranze" HorizontalAlignment="Left" Height="32" Margin="177,53,0,0" VerticalAlignment="Top" Width="435">
+            <ComboBoxItem Content="IT" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Finanse" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Elektronika" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Telekomunikacja" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Motoryzacja" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Media" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Energetyka" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Inne" HorizontalAlignment="Left" Width="463.2"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBoxZagrozenie" HorizontalAlignment="Left" Height="32" Margin="177,275,0,0" VerticalAlignment="Top" Width="435">
+            <ComboBoxItem Content="Bardzo niski" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Niski" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Średni" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Wysoki" HorizontalAlignment="Left" Width="463.2"/>
+            <ComboBoxItem Content="Bardzo wysoki" HorizontalAlignment="Left" Width="463.2"/>
+        </ComboBox>
+
+    </Grid>
+</Window>

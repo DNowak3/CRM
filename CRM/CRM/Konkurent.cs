@@ -21,7 +21,7 @@ namespace CRM
         public enum StopienZagrozenia { Niski, BardzoNiski, Średni, Wysoki, BardzoWysoki }
         StopienZagrozenia zagrozenie;
 
-        internal StopienZagrozenia Zagrozenie { get => zagrozenie; set => zagrozenie = value; }
+        public StopienZagrozenia Zagrozenie { get => zagrozenie; set => zagrozenie = value; }
 
         /// <summary>
         /// Konstruktor domyślny, dziedziczący po konstruktorze domyślnym z klasy bazowej
