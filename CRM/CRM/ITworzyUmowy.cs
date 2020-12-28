@@ -11,6 +11,7 @@ namespace CRM
         double Koszt();
         Produkt ZnajdzProdukt(string kod);
         double JesliSztuki(Produkt produkt, double ilosc);
+        void DodajProdukt(Produkt produkt);
         void DodajProdukt(Produkt produkt, double ilosc);
         bool UsunProdukt(Produkt produkt);
         bool UsunProduktKod(string kod);
