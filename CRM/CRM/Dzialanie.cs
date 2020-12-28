@@ -41,6 +41,7 @@ namespace CRM
         /// </summary>
         string _opis;
 
+        #region wlasciwosci i konstruktory
         /// <summary>
         /// Wlasciwosci.
         /// </summary>
@@ -100,7 +101,9 @@ namespace CRM
         {
             Opis = opis;
         }
+        #endregion
 
+        #region ToString, Clone i CompareTo
         /// <summary>
         /// Meotda tworzy czytelna, tekstowa reprezentacje dzialania.
         /// </summary>
@@ -154,6 +157,6 @@ namespace CRM
         {
             return DateTime.Compare(Data, other.Data);
         }
-
+        #endregion
     }
 }

@@ -14,10 +14,11 @@ namespace CRM
     /// </summary>
     public enum Status { potencjalny, nowy, stały, były }
 
-    [Serializable]
+
     /// <summary>
     /// Klasa definiujaca klientow firmy.
     /// </summary>
+    [Serializable]
     public class Klient : Organizacja, IZapisywalna, ICloneable
     {
         /// <summary>
@@ -134,6 +135,7 @@ namespace CRM
         public List<Dzialanie> DzialaniaList { get => _dzialaniaList; set => _dzialaniaList = value; }
         #endregion
 
+        #region Lista działań
         /// <summary>
         /// Dodaje dzialanie do listy dzialan.
         /// </summary>
@@ -252,7 +254,9 @@ namespace CRM
         {
             return _dzialania.ToList();
         }
+        #endregion
 
+        #region Lista kontaktow
         /// <summary>
         /// Dodaje osobe do listy kontaktow z firma.
         /// </summary>
@@ -331,7 +335,9 @@ namespace CRM
             }
             throw new NonOrganizationMemberException();
         }
+        #endregion
 
+        #region Lista umów
         /// <summary>
         /// Metoda dodaje umowe do listy transakcji z klientem.
         /// </summary>
@@ -389,7 +395,9 @@ namespace CRM
             }
             return null;
         }
+        #endregion
 
+        #region Aktualizacje statusu i daty planowanego kontaktu
         /// <summary>
         /// Metoda ktualizujaca status klienta
         /// </summary>
@@ -435,6 +443,18 @@ namespace CRM
                 DataPlanowanegoKontaktu = DateTime.Compare(OstatniKontakt().AddDays(14), DateTime.Today) < 0 ? DateTime.Today : OstatniKontakt() == DateTime.MinValue ? DateTime.Today : OstatniKontakt().AddDays(14);
             }
         }
+        #endregion
+
+        #region Wypisywanie i ToString
+
+        /// <summary>
+        /// Tworzy czytelny dla czlowieka opis klienta.
+        /// </summary>
+        /// <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
+        public override string ToString()
+        {
+            return base.ToString() + $"\nStatus: {Status}\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}\nLiczba dzialan: {_dzialania.Count()}\nLiczba transakcji: {_transakcje.Count()}\nLiczba kontaktów: {ListaKontaktow.Count()}\n";
+        }
 
         /// <summary>
         /// Meotda tworzy czytelna, tekstowa reprezentacje wszystkich transakcji z klientem i wypisuje je na konsoli.
@@ -463,27 +483,7 @@ namespace CRM
                 Console.WriteLine(d);
             }
         }
-
-        /// <summary>
-        /// Metoda sortujaca malejaco lub rosnaco liste kontaktow wg nazwisk.
-        /// </summary>
-        /// <param name="malejaco">
-        /// Jesli parametr przyjmie wartosc falsz, to kontakty sa sortowane nazwiskami od A do Z.
-        /// Jesli otrzyma wartosc prawda, to kontakty sa sortowane od Z do A.
-        /// Domyslnie falsz.
-        /// </param>
-        public void SortujKontakty(bool malejaco = false)
-        {
-            if (malejaco)
-            {
-                _listaKontaktow.Sort((x, y) => y.Nazwisko.CompareTo(x.Nazwisko));
-            }
-            else
-            {
-                _listaKontaktow.Sort((x, y) => x.Nazwisko.CompareTo(y.Nazwisko));
-            }
-        }
-
+        
         /// <summary>
         /// Metoda wypisuje na konsoli liste osob kontaktowych z klientem:
         /// </summary>
@@ -495,7 +495,9 @@ namespace CRM
                 Console.WriteLine(o);
             }
         }
+        #endregion
 
+        #region Sortowanie i klonowanie
         /// <summary>
         /// Metoda sortujaca malejaco lub rosnaco liste dzialan wg dat.
         /// </summary>
@@ -523,7 +525,31 @@ namespace CRM
             }
         }
 
-        /*public object Clone()
+        /// <summary>
+        /// Metoda sortujaca malejaco lub rosnaco liste kontaktow wg nazwisk.
+        /// </summary>
+        /// <param name="malejaco">
+        /// Jesli parametr przyjmie wartosc falsz, to kontakty sa sortowane nazwiskami od A do Z.
+        /// Jesli otrzyma wartosc prawda, to kontakty sa sortowane od Z do A.
+        /// Domyslnie falsz.
+        /// </param>
+        public void SortujKontakty(bool malejaco = false)
+        {
+            if (malejaco)
+            {
+                _listaKontaktow.Sort((x, y) => y.Nazwisko.CompareTo(x.Nazwisko));
+            }
+            else
+            {
+                _listaKontaktow.Sort((x, y) => x.Nazwisko.CompareTo(y.Nazwisko));
+            }
+        }
+
+        /// <summary>
+        /// Metoda tworzy obiekt klasy klient bedacy kopia biezacego klienta.
+        /// </summary>
+        /// <returns>Zwraca nowego klienta bedacego kopia biezacego</returns>
+        public override object Clone()
         {
             Klient klon = new Klient(Nazwa, Branza, Nip, Kraj, Miasto, DataZalozenia.ToString(), DataPlanowanegoKontaktu.ToString(), Uwagi, Status);
             _listaKontaktow.ForEach(o => klon.DodajKontakt((OsobaKontakt)o.Clone()));
@@ -537,18 +563,11 @@ namespace CRM
             {
                 klon.DodajTransakcje((Umowa)u.Clone());
             }
-            return null;
-        }*/
-
-
-        /// <summary>
-        /// Tworzy czytelny dla czlowieka opis klienta.
-        /// </summary>
-        /// <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
-        public override string ToString()
-        {
-            return base.ToString() + $"\nStatus: {Status}\nData planowanego kontaktu : {DataPlanowanegoKontaktu.ToString("dd.MM.yyyy")}\nLiczba dzialan: {_dzialania.Count()}\nLiczba transakcji: {_transakcje.Count()}\nLiczba kontaktów: {ListaKontaktow.Count()}\n";
+            return klon;
         }
+        #endregion
+
+        #region Zapis i odczyt
 
         /// <summary>
         /// Metoda pomocnicza zapisujaca dane ze stosow do list po serializacji.
@@ -623,5 +642,6 @@ namespace CRM
                 return (Klient)json.Deserialize(z, typeof(Klient));
             }
         }
+        #endregion
     }
 }
