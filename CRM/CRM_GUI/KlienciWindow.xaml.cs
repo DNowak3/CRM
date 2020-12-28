@@ -49,7 +49,7 @@ namespace CRM_GUI
 
         private void buttonUsun_Click(object sender, RoutedEventArgs e)
         {
-            if(lstKlienci.SelectedIndex > -1)
+            if (lstKlienci.SelectedIndex > -1)
             {
                 Klient k = (Klient)lstKlienci.SelectedItem;
                 _orgCRM.UsunKlienta(k);
@@ -98,6 +98,12 @@ namespace CRM_GUI
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
         }
 
+        private void buttonAktualizujDate_Click(object sender, RoutedEventArgs e)
+        {
+            _orgCRM.AktualizujDatyPlanowanychKontaktow();
+            lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
+        }
+
         private void buttonSortuj_Click(object sender, RoutedEventArgs e)
         {
             string opcja = cmbboxSortuj.Text;
@@ -125,7 +131,100 @@ namespace CRM_GUI
 
         private void buttonWyszukaj_Click(object sender, RoutedEventArgs e)
         {
+            string opcja = cmbboxSzukaj.Text;
 
+            switch (opcja)
+            {
+                case "Status":
+                    txtStatus.Visibility = System.Windows.Visibility.Visible;
+                    cmbWyszPoStatusie.Visibility = System.Windows.Visibility.Visible;
+                    cmbWyszPoStatusie.ItemsSource = Enum.GetValues(typeof(Status));
+                    break;
+
+                case "Planowany kontakt":
+                    txtDniPlanKontakt.Visibility = System.Windows.Visibility.Visible;
+                    txtBoxDniPlanKontakt.Visibility = System.Windows.Visibility.Visible;
+                    break;
+
+                case "Ostatni kontakt":
+                    txtDniOstatniKontakt.Visibility = System.Windows.Visibility.Visible;
+                    txtBoxDniOstatniKontakt.Visibility = System.Windows.Visibility.Visible;
+                    break;
+
+                default:
+                    MessageBox.Show("Nie udało się wyszukać klientów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+            }
+            InputBox.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void butWyszukaj_Click(object sender, RoutedEventArgs e)
+        {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+
+            string opcja = cmbboxSzukaj.Text;
+            switch (opcja)
+            {
+                case "Status":
+                    Enum.TryParse<Status>(cmbWyszPoStatusie.SelectedValue.ToString(), out Status s);
+                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowStatus(s));
+
+                    txtStatus.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoStatusie.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoStatusie.Text = String.Empty;
+                    break;
+
+                case "Planowany kontakt":
+                    int.TryParse(txtBoxDniPlanKontakt.Text, out int p);
+                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowPlanowanyKontakt(p));
+
+                    txtDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniPlanKontakt.Text = String.Empty;
+                    break;
+
+                case "Ostatni kontakt":
+                    int.TryParse(txtBoxDniOstatniKontakt.Text, out int o);
+                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowOstatniKontakt(o));
+
+                    txtDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniOstatniKontakt.Text = String.Empty;
+                    break;
+
+                default:
+                    return;
+            }
+        }
+
+        private void butAnuluj_Click(object sender, RoutedEventArgs e)
+        {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+
+            string opcja = cmbboxSzukaj.Text;
+            switch (opcja)
+            {
+                case "Status":
+                    txtStatus.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoStatusie.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoStatusie.Text = String.Empty;
+                    break;
+
+                case "Planowany kontakt":
+                    txtDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniPlanKontakt.Text = String.Empty;
+                    break;
+
+                case "Ostatni kontakt":
+                    txtDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxDniOstatniKontakt.Text = String.Empty;
+                    break;
+
+                default:
+                    return;
+            }
         }
 
         private void buttonSzczegoly_Click(object sender, RoutedEventArgs e)
@@ -139,28 +238,23 @@ namespace CRM_GUI
                 {
                     case "Działania":
                         DzialaniaWindow okno_1 = new DzialaniaWindow(k);
-                        bool? ret_1 = okno_1.ShowDialog();
-                        if (ret_1 == true)
-                        {
-                        }
+                        okno_1.ShowDialog();
                         break;
 
                     case "Osoby do kontaktu":
                         OsobyKontaktoweWindow okno_2 = new OsobyKontaktoweWindow(k);
-                        bool? ret_2 = okno_2.ShowDialog();
-                        if (ret_2 == true)
-                        {
-                        }
+                        okno_2.ShowDialog();
                         break;
 
                     case "Transakcje":
-                        
+
                         break;
 
                     default:
                         MessageBox.Show("Nie wybrano żadnej opcji.");
                         break;
                 }
+
             }
         }
     }

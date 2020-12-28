@@ -563,8 +563,8 @@ namespace CRM
         /// </summary>
         /// <param name="ZaIleDni">Liczba dni, za którą ma się odbyć planowany kontakt z klientem.</param>
         /// <returns>Listę klientów, z którymi planowany kontakt jest ustawiony za podaną liczbę dni.</returns>
-        public List<Klient> ZnajdzWszystkichKlientowPlanowanyKontakt(int ZaIleDni=0)
-        { 
+        public List<Klient> ZnajdzWszystkichKlientowPlanowanyKontakt(int ZaIleDni = 0)
+        {
             return _listaKlientow.FindAll(k => k.DataPlanowanegoKontaktu == DateTime.Today.AddDays(ZaIleDni));
         }
         /// <summary>
@@ -572,9 +572,9 @@ namespace CRM
         /// </summary>
         /// <param name="IleDniTemu">Liczba dni jaka minęła odkąd kontaktowano się z klientem.</param>
         /// <returns>Listę klientów, z którymi kontaktowano się ustaloną liczbę dni temu.</returns>
-        public List<Klient> ZnajdzWszystkichKlientowOstatniKontakt(int IleDniTemu=14)
+        public List<Klient> ZnajdzWszystkichKlientowOstatniKontakt(int IleDniTemu = 14)
         {
-            return _listaKlientow.FindAll(k => k.OstatniKontakt()<=DateTime.Today.AddDays(-IleDniTemu));
+            return _listaKlientow.FindAll(k => k.OstatniKontakt() <= DateTime.Today.AddDays(-IleDniTemu));
         }
         /// <summary>
         /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
@@ -597,7 +597,7 @@ namespace CRM
         /// </summary>
         public void KlienciSortujDataPlanowanegoKontaktu()
         {
-            _listaKlientow.Sort((x,y)=>y.DataPlanowanegoKontaktu.CompareTo(x.DataPlanowanegoKontaktu));
+            _listaKlientow.Sort((x, y) => y.DataPlanowanegoKontaktu.CompareTo(x.DataPlanowanegoKontaktu));
         }
         /// <summary>
         /// Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
@@ -612,9 +612,20 @@ namespace CRM
         /// </summary>
         public void AktualizujStatusKlientow()
         {
-            foreach(Klient k in ListaKlientow)
+            foreach (Klient k in ListaKlientow)
             {
                 k.AktualizujStatus();
+            }
+        }
+
+        /// <summary>
+        /// Metoda aktualizuje daty planowanych kontaktow ze wszystkimi klientami organizacji
+        /// </summary>
+        public void AktualizujDatyPlanowanychKontaktow()
+        {
+            foreach (Klient k in ListaKlientow)
+            {
+                k.AktualizujDatePlanKontaktu();
             }
         }
         #endregion

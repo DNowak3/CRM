@@ -1,6 +1,7 @@
 ﻿using CRM;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,14 @@ namespace CRM_GUI
     /// </summary>
     public partial class DzialaniaWindow : Window
     {
-        Klient k;
-        public DzialaniaWindow()
-        {
-            InitializeComponent();
-        }
+        Klient _k;
 
         public DzialaniaWindow(Klient klient)
         {
             InitializeComponent();
-            k = klient;
+            _k = klient;
+            textblockNazwaFirmy.Text = _k.Nazwa.ToUpper();
+            lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.ZwrocDzialania()); //??
         }
 
     }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Lista kontaktów" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lstDzialania" HorizontalAlignment="Left" Height="291" Margin="23,83,0,0" VerticalAlignment="Top" Width="500"/>
+        <ListBox x:Name="lstKontakty" HorizontalAlignment="Left" Height="291" Margin="23,83,0,0" VerticalAlignment="Top" Width="500"/>
         <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="29" Margin="208,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="315" FontSize="16"/>
         <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="570,118,0,0" VerticalAlignment="Top" Width="195" FontSize="13" >
             <ComboBoxItem Content="Alfabetycznie: od A do Z" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>

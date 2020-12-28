@@ -44,6 +44,7 @@ namespace CRM
         /// </summary>
         string _uwagi;
 
+        #region konstruktory i właściwości
         /// <summary>
         /// Podstawowy konstruktor nieparametryczny.
         /// </summary>
@@ -113,6 +114,9 @@ namespace CRM
         public DateTime DataPlanowanegoKontaktu { get => _dataPlanowanegoKontaktu; set => _dataPlanowanegoKontaktu = value; }
         public string Uwagi { get => _uwagi; set => _uwagi = value; }
         public Status Status { get => _status; set => _status = value; }
+        public List<OsobaKontakt> ListaKontaktow { get => _listaKontaktow; }
+
+        #endregion
 
         /// <summary>
         /// Dodaje dzialanie do listy dzialan.
@@ -158,7 +162,7 @@ namespace CRM
         public DateTime OstatniKontakt()
         {
             SortujDzialania();
-            return IleDzialan() == 0 ? DateTime.MaxValue : _dzialania.Peek().Data;
+            return IleDzialan() == 0 ? DateTime.MinValue : _dzialania.Peek().Data;
         }
         /// <summary>
         /// Wyszukuje wszystkie dzialania od podanej daty do dzisiaj
@@ -222,6 +226,15 @@ namespace CRM
         public void UsunWszystkieDzialania()
         {
             _dzialania.Clear();
+        }
+
+        /// <summary>
+        /// Zwraca wszystkie dzialania w formie listy.
+        /// </summary>
+        /// <returns></returns>
+        public List<Dzialanie> ZwrocDzialania()
+        {
+            return _dzialania.ToList();
         }
 
         /// <summary>
@@ -389,6 +402,7 @@ namespace CRM
 
         /// <summary>
         /// Metoda aktualizuje date planowanego kontaktu:
+        /// Jesli daty nie ma to ustawia ja na dzis.
         /// Jesli data jest w przyszlosci, to pozostaje bez zmian.
         /// Jesli data juz minela, to sa dwie mozliwosci:
         /// Jesli ostatni kontakt z klientem byl mniej niz 2 tygodnie temu, to ustalana jest na dwa tygodnie po ostatnim kontakcie.
@@ -396,10 +410,13 @@ namespace CRM
         /// </summary>
         public void AktualizujDatePlanKontaktu()
         {
-            if(DateTime.Compare(DataPlanowanegoKontaktu, DateTime.Today) < 0)
+            if (DataPlanowanegoKontaktu == null)
             {
-                DateTime ostatniKontakt = OstatniKontakt();
-                DataPlanowanegoKontaktu = DateTime.Compare(OstatniKontakt().AddDays(14), DateTime.Today) < 0 ? DateTime.Today : OstatniKontakt().AddDays(14);
+                DataPlanowanegoKontaktu = DateTime.Today;
+            }
+            else if (DateTime.Compare(DataPlanowanegoKontaktu, DateTime.Today) < 0)
+            {
+                DataPlanowanegoKontaktu = DateTime.Compare(OstatniKontakt().AddDays(14), DateTime.Today) < 0 ? DateTime.Today : OstatniKontakt() == DateTime.MinValue ? DateTime.Today : OstatniKontakt().AddDays(14);
             }
         }
 

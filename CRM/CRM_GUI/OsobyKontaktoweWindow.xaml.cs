@@ -1,6 +1,7 @@
 ﻿using CRM;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,13 @@ namespace CRM_GUI
     /// </summary>
     public partial class OsobyKontaktoweWindow : Window
     {
-        Klient k;
-        public OsobyKontaktoweWindow()
-        {
-            InitializeComponent();
-        }
+        Klient _k;
 
         public OsobyKontaktoweWindow(Klient klient)
         {
             InitializeComponent();
-            k = klient;
+            _k = klient;
+            lstKontakty.ItemsSource = new ObservableCollection<OsobaKontakt>(_k.ListaKontaktow);
         }
     }
 }

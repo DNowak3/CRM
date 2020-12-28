@@ -270,6 +270,12 @@
             Usuwa wszystkie dzialania z listy dzialan.
             </summary>
         </member>
+        <member name="M:CRM.Klient.ZwrocDzialania">
+            <summary>
+            Zwraca wszystkie dzialania w formie listy.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CRM.Klient.DodajKontakt(CRM.OsobaKontakt)">
             <summary>
             Dodaje osobe do listy kontaktow z firma.
@@ -343,6 +349,7 @@
         <member name="M:CRM.Klient.AktualizujDatePlanKontaktu">
             <summary>
             Metoda aktualizuje date planowanego kontaktu:
+            Jesli daty nie ma to ustawia ja na dzis.
             Jesli data jest w przyszlosci, to pozostaje bez zmian.
             Jesli data juz minela, to sa dwie mozliwosci:
             Jesli ostatni kontakt z klientem byl mniej niz 2 tygodnie temu, to ustalana jest na dwa tygodnie po ostatnim kontakcie.
@@ -953,6 +960,11 @@
         <member name="M:CRM.OrgProwadzacaCRM.AktualizujStatusKlientow">
             <summary>
             Metoda aktualizuje statusy wszystkich klientów organizacji
+            </summary>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.AktualizujDatyPlanowanychKontaktow">
+            <summary>
+            Metoda aktualizuje daty planowanych kontaktow ze wszystkimi klientami organizacji
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszXML(System.String)">

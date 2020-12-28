@@ -352,7 +352,16 @@ namespace CRM
             nasza.DodajKonkurenta(k2);
             nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
 
-            nasza.DodajKlienta(new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Wazny klient", Status.stały));
+            Klient fb = new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Wazny klient", Status.stały);
+            Dzialanie d_1 = new Dzialanie("dzialanie 1", "28.12.2020");
+            Dzialanie d_2 = new Dzialanie("dzialanie 2", "18.12.2020");
+
+            fb.DodajDzialanie(d_2);
+            fb.DodajDzialanie(d_1);
+            LG.DodajDzialanie(d_1);
+            LG.DodajDzialanie(d_2);
+
+            nasza.DodajKlienta(fb);
             nasza.DodajKlienta(new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były));
             nasza.DodajKlienta(LG);
             nasza.DodajKlienta(MoneyPL);

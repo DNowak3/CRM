@@ -147,6 +147,10 @@ namespace CRM_GUI
                 KlienciWindow okno = new KlienciWindow(_orgCRM);
                 okno.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Tylko zapisane do pliku, lub z niego odczytane organizacje mają dostęp do listy klientów.", "***", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void butKonkurenci_Click(object sender, RoutedEventArgs e)
