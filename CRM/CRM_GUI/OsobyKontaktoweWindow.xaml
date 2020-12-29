@@ -18,7 +18,9 @@
         <Button x:Name="buttonEdytujKontakt" Content="Edytuj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,220,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonEdytujKontakt_Click"/>
         <Button x:Name="buttonUsunKontakt" Content="Usuń kontakt" HorizontalAlignment="Left" Height="34" Margin="570,259,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunKontakt_Click"/>
         <Button x:Name="buttonUsunWszKontakty" Content="Usuń kontakty" HorizontalAlignment="Left" Height="34" Margin="570,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunWszKontakty_Click"/>
-        <Label Content="Lista kontaktów" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="16"/>
+        <Label Content="Lista kontaktów:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="140" Height="34" FontSize="16"/>
+        <Label Content="W sumie:" HorizontalAlignment="Left" Margin="357,44,0,0" VerticalAlignment="Top" Width="78" Height="34" FontSize="16"/>
+        <TextBlock x:Name="textblockIleKontaktow" HorizontalAlignment="Left" Height="29" Margin="435,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="88" FontSize="16"/>
 
     </Grid>
 </Window>

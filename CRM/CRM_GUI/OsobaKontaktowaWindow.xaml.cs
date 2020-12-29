@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace CRM_GUI
     /// </summary>
     public partial class OsobaKontaktowaWindow : Window
     {
+        OsobaKontakt _o;
         public OsobaKontaktowaWindow()
         {
+            _o = new OsobaKontakt();
             InitializeComponent();
+        }
+
+        public OsobaKontaktowaWindow(OsobaKontakt osoba):this()
+        {
+            _o = osoba;
         }
     }
 }

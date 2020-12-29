@@ -265,6 +265,15 @@ namespace CRM
         }
         #endregion
 
+        /// <summary>
+        /// Oblicza liczbe osob do kontaktu z klientem;
+        /// </summary>
+        /// <returns>Liczba osob na liscie kontaktow</returns>
+        public int IleKontaktow()
+        {
+            return _listaKontaktow.Count();
+        }
+
         #region Lista kontaktow
         /// <summary>
         /// Dodaje osobe do listy kontaktow z firma.

@@ -104,6 +104,14 @@ namespace CRM_GUI {
         #line default
         #line hidden
         
+        
+        #line 23 "..\..\OsobyKontaktoweWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBlock textblockIleKontaktow;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -187,6 +195,9 @@ namespace CRM_GUI {
             
             #line default
             #line hidden
+            return;
+            case 9:
+            this.textblockIleKontaktow = ((System.Windows.Controls.TextBlock)(target));
             return;
             }
             this._contentLoaded = true;
