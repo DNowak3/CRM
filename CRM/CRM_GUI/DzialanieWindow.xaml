@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="DzialanieWindow" Height="286.783" Width="761.306">
-    <Grid Margin="0,0,4.2,0" Height="248" VerticalAlignment="Top">
-        <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="33,16,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labData' Content="Data:" HorizontalAlignment="Left" Height="32" Margin="33,54,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labWynik' Content="Wynik" HorizontalAlignment="Left" Height="32" Margin="33,91,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="32" Margin="33,128,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="177,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
-        <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="32" Margin="177,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
-        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="32" Margin="177,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
-        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="506,179,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" />
-        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="604,179,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" />
-        <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="177,91,0,0" VerticalAlignment="Top" Width="520">
-           
-        </ComboBox>
+        Title="Dodaj / edytuj działanie" Height="318.228" Width="669.485">
+    <Grid Margin="0,0,4.2,0" Height="283" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="40,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labData' Content="Data:" HorizontalAlignment="Left" Height="32" Margin="40,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labWynik' Content="Wynik" HorizontalAlignment="Left" Height="32" Margin="40,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="32" Margin="40,168,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="32" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="60" Margin="131,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="527,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="429,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
+        <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top" Margin="0,0,0.2,0"/>
 
     </Grid>
 </Window>

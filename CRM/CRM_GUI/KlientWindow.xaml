@@ -5,32 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Dodaj/edytuj klienta" Height="464.7" Width="651.2">
-    <Grid Margin="0,0,-0.2,0" Height="442" VerticalAlignment="Top">
-        <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="33,16,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labBranza' Content="Branża:" HorizontalAlignment="Left" Height="32" Margin="33,53,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labNIP' Content="NIP:" HorizontalAlignment="Left" Height="32" Margin="33,90,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labDataZal' Content="Miasto:" HorizontalAlignment="Left" Height="32" Margin="33,201,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labKraj' Content="Kraj:" HorizontalAlignment="Left" Height="32" Margin="33,164,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labMiasto' Content="Data założenia:" HorizontalAlignment="Left" Height="32" Margin="33,127,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labStatus' Content="Status klienta:" HorizontalAlignment="Left" Height="32" Margin="33,239,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labStatus_Copy' Content="Uwagi:" HorizontalAlignment="Left" Height="32" Margin="33,313,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="177,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" Height="32" Margin="177,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" Height="32" Margin="177,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" Height="32" Margin="177,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" Height="32" Margin="177,201,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <TextBox x:Name="txtUwagi" HorizontalAlignment="Left" Height="32" Margin="177,313,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
-        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="421,372,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click"/>
-        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="519,372,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click"/>
-        <ComboBox x:Name="cmboxBranze" HorizontalAlignment="Left" Height="32" Margin="177,53,0,0" VerticalAlignment="Top" Width="435">
-            
-        </ComboBox>
-        <ComboBox x:Name="cmboxStatus" HorizontalAlignment="Left" Height="32" Margin="177,239,0,0" VerticalAlignment="Top" Width="435">
+        Title="Dodaj / edytuj klienta" Height="508.8" Width="621.2">
+    <Grid Margin="0,0,-0.2,3.2">
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="49" VerticalAlignment="Top"/>
+
+        <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="37,54,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labBranza' Content="Branża:" HorizontalAlignment="Left" Height="32" Margin="37,91,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labNIP' Content="NIP:" HorizontalAlignment="Left" Height="32" Margin="37,128,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labDataZal' Content="Miasto:" HorizontalAlignment="Left" Height="32" Margin="37,239,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labKraj' Content="Kraj:" HorizontalAlignment="Left" Height="32" Margin="37,202,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labMiasto' Content="Data założenia:" HorizontalAlignment="Left" Height="32" Margin="37,165,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labStatus' Content="Status klienta:" HorizontalAlignment="Left" Height="32" Margin="37,277,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labStatus_Copy' Content="Uwagi:" HorizontalAlignment="Left" Height="32" Margin="37,351,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="181,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="390" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold"/>
+        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" Height="32" Margin="180,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" Height="32" Margin="180,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" Height="32" Margin="180,202,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" Height="32" Margin="180,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtUwagi" HorizontalAlignment="Left" Height="53" Margin="180,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="478,409,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="380,409,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
+        <ComboBox x:Name="cmboxBranze" HorizontalAlignment="Left" Height="32" Margin="181,91,0,0" VerticalAlignment="Top" Width="390" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold">
 
         </ComboBox>
-        <Label x:Name='labPlanKontakt' Content="Planowany kontakt:" HorizontalAlignment="Left" Height="32" Margin="33,276,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <TextBox x:Name="txtPlanKontakt" HorizontalAlignment="Left" Height="32" Margin="177,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>
+        <ComboBox x:Name="cmboxStatus" HorizontalAlignment="Left" Height="32" Margin="181,277,0,0" VerticalAlignment="Top" Width="390" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold">
+
+        </ComboBox>
+        <Label x:Name='labPlanKontakt' Content="Planowany kontakt:" HorizontalAlignment="Left" Height="32" Margin="37,314,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <TextBox x:Name="txtPlanKontakt" HorizontalAlignment="Left" Height="32" Margin="180,314,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="391" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
 
     </Grid>
 </Window>

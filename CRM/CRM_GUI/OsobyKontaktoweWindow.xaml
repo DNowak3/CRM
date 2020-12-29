@@ -7,20 +7,22 @@
         mc:Ignorable="d"
         Title="Lista kontaktów" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lstKontakty" HorizontalAlignment="Left" Height="291" Margin="23,83,0,0" VerticalAlignment="Top" Width="500"/>
-        <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="29" Margin="208,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="315" FontSize="16"/>
-        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="570,118,0,0" VerticalAlignment="Top" Width="195" FontSize="13" >
-            <ComboBoxItem Content="Alfabetycznie: od A do Z" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Alfabetycznie: od Z do A" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="80" VerticalAlignment="Top" Margin="0,-2,-0.4,0"/>
+
+        <ListBox x:Name="lstKontakty" HorizontalAlignment="Left" Height="301" Margin="23,99,0,0" VerticalAlignment="Top" Width="500"/>
+        <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="34" Margin="23,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="500" FontSize="25" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="570,139,0,0" VerticalAlignment="Top" Width="195" FontSize="18" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold" >
+            <ComboBoxItem Content="Alfabetycznie: od A do Z" HorizontalAlignment="Left" Width="185" FontSize="15"/>
+            <ComboBoxItem Content="Alfabetycznie: od Z do A" HorizontalAlignment="Left" Width="185" FontSize="15"/>
         </ComboBox>
-        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="570,83,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonSortuj_Click"/>
-        <Button x:Name="buttonDodajKontakt" Content="Dodaj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,181,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonDodajKontakt_Click"/>
-        <Button x:Name="buttonEdytujKontakt" Content="Edytuj kontakt" HorizontalAlignment="Left" Height="34" Margin="570,220,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonEdytujKontakt_Click"/>
-        <Button x:Name="buttonUsunKontakt" Content="Usuń kontakt" HorizontalAlignment="Left" Height="34" Margin="570,259,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunKontakt_Click"/>
-        <Button x:Name="buttonUsunWszKontakty" Content="Usuń kontakty" HorizontalAlignment="Left" Height="34" Margin="570,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunWszKontakty_Click"/>
-        <Label Content="Lista kontaktów:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="140" Height="34" FontSize="16"/>
-        <Label Content="W sumie:" HorizontalAlignment="Left" Margin="357,44,0,0" VerticalAlignment="Top" Width="78" Height="34" FontSize="16"/>
-        <TextBlock x:Name="textblockIleKontaktow" HorizontalAlignment="Left" Height="29" Margin="435,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="88" FontSize="16"/>
+        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="40" Margin="570,99,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonSortuj_Click" RenderTransformOrigin="0.491,1.473"/>
+        <Button x:Name="buttonDodajKontakt" Content="Dodaj kontakt" HorizontalAlignment="Left" Height="40" Margin="570,190,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonDodajKontakt_Click"/>
+        <Button x:Name="buttonEdytujKontakt" Content="Edytuj kontakt" HorizontalAlignment="Left" Height="40" Margin="570,235,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonEdytujKontakt_Click"/>
+        <Button x:Name="buttonUsunKontakt" Content="Usuń kontakt" HorizontalAlignment="Left" Height="40" Margin="570,280,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonUsunKontakt_Click"/>
+        <Button x:Name="buttonUsunWszKontakty" Content="Usuń kontakty" HorizontalAlignment="Left" Height="40" Margin="570,360,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonUsunWszKontakty_Click"/>
+        <Label Content="Lista kontaktów:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="174" Height="34" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Label Content="W sumie:" HorizontalAlignment="Left" Margin="357,44,0,0" VerticalAlignment="Top" Width="93" Height="34" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <TextBlock x:Name="textblockIleKontaktow" HorizontalAlignment="Left" Height="29" Margin="455,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="68" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
 
     </Grid>
 </Window>

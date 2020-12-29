@@ -7,25 +7,27 @@
         mc:Ignorable="d"
         Title="Działania" Height="481.651" Width="800">
     <Grid>
-        <ListBox x:Name="lstDzialania" HorizontalAlignment="Left" Height="291" Margin="23,83,0,0" VerticalAlignment="Top" Width="500"/>
-        <Button x:Name="buttonDodajDzialanie" Content="Dodaj działanie" HorizontalAlignment="Left" Height="34" Margin="565,262,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonDodajDzialanie_Click"/>
-        <Button x:Name="buttonEdytujDzialanie" Content="Edytuj działanie" HorizontalAlignment="Left" Height="34" Margin="565,301,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonEdytujDzialanie_Click"/>
-        <Button x:Name="buttonUsunDzialanie" Content="Usuń działanie" HorizontalAlignment="Left" Height="34" Margin="565,340,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonUsunDzialanie_Click"/>
-        <Button x:Name="buttonWszUsunDzialania" Content="Usuń wszystkie" HorizontalAlignment="Left" Height="34" Margin="23,379,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonWszUsunDzialania_Click"/>
-        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="565,118,0,0" VerticalAlignment="Top" Width="195" FontSize="13" >
-            <ComboBoxItem Content="Data: od najnowszych" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Data: od najstarszych" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="80" VerticalAlignment="Top" Margin="0,-2,-0.4,0"/>
+
+        <ListBox x:Name="lstDzialania" HorizontalAlignment="Left" Height="291" Margin="27,94,0,0" VerticalAlignment="Top" Width="500" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+        <Button x:Name="buttonDodajDzialanie" Content="Dodaj działanie" HorizontalAlignment="Left" Height="34" Margin="569,273,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonDodajDzialanie_Click"/>
+        <Button x:Name="buttonEdytujDzialanie" Content="Edytuj działanie" HorizontalAlignment="Left" Height="34" Margin="569,312,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonEdytujDzialanie_Click"/>
+        <Button x:Name="buttonUsunDzialanie" Content="Usuń działanie" HorizontalAlignment="Left" Height="34" Margin="569,351,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonUsunDzialanie_Click"/>
+        <Button x:Name="buttonWszUsunDzialania" Content="Usuń wszystkie" HorizontalAlignment="Left" Height="34" Margin="27,390,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonWszUsunDzialania_Click"/>
+        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="569,124,0,0" VerticalAlignment="Top" Width="195" FontSize="18" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold">
+            <ComboBoxItem Content="Data: od najnowszych" HorizontalAlignment="Left" Width="185" FontSize="15"/>
+            <ComboBoxItem Content="Data: od najstarszych" HorizontalAlignment="Left" Width="185" FontSize="15"/>
         </ComboBox>
-        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="565,83,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonSortuj_Click"/>
-        <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="29" Margin="208,15,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="315" FontSize="16"/>
-        <Label Content="Lista działań:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="16"/>
-        <Label Content="W sumie:" HorizontalAlignment="Left" Margin="345,44,0,0" VerticalAlignment="Top" Width="83" Height="34" FontSize="16"/>
-        <TextBlock x:Name="textblockIleDzialan" HorizontalAlignment="Left" Height="29" Margin="433,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="90" FontSize="16"/>
-        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Height="30" Margin="565,173,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonWyszukaj_Click"/>
-        <Button x:Name="buttonPokazWsz" Content="Pokaż wszystkie" HorizontalAlignment="Left" Height="34" Margin="328,379,0,0" VerticalAlignment="Top" Width="195" FontSize="14" Click="buttonPokazWsz_Click"/>
-        <ComboBox x:Name="cmbboxWyszukaj" HorizontalAlignment="Left" Height="29" Margin="565,208,0,0" VerticalAlignment="Top" Width="195" FontSize="13" >
-            <ComboBoxItem Content="Przyszłe działania" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Działania od podanej daty" HorizontalAlignment="Left" Width="185.6" FontSize="13"/>
+        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="569,94,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonSortuj_Click"/>
+        <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="39" Margin="23,10,0,403" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="500" FontSize="25" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Label Content="Lista działań:" HorizontalAlignment="Left" Margin="23,44,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Label Content="W sumie:" HorizontalAlignment="Left" Margin="372,44,0,0" VerticalAlignment="Top" Width="97" Height="34" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <TextBlock x:Name="textblockIleDzialan" HorizontalAlignment="Left" Height="29" Margin="469,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Height="30" Margin="569,174,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonWyszukaj_Click"/>
+        <Button x:Name="buttonPokazWsz" Content="Pokaż wszystkie" HorizontalAlignment="Left" Height="34" Margin="332,390,0,0" VerticalAlignment="Top" Width="195" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonPokazWsz_Click"/>
+        <ComboBox x:Name="cmbboxWyszukaj" HorizontalAlignment="Left" Height="29" Margin="569,204,0,0" VerticalAlignment="Top" Width="195" FontSize="18" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold">
+            <ComboBoxItem Content="Przyszłe działania" HorizontalAlignment="Left" Width="185" FontSize="15"/>
+            <ComboBoxItem Content="Działania od podanej daty" HorizontalAlignment="Left" Width="185.6" FontSize="15"/>
         </ComboBox>
         <Grid x:Name="InputBox" Visibility="Collapsed" Margin="0,0,0,0.333">
             <Grid Background="Black" Opacity="0.5"/>

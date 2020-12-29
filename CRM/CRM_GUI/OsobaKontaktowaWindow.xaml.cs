@@ -33,7 +33,7 @@ namespace CRM_GUI
             _o = osoba;
             txtImie.Text = _o.Imie;
             txtNazwisko.Text = _o.Nazwisko;
-            cmbPlec.SelectedItem = _o.Plec;
+            cmbPlec.Text = (_o.Plec == Plcie.K) ? "Kobieta" : (_o.Plec == Plcie.M) ? "Mężczyzna" : "Nieznana";
             cmbStanowisko.SelectedItem = _o.Stanowisko;
             txtTelefon.Text = _o.Telefon;
             txtMail.Text = _o.Mail;

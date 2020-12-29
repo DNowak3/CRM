@@ -280,15 +280,9 @@ namespace CRM
         /// </summary>
         /// <param name="o">Osoba do kontaktu</param>
         /// <returns>Zwraca prawde, jesli dodanie powiodlo sie, w przeciwnym wypadku falsz</returns>
-        public bool DodajKontakt(OsobaKontakt o)
+        public void DodajKontakt(OsobaKontakt o)
         {
-            if (_listaKontaktow.Contains(o))
-            {
-                Console.WriteLine($"Osoba jest już na liście kontaktów");
-                return false;
-            }
             _listaKontaktow.Add(o);
-            return true;
         }
 
         /// <summary>

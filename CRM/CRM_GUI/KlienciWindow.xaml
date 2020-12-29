@@ -5,35 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Klienci" Height="571.2" Width="792.8">
-    <Grid Margin="0,0,-6.6,-0.4">
-        <ListBox x:Name="lstKlienci" HorizontalAlignment="Left" Height="385" Margin="26,67,0,0" VerticalAlignment="Top" Width="529"/>
-        <Label x:Name="labelKlienci" Content="Lista klientów:" HorizontalAlignment="Left" Height="40" Margin="26,22,0,0" VerticalAlignment="Top" Width="163" FontSize="18"/>
-        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="590,102,0,0" VerticalAlignment="Top" Width="177" FontSize="13" >
-            <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Data planowanego kontaktu" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Data ostatniego kontaktu" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        Title="Klienci" Height="604.8" Width="837.2">
+    <Grid Margin="0,0,3.4,12.2">
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="49" VerticalAlignment="Top" Margin="0,-2,0,0"/>
+        <ListBox x:Name="lstKlienci" HorizontalAlignment="Left" Height="385" Margin="26,67,0,0" VerticalAlignment="Top" Width="529" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+        <Label x:Name="labelKlienci" Content="Lista klientów:" HorizontalAlignment="Left" Height="37" Margin="26,10,0,0" VerticalAlignment="Top" Width="163" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="35" Margin="590,102,0,0" VerticalAlignment="Top" Width="205" FontSize="15" >
+            <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="205" FontSize="15" />
+            <ComboBoxItem Content="Data planowanego kontaktu" HorizontalAlignment="Left" Width="205" FontSize="15"/>
+            <ComboBoxItem Content="Data ostatniego kontaktu" HorizontalAlignment="Left" Width="205" FontSize="15"/>
         </ComboBox>
-        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="590,67,0,0" VerticalAlignment="Top" Width="177" FontSize="14" Click="buttonSortuj_Click"/>
-        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Margin="590,150,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonWyszukaj_Click"/>
-        <ComboBox x:Name="cmbboxSzukaj" HorizontalAlignment="Left" Height="29" Margin="590,185,0,0" VerticalAlignment="Top" Width="177" FontSize="13">
-            <ComboBoxItem Content="Planowany kontakt" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Ostatni kontakt" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Status" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        <Button x:Name="buttonSortuj" Content="Sortuj" HorizontalAlignment="Left" Height="35" Margin="590,67,0,0" VerticalAlignment="Top" Width="205" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonSortuj_Click"/>
+        <Button x:Name="buttonWyszukaj" Content="Wyszukaj" HorizontalAlignment="Left" Margin="590,150,0,0" VerticalAlignment="Top" Width="205" Height="35" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonWyszukaj_Click"/>
+        <ComboBox x:Name="cmbboxSzukaj" HorizontalAlignment="Left" Height="35" Margin="590,185,0,0" VerticalAlignment="Top" Width="205" FontSize="13">
+            <ComboBoxItem Content="Planowany kontakt" HorizontalAlignment="Left" Width="205" FontSize="15"/>
+            <ComboBoxItem Content="Ostatni kontakt" HorizontalAlignment="Left" Width="205" FontSize="15"/>
+            <ComboBoxItem Content="Status" HorizontalAlignment="Left" Width="205" FontSize="15"/>
         </ComboBox>
-        <Button x:Name="buttonDodaj" Content="Dodaj klienta" HorizontalAlignment="Left" Margin="590,383,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonDodaj_Click"/>
-        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,418,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonUsun_Click" />
-        <Button x:Name="buttonSzczegoly" Content="Pokaż szczegóły" HorizontalAlignment="Left" Margin="590,236,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonSzczegoly_Click"/>
-        <Label x:Name="labelLiczbaKlinetow" Content="W sumie:" HorizontalAlignment="Left" Height="40" Margin="412,22,0,0" VerticalAlignment="Top" Width="91" FontSize="18"/>
-        <TextBlock x:Name="textblockLiczbaKlientow" HorizontalAlignment="Left" Height="40" Margin="503,22,0,0" VerticalAlignment="Top" Width="52" FontSize="18"/>
-        <Button x:Name="buttonEdytuj" Content="Edytuj klienta" HorizontalAlignment="Left" Margin="590,348,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonEdytuj_Click" />
-        <Button x:Name="buttonPokazWszystkich" Content="Pokaż wszystkich" HorizontalAlignment="Left" Margin="26,464,0,0" VerticalAlignment="Top" Width="210" Height="30" FontSize="14" Click="buttonPokazWszystkich_Click"/>
-        <Button x:Name="buttonUsunWszystkich" Content="Usuń wszystkich" HorizontalAlignment="Left" Margin="26,499,0,0" VerticalAlignment="Top" Width="210" Height="30" FontSize="14" Click="buttonUsunWszystkich_Click"/>
-        <Button x:Name="buttonAktualizuj" Content="Aktualizuj status" HorizontalAlignment="Left" Margin="345,464,0,0" VerticalAlignment="Top" Width="210" Height="30" FontSize="14" Click="buttonAktualizuj_Click"/>
-        <ComboBox x:Name="cmbboxSzczegoly" HorizontalAlignment="Left" Height="29" Margin="590,271,0,0" VerticalAlignment="Top" Width="177" FontSize="13">
-            <ComboBoxItem Content="Działania" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Osoby do kontaktu" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
-            <ComboBoxItem Content="Transakcje" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
+        <Button x:Name="buttonDodaj" Content="Dodaj klienta" HorizontalAlignment="Left" Margin="590,373,0,0" VerticalAlignment="Top" Width="205" Height="35" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF047382" Foreground="White" Click="buttonDodaj_Click"/>
+        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,413,0,0" VerticalAlignment="Top" Width="205" Height="35" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonUsun_Click" />
+        <Button x:Name="buttonSzczegoly" Content="Pokaż szczegóły" HorizontalAlignment="Left" Margin="590,236,0,0" VerticalAlignment="Top" Width="205" Height="35" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonSzczegoly_Click"/>
+        <Label x:Name="labelLiczbaKlinetow" Content="W sumie:" HorizontalAlignment="Left" Height="37" Margin="394,10,0,0" VerticalAlignment="Top" Width="109" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <TextBlock x:Name="textblockLiczbaKlientow" HorizontalAlignment="Left" Height="47" Margin="503,0,0,0" VerticalAlignment="Top" Width="52" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Button x:Name="buttonEdytuj" Content="Edytuj klienta" HorizontalAlignment="Left" Margin="590,333,0,0" VerticalAlignment="Top" Width="205" Height="35" FontWeight="SemiBold" FontSize="18" BorderBrush="#FF006674" Background="#FF047382" Foreground="White" Click="buttonEdytuj_Click" />
+        <Button x:Name="buttonPokazWszystkich" Content="Pokaż wszystkich" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="26,474,0,0" VerticalAlignment="Top" Width="210" Height="35" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonPokazWszystkich_Click"/>
+        <Button x:Name="buttonUsunWszystkich" Content="Usuń wszystkich" HorizontalAlignment="Left" Margin="26,514,0,0" VerticalAlignment="Top" Width="210" Height="35" FontSize="18" FontWeight="SemiBold" BorderBrush="#FF006674"  Background="#FF05464F" Foreground="White" Click="buttonUsunWszystkich_Click"/>
+        <Button x:Name="buttonAktualizuj" Content="Aktualizuj status" HorizontalAlignment="Left" Margin="288,474,0,0" VerticalAlignment="Top" Width="267" Height="35" FontSize="18" FontWeight="SemiBold" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonAktualizuj_Click"/>
+        <ComboBox x:Name="cmbboxSzczegoly" HorizontalAlignment="Left" Height="35" Margin="590,271,0,0" VerticalAlignment="Top" Width="205" FontSize="18">
+            <ComboBoxItem Content="Działania" HorizontalAlignment="Left" Width="205" FontSize="15"/>
+            <ComboBoxItem Content="Osoby do kontaktu" HorizontalAlignment="Left" Width="205" FontSize="15"/>
+            <ComboBoxItem Content="Transakcje" HorizontalAlignment="Left" Width="205" FontSize="15"/>
         </ComboBox>
         <Grid x:Name="InputBox" Visibility="Collapsed" Margin="0,0,0,0.333">
             <Grid Background="Black" Opacity="0.5"/>
@@ -46,8 +47,8 @@
             VerticalAlignment="Center">
                 <StackPanel>
                     <StackPanel>
-                        <TextBlock Margin="5" Text="Wpisz ilość dni do planwoanego kontaktu:" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtDniPlanKontakt"/>
-                        <TextBlock Margin="5" Text="Wpisz minimalną liczbę dni od ostatniego kontaktu:" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtDniOstatniKontakt"/>
+                        <TextBlock Margin="5" Text="Wpisz ilość dni do planwoanego kontaktu:" FontWeight="SemiBold" Foreground="White"  Visibility="Collapsed" x:Name="txtDniPlanKontakt"/>
+                        <TextBlock Margin="5" Text="Wpisz minimalną liczbę dni od ostatniego kontaktu:" FontWeight="SemiBold" Foreground="White"  Visibility="Collapsed" x:Name="txtDniOstatniKontakt"/>
                         <TextBlock Margin="5" Text="Wybierz status klienta:" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtStatus"/>
                         <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="txtBoxDniPlanKontakt"  Visibility="Collapsed" Background="#FFDAFAFF" BorderBrush="#FF006674"/>
                         <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="txtBoxDniOstatniKontakt"  Visibility="Collapsed" Background="#FFDAFAFF" BorderBrush="#FF006674"/>
@@ -60,6 +61,6 @@
                 </StackPanel>
             </Border>
         </Grid>
-        <Button x:Name="buttonAktualizujPlanKontakt" Content="Aktualizuj planowany konatkt" HorizontalAlignment="Left" Margin="345,499,0,0" VerticalAlignment="Top" Width="210" Height="30" FontSize="14" Click="buttonAktualizujDate_Click"/>
+        <Button x:Name="buttonAktualizujPlanKontakt" Content="Aktualizuj planowany konatkt" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="288,514,0,0" VerticalAlignment="Top" Width="267" Height="35" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonAktualizujDate_Click"/>
     </Grid>
 </Window>
