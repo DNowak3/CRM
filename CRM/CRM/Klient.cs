@@ -194,6 +194,15 @@ namespace CRM
             List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.Data.CompareTo(d) >= 0));
             return dzialania.Count() == 0 ? null : dzialania;
         }
+        /// <summary>
+        /// Wyszukuje wszytskie przyszłe działania.
+        /// </summary>
+        /// <returns>Zwraca listę przyszłych działań</returns>
+        public List<Dzialanie> ZnajdzPlanowaneDzialania()
+        {
+            List<Dzialanie> dzialania = new List<Dzialanie>(_dzialania.ToList().Where(x => x.Data.CompareTo(DateTime.Today) >= 0));
+            return dzialania.Count() == 0 ? null : dzialania;
+        }
 
         /// <summary>
         /// Wyszukuje wszystkie kontakty danego pracownika z klientem.

@@ -5,40 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="DzialanieWindow" Height="411.307" Width="761.306">
-    <Grid Margin="0,0,4.2,0" Height="381" VerticalAlignment="Top">
+        Title="DzialanieWindow" Height="286.783" Width="761.306">
+    <Grid Margin="0,0,4.2,0" Height="248" VerticalAlignment="Top">
         <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="33,16,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labPracownik' Content="Pracownik" HorizontalAlignment="Left" Height="32" Margin="33,134,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
         <Label x:Name='labData' Content="Data:" HorizontalAlignment="Left" Height="32" Margin="33,54,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labOsKont' Content="Osoba kontaktowa:" HorizontalAlignment="Left" Height="32" Margin="33,91,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labWynik' Content="Wynik" HorizontalAlignment="Left" Height="32" Margin="33,166,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
-        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="32" Margin="33,203,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name='labWynik' Content="Wynik" HorizontalAlignment="Left" Height="32" Margin="33,91,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
+        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="32" Margin="33,128,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
         <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="177,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
         <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="32" Margin="177,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
-        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="32" Margin="177,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
-        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="506,254,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" />
-        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="604,254,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" />
-        <ComboBox x:Name="cmboxPracownik" HorizontalAlignment="Left" Height="32" Margin="177,129,0,0" VerticalAlignment="Top" Width="520">
-        </ComboBox>
-        <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="177,166,0,0" VerticalAlignment="Top" Width="520">
-            <ComboBoxItem Content="skontaktowano" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="umowiono" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="ukonczono" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="anulowano" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="zaplanowano" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="zaplata" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="wygrana" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="przegrana" HorizontalAlignment="Left" Width="463.2"/>
-        </ComboBox>
-        <ComboBox x:Name="cmboxBranze_Copy" HorizontalAlignment="Left" Height="32" Margin="177,91,0,0" VerticalAlignment="Top" Width="520">
-            <ComboBoxItem Content="IT" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Finanse" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Elektronika" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Telekomunikacja" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Motoryzacja" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Media" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Energetyka" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Inne" HorizontalAlignment="Left" Width="463.2"/>
+        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="32" Margin="177,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="520"/>
+        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="506,179,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" />
+        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="604,179,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" />
+        <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="177,91,0,0" VerticalAlignment="Top" Width="520">
+           
         </ComboBox>
 
     </Grid>

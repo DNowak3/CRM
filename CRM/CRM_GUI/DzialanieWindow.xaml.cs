@@ -25,6 +25,7 @@ namespace CRM_GUI
         {
             _d = new Dzialanie();
             InitializeComponent();
+            cmbokWynik.ItemsSource = Enum.GetValues(typeof(WynikDzialania));
         }
 
         public DzialanieWindow(Dzialanie d) : this()
@@ -32,6 +33,7 @@ namespace CRM_GUI
             _d = d;
             txtData.Text = _d.Data.ToString();
             txtNazwa.Text = _d.Nazwa;
+            cmbokWynik.SelectedItem = _d.Wynik;
             txtOpis.Text = _d.Opis;
         }
 
@@ -41,7 +43,8 @@ namespace CRM_GUI
             {
                 _d.Nazwa = txtNazwa.Text;
                 _d.Opis = txtOpis.Text;
-
+                Enum.TryParse<WynikDzialania>(cmbokWynik.SelectedValue.ToString(), out WynikDzialania w);
+                _d.Wynik = w;
                 DateTime.TryParseExact(txtData.Text, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime d);
                 _d.Data = d;
                 DialogResult = true;

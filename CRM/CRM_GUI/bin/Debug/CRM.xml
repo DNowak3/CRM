@@ -71,6 +71,15 @@
             <param name="nazwa">Nazwa dzialania</param>
             <param name="data">Data dzialania</param>
         </member>
+        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania,System.String)">
+            <summary>
+            Konstruktor z dodatkowym parametrem wynik dzialania
+            </summary>
+            <param name="nazwa"></param>
+            <param name="data"></param>
+            <param name="wynik"></param>
+            /// <param name="opis"></param>
+        </member>
         <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.Pracownik,CRM.OsobaKontakt,CRM.WynikDzialania)">
             <summary>
             Bardziej szczegolowy konstruktor, wywoluje poprzedni.
@@ -259,6 +268,12 @@
             </summary>
             <param name="dataOd">Data, od ktorej zaczynaja byc szukane dzialania</param>
             <returns>Lista dzialan od podanej daty do dziś</returns>
+        </member>
+        <member name="M:CRM.Klient.ZnajdzPlanowaneDzialania">
+            <summary>
+            Wyszukuje wszytskie przyszłe działania.
+            </summary>
+            <returns>Zwraca listę przyszłych działań</returns>
         </member>
         <member name="M:CRM.Klient.ZnajdzDzialania(CRM.Pracownik)">
             <summary>

@@ -4,7 +4,7 @@
   <Nazwa>Allegro</Nazwa>
   <Branza>Inne</Branza>
   <Kraj>Polska</Kraj>
-  <Miasto>miasto</Miasto>
+  <Miasto>Warszawa</Miasto>
   <Adres />
   <KodPocztowy />
   <Notatki />
@@ -127,10 +127,12 @@
         <Dzialanie>
           <Nazwa>dzialanie 1</Nazwa>
           <Data>2020-12-28T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>dzialanie 2</Nazwa>
           <Data>2020-12-18T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>
@@ -184,7 +186,7 @@
       </ListaKontaktow>
       <TransakcjeList>
         <Umowa>
-          <NrUmowy>U/29-Dec-20/201</NrUmowy>
+          <NrUmowy>U/29.12.2020/201</NrUmowy>
           <DataUmowy>2020-12-29T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
@@ -220,24 +222,65 @@
         <Dzialanie>
           <Nazwa>dzialanie 2</Nazwa>
           <Data>2020-12-18T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>dzialanie 1</Nazwa>
           <Data>2020-12-28T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Umówienie na spotkanie</Nazwa>
           <Data>2020-12-08T00:00:00</Data>
           <Opis> </Opis>
+          <Pracownik>
+            <Imie>Adam</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Anna</Imie>
+            <Nazwisko>Wiatr</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>123456789</Telefon>
+            <Mail>awiatr@gmail.com</Mail>
+          </OsobaKontaktowa>
+          <Wynik>umowiono</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Sprzedaż towarów</Nazwa>
           <Data>2020-12-08T00:00:00</Data>
           <Opis> </Opis>
+          <Pracownik>
+            <Imie>Adam</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Anna</Imie>
+            <Nazwisko>Wiatr</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>123456789</Telefon>
+            <Mail>awiatr@gmail.com</Mail>
+          </OsobaKontaktowa>
+          <Wynik>ukonczono</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Negocjacje</Nazwa>
           <Data>2020-12-01T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>
@@ -260,6 +303,7 @@
         <Dzialanie>
           <Nazwa>Wpłata za zamówienie</Nazwa>
           <Data>2020-12-28T00:00:00</Data>
+          <Wynik>skontaktowano</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>

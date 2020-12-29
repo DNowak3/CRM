@@ -48,9 +48,9 @@ namespace CRM
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
         public DateTime Data { get => _data; set => _data = value; }
         public string Opis { get => _opis; set => _opis = value; }
-        internal Pracownik Pracownik { get => _pracownik; set => _pracownik = value; }
-        internal OsobaKontakt OsobaKontaktowa { get => _osobaKontaktowa; set => _osobaKontaktowa = value; }
-        internal WynikDzialania Wynik { get => _wynik; set => _wynik = value; }
+        public Pracownik Pracownik { get => _pracownik; set => _pracownik = value; }
+        public OsobaKontakt OsobaKontaktowa { get => _osobaKontaktowa; set => _osobaKontaktowa = value; }
+        public WynikDzialania Wynik { get => _wynik; set => _wynik = value; }
 
         /// <summary>
         /// konstruktor nieparametryczny
@@ -71,6 +71,18 @@ namespace CRM
             string[] formatyDaty = { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" };
             DateTime.TryParseExact(data, formatyDaty, null, System.Globalization.DateTimeStyles.None, out DateTime d);
             Data = d;
+        }
+        /// <summary>
+        /// Konstruktor z dodatkowym parametrem wynik dzialania
+        /// </summary>
+        /// <param name="nazwa"></param>
+        /// <param name="data"></param>
+        /// <param name="wynik"></param>
+        /// /// <param name="opis"></param>
+        public Dzialanie(string nazwa, string data, WynikDzialania wynik, string opis) : this(nazwa, data)
+        {
+            Wynik = wynik;
+            Opis = opis;
         }
 
         /// <summary>
@@ -111,12 +123,8 @@ namespace CRM
         public override string ToString()
         {
             string napis = $"{Data.ToString("dd.MM.yyyy")} - {Nazwa}";
-            if (Pracownik == null)
-            {
-                return napis;
-            }
-            napis += Pracownik == null ? null : $"\n             Pracownik: {Pracownik.ToString()}";
-            napis += OsobaKontaktowa == null ? null : $"\n             Skontaktowano z: {OsobaKontaktowa.ToString()}";
+            //napis += Pracownik == null ? null : $"\n             Pracownik: {Pracownik.ToString()}";
+            //napis += OsobaKontaktowa == null ? null : $"\n             Skontaktowano z: {OsobaKontaktowa.ToString()}";
             napis += Opis == null ? null : $"\n             Opis: {Opis}";
             napis += $"\n             Wynik: {Wynik}";
             return napis;
@@ -129,16 +137,15 @@ namespace CRM
         public object Clone()
         {
             Dzialanie d = new Dzialanie(Nazwa, Data.ToString("dd.MM.yyyy"));
-            if (Pracownik == null) { }
-            else
+            d.Wynik = Wynik;
+            if (Opis != null)
+            {
+                d.Opis = Opis;
+            }
+            if (Pracownik != null) 
             {
                 d.Pracownik = (Pracownik)Pracownik.Clone();
                 d.OsobaKontaktowa = (OsobaKontakt)OsobaKontaktowa.Clone();
-                d.Wynik = Wynik;
-                if (Opis != null)
-                {
-                    d.Opis = Opis;
-                }
             }
             return d;
         }

@@ -27,6 +27,7 @@ namespace CRM_GUI
         {
             InitializeComponent();
             _k = klient;
+            textblockNazwaFirmy.Text = _k.Nazwa.ToUpper();
             lstKontakty.ItemsSource = new ObservableCollection<OsobaKontakt>(_k.ListaKontaktow);
         }
 
