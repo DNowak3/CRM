@@ -28,7 +28,6 @@ namespace CRM_GUI
         {
             InitializeComponent();
             _orgCRM = orgCRM;
-            _orgCRM.AktualizujStatusKlientow();
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
             textblockLiczbaKlientow.Text = _orgCRM.PodajIloscKlientow().ToString();
         }

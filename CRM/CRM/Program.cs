@@ -341,43 +341,75 @@ namespace CRM
 
 
 
-            //Stworzenie przykladowego pliku organizacji Nasza.xml ze wszystkimi informacjami
-            nasza.DodajPracownika(p1);
-            nasza.DodajPracownika(p2);
-            nasza.DodajPracownika(new Pracownik("adam", "nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020"));
-            nasza.DodajPracownika(new Pracownik("adam", "jan", Plcie.M, Stanowiska.konsultant, "21-11-2020"));
-            nasza.DodajPracownika(new Pracownik("lewa", "kowalski", Plcie.K, Stanowiska.konsultant, "21-11-2020"));
+            //Stworzenie przykladowego pliku organizacji NaszaOrganizacja.xml ze wszystkimi informacjami do wykorzystania w GUI
+            OrgProwadzacaCRM NaszaFirma = new OrgProwadzacaCRM("Allegro", Branże.Inne, "454-454-56-56", "Polska", "Poznań", "ul. Szeroka 1", "30-250", "Najpopularniejszy serwis aukcyjny w Polsce", "01.01.1999");
+            NaszaFirma.DodajPracownika(new Pracownik("Adam", "Nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020", "123-456-789", "a.nowak@gmail.com"));
+            NaszaFirma.DodajPracownika(new Pracownik("Witold", "Kowalski", Plcie.M, Stanowiska.konsultant, "21-10-2020", "123-400-789", "w.kowalski@gmail.com", "Spóźnia się do pracy"));
+            NaszaFirma.DodajPracownika(new Pracownik("Julia", "Kot", Plcie.K, Stanowiska.sekretariat, "01.01-2020", "100-400-789", "j.kot@gmail.com"));
+            NaszaFirma.DodajPracownika(new Pracownik("Anna", "Lis", Plcie.K, Stanowiska.sprzedawca, "01.01-2019", "100-400-300", "a.lis@gmail.com", "Sumienny pracownik"));
 
-            nasza.DodajKonkurenta(k);
-            nasza.DodajKonkurenta(k2);
+            nasza.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
+            nasza.DodajKonkurenta(new Konkurent("Wish", Branże.Inne));
             nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
+            nasza.DodajKonkurenta(new Konkurent("Media Expert", Branże.Elektronika));
 
-            Klient fb = new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Wazny klient", Status.stały);
-            Dzialanie d_1 = new Dzialanie("dzialanie 1", "28.12.2020");
-            Dzialanie d_2 = new Dzialanie("dzialanie 2", "18.12.2020");
+            Klient fb = new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Ważny klient", Status.stały);
+            Klient castorama = new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były);
+            Klient olek = new Klient("Olek-Moto", Branże.Motoryzacja, "789-789-89-89", "Polska", "Warszawa", "12.04.2002", "25.01.2021", "", Status.stały);
+            Klient OLX = new Klient("OLX", Branże.Inne, "123-123-78-78", "Polska", "Kraków", "02.04.2001", "26.01.2021", "", Status.nowy);
+            Klient tax = new Klient("Biuro podatkowe TAX", Branże.Finanse, "123-456-96-96", "Polska", "Lublin", "02.04.2001", "13.01.2021", "", Status.były);
 
-            fb.DodajDzialanie(d_2);
+
+            Dzialanie d_1 = new Dzialanie("Pożyczka", "28.12.2020", WynikDzialania.ukonczono, "Zawarcie pożcyzki na kwotę 10 000 zł");
+            Dzialanie d_2 = new Dzialanie("Spotkanie", "18.12.2020", WynikDzialania.anulowano, "Klient anulował spotkanie");
+            Dzialanie d_3 = new Dzialanie("Konferencja", "11.10.2020", WynikDzialania.ukonczono, "Konferencja w ważnej sprawie");
+            Dzialanie d_4 = new Dzialanie("Podpisanie umowy", "27.02.2021", WynikDzialania.zaplanowano, "Zaplanowano podpisanie umowy najmu nowego lokalu");
+            Dzialanie d_5 = new Dzialanie("Zapłata za zamówienie", "06.11.2019");
+            Dzialanie d_6 = new Dzialanie("Zapłata za usługi", "18.03.2019");
+            Dzialanie d_7 = new Dzialanie("Rozmowa telefoniczna", "18.12.2020");
+            Dzialanie d_8 = new Dzialanie("Spłata raty pożyczki", "10.02.2021", WynikDzialania.zaplanowano, "");
+
+            OsobaKontakt o_1 = new OsobaKontakt("Patrycja", "Sosna", Plcie.K, Stanowiska.dyrekcja, "123-456-789", "p.sosna@gmail.com");
+            OsobaKontakt o_2 = new OsobaKontakt("Piotr", "Drwal", Plcie.K, Stanowiska.konsultant, "123-456-789", "p.sosna@gmail.com");
+            OsobaKontakt o_3 = new OsobaKontakt("Karol", "Lasowski", Plcie.K, Stanowiska.sekretariat, "123-456-789", "p.sosna@gmail.com");
+            OsobaKontakt o_4 = new OsobaKontakt("Mateusz", "Piotrowski", Plcie.K, Stanowiska.sprzedawca, "123-456-789", "p.sosna@gmail.com");
+            OsobaKontakt o_5 = new OsobaKontakt("Kinga", "Brzoza", Plcie.K, Stanowiska.sekretariat, "123-456-789", "p.sosna@gmail.com");
+
             fb.DodajDzialanie(d_1);
-            LG.DodajDzialanie(d_1);
-            LG.DodajDzialanie(d_2);
-            LG.DodajTransakcje(u1);
+            fb.DodajDzialanie(d_2);
+            fb.DodajDzialanie(d_8);
+            castorama.DodajDzialanie(d_4);
+            castorama.DodajDzialanie(d_3);
+            olek.DodajDzialanie(d_5);
+            OLX.DodajDzialanie(d_6);
+            tax.DodajDzialanie(d_7);
+            MoneyPL.DodajDzialanie(d_3);
 
-            nasza.DodajKlienta(fb);
-            nasza.DodajKlienta(new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były));
-            nasza.DodajKlienta(LG);
-            nasza.DodajKlienta(MoneyPL);
-            nasza.DodajKlienta(new Klient("Olek-Moto", Branże.Motoryzacja));
+            MoneyPL.DodajKontakt(o_5);
+            fb.DodajKontakt(o_1);
+            castorama.DodajKontakt(o_2);
+            castorama.DodajKontakt(o_3);
+            olek.DodajKontakt(o_4);
+            OLX.DodajKontakt(o_5);
+            tax.DodajKontakt(o_2);
 
-            nasza.DodajProdukt(pr1);
-            nasza.DodajProdukt(pr2);
-            nasza.DodajProdukt(pr3);
-            nasza.ZapiszXML("Nasza.xml");
+            NaszaFirma.DodajKlienta(fb);
+            NaszaFirma.DodajKlienta(castorama);
+            NaszaFirma.DodajKlienta(tax);
+            NaszaFirma.DodajKlienta(olek);
+            NaszaFirma.DodajKlienta(OLX);
+            NaszaFirma.DodajKlienta(MoneyPL);
+
+            NaszaFirma.DodajProdukt(pr1);
+            NaszaFirma.DodajProdukt(pr2);
+            NaszaFirma.DodajProdukt(pr3);
+            NaszaFirma.ZapiszXML("NaszaFirma.xml");
 
             try
             {
-                nasza.ZapiszXML("Nasza.xml");
+                NaszaFirma.ZapiszXML("NaszaFirma.xml");
                 Console.WriteLine("Odczyt z pliku XML:");
-                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("Nasza.xml"));
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("NaszaFirma.xml"));
             }
             catch (Exception ex)
             {

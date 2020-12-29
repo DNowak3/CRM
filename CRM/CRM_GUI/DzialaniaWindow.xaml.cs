@@ -120,7 +120,7 @@ namespace CRM_GUI
                     lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.ZnajdzPlanowaneDzialania());
                     break;
 
-                case "Działanie od podanej daty":
+                case "Działania od podanej daty":
                     txtBoxData.Visibility = System.Windows.Visibility.Visible;
                     txtData.Visibility = System.Windows.Visibility.Visible;
                     InputBox.Visibility = System.Windows.Visibility.Visible;

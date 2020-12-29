@@ -9,7 +9,7 @@
     <Grid>
         <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="80" VerticalAlignment="Top" Margin="0,-2,-0.4,0"/>
 
-        <ListBox x:Name="lstKontakty" HorizontalAlignment="Left" Height="301" Margin="23,99,0,0" VerticalAlignment="Top" Width="500"/>
+        <ListBox x:Name="lstKontakty" HorizontalAlignment="Left" Height="301" Margin="23,99,0,0" VerticalAlignment="Top" Width="500" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
         <TextBlock x:Name="textblockNazwaFirmy" HorizontalAlignment="Left" Height="34" Margin="23,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="500" FontSize="25" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
         <ComboBox x:Name="cmbboxSortuj" HorizontalAlignment="Left" Height="29" Margin="570,139,0,0" VerticalAlignment="Top" Width="195" FontSize="18" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="SemiBold" >
             <ComboBoxItem Content="Alfabetycznie: od A do Z" HorizontalAlignment="Left" Width="185" FontSize="15"/>
