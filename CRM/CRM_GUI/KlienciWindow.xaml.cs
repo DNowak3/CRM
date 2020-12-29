@@ -238,11 +238,13 @@ namespace CRM_GUI
                     case "Działania":
                         DzialaniaWindow okno_1 = new DzialaniaWindow(k);
                         okno_1.ShowDialog();
+                        lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
                         break;
 
                     case "Osoby do kontaktu":
                         OsobyKontaktoweWindow okno_2 = new OsobyKontaktoweWindow(k);
                         okno_2.ShowDialog();
+                        lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
                         break;
 
                     case "Transakcje":

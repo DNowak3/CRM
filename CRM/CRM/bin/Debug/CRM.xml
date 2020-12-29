@@ -306,6 +306,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:CRM.Klient.IleKontaktow">
+            <summary>
+            Oblicza liczbe osob do kontaktu z klientem;
+            </summary>
+            <returns>Liczba osob na liscie kontaktow</returns>
+        </member>
         <member name="M:CRM.Klient.DodajKontakt(CRM.OsobaKontakt)">
             <summary>
             Dodaje osobe do listy kontaktow z firma.
