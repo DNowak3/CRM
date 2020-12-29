@@ -46,7 +46,9 @@ namespace CRM
             }
             set
             {
-                if (wzorNip.IsMatch(value))
+                if(value == null)
+                    nip = "000-000-00-00";
+                else if (wzorNip.IsMatch(value))
                     nip = value;
                 else
                     nip = "000-000-00-00";
