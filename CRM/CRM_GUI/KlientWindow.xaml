@@ -24,20 +24,10 @@
         <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="421,372,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click"/>
         <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="519,372,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click"/>
         <ComboBox x:Name="cmboxBranze" HorizontalAlignment="Left" Height="32" Margin="177,53,0,0" VerticalAlignment="Top" Width="435">
-            <ComboBoxItem Content="IT" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Finanse" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Elektronika" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Telekomunikacja" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Motoryzacja" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Media" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Energetyka" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Inne" HorizontalAlignment="Left" Width="463.2"/>
+            
         </ComboBox>
         <ComboBox x:Name="cmboxStatus" HorizontalAlignment="Left" Height="32" Margin="177,239,0,0" VerticalAlignment="Top" Width="435">
-            <ComboBoxItem Content="Stały" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Były" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Nowy" HorizontalAlignment="Left" Width="463.2"/>
-            <ComboBoxItem Content="Potencjalny" HorizontalAlignment="Left" Width="463.2"/>
+
         </ComboBox>
         <Label x:Name='labPlanKontakt' Content="Planowany kontakt:" HorizontalAlignment="Left" Height="32" Margin="33,276,0,0" VerticalAlignment="Top" Width="139" FontSize="14" />
         <TextBox x:Name="txtPlanKontakt" HorizontalAlignment="Left" Height="32" Margin="177,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435"/>

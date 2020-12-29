@@ -25,6 +25,8 @@ namespace CRM_GUI
         {
             k = new Klient();
             InitializeComponent();
+            cmboxBranze.ItemsSource = Enum.GetValues(typeof(Branże));
+            cmboxStatus.ItemsSource = Enum.GetValues(typeof(Status));
         }
 
         public KlientWindow(Klient klient) : this()

@@ -86,7 +86,6 @@ namespace CRM_GUI
                 {
                     _orgCRM.DodajKlienta(klon);
                     _orgCRM.UsunKlienta(k);
-                    textblockLiczbaKlientow.Text = _orgCRM.PodajIloscKlientow().ToString();
                     lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
                 }
             }

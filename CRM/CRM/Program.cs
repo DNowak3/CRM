@@ -14,7 +14,7 @@ namespace CRM
         {
             //Stworzenie głównej organizacji
             Console.WriteLine("\t\t\tGŁÓWNA ORGANIZACJA");
-            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Branże.Inne,"123","Polska","miasto","2000-12-12");
+            OrgProwadzacaCRM nasza=new OrgProwadzacaCRM("Allegro",Branże.Inne,"123","Polska","Warszawa","2000-12-12");
             OrgProwadzacaCRM klonowana1 = (OrgProwadzacaCRM)nasza.Clone();
 
             //Stworzenie pracownikow

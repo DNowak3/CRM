@@ -22,7 +22,7 @@
             <ComboBoxItem Content="Status" HorizontalAlignment="Left" Width="165.6" FontSize="13"/>
         </ComboBox>
         <Button x:Name="buttonDodaj" Content="Dodaj klienta" HorizontalAlignment="Left" Margin="590,383,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonDodaj_Click"/>
-        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,418,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" />
+        <Button x:Name="buttonUsun" Content="Usuń klienta" HorizontalAlignment="Left" Margin="590,418,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonUsun_Click" />
         <Button x:Name="buttonSzczegoly" Content="Pokaż szczegóły" HorizontalAlignment="Left" Margin="590,236,0,0" VerticalAlignment="Top" Width="177" Height="30" FontSize="14" Click="buttonSzczegoly_Click"/>
         <Label x:Name="labelLiczbaKlinetow" Content="W sumie:" HorizontalAlignment="Left" Height="40" Margin="412,22,0,0" VerticalAlignment="Top" Width="91" FontSize="18"/>
         <TextBlock x:Name="textblockLiczbaKlientow" HorizontalAlignment="Left" Height="40" Margin="503,22,0,0" VerticalAlignment="Top" Width="52" FontSize="18"/>
