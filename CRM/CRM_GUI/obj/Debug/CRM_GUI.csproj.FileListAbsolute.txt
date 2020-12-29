@@ -159,3 +159,11 @@ C:\Users\Magda\Desktop\v5\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCompileInputs
 C:\Users\Magda\Desktop\v5\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
 C:\Users\Magda\Desktop\v5\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
 C:\Users\Magda\Desktop\v5\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\DzialanieWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KonkurenciWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KonkurentWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\OsobaKontaktowaWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\DzialanieWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KonkurenciWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\KonkurentWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\OsobaKontaktowaWindow.baml

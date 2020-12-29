@@ -59,6 +59,11 @@
             Wlasciwosci.
             </summary>
         </member>
+        <member name="M:CRM.Dzialanie.#ctor">
+            <summary>
+            konstruktor nieparametryczny
+            </summary>
+        </member>
         <member name="M:CRM.Dzialanie.#ctor(System.String,System.String)">
             <summary>
             Podstawowy konstruktor parametryczny.
@@ -166,6 +171,16 @@
         <member name="F:CRM.Klient._uwagi">
             <summary>
             Uwagi dotyczace klienta.
+            </summary>
+        </member>
+        <member name="F:CRM.Klient._transakcjeList">
+            <summary>
+            Zmienna pomocnicza, do serializacji transakcji.
+            </summary>
+        </member>
+        <member name="F:CRM.Klient._dzialaniaList">
+            <summary>
+            Zmienna pomocnicza do serializacji dzialan.
             </summary>
         </member>
         <member name="M:CRM.Klient.#ctor">
@@ -356,6 +371,12 @@
             Jesli ostatni kontakt z klientem byl wiecej niz 2 tygodnie temu, to ustalana jest na dzien dzisiejszy.
             </summary>
         </member>
+        <member name="M:CRM.Klient.ToString">
+            <summary>
+            Tworzy czytelny dla czlowieka opis klienta.
+            </summary>
+            <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
+        </member>
         <member name="M:CRM.Klient.WypiszTransakcje">
             <summary>
             Meotda tworzy czytelna, tekstowa reprezentacje wszystkich transakcji z klientem i wypisuje je na konsoli.
@@ -365,16 +386,6 @@
             <summary>
             Metoda wypisuje na konsoli w czytelny sposob wszystkie kontakty i dzialania podjete wobec klienta.
             </summary>
-        </member>
-        <member name="M:CRM.Klient.SortujKontakty(System.Boolean)">
-            <summary>
-            Metoda sortujaca malejaco lub rosnaco liste kontaktow wg nazwisk.
-            </summary>
-            <param name="malejaco">
-            Jesli parametr przyjmie wartosc falsz, to kontakty sa sortowane nazwiskami od A do Z.
-            Jesli otrzyma wartosc prawda, to kontakty sa sortowane od Z do A.
-            Domyslnie falsz.
-            </param>
         </member>
         <member name="M:CRM.Klient.WypiszKontakty">
             <summary>
@@ -391,11 +402,31 @@
             Domyslnie prawda.
             </param>
         </member>
-        <member name="M:CRM.Klient.ToString">
+        <member name="M:CRM.Klient.SortujKontakty(System.Boolean)">
             <summary>
-            Tworzy czytelny dla czlowieka opis klienta.
+            Metoda sortujaca malejaco lub rosnaco liste kontaktow wg nazwisk.
             </summary>
-            <returns>Zwraca ciag znakow bedacy opisem danego klienta</returns>
+            <param name="malejaco">
+            Jesli parametr przyjmie wartosc falsz, to kontakty sa sortowane nazwiskami od A do Z.
+            Jesli otrzyma wartosc prawda, to kontakty sa sortowane od Z do A.
+            Domyslnie falsz.
+            </param>
+        </member>
+        <member name="M:CRM.Klient.Clone">
+            <summary>
+            Metoda tworzy obiekt klasy klient bedacy kopia biezacego klienta.
+            </summary>
+            <returns>Zwraca nowego klienta bedacego kopia biezacego</returns>
+        </member>
+        <member name="M:CRM.Klient.StosDoListy">
+            <summary>
+            Metoda pomocnicza zapisujaca dane ze stosow do list po serializacji.
+            </summary>
+        </member>
+        <member name="M:CRM.Klient.ListaDoStosu">
+            <summary>
+            Metoda pomocnicza zapisujaca dane z list do stosow po deserializacji.
+            </summary>
         </member>
         <member name="M:CRM.Klient.ZapiszXML(System.String)">
             <summary>

@@ -28,3 +28,11 @@ D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\CRM_GUI.csproj.GenerateResource.cache
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\CRM_GUI.csproj.CopyComplete
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\CRM_GUI.exe
 D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\CRM_GUI.pdb
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\DzialanieWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\KonkurenciWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\KonkurentWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\OsobaKontaktowaWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\DzialanieWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\KonkurenciWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\KonkurentWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Release\OsobaKontaktowaWindow.baml

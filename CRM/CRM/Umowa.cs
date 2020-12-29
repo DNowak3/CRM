@@ -17,13 +17,19 @@ namespace CRM
         DateTime _dataUmowy;
         Pracownik _pracownikOdp;
         static int _aktualnyNumer;
+        [NonSerialized]
         Dictionary<Produkt, double> _kupioneProdukty;
+        List<Produkt> _listaKupionychProduktow;
+        List<double> _ilosciKupionychProduktow;
 
         #region Właściwości
         public string NrUmowy { get => _nrUmowy; set => _nrUmowy = value; }
         public DateTime DataUmowy { get => _dataUmowy; set => _dataUmowy = value; }
         public Pracownik PracownikOdp { get => _pracownikOdp; set => _pracownikOdp = value; }
-        public Dictionary<Produkt, double> KupioneProdukty { get => _kupioneProdukty; set => _kupioneProdukty = value; }
+        
+        internal Dictionary<Produkt, double> KupioneProdukty { get => _kupioneProdukty; set => _kupioneProdukty = value; }
+        public List<Produkt> ListaKupionychProduktow { get => _listaKupionychProduktow; set => _listaKupionychProduktow = value; }
+        public List<double> IlosciKupionychProduktow { get => _ilosciKupionychProduktow; set => _ilosciKupionychProduktow = value; }
         #endregion
 
         #region Konstruktory
@@ -34,6 +40,8 @@ namespace CRM
         public Umowa()
         {
             KupioneProdukty = new Dictionary<Produkt, double>();
+            ListaKupionychProduktow = new List<Produkt>();
+            IlosciKupionychProduktow = new List<double>();
             _nrUmowy = string.Empty;
             DataUmowy = DateTime.Today;
             PracownikOdp = null;

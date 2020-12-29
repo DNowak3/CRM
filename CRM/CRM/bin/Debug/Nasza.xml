@@ -57,16 +57,19 @@
       <Nazwa>Papier kancelaryjny</Nazwa>
       <Cena>10.5</Cena>
       <Jednostka>kg</Jednostka>
+      <Kod>P20201</Kod>
     </Produkt>
     <Produkt>
       <Nazwa>Materiały biurowe</Nazwa>
       <Cena>5.6</Cena>
       <Jednostka>szt</Jednostka>
+      <Kod>M20202</Kod>
     </Produkt>
     <Produkt>
       <Nazwa>Komputer</Nazwa>
       <Cena>1000</Cena>
       <Jednostka>szt</Jednostka>
+      <Kod>K20203</Kod>
     </Produkt>
   </ListaProduktow>
   <ListaKonkurentow>
@@ -118,6 +121,18 @@
       <DataPlanowanegoKontaktu>2021-01-12T00:00:00</DataPlanowanegoKontaktu>
       <Uwagi>Wazny klient</Uwagi>
       <Status>stały</Status>
+      <ListaKontaktow />
+      <TransakcjeList />
+      <DzialaniaList>
+        <Dzialanie>
+          <Nazwa>dzialanie 1</Nazwa>
+          <Data>2020-12-28T00:00:00</Data>
+        </Dzialanie>
+        <Dzialanie>
+          <Nazwa>dzialanie 2</Nazwa>
+          <Data>2020-12-18T00:00:00</Data>
+        </Dzialanie>
+      </DzialaniaList>
     </Klient>
     <Klient>
       <Nip>456-457-56-56</Nip>
@@ -132,6 +147,9 @@
       <DataPlanowanegoKontaktu>2021-01-10T00:00:00</DataPlanowanegoKontaktu>
       <Uwagi />
       <Status>były</Status>
+      <ListaKontaktow />
+      <TransakcjeList />
+      <DzialaniaList />
     </Klient>
     <Klient>
       <Nip>121-252-15-14</Nip>
@@ -146,6 +164,82 @@
       <DataPlanowanegoKontaktu>2020-12-15T00:00:00</DataPlanowanegoKontaktu>
       <Uwagi />
       <Status>nowy</Status>
+      <ListaKontaktow>
+        <OsobaKontakt>
+          <Imie>Anna</Imie>
+          <Nazwisko>Lis</Nazwisko>
+          <Plec>K</Plec>
+          <Stanowisko>sekretariat</Stanowisko>
+          <Telefon>123456789</Telefon>
+          <Mail>alis@onet.pl</Mail>
+        </OsobaKontakt>
+        <OsobaKontakt>
+          <Imie>Anna</Imie>
+          <Nazwisko>Wiatr</Nazwisko>
+          <Plec>K</Plec>
+          <Stanowisko>sekretariat</Stanowisko>
+          <Telefon>123456789</Telefon>
+          <Mail>awiatr@gmail.com</Mail>
+        </OsobaKontakt>
+      </ListaKontaktow>
+      <TransakcjeList>
+        <Umowa>
+          <NrUmowy>U/29-Dec-20/201</NrUmowy>
+          <DataUmowy>2020-12-29T00:00:00+01:00</DataUmowy>
+          <PracownikOdp>
+            <Imie>Adam</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </PracownikOdp>
+          <ListaKupionychProduktow>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20203</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20203</Kod>
+            </Produkt>
+          </ListaKupionychProduktow>
+          <IlosciKupionychProduktow>
+            <double>4</double>
+            <double>4</double>
+          </IlosciKupionychProduktow>
+        </Umowa>
+      </TransakcjeList>
+      <DzialaniaList>
+        <Dzialanie>
+          <Nazwa>dzialanie 2</Nazwa>
+          <Data>2020-12-18T00:00:00</Data>
+        </Dzialanie>
+        <Dzialanie>
+          <Nazwa>dzialanie 1</Nazwa>
+          <Data>2020-12-28T00:00:00</Data>
+        </Dzialanie>
+        <Dzialanie>
+          <Nazwa>Umówienie na spotkanie</Nazwa>
+          <Data>2020-12-08T00:00:00</Data>
+          <Opis> </Opis>
+        </Dzialanie>
+        <Dzialanie>
+          <Nazwa>Sprzedaż towarów</Nazwa>
+          <Data>2020-12-08T00:00:00</Data>
+          <Opis> </Opis>
+        </Dzialanie>
+        <Dzialanie>
+          <Nazwa>Negocjacje</Nazwa>
+          <Data>2020-12-01T00:00:00</Data>
+        </Dzialanie>
+      </DzialaniaList>
     </Klient>
     <Klient>
       <Nip>124-242-14-11</Nip>
@@ -160,6 +254,14 @@
       <DataPlanowanegoKontaktu>2020-12-01T00:00:00</DataPlanowanegoKontaktu>
       <Uwagi />
       <Status>stały</Status>
+      <ListaKontaktow />
+      <TransakcjeList />
+      <DzialaniaList>
+        <Dzialanie>
+          <Nazwa>Wpłata za zamówienie</Nazwa>
+          <Data>2020-12-28T00:00:00</Data>
+        </Dzialanie>
+      </DzialaniaList>
     </Klient>
     <Klient>
       <Nazwa>Olek-Moto</Nazwa>
@@ -170,6 +272,9 @@
       <DataZalozenia>0001-01-01T00:00:00</DataZalozenia>
       <DataPlanowanegoKontaktu>0001-01-01T00:00:00</DataPlanowanegoKontaktu>
       <Status>potencjalny</Status>
+      <ListaKontaktow />
+      <TransakcjeList />
+      <DzialaniaList />
     </Klient>
   </ListaKlientow>
 </OrgProwadzacaCRM>

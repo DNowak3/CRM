@@ -639,7 +639,16 @@ namespace CRM
             foreach (Klient k in _listaKlientow)
             {
                 k.StosDoListy();
+                foreach (Umowa u in k.TransakcjeList)
+                {
+                    foreach (Produkt key in u.KupioneProdukty.Keys)
+                    {
+                        u.ListaKupionychProduktow.Add(key);
+                        u.IlosciKupionychProduktow.Add(u.KupioneProdukty[key]);
+                    }
+                }
             }
+
             using (StreamWriter sw = new StreamWriter(nazwa))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(OrgProwadzacaCRM));
@@ -664,6 +673,14 @@ namespace CRM
                 foreach (Klient k in o.ListaKlientow)
                 {
                     k.ListaDoStosu();
+                    foreach (Umowa u in k.TransakcjeList)
+                    {
+                        for(int i=0;i< u.IlosciKupionychProduktow.Count();++i)
+                        {
+                            u.KupioneProdukty.Add(u.ListaKupionychProduktow[i], u.IlosciKupionychProduktow[i]);
+                            Console.WriteLine(u.KupioneProdukty);
+                        }
+                    }
                 }
                 return o;
             }

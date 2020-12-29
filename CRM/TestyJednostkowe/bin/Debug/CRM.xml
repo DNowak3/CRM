@@ -252,12 +252,29 @@
             <param name="pracownik">Pracownik, ktorego kontaktow z klientem szukamy</param>
             <returns>Lista kontaktow danego pracownika z klientem</returns>
         </member>
+        <member name="M:CRM.Klient.UsunDzialanie(CRM.Dzialanie)">
+            <summary>
+            Usuwa podane dzialanie z listy dzialan.
+            </summary>
+            <param name="d">Dzialanie do usuniecia</param>
+        </member>
         <member name="M:CRM.Klient.UsunDzialanie(System.String)">
             <summary>
             Usuwa pierwsze wystapienie dzialania o podanej nazwie z listy dzialan.
             </summary>
             <param name="nazwa">Nazwa dzialania, ktore ma zostac usuniete</param>
             <returns>Zwraca prawde, jesli usuniecie powiodlo sie, w przeciwnym wypadku falsz</returns>
+        </member>
+        <member name="M:CRM.Klient.UsunWszystkieDzialania">
+            <summary>
+            Usuwa wszystkie dzialania z listy dzialan.
+            </summary>
+        </member>
+        <member name="M:CRM.Klient.ZwrocDzialania">
+            <summary>
+            Zwraca wszystkie dzialania w formie listy.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:CRM.Klient.DodajKontakt(CRM.OsobaKontakt)">
             <summary>
@@ -332,6 +349,7 @@
         <member name="M:CRM.Klient.AktualizujDatePlanKontaktu">
             <summary>
             Metoda aktualizuje date planowanego kontaktu:
+            Jesli daty nie ma to ustawia ja na dzis.
             Jesli data jest w przyszlosci, to pozostaje bez zmian.
             Jesli data juz minela, to sa dwie mozliwosci:
             Jesli ostatni kontakt z klientem byl mniej niz 2 tygodnie temu, to ustalana jest na dwa tygodnie po ostatnim kontakcie.
@@ -849,6 +867,11 @@
             Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
             </summary>
         </member>
+        <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujDataZalozenia">
+            <summary>
+            Funkcja sortuje wszystkich konkurentów według daty założenia organizacji.
+            </summary>
+        </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajKlienta(CRM.Klient)">
             <summary>
             Funkcja dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
@@ -937,6 +960,11 @@
         <member name="M:CRM.OrgProwadzacaCRM.AktualizujStatusKlientow">
             <summary>
             Metoda aktualizuje statusy wszystkich klientów organizacji
+            </summary>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.AktualizujDatyPlanowanychKontaktow">
+            <summary>
+            Metoda aktualizuje daty planowanych kontaktow ze wszystkimi klientami organizacji
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszXML(System.String)">

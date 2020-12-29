@@ -360,6 +360,7 @@ namespace CRM
             fb.DodajDzialanie(d_1);
             LG.DodajDzialanie(d_1);
             LG.DodajDzialanie(d_2);
+            LG.DodajTransakcje(u1);
 
             nasza.DodajKlienta(fb);
             nasza.DodajKlienta(new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były));
@@ -370,6 +371,7 @@ namespace CRM
             nasza.DodajProdukt(pr1);
             nasza.DodajProdukt(pr2);
             nasza.DodajProdukt(pr3);
+            nasza.ZapiszXML("Nasza.xml");
 
             try
             {

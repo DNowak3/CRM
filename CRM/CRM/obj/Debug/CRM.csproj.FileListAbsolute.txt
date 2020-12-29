@@ -77,8 +77,6 @@ C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.xml
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.exe
 C:\Users\Magda\Desktop\ProjektPO_v3\CRM\CRM\bin\Debug\CRM.pdb
 D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.xml
-D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.CodeAnalysisLog.xml
-D:\GitFork\CRM\CRM\CRM\bin\Debug\CRM.exe.lastcodeanalysissucceeded
 C:\Users\Magda\Desktop\PO_V4\CRM\CRM\bin\Debug\CRM.exe.config
 C:\Users\Magda\Desktop\PO_V4\CRM\CRM\bin\Debug\CRM.xml
 C:\Users\Magda\Desktop\PO_V4\CRM\CRM\bin\Debug\CRM.exe
@@ -103,3 +101,4 @@ C:\Users\Magda\Desktop\v5\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
 C:\Users\Magda\Desktop\v5\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
 C:\Users\Magda\Desktop\v5\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\Magda\Desktop\v5\CRM\CRM\obj\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
