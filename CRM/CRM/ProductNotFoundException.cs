@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM
 {
-    class ProductNotFoundException :Exception
+    public class ProductNotFoundException :Exception
     {
         public ProductNotFoundException() : base() { }
         public ProductNotFoundException(string komunikat) : base(komunikat) { }

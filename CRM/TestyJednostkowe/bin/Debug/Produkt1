@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Produkt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nazwa>Zszywacz</Nazwa>
+  <Cena>15.8</Cena>
+  <Jednostka>szt</Jednostka>
+  <Kod>Z20201</Kod>
+</Produkt>

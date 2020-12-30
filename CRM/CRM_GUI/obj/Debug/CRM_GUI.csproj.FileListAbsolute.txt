@@ -207,3 +207,43 @@ C:\Users\Magda\Desktop\v8\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCompileInputs
 C:\Users\Magda\Desktop\v8\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
 C:\Users\Magda\Desktop\v8\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
 C:\Users\Magda\Desktop\v8\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM_GUI.exe.config
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM_GUI.exe
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM_GUI.pdb
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM.exe
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM.pdb
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM.xml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\bin\Debug\CRM.exe.config
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csprojAssemblyReference.cache
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\DzialanieWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KlienciWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KlientWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KonkurenciWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KonkurentWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\MainWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\OsobaKontaktowaWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\PracownicyWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\PracownikWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\App.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI_MarkupCompile.cache
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI_MarkupCompile.lref
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\DzialaniaWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\DzialanieWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KlienciWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KlientWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KonkurenciWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\KonkurentWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\MainWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\OsobaKontaktowaWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\OsobyKontaktoweWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\PracownicyWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\PracownikWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.g.resources
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.Properties.Resources.resources
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.GenerateResource.cache
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCompileInputs.cache
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb

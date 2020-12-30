@@ -53,6 +53,8 @@
     <Compile Include="TestyDzialanie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestyKlient.cs" />
+    <Compile Include="TestyUmowa.cs" />
+    <Compile Include="TestyProdukt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

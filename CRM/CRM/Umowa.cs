@@ -27,7 +27,7 @@ namespace CRM
         public DateTime DataUmowy { get => _dataUmowy; set => _dataUmowy = value; }
         public Pracownik PracownikOdp { get => _pracownikOdp; set => _pracownikOdp = value; }
         
-        internal Dictionary<Produkt, double> KupioneProdukty { get => _kupioneProdukty; set => _kupioneProdukty = value; }
+        public Dictionary<Produkt, double> KupioneProdukty { get => _kupioneProdukty; set => _kupioneProdukty = value; }
         public List<Produkt> ListaKupionychProduktow { get => _listaKupionychProduktow; set => _listaKupionychProduktow = value; }
         public List<double> IlosciKupionychProduktow { get => _ilosciKupionychProduktow; set => _ilosciKupionychProduktow = value; }
         #endregion
