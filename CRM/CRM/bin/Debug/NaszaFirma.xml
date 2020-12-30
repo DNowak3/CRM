@@ -133,18 +133,18 @@
         <OsobaKontakt>
           <Imie>Piotr</Imie>
           <Nazwisko>Drwal</Nazwisko>
-          <Plec>K</Plec>
+          <Plec>M</Plec>
           <Stanowisko>konsultant</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>p.drwal@gmail.com</Mail>
         </OsobaKontakt>
         <OsobaKontakt>
           <Imie>Karol</Imie>
           <Nazwisko>Lasowski</Nazwisko>
-          <Plec>K</Plec>
+          <Plec>M</Plec>
           <Stanowisko>sekretariat</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>k.lasowski@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
       <TransakcjeList />
@@ -180,10 +180,10 @@
         <OsobaKontakt>
           <Imie>Piotr</Imie>
           <Nazwisko>Drwal</Nazwisko>
-          <Plec>K</Plec>
+          <Plec>M</Plec>
           <Stanowisko>konsultant</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>p.drwal@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
       <TransakcjeList />
@@ -212,10 +212,10 @@
         <OsobaKontakt>
           <Imie>Mateusz</Imie>
           <Nazwisko>Piotrowski</Nazwisko>
-          <Plec>K</Plec>
+          <Plec>M</Plec>
           <Stanowisko>sprzedawca</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>m.piotrowski@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
       <TransakcjeList />
@@ -247,7 +247,7 @@
           <Plec>K</Plec>
           <Stanowisko>sekretariat</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>k.brzoza@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
       <TransakcjeList />
@@ -279,7 +279,7 @@
           <Plec>K</Plec>
           <Stanowisko>sekretariat</Stanowisko>
           <Telefon>123-456-789</Telefon>
-          <Mail>p.sosna@gmail.com</Mail>
+          <Mail>k.brzoza@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
       <TransakcjeList />

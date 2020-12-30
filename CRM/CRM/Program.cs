@@ -370,10 +370,10 @@ namespace CRM
             Dzialanie d_8 = new Dzialanie("Spłata raty pożyczki", "10.02.2021", WynikDzialania.zaplanowano, "");
 
             OsobaKontakt o_1 = new OsobaKontakt("Patrycja", "Sosna", Plcie.K, Stanowiska.dyrekcja, "123-456-789", "p.sosna@gmail.com");
-            OsobaKontakt o_2 = new OsobaKontakt("Piotr", "Drwal", Plcie.K, Stanowiska.konsultant, "123-456-789", "p.sosna@gmail.com");
-            OsobaKontakt o_3 = new OsobaKontakt("Karol", "Lasowski", Plcie.K, Stanowiska.sekretariat, "123-456-789", "p.sosna@gmail.com");
-            OsobaKontakt o_4 = new OsobaKontakt("Mateusz", "Piotrowski", Plcie.K, Stanowiska.sprzedawca, "123-456-789", "p.sosna@gmail.com");
-            OsobaKontakt o_5 = new OsobaKontakt("Kinga", "Brzoza", Plcie.K, Stanowiska.sekretariat, "123-456-789", "p.sosna@gmail.com");
+            OsobaKontakt o_2 = new OsobaKontakt("Piotr", "Drwal", Plcie.M, Stanowiska.konsultant, "123-456-789", "p.drwal@gmail.com");
+            OsobaKontakt o_3 = new OsobaKontakt("Karol", "Lasowski", Plcie.M, Stanowiska.sekretariat, "123-456-789", "k.lasowski@gmail.com");
+            OsobaKontakt o_4 = new OsobaKontakt("Mateusz", "Piotrowski", Plcie.M, Stanowiska.sprzedawca, "123-456-789", "m.piotrowski@gmail.com");
+            OsobaKontakt o_5 = new OsobaKontakt("Kinga", "Brzoza", Plcie.K, Stanowiska.sekretariat, "123-456-789", "k.brzoza@gmail.com");
 
             fb.DodajDzialanie(d_1);
             fb.DodajDzialanie(d_2);

@@ -221,11 +221,8 @@ namespace CRM
         /// <param name="d">Dzialanie do usuniecia</param>
         public void UsunDzialanie(Dzialanie d)
         {
-            if (_dzialania.Contains(d))
-            {
                 _dzialania = new Stack<Dzialanie>(_dzialania.Where(x => x.Nazwa != d.Nazwa || !x.Data.Equals(d.Data)));
                 _dzialania.Reverse();
-            }
         }
 
         /// <summary>

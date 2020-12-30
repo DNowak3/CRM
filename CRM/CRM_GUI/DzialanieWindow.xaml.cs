@@ -31,7 +31,7 @@ namespace CRM_GUI
         public DzialanieWindow(Dzialanie d) : this()
         {
             _d = d;
-            txtData.Text = _d.Data.ToString();
+            txtData.Text = _d.Data.ToString("dd.MM.yyyy");
             txtNazwa.Text = _d.Nazwa;
             cmbokWynik.SelectedItem = _d.Wynik;
             txtOpis.Text = _d.Opis;
@@ -51,6 +51,7 @@ namespace CRM_GUI
             }
             else
             {
+                MessageBox.Show("Dodawanie działania nie powiodło się. Brakuje kluczowych informacji.", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Information);
                 DialogResult = false;
             }
         }

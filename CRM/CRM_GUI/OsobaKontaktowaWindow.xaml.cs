@@ -48,7 +48,8 @@ namespace CRM_GUI
                 _o.Nazwisko = txtNazwisko.Text;
                 Enum.TryParse<Stanowiska>(cmbStanowisko.SelectedValue.ToString(), out Stanowiska s);
                 _o.Stanowisko = s;
-                Enum.TryParse<Plcie>(cmbPlec.SelectedValue.ToString(), out Plcie p);
+                string str = cmbPlec.SelectedIndex == 0 ? "K" : cmbPlec.SelectedIndex == 1 ? "M" : "Nieznana";
+                Enum.TryParse<Plcie>(str, out Plcie p);
                 _o.Plec = p;
                 _o.Telefon = txtTelefon.Text;
                 _o.Mail = txtMail.Text;
@@ -57,6 +58,7 @@ namespace CRM_GUI
             }
             else
             {
+                MessageBox.Show("Dodawanie kontaktu nie powiodło się. Brakuje kluczowych informacji.", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Information);
                 DialogResult = false;
             }
         }

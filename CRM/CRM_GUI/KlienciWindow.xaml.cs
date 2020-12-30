@@ -30,6 +30,10 @@ namespace CRM_GUI
             _orgCRM = orgCRM;
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
             textblockLiczbaKlientow.Text = _orgCRM.PodajIloscKlientow().ToString();
+            cmbboxSortuj.SelectedIndex = 0;
+            cmbboxSzczegoly.SelectedIndex = 0;
+            cmbboxSzukaj.SelectedIndex = 0;
+            cmbWyszPoStatusie.SelectedIndex = 0;
         }
 
         private void buttonDodaj_Click(object sender, RoutedEventArgs e)
@@ -70,6 +74,7 @@ namespace CRM_GUI
 
         private void buttonPokazWszystkich_Click(object sender, RoutedEventArgs e)
         {
+            textblockLiczbaKlientow.Text = _orgCRM.PodajIloscKlientow().ToString();
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
         }
 
@@ -121,7 +126,7 @@ namespace CRM_GUI
                     break;
 
                 default:
-                    MessageBox.Show("Sortowanie zakończyło się niepowodzeniem.");
+                    MessageBox.Show("Nie udało się posortować listy klientów.");
                     break;
             }
             lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
@@ -164,8 +169,16 @@ namespace CRM_GUI
             switch (opcja)
             {
                 case "Status":
-                    Enum.TryParse<Status>(cmbWyszPoStatusie.SelectedValue.ToString(), out Status s);
-                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowStatus(s));
+                    try
+                    {
+                        Enum.TryParse<Status>(cmbWyszPoStatusie.SelectedValue.ToString(), out Status s);
+                        lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowStatus(s));
+                        textblockLiczbaKlientow.Text = _orgCRM.ZnajdzWszystkichKlientowStatus(s).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się znaleźć klientów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
 
                     txtStatus.Visibility = System.Windows.Visibility.Collapsed;
                     cmbWyszPoStatusie.Visibility = System.Windows.Visibility.Collapsed;
@@ -173,8 +186,16 @@ namespace CRM_GUI
                     break;
 
                 case "Planowany kontakt":
-                    int.TryParse(txtBoxDniPlanKontakt.Text, out int p);
-                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowPlanowanyKontakt(p));
+                    try
+                    {
+                        int.TryParse(txtBoxDniPlanKontakt.Text, out int p);
+                        lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowPlanowanyKontakt(p));
+                        textblockLiczbaKlientow.Text = _orgCRM.ZnajdzWszystkichKlientowPlanowanyKontakt(p).Count().ToString();
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Nie udało się znaleźć klientów. Upewnij się, że podałeś prawdiłową wartość.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
 
                     txtDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxDniPlanKontakt.Visibility = System.Windows.Visibility.Collapsed;
@@ -182,8 +203,17 @@ namespace CRM_GUI
                     break;
 
                 case "Ostatni kontakt":
-                    int.TryParse(txtBoxDniOstatniKontakt.Text, out int o);
-                    lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowOstatniKontakt(o));
+
+                    try
+                    {
+                        int.TryParse(txtBoxDniOstatniKontakt.Text, out int o);
+                        lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ZnajdzWszystkichKlientowOstatniKontakt(o));
+                        textblockLiczbaKlientow.Text = _orgCRM.ZnajdzWszystkichKlientowOstatniKontakt(o).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się znaleźć klientów. Upewnij się, że podałeś prawdiłową wartość.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
 
                     txtDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxDniOstatniKontakt.Visibility = System.Windows.Visibility.Collapsed;
@@ -191,6 +221,7 @@ namespace CRM_GUI
                     break;
 
                 default:
+                    MessageBox.Show("Nie udało się wyszukać klientów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
             }
         }

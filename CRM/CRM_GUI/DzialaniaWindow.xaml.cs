@@ -141,6 +141,7 @@ namespace CRM_GUI
         }
         private void butAnuluj_Click(object sender, RoutedEventArgs e)
         {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
             txtData.Visibility = System.Windows.Visibility.Collapsed;
             txtBoxData.Visibility = System.Windows.Visibility.Collapsed;
             txtBoxData.Text = String.Empty;
