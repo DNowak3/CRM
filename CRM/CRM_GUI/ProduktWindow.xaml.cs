@@ -24,13 +24,11 @@ namespace CRM_GUI
         public ProduktWindow()
         {
             InitializeComponent();
-            _p = new Produkt();
             cmbJednostka.ItemsSource = Enum.GetValues(typeof(Jednostki));
             
         }
         public ProduktWindow(Produkt p):this()
         {
-            InitializeComponent();
             _p = p;
             if(!_p.Kod.Equals(string.Empty))
             {
@@ -54,7 +52,7 @@ namespace CRM_GUI
 
         private void buttonZatwierdz_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNazwa.Text != "" && txtCena.Text != "")
+            if (txtNazwa.Text != "" && txtCena.Text != "" && !cmbJednostka.SelectedIndex.Equals(-1))
             {
                 string nazwa = txtNazwa.Text;
                 double cena=0;
@@ -65,7 +63,7 @@ namespace CRM_GUI
                 }
                 catch(FormatException)
                 {
-                    MessageBoxResult m = MessageBox.Show("Dodawanie działania nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
                         DialogResult = false;
@@ -78,7 +76,7 @@ namespace CRM_GUI
                 }
                 catch (OverflowException)
                 {
-                    MessageBoxResult m = MessageBox.Show("Dodawanie działania nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
                         DialogResult = false;
@@ -94,7 +92,7 @@ namespace CRM_GUI
                 }
                 catch(ArgumentException)
                 {
-                    MessageBoxResult m = MessageBox.Show("Dodawanie działania nie powiodło się. Niepoprawna jednostka. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna jednostka. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
                         DialogResult = false;
@@ -115,13 +113,13 @@ namespace CRM_GUI
                     _p.Nazwa = nazwa;
                     _p.Cena = cena;
                     _p.Jednostka = j;
-                    _p.Kod = $"{_p.Nazwa[0]}{DateTime.Now.Year}{Produkt.AktualnyNumer}"; //???
+                    _p.Kod = $"{_p.Nazwa[0]}{DateTime.Now.Year}{Produkt.AktualnyNumer}";
                 }
                 DialogResult = true;
             }
             else
             {
-                MessageBoxResult m = MessageBox.Show("Dodawanie działania nie powiodło się. Brakuje kluczowych informacji. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Brakuje kluczowych informacji. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (m == MessageBoxResult.Yes)
                 {
                     DialogResult = false;

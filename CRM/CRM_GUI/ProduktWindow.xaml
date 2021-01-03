@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="Dodaj/Edytuj produkt" Height="336.192" Width="725.436">
     <Grid Margin="0,0,4.2,0" Height="283" VerticalAlignment="Top">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        
         <Label x:Name='labKod' Content="Kod:" HorizontalAlignment="Left" Height="32" Margin="40,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="40,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labCena' Content="Cena" HorizontalAlignment="Left" Height="32" Margin="40,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />

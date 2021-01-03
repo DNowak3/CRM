@@ -58,6 +58,7 @@ namespace CRM
         internal Dictionary<Produkt, double> KupioneProdukty { get => _kupioneProdukty; set => _kupioneProdukty = value; }
         public List<Produkt> ListaKupionychProduktow { get => _listaKupionychProduktow; set => _listaKupionychProduktow = value; }
         public List<double> IlosciKupionychProduktow { get => _ilosciKupionychProduktow; set => _ilosciKupionychProduktow = value; }
+        public static int AktualnyNumer { get => _aktualnyNumer; }
         #endregion
 
         #region Konstruktory
@@ -84,22 +85,22 @@ namespace CRM
         /// <summary>
         /// Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp
         /// </summary>
-        /// <param name="pracownik"></param>
+        /// <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
         public Umowa(Pracownik pracownik) : this()
         {
-            _nrUmowy = $"U/{DataUmowy.ToShortDateString()}/{_aktualnyNumer}";
+            _nrUmowy = $"U/{DataUmowy.ToShortDateString()}/{AktualnyNumer}";
             PracownikOdp = pracownik;
         }
         /// <summary>
         /// Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp
         /// </summary>
-        /// <param name="pracownik"></param>
-        /// <param name="data"></param>
+        /// <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
+        /// <param name="data">Data zawarcia umowy</param>
         public Umowa(Pracownik pracownik, string data) : this(pracownik)
         {
             DateTime.TryParseExact(data, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime dd);
             DataUmowy = dd;
-            _nrUmowy = $"U/{DataUmowy.ToShortDateString()}/{_aktualnyNumer}";
+            _nrUmowy = $"U/{DataUmowy.ToShortDateString()}/{AktualnyNumer}";
         }
 
         #endregion
@@ -147,6 +148,22 @@ namespace CRM
                 return Math.Floor(ilosc);
             }
             return ilosc;
+        }
+        /// <summary>
+        /// Funkcja zapisująca obiekty ze slownika KupioneProdukty do odpowiednich list
+        /// </summary>
+        public void SlownikDoListy()
+        {
+            ListaKupionychProduktow.Clear();
+            IlosciKupionychProduktow.Clear();
+            foreach (Produkt key in KupioneProdukty.Keys)
+            {
+                if(!ListaKupionychProduktow.Contains(key))
+                {
+                    ListaKupionychProduktow.Add(key);
+                    IlosciKupionychProduktow.Add(KupioneProdukty[key]);
+                }
+            }
         }
         #endregion
         #region Funkcje Dodawania

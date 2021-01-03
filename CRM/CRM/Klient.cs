@@ -374,6 +374,24 @@ namespace CRM
             }
             return false;
         }
+        /// <summary>
+        /// Metoda, ktora usuwa dana umowe z listy transakcji.
+        /// </summary>
+        /// <param name="umowa">Umowa która ma zostać usunięta</param>
+        /// <returns>Zwraca prawde, jesli usuniecie umowy powiodlo sie, w przeciwnym wypadku falsz</returns>
+        public bool UsunTransakcje(Umowa umowa)
+        {
+            foreach (Umowa u in _transakcje)
+            {
+                if (u.Equals(umowa))
+                {
+                    _transakcje = new Stack<Umowa>(_transakcje.Where(x => x != umowa));
+                    _transakcje.Reverse();
+                    return true;
+                }
+            }
+            return false;
+        }
 
         /// <summary>
         /// Metoda wyszukuje wszystkie transakcje podpisane z klientem od podanej daty do dzis
@@ -393,16 +411,36 @@ namespace CRM
         /// </summary>
         /// <param name="numer">Numer szukanej transakcji</param>
         /// <returns>Zwraca transakcje o podanym numerze</returns>
-        public Umowa ZwrocTransakcje(string numer)
+        public List<Umowa> ZwrocTransakcje(string numer)
         {
+            List<Umowa> transakcje = new List<Umowa>();
             foreach (Umowa u in _transakcje)
             {
                 if (u.NrUmowy == numer)
                 {
-                    return u;
+                    transakcje.Add(u);
+                    
                 }
             }
-            return null;
+            return transakcje;
+        }
+        /// <summary>
+        /// Metoda wyszukująca transakcje zawarte przez podanego pracownika.
+        /// </summary>
+        /// <param name="p">Szukany pracownik odpowiedzialny za zawarcie umowy</param>
+        /// <returns>Lista transakcji zawartych przez podanego pracownika </returns>
+        public List<Umowa> ZwrocTransakcjePracownik(Pracownik p)
+        {
+            List<Umowa> transakcje = new List<Umowa>();
+            foreach (Umowa u in _transakcje)
+            {
+                if (u.PracownikOdp.Equals(p))
+                {
+                    transakcje.Add(u);
+
+                }
+            }
+            return transakcje;
         }
         #endregion
 

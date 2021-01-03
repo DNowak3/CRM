@@ -94,7 +94,146 @@
           <Mail>p.sosna@gmail.com</Mail>
         </OsobaKontakt>
       </ListaKontaktow>
-      <TransakcjeList />
+      <TransakcjeList>
+        <Umowa>
+          <NrUmowy>U/2019-01-11/203</NrUmowy>
+          <DataUmowy>2019-01-11T00:00:00</DataUmowy>
+          <PracownikOdp>
+            <Imie>Adam</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </PracownikOdp>
+          <ListaKupionychProduktow>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+          </ListaKupionychProduktow>
+          <IlosciKupionychProduktow>
+            <double>15</double>
+            <double>15</double>
+          </IlosciKupionychProduktow>
+        </Umowa>
+        <Umowa>
+          <NrUmowy>U/2020-10-06/202</NrUmowy>
+          <DataUmowy>2020-10-06T00:00:00</DataUmowy>
+          <PracownikOdp>
+            <Imie>Patryk</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2000-12-02T00:00:00</DataRozpoczeciaPracy>
+          </PracownikOdp>
+          <ListaKupionychProduktow>
+            <Produkt>
+              <Nazwa>Papier kancelaryjny</Nazwa>
+              <Cena>10.5</Cena>
+              <Jednostka>kg</Jednostka>
+              <Kod>P20211</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Materiały biurowe</Nazwa>
+              <Cena>5.6</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>M20212</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Papier kancelaryjny</Nazwa>
+              <Cena>10.5</Cena>
+              <Jednostka>kg</Jednostka>
+              <Kod>P20211</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Materiały biurowe</Nazwa>
+              <Cena>5.6</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>M20212</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+          </ListaKupionychProduktow>
+          <IlosciKupionychProduktow>
+            <double>3</double>
+            <double>10</double>
+            <double>5</double>
+            <double>3</double>
+            <double>10</double>
+            <double>5</double>
+          </IlosciKupionychProduktow>
+        </Umowa>
+        <Umowa>
+          <NrUmowy>U/2021-01-03/201</NrUmowy>
+          <DataUmowy>2021-01-03T00:00:00+01:00</DataUmowy>
+          <PracownikOdp>
+            <Imie>Adam</Imie>
+            <Nazwisko>Kowalski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>999-999-999</Telefon>
+            <Mail>kowalski@student.agh.edu.pl.com</Mail>
+            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </PracownikOdp>
+          <ListaKupionychProduktow>
+            <Produkt>
+              <Nazwa>Materiały biurowe</Nazwa>
+              <Cena>5.6</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>M20212</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Materiały biurowe</Nazwa>
+              <Cena>5.6</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>M20212</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Komputer</Nazwa>
+              <Cena>1000</Cena>
+              <Jednostka>szt</Jednostka>
+              <Kod>K20213</Kod>
+            </Produkt>
+          </ListaKupionychProduktow>
+          <IlosciKupionychProduktow>
+            <double>6</double>
+            <double>4</double>
+            <double>6</double>
+            <double>4</double>
+          </IlosciKupionychProduktow>
+        </Umowa>
+      </TransakcjeList>
       <DzialaniaList>
         <Dzialanie>
           <Nazwa>Spłata raty pożyczki</Nazwa>

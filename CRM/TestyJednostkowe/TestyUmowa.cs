@@ -52,7 +52,7 @@ namespace TestyJednostkowe
             Produkt p1 = new Produkt("Zszywacz", 15.8, Jednostki.szt);
             Umowa u1 = new Umowa();
             u1.DodajProdukt(p1);
-            u1.UsunProduktKod("Z20201");
+            u1.UsunProduktKod(p1.Kod);
             Assert.IsFalse(u1.KupioneProdukty.ContainsKey(p1));
         }
         [TestMethod]
@@ -73,7 +73,7 @@ namespace TestyJednostkowe
             Umowa u1 = new Umowa();
             u1.DodajProdukt(p1);
             double nowaIlosc = 3;
-            Assert.IsTrue(u1.ZmienIloscKod("Z20201", nowaIlosc));
+            Assert.IsTrue(u1.ZmienIloscKod(p1.Kod, nowaIlosc));
             u1.KupioneProdukty.TryGetValue(p1, out double ilosc);
             Assert.AreEqual(nowaIlosc, ilosc);
         }

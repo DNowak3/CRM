@@ -261,7 +261,7 @@ namespace CRM_GUI
             if (lstKlienci.SelectedIndex > -1)
             {
                 string opcja = cmbboxSzczegoly.Text;
-
+                
                 Klient k = (Klient)lstKlienci.SelectedItem;
                 switch (opcja)
                 {
@@ -278,7 +278,9 @@ namespace CRM_GUI
                         break;
 
                     case "Transakcje":
-
+                        UmowyWindow okno_3 = new UmowyWindow(k, _orgCRM);
+                        okno_3.ShowDialog();
+                        lstKlienci.ItemsSource= new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
                         break;
 
                     default:

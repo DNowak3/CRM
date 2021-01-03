@@ -275,15 +275,25 @@ namespace CRM
 
             //Stworzenie umowy
             Umowa u1 = new Umowa(p1);
+            Umowa u2 = new Umowa(p2, "2020/10/06");
+            Umowa u3 = new Umowa(p1, "2019/01/11");
 
             //Dodanie produktow do umowy
             u1.DodajProdukt(pr1, 5);
             u1.DodajProdukt(pr2, 2);
             u1.DodajProdukt(pr3, 1);
 
-            //Wypisanie umowy
-            Console.WriteLine("\nUmowa:");
+            u2.DodajProdukt(pr1, 3);
+            u2.DodajProdukt(pr2, 10);
+            u2.DodajProdukt(pr3, 5);
+
+            u3.DodajProdukt(pr3, 15);
+
+            //Wypisanie umowów
+            Console.WriteLine("\nUmowy:");
             Console.WriteLine(u1);
+            Console.WriteLine(u2);
+            Console.WriteLine(u3);
 
             //Wprowadzanie zmian w umowie
             u1.DodajProdukt(pr2, 4.6);
@@ -311,7 +321,7 @@ namespace CRM
             Console.WriteLine("Produkty po cenie malejąco:");
             nasza.ProduktySortujPoCenie(false);
             Console.WriteLine(nasza.WypiszProdukty());
-            Console.WriteLine("Produkty po nazwie:");
+            Console.WriteLine("Produkty po kodzie:");
             nasza.ProduktySortujPoKodzie();
             Console.WriteLine(nasza.WypiszProdukty());
 
@@ -343,10 +353,14 @@ namespace CRM
 
             //Stworzenie przykladowego pliku organizacji NaszaOrganizacja.xml ze wszystkimi informacjami do wykorzystania w GUI
             OrgProwadzacaCRM NaszaFirma = new OrgProwadzacaCRM("Allegro", Branże.Inne, "454-454-56-56", "Polska", "Poznań", "ul. Szeroka 1", "30-250", "Najpopularniejszy serwis aukcyjny w Polsce", "01.01.1999");
-            NaszaFirma.DodajPracownika(new Pracownik("Adam", "Nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020", "123-456-789", "a.nowak@gmail.com"));
-            NaszaFirma.DodajPracownika(new Pracownik("Witold", "Kowalski", Plcie.M, Stanowiska.konsultant, "21-10-2020", "123-400-789", "w.kowalski@gmail.com", "Spóźnia się do pracy"));
-            NaszaFirma.DodajPracownika(new Pracownik("Julia", "Kot", Plcie.K, Stanowiska.sekretariat, "01.01-2020", "100-400-789", "j.kot@gmail.com"));
-            NaszaFirma.DodajPracownika(new Pracownik("Anna", "Lis", Plcie.K, Stanowiska.sprzedawca, "01.01-2019", "100-400-300", "a.lis@gmail.com", "Sumienny pracownik"));
+            Pracownik pracownik1 = new Pracownik("Adam", "Nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020", "123-456-789", "a.nowak@gmail.com");
+            Pracownik pracownik2 = new Pracownik("Witold", "Kowalski", Plcie.M, Stanowiska.konsultant, "21-10-2020", "123-400-789", "w.kowalski@gmail.com", "Spóźnia się do pracy");
+            Pracownik pracownik3 = new Pracownik("Julia", "Kot", Plcie.K, Stanowiska.sekretariat, "01.01-2020", "100-400-789", "j.kot@gmail.com");
+            Pracownik pracownik4 = new Pracownik("Anna", "Lis", Plcie.K, Stanowiska.sprzedawca, "01.01-2019", "100-400-300", "a.lis@gmail.com", "Sumienny pracownik");
+            NaszaFirma.DodajPracownika(pracownik1);
+            NaszaFirma.DodajPracownika(pracownik2);
+            NaszaFirma.DodajPracownika(pracownik3);
+            NaszaFirma.DodajPracownika(pracownik4);
 
             nasza.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
             nasza.DodajKonkurenta(new Konkurent("Wish", Branże.Inne));
@@ -375,6 +389,18 @@ namespace CRM
             OsobaKontakt o_4 = new OsobaKontakt("Mateusz", "Piotrowski", Plcie.M, Stanowiska.sprzedawca, "123-456-789", "m.piotrowski@gmail.com");
             OsobaKontakt o_5 = new OsobaKontakt("Kinga", "Brzoza", Plcie.K, Stanowiska.sekretariat, "123-456-789", "k.brzoza@gmail.com");
 
+            Umowa umowa1 = new Umowa(pracownik1);
+            Umowa umowa2 = new Umowa(pracownik2, "2020/10/06");
+            Umowa umowa3 = new Umowa(pracownik3, "2019/01/11");
+
+            umowa1.DodajProdukt(pr1, 5);
+            umowa1.DodajProdukt(pr2, 2);
+            umowa1.DodajProdukt(pr3, 1);
+            umowa2.DodajProdukt(pr1, 3);
+            umowa2.DodajProdukt(pr2, 10);
+            umowa2.DodajProdukt(pr3, 5);
+            umowa3.DodajProdukt(pr3, 15);
+
             fb.DodajDzialanie(d_1);
             fb.DodajDzialanie(d_2);
             fb.DodajDzialanie(d_8);
@@ -392,6 +418,10 @@ namespace CRM
             olek.DodajKontakt(o_4);
             OLX.DodajKontakt(o_5);
             tax.DodajKontakt(o_2);
+
+            fb.DodajTransakcje(umowa1);
+            fb.DodajTransakcje(umowa2);
+            fb.DodajTransakcje(umowa3);
 
             NaszaFirma.DodajKlienta(fb);
             NaszaFirma.DodajKlienta(castorama);

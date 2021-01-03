@@ -251,3 +251,7 @@ F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktyWindow.g.cs
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktyWindow.baml
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktWindow.g.cs
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowyWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowyWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowaWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowaWindow.baml
