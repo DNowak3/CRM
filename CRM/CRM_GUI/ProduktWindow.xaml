@@ -1,0 +1,27 @@
+﻿<Window x:Class="CRM_GUI.ProduktWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM_GUI"
+        mc:Ignorable="d"
+        Title="Dodaj/Edytuj produkt" Height="336.192" Width="725.436">
+    <Grid Margin="0,0,4.2,0" Height="283" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name='labKod' Content="Kod:" HorizontalAlignment="Left" Height="32" Margin="40,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="40,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labCena' Content="Cena" HorizontalAlignment="Left" Height="32" Margin="40,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labJednostka' Content="Jednostka:" HorizontalAlignment="Left" Height="32" Margin="40,168,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <TextBox x:Name="txtKod" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtCena" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <ComboBox x:Name="cmbJednostka" HorizontalAlignment="Left" Height="32" Margin="131,168,0,0" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="429,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="527,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
+        
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top" Margin="0,0,0.2,0"/>
+
+    </Grid>
+</Window>

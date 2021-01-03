@@ -323,8 +323,8 @@ namespace CRM
         /// </summary>
         /// <param name="porownywalnaCena">Cena wobec której porównywane są produkty.</param>
         /// <param name="tansze">Parametr służący do opisania, czy chcemy sobaczyć produkty tańsze czy droższe. True oznacza, że chcemy uzyskać produkty tańsze (co też jest domyślną wartością), a false, że produkty droższe od podanej ceny.</param>
-        /// <returns>LListę produktów tańszych/droższych od podanej ceny.</returns>
-        public List<Produkt> ZnajdzWszystkieProduktyCena(float porownywalnaCena, bool tansze = true)
+        /// <returns>Listę produktów tańszych/droższych od podanej ceny.</returns>
+        public List<Produkt> ZnajdzWszystkieProduktyCena(double porownywalnaCena, bool tansze = true)
         {
             if (tansze)
             {
@@ -335,6 +335,18 @@ namespace CRM
                 return _listaProduktow.FindAll(p => p.Cena > porownywalnaCena);
             }
         }
+        
+
+        /// <summary>
+        /// Znajduje listę produktów o podanym kodzie.
+        /// </summary>
+        /// <param name="kod">Szukany kod produktu</param>
+        /// <returns>Lista produktów o podanym kodzie</returns>
+        public List<Produkt> ZnajdzProduktKod(string kod)
+        {
+            return _listaProduktow.FindAll(p => p.Kod == kod);
+        }
+
         /// <summary>
         /// Funkcja wyszukuje wszystkie pprodukty oferowane przez organizację prowadzącą CRM, które sprzedawane są w podanej jednostce.
         /// </summary>
@@ -363,7 +375,7 @@ namespace CRM
         /// <summary>
         /// Funkcja sortuje wszystkich produkty alfabetycznie po ich nazwie.
         /// </summary>
-        public void ProduktySortujPoNazwie()
+        public void ProduktySortujPoKodzie()
         {
             _listaProduktow.Sort();
         }

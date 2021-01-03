@@ -312,7 +312,7 @@ namespace CRM
             nasza.ProduktySortujPoCenie(false);
             Console.WriteLine(nasza.WypiszProdukty());
             Console.WriteLine("Produkty po nazwie:");
-            nasza.ProduktySortujPoNazwie();
+            nasza.ProduktySortujPoKodzie();
             Console.WriteLine(nasza.WypiszProdukty());
 
             //Sprawdzanie czy jest produktem

@@ -125,6 +125,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ProduktWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProduktyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OsobaKontaktowaWindow.xaml.cs">
@@ -138,6 +146,12 @@
     </Compile>
     <Compile Include="PracownikWindow.xaml.cs">
       <DependentUpon>PracownikWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProduktWindow.xaml.cs">
+      <DependentUpon>ProduktWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProduktyWindow.xaml.cs">
+      <DependentUpon>ProduktyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

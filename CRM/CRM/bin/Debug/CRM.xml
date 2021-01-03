@@ -832,13 +832,16 @@
             <returns>Prawdę, jeśli obiekt o takim kodzie jest produktem oferowanym przez oraganizację prowadzącą CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
-        <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkieProduktyCena(System.Single,System.Boolean)">
+        <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkieProduktyCena(System.Double,System.Boolean)">
             <summary>
             Funkcja wyszukuje wszystkie produkty oferowane przez organizację prowadzącą CRM poniżej lub powyżej podanej ceny.
             </summary>
             <param name="porownywalnaCena">Cena wobec której porównywane są produkty.</param>
             <param name="tansze">Parametr służący do opisania, czy chcemy sobaczyć produkty tańsze czy droższe. True oznacza, że chcemy uzyskać produkty tańsze (co też jest domyślną wartością), a false, że produkty droższe od podanej ceny.</param>
-            <returns>LListę produktów tańszych/droższych od podanej ceny.</returns>
+            <returns>Listę produktów tańszych/droższych od podanej ceny.</returns>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.ZnajdzProduktKod(System.String)">
+            dokumentacja!
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkieProduktyJednostka(CRM.Jednostki)">
             <summary>
@@ -853,7 +856,7 @@
             </summary>
             <param name="rosnaco">True, produkty sortowane są rosnąco wg ceny, False, produkty sortowane są malejąco wg ceny.</param>
         </member>
-        <member name="M:CRM.OrgProwadzacaCRM.ProduktySortujPoNazwie">
+        <member name="M:CRM.OrgProwadzacaCRM.ProduktySortujPoKodzie">
             <summary>
             Funkcja sortuje wszystkich produkty alfabetycznie po ich nazwie.
             </summary>

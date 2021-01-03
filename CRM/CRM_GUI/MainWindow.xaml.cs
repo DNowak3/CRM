@@ -161,5 +161,17 @@ namespace CRM_GUI
                 okno.ShowDialog();
             }
         }
+        private void butProdukty_Click(object sender, RoutedEventArgs e)
+        {
+            if (_orgCRM is OrgProwadzacaCRM)
+            {
+                ProduktyWindow okno = new ProduktyWindow(_orgCRM);
+                okno.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Tylko zapisane do pliku, lub z niego odczytane organizacje mają dostęp do listy produktów.", "***", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }

@@ -247,3 +247,7 @@ F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCompileI
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktyWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktyWindow.baml
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktWindow.g.cs
+F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\ProduktWindow.baml
