@@ -71,9 +71,17 @@
             <param name="nazwa">Nazwa dzialania</param>
             <param name="data">Data dzialania</param>
         </member>
-        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania,System.String)">
+        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania)">
             <summary>
             Konstruktor z dodatkowym parametrem wynik dzialania
+            </summary>
+            <param name="nazwa"></param>
+            <param name="data"></param>
+            <param name="wynik"></param>
+        </member>
+        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania,System.String)">
+            <summary>
+            Konstruktor z dodatkowym parametrem opis
             </summary>
             <param name="nazwa"></param>
             <param name="data"></param>
@@ -124,6 +132,14 @@
              Wartosc rowna 0 oznacza, ze dzialania maja te sama date.
              Wartosc wieksza od 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
             </returns>
+        </member>
+        <member name="M:CRM.Dzialanie.Equals(CRM.Dzialanie)">
+            <summary>
+            Funkcja sprawdza, czy dwa dzialania sa tym samym dzialaniem.
+            </summary>
+            <param name="other">Dzialanie, z którym porównujemy.</param>
+            <returns>Prawda, jeśli są,
+            Fałsz, jeśli nie są.</returns>
         </member>
         <member name="T:CRM.IZapisywalna">
             <summary>
@@ -363,6 +379,13 @@
             <param name="numer">Numer umowy, ktora ma zostac usunieta</param>
             <returns>Zwraca prawde, jesli usuniecie umowy powiodlo sie, w przeciwnym wypadku falsz</returns>
         </member>
+        <member name="M:CRM.Klient.UsunTransakcje(CRM.Umowa)">
+            <summary>
+            Metoda, ktora usuwa dana umowe z listy transakcji.
+            </summary>
+            <param name="umowa">Umowa która ma zostać usunięta</param>
+            <returns>Zwraca prawde, jesli usuniecie umowy powiodlo sie, w przeciwnym wypadku falsz</returns>
+        </member>
         <member name="M:CRM.Klient.ZnajdzTransakcje(System.String)">
             <summary>
             Metoda wyszukuje wszystkie transakcje podpisane z klientem od podanej daty do dzis
@@ -376,6 +399,13 @@
             </summary>
             <param name="numer">Numer szukanej transakcji</param>
             <returns>Zwraca transakcje o podanym numerze</returns>
+        </member>
+        <member name="M:CRM.Klient.ZwrocTransakcjePracownik(CRM.Pracownik)">
+            <summary>
+            Metoda wyszukująca transakcje zawarte przez podanego pracownika.
+            </summary>
+            <param name="p">Szukany pracownik odpowiedzialny za zawarcie umowy</param>
+            <returns>Lista transakcji zawartych przez podanego pracownika </returns>
         </member>
         <member name="M:CRM.Klient.AktualizujStatus">
             <summary>
@@ -1457,6 +1487,11 @@
             <param name="produkt">Wybrany produkt dla którego sprawdzana jest jednostka</param>
             <param name="ilosc">Ilość wybranego produktu wprowadzona przez użytkownika</param>
             <returns>Wartość ilości produktu. Jeśli produkt liczony jest w sztukach, zwracana jest wartość ilości zaokrąlona w dół do najbliższej liczby całkowitej</returns>
+        </member>
+        <member name="M:CRM.Umowa.SlownikDoListy">
+            <summary>
+            Funkcja zapisująca obiekty ze slownika KupioneProdukty do odpowiednich list
+            </summary>
         </member>
         <member name="M:CRM.Umowa.DodajProdukt(CRM.Produkt)">
             <summary>

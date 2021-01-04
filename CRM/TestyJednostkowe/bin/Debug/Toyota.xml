@@ -2,6 +2,7 @@
 <Klient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Nip>123-456-78-91</Nip>
   <Nazwa>Toyota S.A.</Nazwa>
+  <Branza>Motoryzacja</Branza>
   <Kraj>Japonia</Kraj>
   <Miasto>Toyota</Miasto>
   <Adres />
@@ -10,4 +11,7 @@
   <DataZalozenia>1920-01-01T00:00:00</DataZalozenia>
   <DataPlanowanegoKontaktu>0001-01-01T00:00:00</DataPlanowanegoKontaktu>
   <Status>potencjalny</Status>
+  <ListaKontaktow />
+  <TransakcjeList />
+  <DzialaniaList />
 </Klient>

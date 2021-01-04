@@ -14,10 +14,11 @@ namespace CRM
     /// Typ wyliczeniowy, zawiera rodzaje plci.
     /// </summary>
     public enum Plcie { K, M,Nieznana };
-    [Serializable]
+
     /// <summary>
     /// Klasa abstrakcyjna definiująca osobę.
     /// </summary>
+    [Serializable]
     public abstract class Osoba: IComparable<Osoba>
     {
         /// <summary>

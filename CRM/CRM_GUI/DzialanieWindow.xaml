@@ -22,7 +22,7 @@
         <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top" Margin="0,0,0.2,0"/>
         <Button x:Name="buttonZmienPracownika" Content="Zmień" HorizontalAlignment="Left" Height="32" Margin="524,168,0,0" VerticalAlignment="Top" Width="96" Click="buttonZmienPracownika_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
-        <Label x:Name='labPracownik' Content="Praciwnik:" HorizontalAlignment="Left" Height="32" Margin="40,167,0,0" VerticalAlignment="Top" Width="86" FontSize="15" />
+        <Label x:Name='labPracownik' Content="Pracownik:" HorizontalAlignment="Left" Height="32" Margin="40,167,0,0" VerticalAlignment="Top" Width="86" FontSize="15" />
         <TextBox x:Name="txtPracownik" HorizontalAlignment="Left" Height="32" Margin="131,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="388" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <Label x:Name='labKontakt' Content="Kontakt z:" HorizontalAlignment="Left" Height="32" Margin="40,200,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <TextBox x:Name="txtKontakt" HorizontalAlignment="Left" Height="32" Margin="131,205,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="388" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>

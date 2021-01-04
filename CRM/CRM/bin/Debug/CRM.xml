@@ -1122,6 +1122,11 @@
             Typ wyliczeniowy, zawiera rodzaje plci.
             </summary>
         </member>
+        <member name="T:CRM.Osoba">
+            <summary>
+            Klasa abstrakcyjna definiująca osobę.
+            </summary>
+        </member>
         <member name="F:CRM.Osoba._imie">
             <summary>
             Imie osoby.
@@ -1257,6 +1262,11 @@
             Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
             </summary>
             <returns>Napis zawierający dane osoby do kontaktu</returns>
+        </member>
+        <member name="T:CRM.Pracownik">
+            <summary>
+            Klasa definiująca pracownika firmy, która prowadzi CRM. Dziedziczy po klasie OsobaKontakt.
+            </summary>
         </member>
         <member name="F:CRM.Pracownik._dataRozpoczeciaPracy">
             <summary>

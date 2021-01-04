@@ -9,10 +9,11 @@ using System.Xml.Serialization;
 
 namespace CRM
 {
-    [Serializable]
+
     /// <summary>
     /// Klasa definiująca pracownika firmy, która prowadzi CRM. Dziedziczy po klasie OsobaKontakt.
     /// </summary>
+    [Serializable]
     public class Pracownik:OsobaKontakt,IZapisywalna
     {
         /// <summary>

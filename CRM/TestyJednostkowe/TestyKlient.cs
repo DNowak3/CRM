@@ -87,20 +87,19 @@ namespace TestyJednostkowe
         }
 
 
-        //[TestMethod]
-        //public void DodawanieUsuwanieKontaktu()
-        //{
-        //    Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja);
-        //    OsobaKontakt o = new OsobaKontakt("Brad", "Pitt", Plcie.M);
-        //    Toyota.DodajKontakt(o);
+        [TestMethod]
+        public void DodawanieUsuwanieKontaktu()
+        {
+            Klient Toyota = new Klient("Toyota S.A.",Branże.Motoryzacja);
+            OsobaKontakt o = new OsobaKontakt("Brad", "Pitt", Plcie.M);
+            Toyota.DodajKontakt(o);
 
-        //    Assert.IsTrue(Toyota.PosiadaKontakt("Brad", "Pitt"));
-        //    Assert.AreEqual(Toyota.ZwrocKontakt("Brad", "Pitt"), o);
-        //    Assert.IsFalse(Toyota.DodajKontakt(o));
+            Assert.IsTrue(Toyota.PosiadaKontakt("Brad", "Pitt"));
+            Assert.AreEqual(Toyota.ZwrocKontakt("Brad", "Pitt"), o);
 
-        //    Toyota.UsunKontakt(o);
-        //    Assert.IsFalse(Toyota.PosiadaKontakt("Brad", "Pitt"));
-        //}
+            Toyota.UsunKontakt(o);
+            Assert.IsFalse(Toyota.PosiadaKontakt("Brad", "Pitt"));
+        }
 
         [TestMethod]
         public void DodawanieUsuwanieTransakcji()
@@ -112,7 +111,7 @@ namespace TestyJednostkowe
             Toyota.DodajTransakcje(u1);
             Toyota.DodajTransakcje(u2);
             Toyota.UsunTransakcje(u2.NrUmowy);
-            Assert.IsTrue(Toyota.ZwrocTransakcje(u2.NrUmowy) == null);
+            Assert.IsTrue(Toyota.ZwrocTransakcje(u2.NrUmowy).Count == 0);
         }
 
         [TestMethod]
