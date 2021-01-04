@@ -80,7 +80,7 @@ namespace CRM_GUI
                     {
                         _orgCRM.ZapiszJSON(nazwaPliku);
                     }
-                    _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
+                    //_orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
                 }
                 catch (Exception)
                 {
@@ -122,7 +122,7 @@ namespace CRM_GUI
                     txtNIP.Text = _orgCRM.Nip;
                     txtAdres.Text = _orgCRM.Adres;
 
-                   _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
+                   //_orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
                 }
             }
         }
