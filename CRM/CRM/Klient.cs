@@ -221,8 +221,7 @@ namespace CRM
         /// <param name="d">Dzialanie do usuniecia</param>
         public void UsunDzialanie(Dzialanie d)
         {
-                _dzialania = new Stack<Dzialanie>(_dzialania.Where(x => x.Nazwa != d.Nazwa || !x.Data.Equals(d.Data)));
-                _dzialania.Reverse();
+                _dzialania = new Stack<Dzialanie>(_dzialania.Where(x => !x.Equals(d)));
         }
 
         /// <summary>
@@ -419,7 +418,7 @@ namespace CRM
                 if (u.NrUmowy == numer)
                 {
                     transakcje.Add(u);
-                    
+      
                 }
             }
             return transakcje;
@@ -437,7 +436,6 @@ namespace CRM
                 if (u.PracownikOdp.Equals(p))
                 {
                     transakcje.Add(u);
-
                 }
             }
             return transakcje;
@@ -598,7 +596,7 @@ namespace CRM
         /// <returns>Zwraca nowego klienta bedacego kopia biezacego</returns>
         public override object Clone()
         {
-            Klient klon = new Klient(Nazwa, Branza, Nip, Kraj, Miasto, DataZalozenia.ToString(), DataPlanowanegoKontaktu.ToString(), Uwagi, Status);
+            Klient klon = new Klient(Nazwa, Branza, Nip, Kraj, Miasto, DataZalozenia.ToString("dd-MM-yyyy"), DataPlanowanegoKontaktu.ToString("dd-MM-yyyy"), Uwagi, Status);
             _listaKontaktow.ForEach(o => klon.DodajKontakt((OsobaKontakt)o.Clone()));
 
             foreach(Dzialanie d in _dzialania)

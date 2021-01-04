@@ -30,6 +30,7 @@ namespace CRM_GUI
             textblockNazwaFirmy.Text = _k.Nazwa.ToUpper();
             lstKontakty.ItemsSource = new ObservableCollection<OsobaKontakt>(_k.ListaKontaktow);
             textblockIleKontaktow.Text = _k.IleKontaktow().ToString();
+            cmbboxSortuj.SelectedIndex = 0;
         }
 
         private void buttonDodajKontakt_Click(object sender, RoutedEventArgs e)
@@ -86,6 +87,11 @@ namespace CRM_GUI
 
         private void buttonSortuj_Click(object sender, RoutedEventArgs e)
         {
+            if (_k.DzialaniaList.Count == 0)
+            {
+                MessageBox.Show("Lista kontaktów jest pusta.", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             string opcja = cmbboxSortuj.Text;
 
             switch (opcja)

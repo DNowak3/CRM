@@ -9,12 +9,12 @@ namespace CRM
     /// <summary>
     /// Typ wyliczeniowy, zawiera stale wartosci bedace wynikiem dzialania z klientem.
     /// </summary>
-    public enum WynikDzialania { skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
+    public enum WynikDzialania { nieznany, skontaktowano, umowiono, ukonczono, anulowano, zaplanowano, zaplata, wygrana, przegrana }
 
     /// <summary>
     /// Klasa definiujaca dzialania wobec klientow.
     /// </summary>
-    public class Dzialanie : ICloneable, IComparable<Dzialanie>
+    public class Dzialanie : ICloneable, IComparable<Dzialanie>, IEquatable<Dzialanie>
     {
         /// <summary>
         /// Nazwa dzialania.
@@ -57,7 +57,8 @@ namespace CRM
         /// </summary>
         public Dzialanie()
         {
-
+            Nazwa = String.Empty;
+            Data = DateTime.Today;
         }
 
         /// <summary>
@@ -78,13 +79,22 @@ namespace CRM
         /// <param name="nazwa"></param>
         /// <param name="data"></param>
         /// <param name="wynik"></param>
-        /// /// <param name="opis"></param>
-        public Dzialanie(string nazwa, string data, WynikDzialania wynik, string opis) : this(nazwa, data)
+        public Dzialanie(string nazwa, string data, WynikDzialania wynik = WynikDzialania.nieznany) : this(nazwa, data)
         {
             Wynik = wynik;
-            Opis = opis;
         }
 
+        /// <summary>
+        /// Konstruktor z dodatkowym parametrem opis
+        /// </summary>
+        /// <param name="nazwa"></param>
+        /// <param name="data"></param>
+        /// <param name="wynik"></param>
+        /// /// <param name="opis"></param>
+        public Dzialanie(string nazwa, string data, WynikDzialania wynik, string opis) : this(nazwa, data, wynik)
+        {
+            Opis = opis;
+        }
         /// <summary>
         /// Bardziej szczegolowy konstruktor, wywoluje poprzedni.
         /// </summary>
@@ -93,11 +103,10 @@ namespace CRM
         /// <param name="pracownik">Pracownik, ktory wykonal dzialanie</param>
         /// <param name="osobaKontaktowa">Osoba, z ktora skontaktowal sie pracownik</param>
         /// <param name="wynik">Ogolny rezultat dzialania</param>
-        public Dzialanie(string nazwa, string data, Pracownik pracownik, OsobaKontakt osobaKontaktowa, WynikDzialania wynik) : this(nazwa, data)
+        public Dzialanie(string nazwa, string data, Pracownik pracownik, OsobaKontakt osobaKontaktowa, WynikDzialania wynik) : this(nazwa, data, wynik)
         {
             Pracownik = pracownik;
             OsobaKontaktowa = osobaKontaktowa;
-            Wynik = wynik;
         }
 
         /// <summary>
@@ -123,8 +132,8 @@ namespace CRM
         public override string ToString()
         {
             string napis = $"{Data.ToString("dd.MM.yyyy")} - {Nazwa}";
-            //napis += Pracownik == null ? null : $"\n             Pracownik: {Pracownik.ToString()}";
-            //napis += OsobaKontaktowa == null ? null : $"\n             Skontaktowano z: {OsobaKontaktowa.ToString()}";
+            napis += Pracownik == null ? null : $"\n             Pracownik: {Pracownik.Imie} {Pracownik.Nazwisko}";
+            napis += OsobaKontaktowa == null ? null : $"\n             Skontaktowano z: {OsobaKontaktowa.Imie} {OsobaKontaktowa.Nazwisko}";
             napis += Opis == null ? null : $"\n             Opis: {Opis}";
             napis += $"\n             Wynik: {Wynik}";
             return napis;
@@ -136,7 +145,7 @@ namespace CRM
         /// <returns>Zwraca nowe dzialanie bedace kopia danego dzialania</returns>
         public object Clone()
         {
-            Dzialanie d = new Dzialanie(Nazwa, Data.ToString("dd.MM.yyyy"));
+            Dzialanie d = new Dzialanie(Nazwa, Data.ToString("dd-MM-yyyy"));
             d.Wynik = Wynik;
             if (Opis != null)
             {
@@ -145,6 +154,9 @@ namespace CRM
             if (Pracownik != null) 
             {
                 d.Pracownik = (Pracownik)Pracownik.Clone();
+            }
+            if(OsobaKontaktowa != null)
+            {
                 d.OsobaKontaktowa = (OsobaKontakt)OsobaKontaktowa.Clone();
             }
             return d;
@@ -163,6 +175,25 @@ namespace CRM
         public int CompareTo(Dzialanie other)
         {
             return DateTime.Compare(Data, other.Data);
+        }
+
+        /// <summary>
+        /// Funkcja sprawdza, czy dwa dzialania sa tym samym dzialaniem.
+        /// </summary>
+        /// <param name="other">Dzialanie, z którym porównujemy.</param>
+        /// <returns>Prawda, jeśli są,
+        /// Fałsz, jeśli nie są.</returns>
+        public bool Equals(Dzialanie other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (Pracownik != null && OsobaKontaktowa != null)
+            {
+                return (Nazwa.Equals(other.Nazwa) && Data.Equals(other.Data) && OsobaKontaktowa.Equals(other.OsobaKontaktowa) && Pracownik.Equals(other.Pracownik));
+            }
+            return (Nazwa.Equals(other.Nazwa) && Data.Equals(other.Data));
         }
         #endregion
     }

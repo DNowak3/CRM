@@ -373,21 +373,20 @@ namespace CRM
             Klient OLX = new Klient("OLX", Branże.Inne, "123-123-78-78", "Polska", "Kraków", "02.04.2001", "26.01.2021", "", Status.nowy);
             Klient tax = new Klient("Biuro podatkowe TAX", Branże.Finanse, "123-456-96-96", "Polska", "Lublin", "02.04.2001", "13.01.2021", "", Status.były);
 
-
-            Dzialanie d_1 = new Dzialanie("Pożyczka", "28.12.2020", WynikDzialania.ukonczono, "Zawarcie pożcyzki na kwotę 10 000 zł");
-            Dzialanie d_2 = new Dzialanie("Spotkanie", "18.12.2020", WynikDzialania.anulowano, "Klient anulował spotkanie");
-            Dzialanie d_3 = new Dzialanie("Konferencja", "11.10.2020", WynikDzialania.ukonczono, "Konferencja w ważnej sprawie");
-            Dzialanie d_4 = new Dzialanie("Podpisanie umowy", "27.02.2021", WynikDzialania.zaplanowano, "Zaplanowano podpisanie umowy najmu nowego lokalu");
-            Dzialanie d_5 = new Dzialanie("Zapłata za zamówienie", "06.11.2019");
-            Dzialanie d_6 = new Dzialanie("Zapłata za usługi", "18.03.2019");
-            Dzialanie d_7 = new Dzialanie("Rozmowa telefoniczna", "18.12.2020");
-            Dzialanie d_8 = new Dzialanie("Spłata raty pożyczki", "10.02.2021", WynikDzialania.zaplanowano, "");
-
             OsobaKontakt o_1 = new OsobaKontakt("Patrycja", "Sosna", Plcie.K, Stanowiska.dyrekcja, "123-456-789", "p.sosna@gmail.com");
             OsobaKontakt o_2 = new OsobaKontakt("Piotr", "Drwal", Plcie.M, Stanowiska.konsultant, "123-456-789", "p.drwal@gmail.com");
             OsobaKontakt o_3 = new OsobaKontakt("Karol", "Lasowski", Plcie.M, Stanowiska.sekretariat, "123-456-789", "k.lasowski@gmail.com");
             OsobaKontakt o_4 = new OsobaKontakt("Mateusz", "Piotrowski", Plcie.M, Stanowiska.sprzedawca, "123-456-789", "m.piotrowski@gmail.com");
             OsobaKontakt o_5 = new OsobaKontakt("Kinga", "Brzoza", Plcie.K, Stanowiska.sekretariat, "123-456-789", "k.brzoza@gmail.com");
+
+            Dzialanie d_1 = new Dzialanie("Pożyczka", "28.12.2020", pracownik1, o_1, WynikDzialania.ukonczono, "Zawarcie pożcyzki na kwotę 10 000 zł");
+            Dzialanie d_2 = new Dzialanie("Spotkanie", "18.12.2020", pracownik4, o_2, WynikDzialania.anulowano, "Klient anulował spotkanie");
+            Dzialanie d_3 = new Dzialanie("Konferencja", "11.10.2020", pracownik1, o_3, WynikDzialania.ukonczono, "Konferencja w ważnej sprawie");
+            Dzialanie d_4 = new Dzialanie("Podpisanie umowy", "27.02.2021", pracownik4, o_1, WynikDzialania.zaplanowano, "Zaplanowano podpisanie umowy najmu nowego lokalu");
+            Dzialanie d_5 = new Dzialanie("Zapłata za zamówienie", "06.11.2019", pracownik3, o_4, WynikDzialania.zaplata);
+            Dzialanie d_6 = new Dzialanie("Zapłata za usługi", "18.03.2019");
+            Dzialanie d_7 = new Dzialanie("Rozmowa telefoniczna", "18.12.2020");
+            Dzialanie d_8 = new Dzialanie("Spłata raty pożyczki", "10.02.2021", WynikDzialania.zaplanowano);
 
             Umowa umowa1 = new Umowa(pracownik1);
             Umowa umowa2 = new Umowa(pracownik2, "2020/10/06");

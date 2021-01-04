@@ -266,7 +266,7 @@ namespace CRM_GUI
                 switch (opcja)
                 {
                     case "Działania":
-                        DzialaniaWindow okno_1 = new DzialaniaWindow(k);
+                        DzialaniaWindow okno_1 = new DzialaniaWindow(k, _orgCRM);
                         okno_1.ShowDialog();
                         lstKlienci.ItemsSource = new ObservableCollection<Klient>(_orgCRM.ListaKlientow);
                         break;

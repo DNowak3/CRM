@@ -111,8 +111,6 @@ namespace TestyJednostkowe
             Umowa u2 = new Umowa(p, "12-08-2020");
             Toyota.DodajTransakcje(u1);
             Toyota.DodajTransakcje(u2);
-            string nr = u1.NrUmowy;
-            Assert.IsTrue(Toyota.ZwrocTransakcje(nr).DataUmowy == u1.DataUmowy);
             Toyota.UsunTransakcje(u2.NrUmowy);
             Assert.IsTrue(Toyota.ZwrocTransakcje(u2.NrUmowy) == null);
         }

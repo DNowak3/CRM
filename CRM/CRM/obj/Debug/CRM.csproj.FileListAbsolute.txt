@@ -118,3 +118,11 @@ F:\Justyna\PO 2020\Nowy folder\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cac
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM\obj\Debug\CRM.exe
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM\obj\Debug\CRM.pdb
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\CRM.exe.config
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\CRM.xml
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\CRM.exe
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\CRM.pdb
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.exe
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.pdb

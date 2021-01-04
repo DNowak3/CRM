@@ -71,9 +71,17 @@
             <param name="nazwa">Nazwa dzialania</param>
             <param name="data">Data dzialania</param>
         </member>
-        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania,System.String)">
+        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania)">
             <summary>
             Konstruktor z dodatkowym parametrem wynik dzialania
+            </summary>
+            <param name="nazwa"></param>
+            <param name="data"></param>
+            <param name="wynik"></param>
+        </member>
+        <member name="M:CRM.Dzialanie.#ctor(System.String,System.String,CRM.WynikDzialania,System.String)">
+            <summary>
+            Konstruktor z dodatkowym parametrem opis
             </summary>
             <param name="nazwa"></param>
             <param name="data"></param>
@@ -124,6 +132,14 @@
              Wartosc rowna 0 oznacza, ze dzialania maja te sama date.
              Wartosc wieksza od 0 oznacza, ze dzialanie other bylo pozniej niz aktualne.
             </returns>
+        </member>
+        <member name="M:CRM.Dzialanie.Equals(CRM.Dzialanie)">
+            <summary>
+            Funkcja sprawdza, czy dwa dzialania sa tym samym dzialaniem.
+            </summary>
+            <param name="other">Dzialanie, z którym porównujemy.</param>
+            <returns>Prawda, jeśli są,
+            Fałsz, jeśli nie są.</returns>
         </member>
         <member name="T:CRM.IZapisywalna">
             <summary>

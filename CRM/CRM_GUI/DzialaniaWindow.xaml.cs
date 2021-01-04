@@ -22,20 +22,23 @@ namespace CRM_GUI
     public partial class DzialaniaWindow : Window
     {
         Klient _k;
-
-        public DzialaniaWindow(Klient klient)
+        OrgProwadzacaCRM _orgCRM;
+        public DzialaniaWindow(Klient klient, OrgProwadzacaCRM orgCRM)
         {
             InitializeComponent();
             _k = klient;
+            _orgCRM = orgCRM;
             textblockNazwaFirmy.Text = _k.Nazwa.ToUpper();
             lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.DzialaniaList);
             textblockIleDzialan.Text = _k.IleDzialan().ToString();
+            cmbboxSortuj.SelectedIndex = 0;
+            cmbboxWyszukaj.SelectedIndex = 0;
         }
 
         private void buttonDodajDzialanie_Click(object sender, RoutedEventArgs e)
         {
             Dzialanie d = new Dzialanie();
-            DzialanieWindow okno = new DzialanieWindow(d);
+            DzialanieWindow okno = new DzialanieWindow(d, _orgCRM, _k);
             bool? ret = okno.ShowDialog();
             if (ret == true)
             {
@@ -52,12 +55,12 @@ namespace CRM_GUI
             {
                 Dzialanie d = (Dzialanie)lstDzialania.SelectedItem;
                 Dzialanie klon = (Dzialanie)d.Clone();
-                DzialanieWindow okno = new DzialanieWindow(klon);
+                DzialanieWindow okno = new DzialanieWindow(klon, _orgCRM, _k);
                 bool? ret = okno.ShowDialog();
                 if (ret == true)
                 {
-                    _k.DodajDzialanie(klon);
                     _k.UsunDzialanie(d);
+                    _k.DodajDzialanie(klon);
                     _k.StosDoListy();
                     lstDzialania.ItemsSource = new ObservableCollection<Dzialanie>(_k.DzialaniaList);
                 }
@@ -90,6 +93,11 @@ namespace CRM_GUI
 
         private void buttonSortuj_Click(object sender, RoutedEventArgs e)
         {
+            if(_k.DzialaniaList.Count == 0)
+            {
+                MessageBox.Show("Lista działań jest pusta.", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             string opcja = cmbboxSortuj.Text;
 
             switch (opcja)
@@ -112,6 +120,11 @@ namespace CRM_GUI
 
         private void buttonWyszukaj_Click(object sender, RoutedEventArgs e)
         {
+            if (_k.DzialaniaList.Count == 0)
+            {
+                MessageBox.Show("Lista działań jest pusta.", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             string opcja = cmbboxWyszukaj.Text;
 
             switch (opcja)

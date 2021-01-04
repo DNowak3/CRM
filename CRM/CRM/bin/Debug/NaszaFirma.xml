@@ -96,7 +96,7 @@
       </ListaKontaktow>
       <TransakcjeList>
         <Umowa>
-          <NrUmowy>U/11-Jan-19/206</NrUmowy>
+          <NrUmowy>U/11.01.2019/206</NrUmowy>
           <DataUmowy>2019-01-11T00:00:00</DataUmowy>
           <PracownikOdp>
             <Imie>Julia</Imie>
@@ -127,7 +127,7 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/06-Oct-20/205</NrUmowy>
+          <NrUmowy>U/06.10.2020/205</NrUmowy>
           <DataUmowy>2020-10-06T00:00:00</DataUmowy>
           <PracownikOdp>
             <Imie>Witold</Imie>
@@ -187,7 +187,7 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/04-Jan-21/204</NrUmowy>
+          <NrUmowy>U/04.01.2021/204</NrUmowy>
           <DataUmowy>2021-01-04T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
@@ -250,19 +250,53 @@
         <Dzialanie>
           <Nazwa>Spłata raty pożyczki</Nazwa>
           <Data>2021-02-10T00:00:00</Data>
-          <Opis />
           <Wynik>zaplanowano</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Spotkanie</Nazwa>
           <Data>2020-12-18T00:00:00</Data>
           <Opis>Klient anulował spotkanie</Opis>
+          <Pracownik>
+            <Imie>Anna</Imie>
+            <Nazwisko>Lis</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sprzedawca</Stanowisko>
+            <Telefon>100-400-300</Telefon>
+            <Mail>a.lis@gmail.com</Mail>
+            <Notatki>Sumienny pracownik</Notatki>
+            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Piotr</Imie>
+            <Nazwisko>Drwal</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>konsultant</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>p.drwal@gmail.com</Mail>
+          </OsobaKontaktowa>
           <Wynik>anulowano</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Pożyczka</Nazwa>
           <Data>2020-12-28T00:00:00</Data>
           <Opis>Zawarcie pożcyzki na kwotę 10 000 zł</Opis>
+          <Pracownik>
+            <Imie>Adam</Imie>
+            <Nazwisko>Nowak</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>a.nowak@gmail.com</Mail>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Patrycja</Imie>
+            <Nazwisko>Sosna</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>p.sosna@gmail.com</Mail>
+          </OsobaKontaktowa>
           <Wynik>ukonczono</Wynik>
         </Dzialanie>
       </DzialaniaList>
@@ -304,12 +338,47 @@
           <Nazwa>Konferencja</Nazwa>
           <Data>2020-10-11T00:00:00</Data>
           <Opis>Konferencja w ważnej sprawie</Opis>
+          <Pracownik>
+            <Imie>Adam</Imie>
+            <Nazwisko>Nowak</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>a.nowak@gmail.com</Mail>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Karol</Imie>
+            <Nazwisko>Lasowski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>k.lasowski@gmail.com</Mail>
+          </OsobaKontaktowa>
           <Wynik>ukonczono</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Podpisanie umowy</Nazwa>
           <Data>2021-02-27T00:00:00</Data>
           <Opis>Zaplanowano podpisanie umowy najmu nowego lokalu</Opis>
+          <Pracownik>
+            <Imie>Anna</Imie>
+            <Nazwisko>Lis</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sprzedawca</Stanowisko>
+            <Telefon>100-400-300</Telefon>
+            <Mail>a.lis@gmail.com</Mail>
+            <Notatki>Sumienny pracownik</Notatki>
+            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Patrycja</Imie>
+            <Nazwisko>Sosna</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>p.sosna@gmail.com</Mail>
+          </OsobaKontaktowa>
           <Wynik>zaplanowano</Wynik>
         </Dzialanie>
       </DzialaniaList>
@@ -342,7 +411,7 @@
         <Dzialanie>
           <Nazwa>Rozmowa telefoniczna</Nazwa>
           <Data>2020-12-18T00:00:00</Data>
-          <Wynik>skontaktowano</Wynik>
+          <Wynik>nieznany</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>
@@ -374,7 +443,24 @@
         <Dzialanie>
           <Nazwa>Zapłata za zamówienie</Nazwa>
           <Data>2019-11-06T00:00:00</Data>
-          <Wynik>skontaktowano</Wynik>
+          <Pracownik>
+            <Imie>Julia</Imie>
+            <Nazwisko>Kot</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>100-400-789</Telefon>
+            <Mail>j.kot@gmail.com</Mail>
+            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Mateusz</Imie>
+            <Nazwisko>Piotrowski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>sprzedawca</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>m.piotrowski@gmail.com</Mail>
+          </OsobaKontaktowa>
+          <Wynik>zaplata</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>
@@ -406,7 +492,7 @@
         <Dzialanie>
           <Nazwa>Zapłata za usługi</Nazwa>
           <Data>2019-03-18T00:00:00</Data>
-          <Wynik>skontaktowano</Wynik>
+          <Wynik>nieznany</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>
@@ -439,12 +525,29 @@
           <Nazwa>Konferencja</Nazwa>
           <Data>2020-10-11T00:00:00</Data>
           <Opis>Konferencja w ważnej sprawie</Opis>
+          <Pracownik>
+            <Imie>Adam</Imie>
+            <Nazwisko>Nowak</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>a.nowak@gmail.com</Mail>
+            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+          </Pracownik>
+          <OsobaKontaktowa>
+            <Imie>Karol</Imie>
+            <Nazwisko>Lasowski</Nazwisko>
+            <Plec>M</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>k.lasowski@gmail.com</Mail>
+          </OsobaKontaktowa>
           <Wynik>ukonczono</Wynik>
         </Dzialanie>
         <Dzialanie>
           <Nazwa>Wpłata za zamówienie</Nazwa>
           <Data>2020-12-28T00:00:00</Data>
-          <Wynik>skontaktowano</Wynik>
+          <Wynik>nieznany</Wynik>
         </Dzialanie>
       </DzialaniaList>
     </Klient>

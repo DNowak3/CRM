@@ -5,22 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Dodaj / edytuj działanie" Height="318.228" Width="669.485">
-    <Grid Margin="0,0,4.2,0" Height="283" VerticalAlignment="Top">
+        Title="Dodaj / edytuj działanie" Height="429.829" Width="669.485">
+    <Grid Margin="0,0,4.2,-5" Height="405" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="40,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labData' Content="Data:" HorizontalAlignment="Left" Height="32" Margin="40,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labWynik' Content="Wynik" HorizontalAlignment="Left" Height="32" Margin="40,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
-        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="32" Margin="40,168,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <Label x:Name='labOpis' Content="Opis:" HorizontalAlignment="Left" Height="60" Margin="40,237,0,0" VerticalAlignment="Top" Width="91" FontSize="15" />
         <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="32" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
-        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="60" Margin="131,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
-        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="527,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
-        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="429,233,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
+        <TextBox x:Name="txtOpis" HorizontalAlignment="Left" Height="60" Margin="131,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="524,324,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="426,324,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
         <ComboBox x:Name="cmbokWynik" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top" Margin="0,0,0.2,0"/>
+        <Button x:Name="buttonZmienPracownika" Content="Zmień" HorizontalAlignment="Left" Height="32" Margin="524,168,0,0" VerticalAlignment="Top" Width="96" Click="buttonZmienPracownika_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Label x:Name='labPracownik' Content="Praciwnik:" HorizontalAlignment="Left" Height="32" Margin="40,167,0,0" VerticalAlignment="Top" Width="86" FontSize="15" />
+        <TextBox x:Name="txtPracownik" HorizontalAlignment="Left" Height="32" Margin="131,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="388" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Label x:Name='labKontakt' Content="Kontakt z:" HorizontalAlignment="Left" Height="32" Margin="40,200,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
+        <TextBox x:Name="txtKontakt" HorizontalAlignment="Left" Height="32" Margin="131,205,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="388" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <Button x:Name="buttonZmienOsoKont" Content="Zmień" HorizontalAlignment="Left" Height="32" Margin="524,205,0,0" VerticalAlignment="Top" Width="96" Click="buttonZmienOsobe_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
+        <Grid x:Name="InputBox"  Visibility="Collapsed" Margin="0,0,0,0.333">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border
+            Width="390"
+            Background="#FF006674" 
+            BorderBrush="#FF006674" 
+            BorderThickness="1" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <StackPanel>
+                        <TextBlock Margin="120,10,80,5" Text="Wybierz pracownika:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie"  Visibility="Collapsed" Height="30"/>
+                        <ListBox x:Name="lstPracownicy" Margin="20" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="350" Background="#FFDAFAFF"  Visibility="Collapsed" BorderBrush="#FF006674" Foreground="#FF001E22"/>
 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="butWybierz" Margin="5" Content="Wybierz" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Height="30" Width="70" Click="butWybierz_Click"/>
+                        <Button x:Name="butAnuluj1" Margin="5" Content="Anuluj" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Width="70" Click="butAnuluj1_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="InputBox_Kontakt"  Visibility="Collapsed" Margin="0,0,0,0.333">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border
+            Width="390"
+            Background="#FF006674" 
+            BorderBrush="#FF006674" 
+            BorderThickness="1" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                <StackPanel>
+                    <StackPanel>
+                        <TextBlock Margin="120,10,80,5" Text="Wybierz osobę, z którą się skontaktowano:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie_2"  Visibility="Collapsed" Height="30"/>
+                        <ListBox x:Name="lstOsobyKontaktowe" Margin="20" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="350" Background="#FFDAFAFF"  Visibility="Collapsed" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="butWybierzKontakt" Margin="5" Content="Wybierz" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Height="30" Width="70" Click="butWybierzKontakt_Click"/>
+                        <Button x:Name="butAnulujKontakt" Margin="5" Content="Anuluj" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Width="70" Click="butAnulujKontakt_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
