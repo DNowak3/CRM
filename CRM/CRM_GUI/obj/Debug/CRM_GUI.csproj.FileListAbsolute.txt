@@ -255,3 +255,11 @@ F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowyWindow.g.cs
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowyWindow.baml
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowaWindow.g.cs
 F:\Justyna\PO 2020\Nowy folder\CRM\CRM_GUI\obj\Debug\UmowaWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\ProduktWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\ProduktyWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\UmowaWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\UmowyWindow.g.cs
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\ProduktWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\ProduktyWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\UmowaWindow.baml
+D:\GitFork\CRM\CRM\CRM_GUI\obj\Debug\UmowyWindow.baml

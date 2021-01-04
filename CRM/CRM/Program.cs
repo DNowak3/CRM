@@ -440,6 +440,9 @@ namespace CRM
                 NaszaFirma.ZapiszXML("NaszaFirma.xml");
                 Console.WriteLine("Odczyt z pliku XML:");
                 Console.WriteLine(OrgProwadzacaCRM.OdczytajXML("NaszaFirma.xml"));
+                NaszaFirma.ZapiszJSON("NaszaFirma.json");
+                Console.WriteLine("Odczyt z pliku json:");
+                Console.WriteLine(OrgProwadzacaCRM.OdczytajJSON("NaszaFirma.json"));
             }
             catch (Exception ex)
             {

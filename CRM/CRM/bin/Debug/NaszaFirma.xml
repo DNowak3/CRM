@@ -96,17 +96,16 @@
       </ListaKontaktow>
       <TransakcjeList>
         <Umowa>
-          <NrUmowy>U/2019-01-11/203</NrUmowy>
+          <NrUmowy>U/11-Jan-19/206</NrUmowy>
           <DataUmowy>2019-01-11T00:00:00</DataUmowy>
           <PracownikOdp>
-            <Imie>Adam</Imie>
-            <Nazwisko>Kowalski</Nazwisko>
-            <Plec>M</Plec>
-            <Stanowisko>konsultant</Stanowisko>
-            <Telefon>999-999-999</Telefon>
-            <Mail>kowalski@student.agh.edu.pl.com</Mail>
-            <Notatki>Leniwy, nie lubi Agaty</Notatki>
-            <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
+            <Imie>Julia</Imie>
+            <Nazwisko>Kot</Nazwisko>
+            <Plec>K</Plec>
+            <Stanowisko>sekretariat</Stanowisko>
+            <Telefon>100-400-789</Telefon>
+            <Mail>j.kot@gmail.com</Mail>
+            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
           </PracownikOdp>
           <ListaKupionychProduktow>
             <Produkt>
@@ -128,17 +127,17 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/2020-10-06/202</NrUmowy>
+          <NrUmowy>U/06-Oct-20/205</NrUmowy>
           <DataUmowy>2020-10-06T00:00:00</DataUmowy>
           <PracownikOdp>
-            <Imie>Patryk</Imie>
+            <Imie>Witold</Imie>
             <Nazwisko>Kowalski</Nazwisko>
             <Plec>M</Plec>
             <Stanowisko>konsultant</Stanowisko>
-            <Telefon>999-999-999</Telefon>
-            <Mail>kowalski@student.agh.edu.pl.com</Mail>
-            <Notatki>Leniwy, nie lubi Agaty</Notatki>
-            <DataRozpoczeciaPracy>2000-12-02T00:00:00</DataRozpoczeciaPracy>
+            <Telefon>123-400-789</Telefon>
+            <Mail>w.kowalski@gmail.com</Mail>
+            <Notatki>Spóźnia się do pracy</Notatki>
+            <DataRozpoczeciaPracy>2020-10-21T00:00:00</DataRozpoczeciaPracy>
           </PracownikOdp>
           <ListaKupionychProduktow>
             <Produkt>
@@ -188,19 +187,24 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/2021-01-03/201</NrUmowy>
-          <DataUmowy>2021-01-03T00:00:00+01:00</DataUmowy>
+          <NrUmowy>U/04-Jan-21/204</NrUmowy>
+          <DataUmowy>2021-01-04T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
-            <Nazwisko>Kowalski</Nazwisko>
+            <Nazwisko>Nowak</Nazwisko>
             <Plec>M</Plec>
-            <Stanowisko>konsultant</Stanowisko>
-            <Telefon>999-999-999</Telefon>
-            <Mail>kowalski@student.agh.edu.pl.com</Mail>
-            <Notatki>Leniwy, nie lubi Agaty</Notatki>
+            <Stanowisko>dyrekcja</Stanowisko>
+            <Telefon>123-456-789</Telefon>
+            <Mail>a.nowak@gmail.com</Mail>
             <DataRozpoczeciaPracy>2020-11-21T00:00:00</DataRozpoczeciaPracy>
           </PracownikOdp>
           <ListaKupionychProduktow>
+            <Produkt>
+              <Nazwa>Papier kancelaryjny</Nazwa>
+              <Cena>10.5</Cena>
+              <Jednostka>kg</Jednostka>
+              <Kod>P20211</Kod>
+            </Produkt>
             <Produkt>
               <Nazwa>Materiały biurowe</Nazwa>
               <Cena>5.6</Cena>
@@ -212,6 +216,12 @@
               <Cena>1000</Cena>
               <Jednostka>szt</Jednostka>
               <Kod>K20213</Kod>
+            </Produkt>
+            <Produkt>
+              <Nazwa>Papier kancelaryjny</Nazwa>
+              <Cena>10.5</Cena>
+              <Jednostka>kg</Jednostka>
+              <Kod>P20211</Kod>
             </Produkt>
             <Produkt>
               <Nazwa>Materiały biurowe</Nazwa>
@@ -227,10 +237,12 @@
             </Produkt>
           </ListaKupionychProduktow>
           <IlosciKupionychProduktow>
-            <double>6</double>
-            <double>4</double>
-            <double>6</double>
-            <double>4</double>
+            <double>5</double>
+            <double>2</double>
+            <double>1</double>
+            <double>5</double>
+            <double>2</double>
+            <double>1</double>
           </IlosciKupionychProduktow>
         </Umowa>
       </TransakcjeList>
