@@ -26,16 +26,18 @@ namespace CRM_GUI
         {
             k = new Konkurent();
             InitializeComponent();
+            comboBoxBranze.SelectedIndex = 7;
+            comboBoxZagrozenie.SelectedIndex = 2;
         }
 
-        public KonkurentWindow(Konkurent konkurent):this()
+        public KonkurentWindow(Konkurent konkurent) : this()
         {
             k = konkurent;
 
             txtNazwa.Text = k.Nazwa;
             comboBoxBranze.SelectedItem = k.Branza;
             txtNIP.Text = k.Nip;
-            txtDataZal.Text = k.DataZalozenia.ToString();
+            txtDataZal.Text = k.DataZalozenia.ToString("dd-MM-yyyy");
             txtKraj.Text = k.Kraj;
             txtMiasto.Text = k.Miasto;
             txtKodPocztowy.Text = k.KodPocztowy;
@@ -74,3 +76,4 @@ namespace CRM_GUI
         }
     }
 }
+

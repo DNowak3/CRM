@@ -114,15 +114,8 @@
               <Jednostka>szt</Jednostka>
               <Kod>K20213</Kod>
             </Produkt>
-            <Produkt>
-              <Nazwa>Komputer</Nazwa>
-              <Cena>1000</Cena>
-              <Jednostka>szt</Jednostka>
-              <Kod>K20213</Kod>
-            </Produkt>
           </ListaKupionychProduktow>
           <IlosciKupionychProduktow>
-            <double>15</double>
             <double>15</double>
           </IlosciKupionychProduktow>
         </Umowa>
@@ -158,37 +151,16 @@
               <Jednostka>szt</Jednostka>
               <Kod>K20213</Kod>
             </Produkt>
-            <Produkt>
-              <Nazwa>Papier kancelaryjny</Nazwa>
-              <Cena>10.5</Cena>
-              <Jednostka>kg</Jednostka>
-              <Kod>P20211</Kod>
-            </Produkt>
-            <Produkt>
-              <Nazwa>Materiały biurowe</Nazwa>
-              <Cena>5.6</Cena>
-              <Jednostka>szt</Jednostka>
-              <Kod>M20212</Kod>
-            </Produkt>
-            <Produkt>
-              <Nazwa>Komputer</Nazwa>
-              <Cena>1000</Cena>
-              <Jednostka>szt</Jednostka>
-              <Kod>K20213</Kod>
-            </Produkt>
           </ListaKupionychProduktow>
           <IlosciKupionychProduktow>
-            <double>3</double>
-            <double>10</double>
-            <double>5</double>
             <double>3</double>
             <double>10</double>
             <double>5</double>
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/04.01.2021/204</NrUmowy>
-          <DataUmowy>2021-01-04T00:00:00+01:00</DataUmowy>
+          <NrUmowy>U/05.01.2021/204</NrUmowy>
+          <DataUmowy>2021-01-05T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
             <Nazwisko>Nowak</Nazwisko>
@@ -217,29 +189,8 @@
               <Jednostka>szt</Jednostka>
               <Kod>K20213</Kod>
             </Produkt>
-            <Produkt>
-              <Nazwa>Papier kancelaryjny</Nazwa>
-              <Cena>10.5</Cena>
-              <Jednostka>kg</Jednostka>
-              <Kod>P20211</Kod>
-            </Produkt>
-            <Produkt>
-              <Nazwa>Materiały biurowe</Nazwa>
-              <Cena>5.6</Cena>
-              <Jednostka>szt</Jednostka>
-              <Kod>M20212</Kod>
-            </Produkt>
-            <Produkt>
-              <Nazwa>Komputer</Nazwa>
-              <Cena>1000</Cena>
-              <Jednostka>szt</Jednostka>
-              <Kod>K20213</Kod>
-            </Produkt>
           </ListaKupionychProduktow>
           <IlosciKupionychProduktow>
-            <double>5</double>
-            <double>2</double>
-            <double>1</double>
             <double>5</double>
             <double>2</double>
             <double>1</double>

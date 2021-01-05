@@ -1020,6 +1020,13 @@
             <param name="zagrozenie">Stopień zagrożenia szukanych konkurentów.</param>
             <returns>Listę konkurentów, o podanym stopniu zagrożenia.</returns>
         </member>
+        <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKonkurentowKraj(System.String)">
+            <summary>
+            Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym kraju.
+            </summary>
+            <param name="kraj"></param>
+            <returns></returns>
+        </member>
         <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujAlfabetycznie">
             <summary>
             Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.

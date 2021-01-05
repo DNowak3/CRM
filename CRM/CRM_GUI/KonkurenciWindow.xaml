@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="KONKURENCI" Height="450" Width="800">
     <Grid>
-        <Rectangle Fill="#FF003674" HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textblockLiczbaKonkurentow" Text="Liczba konkurentów: " FontWeight="Bold" Foreground="White" Padding="20 0"/>
-        <TextBlock x:Name="textBlockListaKonkurentow" Text="Lista konkurentów: " FontWeight="Bold" Foreground="White" Padding="20 18"/>
+        <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="40" VerticalAlignment="Top"/>
+        <Label x:Name="labelLiczbaKonkurentow" Content="Liczba konkurentów: " FontWeight="Bold" Foreground="White" Padding="20 0"/>
+        <TextBlock x:Name="textblockLiczbaKonkurentow"  Foreground="White" Padding="150 0"/>
+        <Label x:Name="labelListaKonkurentow" Content="Lista konkurentów: " FontWeight="Bold" Foreground="White" Padding="20 18"/>
 
         <StackPanel>
             <Grid Margin="10,50,10,0">
@@ -17,18 +18,48 @@
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <ListBox x:Name="lstKonkurenci" Margin="10,10,0,-23.667" Background="#FFDAFAFF"/>
+                <ListBox x:Name="lstKonkurenci" Margin="10,10,0,0" Background="#FFDAFAFF" Height="337" VerticalAlignment="Top"/>
                 <StackPanel Grid.Column="1" Margin="10,10">
-                    <Button x:Name="btnSortuj" Content="Sortuj" Margin="0,0,0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF3959F5" Cursor="Hand" Click="btnSortuj_Click"/>
-                    <ComboBox x:Name="comboBoxSortuj" Margin="0,5" Height="25">
+                    <Button x:Name="btnSortuj" Content="Sortuj" Margin="0,0,0,0" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnSortuj_Click"/>
+                    <ComboBox x:Name="comboBoxSortuj" Margin="0,0" Height="25">
                         <ComboBoxItem>Sortuj po nazwie</ComboBoxItem>
                         <ComboBoxItem>Sortuj po dacie założenia</ComboBoxItem>
                     </ComboBox>
-                    <Button x:Name="btnDodaj" Content="Dodaj konkurenta" Margin="0,80,0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF3959F5" Cursor="Hand" Click="btnDodaj_Click"/>
-                    <Button x:Name="btnEdytuj" Content="Edytuj konkurenta" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF3959F5" Cursor="Hand" Click="btnEdytuj_Click"/>
-                    <Button x:Name="btnUsun" Content="Usuń konkurenta" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF3959F5" Cursor="Hand" Click="btnUsun_Click"/>
-                    <Button x:Name="btnWyczysc" Content="Wyczyść wszystko" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF3959F5" Cursor="Hand" Click="btnWyczysc_Click"/>
+                    <Button x:Name="btnWyszukaj" Content="Wyszukaj" Margin="0,20,0,0" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnWyszukaj_Click"/>
+                    <ComboBox x:Name="comboBoxWyszukaj" Margin="0,0" Height="25">
+                        <ComboBoxItem>Wyszukaj po stopniu zagrożenia</ComboBoxItem>
+                        <ComboBoxItem>Wyszukaj po kraju</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="btnDodaj" Content="Dodaj konkurenta" Margin="0,58,0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnDodaj_Click"/>
+                    <Button x:Name="btnEdytuj" Content="Edytuj konkurenta" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnEdytuj_Click"/>
+                    <Button x:Name="btnUsun" Content="Usuń konkurenta" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnUsun_Click"/>
+                    <Button x:Name="btnWyczysc" Content="Wyczyść wszystko" Margin="0,5" Height="30" FontWeight="bold" Foreground="White" Background="#FF006674" Cursor="Hand" Click="btnWyczysc_Click"/>
+
+                    
                 </StackPanel>
+                <Grid x:Name="InputBox" Visibility="Collapsed" Margin="0,0,0,0.333">
+                    <Grid Background="Black" Opacity="0.5"/>
+                    <Border
+                        Width="300"
+                        Background="#FF006674" 
+                        BorderBrush="#FF006674" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                        <StackPanel>
+                            <StackPanel>
+                                <TextBlock Margin="5" Text="Wybierz stopień zagrożenia:" FontWeight="SemiBold" Foreground="White"  Visibility="Collapsed" x:Name="txtZagrozenie"/>
+                                <TextBlock Margin="5" Text="Wpisz kraj:" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtKraj"/>
+                                <ComboBox x:Name="cmbWyszPoZagrozeniu" MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+                                <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="txtBoxKraj"  Visibility="Collapsed" Background="#FFDAFAFF" BorderBrush="#FF006674"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="butWyszukaj" Margin="5" Content="Wyszukaj" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Height="30" Width="70" Click="butWyszukaj_Click"/>
+                                <Button x:Name="butAnuluj" Margin="5" Content="Anuluj" Background="#FF00333A" BorderBrush="#FF006674" Foreground="White" Width="70" Click="butAnuluj_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </Grid>
         </StackPanel>
     </Grid>

@@ -473,6 +473,15 @@ namespace CRM
             return _listaKonkurentow.FindAll(k => k.Zagrozenie == zagrozenie);
         }
         /// <summary>
+        /// Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym kraju.
+        /// </summary>
+        /// <param name="kraj"></param>
+        /// <returns></returns>
+        public List<Konkurent> ZnajdzWszystkichKonkurentowKraj(string kraj)
+        {
+            return _listaKonkurentow.FindAll(k => k.Kraj == kraj);
+        }
+        /// <summary>
         /// Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
         /// </summary>
         public void KonkurenciSortujAlfabetycznie()

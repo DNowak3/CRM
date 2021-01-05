@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CRM;
+using static CRM.Konkurent;
 
 namespace CRM_GUI
 {
@@ -28,6 +29,7 @@ namespace CRM_GUI
             _orgCRM = orgCRM;
             lstKonkurenci.ItemsSource = new ObservableCollection<Konkurent>(_orgCRM.ListaKonkurentow);
             textblockLiczbaKonkurentow.Text = _orgCRM.PodajIloscKonkurentow().ToString();
+            comboBoxSortuj.SelectedIndex = 0;
         }
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
@@ -100,6 +102,100 @@ namespace CRM_GUI
                     break;
             }
             lstKonkurenci.ItemsSource = new ObservableCollection<Konkurent>(_orgCRM.ListaKonkurentow);
+        }
+
+        private void btnWyszukaj_Click(object sender, RoutedEventArgs e)
+        {
+            string opcja = comboBoxWyszukaj.Text;
+
+            switch (opcja)
+            {
+                case "Wyszukaj po stopniu zagrożenia":
+                    txtZagrozenie.Visibility = System.Windows.Visibility.Visible;
+                    cmbWyszPoZagrozeniu.Visibility = System.Windows.Visibility.Visible;
+                    break;
+
+                case "Wyszukaj po kraju":
+                    txtKraj.Visibility = System.Windows.Visibility.Visible;
+                    txtBoxKraj.Visibility = System.Windows.Visibility.Visible;
+                    break;
+
+                default:
+                    MessageBox.Show("Nie udało się wyszukać konkurentów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+            }
+            InputBox.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void butWyszukaj_Click(object sender, RoutedEventArgs e)
+        {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+
+            string opcja = comboBoxWyszukaj.Text;
+            switch (opcja)
+            {
+                case "Wyszukaj po stopniu zagrozenia":
+                    try
+                    {
+                        Enum.TryParse<StopienZagrozenia>(cmbWyszPoZagrozeniu.SelectedValue.ToString(), out StopienZagrozenia z);
+                        lstKonkurenci.ItemsSource = new ObservableCollection<Konkurent>(_orgCRM.ZnajdzWszystkichKonkurentowZagrozenie(z));
+                        textblockLiczbaKonkurentow.Text = _orgCRM.ZnajdzWszystkichKonkurentowZagrozenie(z).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się znaleźć klientów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                    txtZagrozenie.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoZagrozeniu.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoZagrozeniu.Text = String.Empty;
+                    break;
+
+                case "Wyszukaj po kraju:":
+                    try
+                    {
+                        string kraj = txtBoxKraj.Text;
+                        lstKonkurenci.ItemsSource = new ObservableCollection<Konkurent>(_orgCRM.ZnajdzWszystkichKonkurentowKraj(kraj));
+                        textblockLiczbaKonkurentow.Text = _orgCRM.ZnajdzWszystkichKonkurentowKraj(kraj).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Nie udało się znaleźć klientów. Upewnij się, że podałeś prawdiłową wartość.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                    txtKraj.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxKraj.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxKraj.Text = String.Empty;
+                    break;
+
+                default:
+                    MessageBox.Show("Nie udało się wyszukać konkurentów.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+            }
+        }
+
+        private void butAnuluj_Click(object sender, RoutedEventArgs e)
+        {
+            InputBox.Visibility = System.Windows.Visibility.Collapsed;
+
+            string opcja = comboBoxWyszukaj.Text;
+            switch (opcja)
+            {
+                case "Wyszukaj po zagrożeniu":
+                    txtZagrozenie.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoZagrozeniu.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbWyszPoZagrozeniu.Text = String.Empty;
+                    break;
+
+                case "Wyszukaj po kraju":
+                    txtKraj.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxKraj.Visibility = System.Windows.Visibility.Collapsed;
+                    txtBoxKraj.Text = String.Empty;
+                    break;
+
+                default:
+                    return;
+            }
         }
     }
 }

@@ -97,6 +97,7 @@ namespace CRM
             Adres = string.Empty;
             KodPocztowy = string.Empty;
             Notatki = string.Empty;
+            DataZalozenia = DateTime.Today;
         }
 
         /// <summary>
