@@ -123,7 +123,7 @@ namespace CRM
         /// Funkcja wyszukująca produkt w umowie po kodzie. Jeśli nie ma produktu o takim kodzie w umowie, funkcja zwraca ProductNotFoundException.
         /// </summary>
         /// <param name="kod">Kod szukanego produktu</param>
-        /// <returns>Produkt o podanym kodzie</returns>
+        /// <returns>Produkt o podanym kodzie lub wyjątek ProductNotFoundException</returns>
         public Produkt ZnajdzProdukt(string kod)
         {
             foreach (Produkt p in KupioneProdukty.Keys)

@@ -25,12 +25,14 @@ namespace CRM_GUI
         {
             InitializeComponent();
             cmbJednostka.ItemsSource = Enum.GetValues(typeof(Jednostki));
-            
+            cmbJednostka.SelectedIndex = 0;
+
+
         }
-        public ProduktWindow(Produkt p):this()
+        public ProduktWindow(Produkt p) : this()
         {
             _p = p;
-            if(!_p.Kod.Equals(string.Empty))
+            if (!_p.Kod.Equals(string.Empty))
             {
                 txtKod.Text = _p.Kod;
                 txtNazwa.Text = _p.Nazwa;
@@ -45,23 +47,23 @@ namespace CRM_GUI
                 txtNazwa.Text = String.Empty;
                 txtCena.Text = String.Empty;
 
-            }                   
-            
+            }
+
         }
-        
+
 
         private void buttonZatwierdz_Click(object sender, RoutedEventArgs e)
         {
             if (txtNazwa.Text != "" && txtCena.Text != "" && !cmbJednostka.SelectedIndex.Equals(-1))
             {
                 string nazwa = txtNazwa.Text;
-                double cena=0;
+                double cena = 0;
                 Jednostki j = Jednostki.szt;
                 try
                 {
                     cena = Convert.ToDouble(txtCena.Text);
                 }
-                catch(FormatException)
+                catch (FormatException)
                 {
                     MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
@@ -72,7 +74,7 @@ namespace CRM_GUI
                     {
                         return;
                     }
-                    
+
                 }
                 catch (OverflowException)
                 {
@@ -90,7 +92,7 @@ namespace CRM_GUI
                 {
                     Enum.TryParse<Jednostki>(cmbJednostka.SelectedValue.ToString(), out j);
                 }
-                catch(ArgumentException)
+                catch (ArgumentException)
                 {
                     MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna jednostka. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
@@ -119,7 +121,7 @@ namespace CRM_GUI
             }
             else
             {
-                MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Brakuje kluczowych informacji. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Żadne z pól nie powinno pozostać puste. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (m == MessageBoxResult.Yes)
                 {
                     DialogResult = false;

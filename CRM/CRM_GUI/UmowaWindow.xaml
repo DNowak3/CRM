@@ -14,7 +14,7 @@
         <Label x:Name='labNumer' Content="Numer umowy:" HorizontalAlignment="Left" Height="32" Margin="18,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labData' Content="Data zawarcia:" HorizontalAlignment="Left" Height="32" Margin="18,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labPracownik' Content="Pracownik:" HorizontalAlignment="Left" Height="32" Margin="18,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
-        <TextBox x:Name="txtNumer" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBlock x:Name="txtNumer" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="200" Background="#FFDAFAFF" Foreground="#FF001D21"/>
         <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="32" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <TextBox x:Name="txtPracownik" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" VerticalAlignment="Top" Width="200" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <Button x:Name="buttonZmienP" Content="Zmień" HorizontalAlignment="Left" Height="32" Margin="340,131,0,0" VerticalAlignment="Top" Width="50" Click="buttonZmienP_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
@@ -23,13 +23,13 @@
         <Button x:Name="buttonZmien" Content="Zmień ilość" HorizontalAlignment="Left" Height="32" Margin="240,190,0,0" VerticalAlignment="Top" Width="93" Click="buttonZmien_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF047382"/>
         <Button x:Name="buttonZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Height="32" Margin="100,250,0,0" VerticalAlignment="Top" Width="93" Click="buttonZatwierdz_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
         <Button x:Name="buttonAnuluj" Content="Anuluj" HorizontalAlignment="Left" Height="32" Margin="200,250,0,0" VerticalAlignment="Top" Width="93" Click="buttonAnuluj_Click" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF05464F"/>
-        <ListBox x:Name="lstKupioneProdukty" HorizontalAlignment="Left" Height="178" Margin="415,94,0,0" VerticalAlignment="Top" Width="180" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
-        <ListBox x:Name="lstKupioneIlosci" HorizontalAlignment="Left" Height="178" Margin="600,94,0,0" VerticalAlignment="Top" Width="40" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+        <ListBox x:Name="lstKupioneProdukty" HorizontalAlignment="Left" Height="178" Margin="415,94,0,0" VerticalAlignment="Top" Width="230" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+        <ListBox x:Name="lstKupioneIlosci" HorizontalAlignment="Left" Height="178" Margin="650,94,0,0" VerticalAlignment="Top" Width="40" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
 
         <Grid x:Name="InputBox"  Visibility="Collapsed" Margin="0,0,0,0.333">
             <Grid Background="Black" Opacity="0.5"/>
             <Border
-            Width="390"
+            Width="450"
             Background="#FF006674" 
             BorderBrush="#FF006674" 
             BorderThickness="1" 
@@ -37,8 +37,8 @@
             VerticalAlignment="Center">
                 <StackPanel>
                     <StackPanel>
-                        <TextBlock Margin="120,10,80,5" Text="Wybierz pracownika:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie"  Visibility="Collapsed" Height="30"/>
-                        <ListBox x:Name="lstPracownicy" Margin="20" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="350" Background="#FFDAFAFF"  Visibility="Collapsed" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+                        <TextBlock Margin="150,10,80,5" Text="Wybierz pracownika:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie" Visibility="Collapsed"  Height="30"/>
+                        <ListBox x:Name="lstPracownicy" Margin="20" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="410" Background="#FFDAFAFF" Visibility="Collapsed"   BorderBrush="#FF006674" Foreground="#FF001E22"/>
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

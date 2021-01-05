@@ -12,7 +12,7 @@
         <Label x:Name='labNazwa' Content="Nazwa:" HorizontalAlignment="Left" Height="32" Margin="40,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labCena' Content="Cena" HorizontalAlignment="Left" Height="32" Margin="40,131,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labJednostka' Content="Jednostka:" HorizontalAlignment="Left" Height="32" Margin="40,168,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
-        <TextBox x:Name="txtKod" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBlock x:Name="txtKod" HorizontalAlignment="Left" Height="32" Margin="131,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" Foreground="#FF001D21"/>
         <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="32" Margin="131,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <TextBox x:Name="txtCena" HorizontalAlignment="Left" Height="32" Margin="131,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
         <ComboBox x:Name="cmbJednostka" HorizontalAlignment="Left" Height="32" Margin="131,168,0,0" VerticalAlignment="Top" Width="489" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>

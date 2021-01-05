@@ -94,7 +94,7 @@ namespace CRM_GUI
 
         private void buttonSzukajNumer_Click(object sender, RoutedEventArgs e)
         {
-            InputBox.Visibility= System.Windows.Visibility.Visible;
+            InputBox.Visibility = System.Windows.Visibility.Visible;
             txtNumerSzukany.Text = string.Empty;
         }
 
@@ -118,10 +118,10 @@ namespace CRM_GUI
                 lstUmowy.ItemsSource = new ObservableCollection<Umowa>(_k.ZwrocTransakcje(numer));
                 txtLiczbaUmow.Text = (_k.ZwrocTransakcje(numer).Count().ToString());
             }
-            catch(ArgumentNullException)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("Nie udało się znaleźć umowy o podanym numerze.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }           
+            }
             InputBox.Visibility = System.Windows.Visibility.Collapsed;
         }
 
@@ -138,10 +138,10 @@ namespace CRM_GUI
                 lstUmowy.ItemsSource = new ObservableCollection<Umowa>(_k.ZnajdzTransakcje(data));
                 txtLiczbaUmow.Text = (_k.ZnajdzTransakcje(data).Count().ToString());
             }
-            catch(ArgumentNullException)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("Nie udało się znaleźć umowy o podanej dacie.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }            
+            }
             InputBox1.Visibility = System.Windows.Visibility.Collapsed;
         }
 
@@ -154,7 +154,7 @@ namespace CRM_GUI
         {
             try
             {
-                if(lstPracownicy.SelectedIndex > -1)
+                if (lstPracownicy.SelectedIndex > -1)
                 {
                     Pracownik p = (Pracownik)lstPracownicy.SelectedItem;
                     lstUmowy.ItemsSource = new ObservableCollection<Umowa>(_k.ZwrocTransakcjePracownik(p));
@@ -175,7 +175,7 @@ namespace CRM_GUI
                 MessageBox.Show("Nie udało się znaleźć umowy zawartej przez podanego pracownika.", "Błąd!", MessageBoxButton.OK, MessageBoxImage.Error);
                 InputBox2.Visibility = System.Windows.Visibility.Collapsed;
             }
-            
+
         }
 
         private void butAnuluj2_Click(object sender, RoutedEventArgs e)

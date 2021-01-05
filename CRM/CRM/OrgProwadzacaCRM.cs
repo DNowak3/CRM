@@ -653,6 +653,8 @@ namespace CRM
                 k.StosDoListy();
                 foreach (Umowa u in k.TransakcjeList)
                 {
+                    u.ListaKupionychProduktow.Clear();
+                    u.IlosciKupionychProduktow.Clear();
                     foreach (Produkt key in u.KupioneProdukty.Keys)
                     {
                         u.ListaKupionychProduktow.Add(key);

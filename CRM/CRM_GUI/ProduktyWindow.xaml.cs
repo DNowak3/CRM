@@ -29,8 +29,11 @@ namespace CRM_GUI
             textblockNazwaFirmy.Text = _orgCRM.Nazwa.ToUpper();
             lstProdukty.ItemsSource = new ObservableCollection<Produkt>(_orgCRM.ListaProduktow);
             textblockLiczbaProduktow.Text = _orgCRM.PodajIloscProduktow().ToString();
-            //cmbboxSortuj.SelectedIndex = 0;
-            
+            cmbboxSortuj.SelectedIndex = 0;
+            cmbboxSzukaj.SelectedIndex = 0;
+
+
+
         }
         private void buttonSortuj_Click(object sender, RoutedEventArgs e)
         {
@@ -115,28 +118,30 @@ namespace CRM_GUI
 
         private void buttonWyszukaj_Click(object sender, RoutedEventArgs e)
         {
-            
+
             string wybor = cmbboxSzukaj.Text;
 
             switch (wybor)
             {
                 case "Kod":
                     txtKod.Visibility = System.Windows.Visibility.Visible;
-                    txtBoxKod.Visibility= System.Windows.Visibility.Visible;
+                    txtBoxKod.Visibility = System.Windows.Visibility.Visible;
                     break;
 
                 case "Jednostka":
                     txtJednostka.Visibility = System.Windows.Visibility.Visible;
                     cmbWyszPoJednostce.Visibility = System.Windows.Visibility.Visible;
                     cmbWyszPoJednostce.ItemsSource = Enum.GetValues(typeof(Jednostki));
+                    cmbWyszPoJednostce.SelectedIndex = 0;
                     break;
 
                 case "Cena":
                     txtCena.Visibility = System.Windows.Visibility.Visible;
                     txtBoxCena.Visibility = System.Windows.Visibility.Visible;
-                    cmbTD.Visibility= System.Windows.Visibility.Visible;
+                    cmbTD.Visibility = System.Windows.Visibility.Visible;
                     cmbTD.Items.Add("poniżej");
                     cmbTD.Items.Add("powyżej");
+                    cmbTD.SelectedIndex = 0;
                     break;
 
                 default:
@@ -206,6 +211,7 @@ namespace CRM_GUI
                     }
                     txtCena.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxCena.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbTD.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxCena.Text = String.Empty;
                     cmbTD.Text = String.Empty;
                     cmbTD.Items.Clear();
@@ -238,6 +244,7 @@ namespace CRM_GUI
                 case "Cena":
                     txtCena.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxCena.Visibility = System.Windows.Visibility.Collapsed;
+                    cmbTD.Visibility = System.Windows.Visibility.Collapsed;
                     txtBoxCena.Text = String.Empty;
                     cmbTD.Text = String.Empty;
                     cmbTD.Items.Clear();
