@@ -23,8 +23,6 @@ namespace CRM
         /// Wyrażenie regularne wskazujące na poprawny format numeru NIP
         /// </summary>
         Regex wzorNip = new Regex(@"^\d{3}-\d{3}-\d{2}-\d{2}$");
-
-
         string nazwa;
         Branże branza;
         string nip;
@@ -34,7 +32,6 @@ namespace CRM
         string adres;
         string kodPocztowy;
         string notatki;
-
         /// <summary>
         /// Metoda akcesorowa do prywatnego pola: nip
         /// </summary>
@@ -86,7 +83,6 @@ namespace CRM
         /// Metoda akcesorowa do prywatnego pola: dataZalozenia
         /// </summary>
         public DateTime DataZalozenia { get => dataZalozenia; set => dataZalozenia = value; }
-
         /// <summary>
         /// Konstruktor domyślny klasy
         /// </summary>
@@ -99,7 +95,6 @@ namespace CRM
             Notatki = string.Empty;
             DataZalozenia = DateTime.Today;
         }
-
         /// <summary>
         /// Konstruktor parametryczny klasy dziedziczący po konstruktorze bazowym
         /// </summary>
@@ -110,7 +105,6 @@ namespace CRM
             Nazwa = nazwa;
             Branza = branza;
         }
-
         /// <summary>
         /// Konstruktor z większą liczbą parametrów, dziedziczy po poprzednim konstruktorze parametrycznym
         /// </summary>
@@ -127,16 +121,13 @@ namespace CRM
             Miasto = miasto;
             DateTime.TryParseExact(dataZalozenia, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime dt);
             DataZalozenia = dt;
-
         }
-
         public Organizacja(string nazwa, Branże branza, string nip, string kraj, string miasto, string adres, string kodpocztowy, string notatki, string dataZalozenia) : this(nazwa, branza, nip, kraj, miasto, dataZalozenia)
         {
             Adres = adres;
             KodPocztowy = kodpocztowy;
             Notatki = notatki;
         }
-
         /// <summary>
         /// Metoda porównująca obiekty klas dziedziczących po klasie Organizacja po nazwie (alfabetycznie)
         /// </summary>
@@ -146,7 +137,6 @@ namespace CRM
         {
             return Nazwa.CompareTo(other.Nazwa);
         }
-
         /// <summary>
         /// Metoda sprawdzająca czy dwie organizacje "są równe" - przyjmujemy że organizacje są równe gdy posiadają
         /// takie same nazwy, branże i adresy NIP
@@ -159,7 +149,6 @@ namespace CRM
                 return true;
             return false;
         }
-
         /// <summary>
         /// Metoda, która umożliwia utworzenie kopii obiektu
         /// </summary>
@@ -168,7 +157,6 @@ namespace CRM
         {
             return MemberwiseClone();
         }
-
         /// <summary>
         /// Metoda umożliwiająca zapis danych do pliku XML - nadpisywana w klasie Konkurent
         /// </summary>
@@ -181,7 +169,6 @@ namespace CRM
                 xml.Serialize(sw, this);
             }
         }
-
         public virtual void ZapiszJSON(string nazwa)
         {
             using (StreamWriter sw = new StreamWriter(nazwa))
@@ -190,7 +177,6 @@ namespace CRM
                 sw.WriteLine(json.Serialize(this));
             }
         }
-
         /// <summary>
         /// Tworzy czytelny opis obiektu organizacja, metoda nadpisywana zostaje w klasie Konkurent
         /// </summary>

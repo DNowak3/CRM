@@ -20,21 +20,20 @@ namespace CRM
         /// </summary>
         public enum StopienZagrozenia { Niski, BardzoNiski, Średni, Wysoki, BardzoWysoki }
         StopienZagrozenia zagrozenie;
-
         public StopienZagrozenia Zagrozenie { get => zagrozenie; set => zagrozenie = value; }
-
         /// <summary>
         /// Konstruktor domyślny, dziedziczący po konstruktorze domyślnym z klasy bazowej
         /// </summary>
-        public Konkurent() : base() { }
-
+        public Konkurent() : base() 
+        {
+            Zagrozenie = StopienZagrozenia.Średni;
+        }
         /// <summary>
         /// Konstruktor parametryczny, dziedziczący po konstruktorze z dwoma parametrami z klasy bazowej
         /// </summary>
         /// <param name="nazwa"></param>
         /// <param name="branza"></param>
         public Konkurent(string nazwa, Branże branza) : base(nazwa, branza) { }
-
         /// <summary>
         /// Konstruktor parametryczny, dziedziczący po kosntruktorze z dwoma parametrami z klasy bazowej
         /// </summary>
@@ -49,7 +48,6 @@ namespace CRM
         {
             Zagrozenie = zagrozenie;
         }
-
         /// <summary>
         /// Metoda, która korzystając z funkcji Equals zdefiniowanej z klasie Organizacja, sprawdza, czy dwa obiekty
         /// klasy Konkurent (dwie organizacje będące konkurentami) są równe - czy to ta sama firma
@@ -63,7 +61,6 @@ namespace CRM
                 return true;
             return false;
         }
-
         /// <summary>
         /// Metoda  umożliwiająca zapis obiektu do pliku xml
         /// </summary>
@@ -76,7 +73,6 @@ namespace CRM
                 xml.Serialize(sw, this);
             }
         }
-
         /// <summary>
         /// Metoda pozwalająca na odczyt danych z pliku xml o podanej nazwie
         /// </summary>
@@ -94,7 +90,6 @@ namespace CRM
                 return (Konkurent)xml.Deserialize(sr);
             }
         }
-
         /// <summary>
         /// Metoda zapisująca dane o konkurencie w pliku JSON
         /// </summary>
@@ -103,7 +98,6 @@ namespace CRM
         {
             base.ZapiszJSON(nazwa);
         }
-
         /// <summary>
         /// Metoda odczytująca dane o konkurencie z pliku JSON
         /// </summary>
@@ -120,7 +114,16 @@ namespace CRM
                 return (Konkurent)json.Deserialize(z, typeof(Konkurent));
             }
         }
-
+        /// <summary>
+        /// Metoda klonująca obiekt klasy Konkurent
+        /// </summary>
+        /// <returns></returns>
+        public override object Clone()
+        {
+            Konkurent klonowany = (Konkurent)base.Clone();
+            klonowany.Zagrozenie = this.zagrozenie;
+            return klonowany;
+        }
         /// <summary>
         /// Metoda nadpisywana z klasy Organizacja, wypisuje czytelny opis obiektów klasy Konkurent
         /// </summary>
@@ -128,13 +131,6 @@ namespace CRM
         public override string ToString()
         {
             return base.ToString() + $" (stopień zagrożenia: {Zagrozenie})";
-        }
-
-        public override object Clone()
-        {
-            Konkurent klonowany = (Konkurent)base.Clone();
-            klonowany.Zagrozenie=this.zagrozenie;
-            return klonowany;
         }
     }
 }

@@ -30,6 +30,8 @@ namespace CRM_GUI
             lstKonkurenci.ItemsSource = new ObservableCollection<Konkurent>(_orgCRM.ListaKonkurentow);
             textblockLiczbaKonkurentow.Text = _orgCRM.PodajIloscKonkurentow().ToString();
             comboBoxSortuj.SelectedIndex = 0;
+            comboBoxWyszukaj.SelectedIndex = 1;
+            cmbWyszPoZagrozeniu.SelectedIndex = 3;
         }
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
@@ -113,6 +115,7 @@ namespace CRM_GUI
                 case "Wyszukaj po stopniu zagrożenia":
                     txtZagrozenie.Visibility = System.Windows.Visibility.Visible;
                     cmbWyszPoZagrozeniu.Visibility = System.Windows.Visibility.Visible;
+                    cmbWyszPoZagrozeniu.ItemsSource = Enum.GetValues(typeof(StopienZagrozenia));
                     break;
 
                 case "Wyszukaj po kraju":
@@ -134,7 +137,7 @@ namespace CRM_GUI
             string opcja = comboBoxWyszukaj.Text;
             switch (opcja)
             {
-                case "Wyszukaj po stopniu zagrozenia":
+                case "Wyszukaj po stopniu zagrożenia":
                     try
                     {
                         Enum.TryParse<StopienZagrozenia>(cmbWyszPoZagrozeniu.SelectedValue.ToString(), out StopienZagrozenia z);
@@ -151,7 +154,7 @@ namespace CRM_GUI
                     cmbWyszPoZagrozeniu.Text = String.Empty;
                     break;
 
-                case "Wyszukaj po kraju:":
+                case "Wyszukaj po kraju":
                     try
                     {
                         string kraj = txtBoxKraj.Text;

@@ -160,6 +160,10 @@ namespace CRM_GUI
                 KonkurenciWindow okno = new KonkurenciWindow(_orgCRM);
                 okno.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Tylko zapisane do pliku, lub z niego odczytane organizacje mają dostęp do listy produktów.", "***", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
         private void butProdukty_Click(object sender, RoutedEventArgs e)
         {

@@ -362,10 +362,12 @@ namespace CRM
             NaszaFirma.DodajPracownika(pracownik3);
             NaszaFirma.DodajPracownika(pracownik4);
 
-            nasza.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
-            nasza.DodajKonkurenta(new Konkurent("Wish", Branże.Inne));
-            nasza.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
-            nasza.DodajKonkurenta(new Konkurent("Media Expert", Branże.Elektronika));
+            NaszaFirma.DodajKonkurenta(k);
+            NaszaFirma.DodajKonkurenta(k2);
+            NaszaFirma.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Wish", Branże.Inne));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Media Expert", Branże.Elektronika));
 
             Klient fb = new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Ważny klient", Status.stały);
             Klient castorama = new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były);

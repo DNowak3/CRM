@@ -142,3 +142,11 @@ C:\Users\kycia\Source\Repos\CRM14\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.
 C:\Users\kycia\Source\Repos\CRM14\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
 C:\Users\kycia\Source\Repos\CRM14\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\kycia\Source\Repos\CRM14\CRM\CRM\obj\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\bin\Debug\CRM.exe.config
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\bin\Debug\CRM.xml
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\bin\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\bin\Debug\CRM.pdb
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.exe
+C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.pdb

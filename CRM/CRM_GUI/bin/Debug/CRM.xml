@@ -644,6 +644,12 @@
             <param name="nazwa"> nazwa pliku </param>
             <returns></returns>
         </member>
+        <member name="M:CRM.Konkurent.Clone">
+            <summary>
+            Metoda klonująca obiekt klasy Konkurent
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CRM.Konkurent.ToString">
             <summary>
             Metoda nadpisywana z klasy Organizacja, wypisuje czytelny opis obiektów klasy Konkurent
