@@ -25,6 +25,8 @@ namespace CRM_GUI
         {
             p = new Pracownik();
             InitializeComponent();
+            cmbPlec.SelectedIndex = 0;
+            cmbStanowisko.SelectedIndex = 0;
         }
         public PracownikWindow(Pracownik prac) : this()
         {

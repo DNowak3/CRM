@@ -29,6 +29,10 @@ namespace CRM_GUI
             _orgCRM = orgCRM;
             lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(orgCRM.ListaPracownikow);
             txtBoxLiczbaPrac.Text = _orgCRM.PodajIloscPracownikow().ToString();
+            cmbSortPrac.SelectedIndex = 0;
+            cmbWyszPoPlci.SelectedIndex = 0;
+            cmbWyszPoStanowisku.SelectedIndex = 0;
+            cmbWyszukajPracPo.SelectedIndex = 0;
         }
 
         private void butDodajPrac_Click(object sender, RoutedEventArgs e)
@@ -93,6 +97,7 @@ namespace CRM_GUI
                 MessageBox.Show("Nie udało się posortować pracowników.","Błąd!",MessageBoxButton.OK,MessageBoxImage.Error);
             }
             lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ListaPracownikow);
+            txtBoxLiczbaPrac.Text = _orgCRM.PodajIloscPracownikow().ToString();
         }
 
         private void butWyszukajPracPo_Click(object sender, RoutedEventArgs e)
@@ -126,23 +131,25 @@ namespace CRM_GUI
             {
                 Enum.TryParse<Stanowiska>(cmbWyszPoStanowisku.SelectedValue.ToString(), out Stanowiska pom);
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowStanowisko(pom));
+                txtBoxLiczbaPrac.Text = _orgCRM.ZnajdzWszystkichPracownikowStanowisko(pom).Count().ToString();
+
                 cmbWyszPoStanowisku.Visibility = System.Windows.Visibility.Collapsed;
                 txtStanowisko.Visibility = System.Windows.Visibility.Collapsed;
-
-                cmbWyszPoStanowisku.Text = String.Empty;
             }
             else if (cmbWyszukajPracPo.Text == "Po płci")
             {
                 Enum.TryParse<Plcie>(cmbWyszPoPlci.SelectedValue.ToString(), out Plcie pom);
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPlec(pom));
+                txtBoxLiczbaPrac.Text = _orgCRM.ZnajdzWszystkichPracownikowPlec(pom).Count().ToString();
+
                 cmbWyszPoPlci.Visibility = System.Windows.Visibility.Collapsed;
                 txtPlec.Visibility = System.Windows.Visibility.Collapsed;
-
-                cmbWyszPoPlci.Text = String.Empty;
             }
             else if (cmbWyszukajPracPo.Text == "Po dacie rozpoczęcia pracy")
             {
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(txtBoxData.Text));
+                txtBoxLiczbaPrac.Text = _orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(txtBoxData.Text).Count().ToString();
+
                 InputBox.Visibility = System.Windows.Visibility.Collapsed;
                 txtData.Visibility = System.Windows.Visibility.Collapsed;
                 txtBoxData.Text = String.Empty;
@@ -156,24 +163,25 @@ namespace CRM_GUI
             if (cmbWyszukajPracPo.Text == "Po stanowisku")
             {
                 cmbWyszPoStanowisku.Visibility = System.Windows.Visibility.Collapsed;
-                cmbWyszPoStanowisku.Text = String.Empty;
+                txtStanowisko.Visibility = System.Windows.Visibility.Collapsed;
             }
             else if (cmbWyszukajPracPo.Text == "Po płci")
             {
                 cmbWyszPoPlci.Visibility = System.Windows.Visibility.Collapsed;
-                cmbWyszPoPlci.Text = String.Empty;
+                txtPlec.Visibility = System.Windows.Visibility.Collapsed;
             }
             else if (cmbWyszukajPracPo.Text == "Po dacie rozpoczęcia pracy")
             {
                 txtBoxData.Visibility = System.Windows.Visibility.Collapsed;
+                txtData.Visibility = System.Windows.Visibility.Collapsed;
                 txtBoxData.Text = String.Empty;
-
             }
         }
 
         private void butPokazWszystkich_Click(object sender, RoutedEventArgs e)
         {
             lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ListaPracownikow);
+            txtBoxLiczbaPrac.Text = _orgCRM.PodajIloscPracownikow().ToString();
         }
 
         private void butUsunWszystkichPrac_Click(object sender, RoutedEventArgs e)

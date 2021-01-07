@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OrgProwadzacaCRM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Nip>908-786-23-45</Nip>
+  <Nazwa>Monety S.A.</Nazwa>
+  <Branza>Finanse</Branza>
+  <Kraj>Polska</Kraj>
+  <Miasto>Lublin</Miasto>
+  <Adres>Aleksandra 34/5</Adres>
+  <KodPocztowy>23-456</KodPocztowy>
+  <Notatki>Brak danych</Notatki>
+  <DataZalozenia>1920-01-01T00:00:00</DataZalozenia>
+  <ListaPracownikow>
+    <Pracownik>
+      <Imie>Adam</Imie>
+      <Nazwisko>Kowalski</Nazwisko>
+      <Plec>M</Plec>
+      <Stanowisko>konsultant</Stanowisko>
+      <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+    </Pracownik>
+  </ListaPracownikow>
+  <ListaProduktow>
+    <Produkt>
+      <Nazwa>Telefon</Nazwa>
+      <Cena>456.89</Cena>
+      <Jednostka>szt</Jednostka>
+      <Kod>T20211</Kod>
+    </Produkt>
+  </ListaProduktow>
+  <ListaKonkurentow>
+    <Konkurent>
+      <Nazwa>Konkurencyjni z o.o.</Nazwa>
+      <Branza>Media</Branza>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
+      <Zagrozenie>Niski</Zagrozenie>
+    </Konkurent>
+  </ListaKonkurentow>
+  <ListaKlientow>
+    <Klient>
+      <Nip>123-456-78-91</Nip>
+      <Nazwa>Toyota S.A.</Nazwa>
+      <Branza>Motoryzacja</Branza>
+      <Kraj>Japonia</Kraj>
+      <Miasto>Toyota</Miasto>
+      <Adres />
+      <KodPocztowy />
+      <Notatki />
+      <DataZalozenia>1920-01-01T00:00:00</DataZalozenia>
+      <DataPlanowanegoKontaktu>0001-01-01T00:00:00</DataPlanowanegoKontaktu>
+      <Status>potencjalny</Status>
+      <ListaKontaktow />
+      <TransakcjeList />
+      <DzialaniaList />
+    </Klient>
+  </ListaKlientow>
+</OrgProwadzacaCRM>

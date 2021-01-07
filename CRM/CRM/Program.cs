@@ -362,6 +362,7 @@ namespace CRM
             NaszaFirma.DodajPracownika(pracownik3);
             NaszaFirma.DodajPracownika(pracownik4);
 
+
             NaszaFirma.DodajKonkurenta(k);
             NaszaFirma.DodajKonkurenta(k2);
             NaszaFirma.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
@@ -434,7 +435,6 @@ namespace CRM
             NaszaFirma.DodajProdukt(pr1);
             NaszaFirma.DodajProdukt(pr2);
             NaszaFirma.DodajProdukt(pr3);
-            NaszaFirma.ZapiszXML("NaszaFirma.xml");
 
             try
             {

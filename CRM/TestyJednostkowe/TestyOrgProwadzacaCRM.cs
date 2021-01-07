@@ -224,5 +224,45 @@ namespace TestyJednostkowe
             Assert.AreEqual(true, temp.JestKlientem("AdamEx"));
             Assert.AreEqual(false, temp.JestKlientem("AutoMoto"));
         }
+        [TestMethod]
+        public void ZapisOdczytXML()
+        {
+            OrgProwadzacaCRM o = new OrgProwadzacaCRM("Monety S.A.", Branże.Finanse, "908-786-23-45", "Polska","Lublin","Aleksandra 34/5","23-456","Brak danych", "01.01.1920");
+            Klient kl = new Klient("Toyota S.A.", Branże.Motoryzacja, "123-456-78-91", "Japonia", "Toyota", "01.01.1920");
+            Konkurent kon = new Konkurent("Konkurencyjni z o.o.", Branże.Media);
+            Pracownik prac = new Pracownik("Adam", "Kowalski", Plcie.M, Stanowiska.konsultant);
+            Produkt pr = new Produkt("Telefon", 456.89);
+            o.DodajKlienta(kl);
+            o.DodajKonkurenta(kon);
+            o.DodajPracownika(prac);
+            o.DodajProdukt(pr);
+            o.ZapiszXML("o.xml");
+            OrgProwadzacaCRM oXML = OrgProwadzacaCRM.OdczytajXML("o.xml");
+
+            Assert.AreEqual(oXML.Nazwa, o.Nazwa);
+            Assert.AreEqual(oXML.Branza, o.Branza);
+            Assert.AreEqual(oXML.Nip, o.Nip);
+            Assert.AreEqual(oXML.Kraj, o.Kraj);
+            Assert.AreEqual(oXML.Miasto, o.Miasto);
+            Assert.AreEqual(oXML.Adres, o.Adres);
+            Assert.AreEqual(oXML.KodPocztowy, o.KodPocztowy);
+            Assert.AreEqual(oXML.Notatki, o.Notatki);
+            Assert.AreEqual(oXML.DataZalozenia, o.DataZalozenia);
+            Assert.AreEqual(true, oXML.JestProduktem(o.ListaProduktow[0].Kod));
+            Assert.AreEqual(true, oXML.JestPracownikiem(o.ListaPracownikow[0].Imie, o.ListaPracownikow[0].Nazwisko, o.ListaPracownikow[0].Stanowisko));
+            Assert.AreEqual(true, oXML.JestKlientem(o.ListaKlientow[0].Nazwa));
+            Assert.AreEqual(true, oXML.JestKonkurentem(o.ListaKonkurentow[0].Nazwa));
+        }
+        [TestMethod]
+        public void Clone()
+        {
+            OrgProwadzacaCRM o = new OrgProwadzacaCRM("Monety S.A.", Branże.Finanse, "908-786-23-45", "Polska", "Lublin", "Aleksandra 34/5", "23-456", "Brak danych", "01.01.1920");
+            OrgProwadzacaCRM klon = (OrgProwadzacaCRM) o.Clone();
+
+            o.ListaPracownikow.ForEach(p =>Assert.IsTrue(klon.JestPracownikiem(p)));
+            o.ListaProduktow.ForEach(p => Assert.IsTrue(klon.JestProduktem(p)));
+            o.ListaKonkurentow.ForEach(k => Assert.IsTrue(klon.JestKonkurentem(k)));
+            o.ListaKlientow.ForEach(k => Assert.IsTrue(klon.JestKlientem(k)));
+        }
     }
 }

@@ -201,7 +201,7 @@ namespace CRM
         {
             string napis = Telefon == null ? "" : $", nr telefonu: {Telefon}";
             napis += Mail == null ? null : $", email: {Mail}";
-            napis+= Notatki==null?null:$"\n\tNotatki: {Notatki}";
+            napis+= $"\n\tNotatki: {Notatki}";
             return base.ToString() + napis;
         }
 

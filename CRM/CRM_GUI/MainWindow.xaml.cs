@@ -29,15 +29,13 @@ namespace CRM_GUI
         }
         private void menuWyjdz_Click(object sender, RoutedEventArgs e)
         {
-            if (_orgZPliku is OrgProwadzacaCRM)
+
+            if (txtNazwa.Text != "" && cmbBranza.Text != "")
             {
-                if (_orgCRM.WprowadzonoZmiany(_orgZPliku))
+                MessageBoxResult m = MessageBox.Show("Chcesz zapisać plik?", "", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                if (m == MessageBoxResult.Yes)
                 {
-                    MessageBoxResult m = MessageBox.Show("Od ostatniego zapisu pliku wprowadzono zmiany, czy chcesz je zapisać?", "", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                    if (m == MessageBoxResult.Yes)
-                    {
-                        menuZapisz_Click(sender, e);
-                    }
+                    menuZapisz_Click(sender, e);
                 }
             }
             MessageBox.Show("Dziękujemy za używanie naszego programu, do zobaczenia!");
@@ -55,7 +53,8 @@ namespace CRM_GUI
                 if (txtNazwa.Text != "" && cmbBranza.Text != "")
                 {
                     Enum.TryParse<Branże>(cmbBranza.Text, out Branże pom);
-                    _orgCRM = new OrgProwadzacaCRM(txtNazwa.Text, pom);
+                    _orgCRM.Nazwa = txtNazwa.Text;
+                    _orgCRM.Branza=pom;
                     
                     DateTime.TryParseExact(txtDataZal.Text, new[] { "dd.MM.yyyy", "dd.MMM.yyyy", "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yyyy", "dd-MMM-yyyy" }, null, System.Globalization.DateTimeStyles.None, out DateTime temp);
                     _orgCRM.DataZalozenia = temp;
@@ -69,6 +68,7 @@ namespace CRM_GUI
                 else
                 {
                     MessageBox.Show("Aby zapisać organizację, należy podać co najmniej jej nazwę i branżę", "Uwaga!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
                 }
                 try
                 {
@@ -80,7 +80,7 @@ namespace CRM_GUI
                     {
                         _orgCRM.ZapiszJSON(nazwaPliku);
                     }
-                    //_orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
+                    _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
                 }
                 catch (Exception)
                 {

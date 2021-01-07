@@ -7,7 +7,7 @@
         xmlns:CRM="clr-namespace:CRM;assembly=CRM"
         xmlns:local="clr-namespace:CRM_GUI"
         mc:Ignorable="d"
-        Title="Pracownicy" Height="530" Width="1048.667">
+        Title="Pracownicy" Height="530" Width="974">
     <Window.Resources>
         <ObjectDataProvider x:Key="enumStanowiska" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
@@ -26,29 +26,25 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="46" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstPracownicy" HorizontalAlignment="Left" Height="417" Margin="27,50,0,0" VerticalAlignment="Top" Width="684" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
-        <Button x:Name="butDodajPrac" Content="Dodaj pracownika" HorizontalAlignment="Left" Height="30" Margin="742,318,0,0" VerticalAlignment="Top" Width="287" Click="butDodajPrac_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF008698"/>
-        <Button x:Name="butUsunPrac" Content="Usuń pracownika" HorizontalAlignment="Left" Height="30" Margin="743,388,0,0" VerticalAlignment="Top" Width="287" Click="butUsunPrac_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF003C44"/>
-        <Button x:Name="butSortPrac" Content="Sortuj" HorizontalAlignment="Left" Height="30" Margin="742,121,0,0" VerticalAlignment="Top" Width="287" Click="butSortPrac_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF007C8D"/>
-        <ComboBox x:Name="cmbSortPrac" HorizontalAlignment="Left" Height="30" Margin="742,86,0,0" VerticalAlignment="Top" Width="287" RenderTransformOrigin="0.898,0.476" FontSize="14" Background="#FF879AF3" Foreground="#FF002A30" BorderBrush="#FF3959F5">
-            <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="236"/>
-            <ComboBoxItem Content="Po dacie zatrudnienia malejąco" HorizontalAlignment="Left" Width="236"/>
-            <ComboBoxItem Content="Po dacie zatrudnienia rosnąco" HorizontalAlignment="Left" Width="236"/>
+        <ListBox x:Name="lstPracownicy" HorizontalAlignment="Left" Height="417" Margin="27,62,0,0" VerticalAlignment="Top" Width="684" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001E22"/>
+        <Button x:Name="butDodajPrac" Content="Dodaj pracownika" HorizontalAlignment="Left" Height="35" Margin="744,258,0,0" VerticalAlignment="Top" Width="205" Click="butDodajPrac_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF008698"/>
+        <Button x:Name="butUsunPrac" Content="Usuń Pracownika" HorizontalAlignment="Left" Height="35" Margin="744,338,0,0" VerticalAlignment="Top" Width="205" Click="butUsunPrac_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF003C44"/>
+        <Button x:Name="butSortPrac" Content="Sortuj" HorizontalAlignment="Left" Height="35" Margin="743,62,0,0" VerticalAlignment="Top" Width="205" Click="butSortPrac_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF007C8D"/>
+        <ComboBox x:Name="cmbSortPrac" HorizontalAlignment="Left" Height="35" Margin="742,102,0,0" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.898,0.476" FontSize="16" Background="#FF879AF3" Foreground="#FF002A30" BorderBrush="#FF3959F5" FontWeight="Bold">
+            <ComboBoxItem Content="Alfabetycznie" HorizontalAlignment="Left" Width="250"/>
+            <ComboBoxItem Content="Po dacie zatrudnienia malejąco" HorizontalAlignment="Left" Width="250"/>
+            <ComboBoxItem Content="Po dacie zatrudnienia rosnąco" HorizontalAlignment="Left" Width="250"/>
         </ComboBox>
-        <Button x:Name="butWyszukajPracPo" Content="Wyszukaj" HorizontalAlignment="Left" Height="30" Margin="742,226,0,0" VerticalAlignment="Top" Width="287" Click="butWyszukajPracPo_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF007C8D"/>
-        <ComboBox x:Name="cmbWyszukajPracPo" HorizontalAlignment="Left" Height="30" Margin="742,193,0,0" VerticalAlignment="Top" Width="287" FontSize="14" Background="#FFD1F7FF" Foreground="#FF120717">
+        <Button x:Name="butWyszukajPracPo" Content="Wyszukaj" HorizontalAlignment="Left" Height="35" Margin="744,157,0,0" VerticalAlignment="Top" Width="205" Click="butWyszukajPracPo_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF007C8D"/>
+        <ComboBox x:Name="cmbWyszukajPracPo" HorizontalAlignment="Left" Height="35" Margin="743,197,0,0" VerticalAlignment="Top" Width="205" FontSize="16" Background="#FFD1F7FF" Foreground="#FF120717" FontWeight="Bold">
             <ComboBoxItem Content="Po stanowisku" HorizontalAlignment="Left" Width="236"/>
             <ComboBoxItem Content="Po płci" HorizontalAlignment="Left" Width="236"/>
             <ComboBoxItem Content="Po dacie rozpoczęcia pracy" HorizontalAlignment="Left" Width="236"/>
         </ComboBox>
-        <Label x:Name="labPracownicy" Content="Liczba wszystkich pracowników: " HorizontalAlignment="Left" Height="30" Margin="725,11,0,0" VerticalAlignment="Top" Width="265" FontSize="16" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
-        <Button x:Name="butEdytujDane" Content="Edytuj dane pracowników" HorizontalAlignment="Left" Height="30" Margin="742,353,0,0" VerticalAlignment="Top" Width="287" Click="butEdytujDane_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF006674"/>
-        <Button x:Name="butPokazWszystkich" Content="Pokaż dane wszystkich pracowników" HorizontalAlignment="Left" Height="32" Margin="742,263,0,0" VerticalAlignment="Top" Width="287" Click="butPokazWszystkich_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF005763"/>
-        <TextBlock x:Name="txtBlockJakSortowac" HorizontalAlignment="Left" Height="30" Margin="742,56,0,0" TextWrapping="Wrap" Text="Wybierz jak posortować pracowników" VerticalAlignment="Top" Width="286" FontSize="14" TextAlignment="Center" FontStretch="SemiExpanded" FontWeight="Bold" Foreground="#FF00525E"/>
-        <TextBlock x:Name="txtBlockJakWszukac" HorizontalAlignment="Left" Height="30" Margin="742,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="14" TextAlignment="Center" FontWeight="Bold" Foreground="#FF00525E"><Run Text="Wybierz"/><Run Text=" "/><Run Text="po czym wyszukać pracowników"/></TextBlock>
-        <Button x:Name="butUsunWszystkichPrac" Content="Usuń wszystkich pracowników" HorizontalAlignment="Left" Height="30" Margin="742,437,0,0" VerticalAlignment="Top" Width="287" Click="butUsunWszystkichPrac_Click" FontSize="14" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF00272C"/>
-        <TextBlock x:Name="txtBoxLiczbaPrac" HorizontalAlignment="Left" Height="22" Margin="967,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59" FontSize="16" FontWeight="SemiBold" RenderTransformOrigin="2.028,0.571" TextAlignment="Center" Foreground="White"/>
-        <Label x:Name="labPracownicyLista" Content="Lista pracowników:" HorizontalAlignment="Left" Height="39" Margin="27,2,0,0" VerticalAlignment="Top" Width="591" FontSize="20" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <Button x:Name="butEdytujDane" Content="Edytuj pracownika" HorizontalAlignment="Left" Height="35" Margin="744,298,0,0" VerticalAlignment="Top" Width="205" Click="butEdytujDane_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF006674"/>
+        <Button x:Name="butPokazWszystkich" Content="Pokaż wszystkich" HorizontalAlignment="Left" Height="35" Margin="743,404,0,0" VerticalAlignment="Top" Width="205" Click="butPokazWszystkich_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF005763"/>
+        <Button x:Name="butUsunWszystkichPrac" Content="Usuń wszystkich" HorizontalAlignment="Left" Height="35" Margin="742,444,0,0" VerticalAlignment="Top" Width="205" Click="butUsunWszystkichPrac_Click" FontSize="18" BorderBrush="#FF006674" Foreground="White" FontWeight="Bold" Background="#FF00272C"/>
+        <Label x:Name="labPracownicyLista" Content="Lista pracowników:" HorizontalAlignment="Left" Height="39" Margin="27,8,0,0" VerticalAlignment="Top" Width="418" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
         <Grid x:Name="InputBox" Visibility="Collapsed" Margin="0,0,0,0.333">
             <Grid Background="Black" Opacity="0.5"/>
             <Border
@@ -59,7 +55,6 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Center">
                 <StackPanel>
-
                     <StackPanel>
                         <TextBlock Margin="5" Text="Wybierz stanowisko" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtStanowisko"/>
                         <TextBlock Margin="5" Text="Wybierz płeć" FontWeight="Bold" Foreground="White"  Visibility="Collapsed" x:Name="txtPlec"/>
@@ -77,5 +72,7 @@
                 </StackPanel>
             </Border>
         </Grid>
+        <Label x:Name="labPracownicy" Content="W sumie:" HorizontalAlignment="Left" Height="37" Margin="550,6,0,0" VerticalAlignment="Top" Width="109" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
+        <TextBlock x:Name="txtBoxLiczbaPrac" HorizontalAlignment="Left" Height="30" Margin="657,14,0,452" VerticalAlignment="Center" Width="52" FontSize="22" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
     </Grid>
 </Window>

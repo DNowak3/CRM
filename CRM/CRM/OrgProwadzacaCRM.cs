@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,9 +33,13 @@ namespace CRM
         /// </summary>
         List<Klient> _listaKlientow;
 
+        [JsonProperty("ListaPracownikow")]
         public List<Pracownik> ListaPracownikow { get => _listaPracownikow;}
+        [JsonProperty("ListaProduktow")]
         public List<Produkt> ListaProduktow { get => _listaProduktow;  }
+        [JsonProperty("ListaKonkurentow")]
         public List<Konkurent> ListaKonkurentow { get => _listaKonkurentow; }
+        [JsonProperty("ListaKlientow")]
         public List<Klient> ListaKlientow { get => _listaKlientow;}
 
         #region Konstruktory
@@ -701,7 +706,6 @@ namespace CRM
                         for(int i=0;i< u.IlosciKupionychProduktow.Count();++i)
                         {
                             u.KupioneProdukty.Add(u.ListaKupionychProduktow[i], u.IlosciKupionychProduktow[i]);
-                            Console.WriteLine(u.KupioneProdukty);
                         }
                     }
                 }
@@ -741,25 +745,31 @@ namespace CRM
         {
             if (!File.Exists(nazwa))
                 return null;
-            using (StreamReader sw = new StreamReader(nazwa))
-            {
-                JavaScriptSerializer json = new JavaScriptSerializer();
-                string z = sw.ReadToEnd(); 
-                OrgProwadzacaCRM o = (OrgProwadzacaCRM)json.Deserialize(z, typeof(OrgProwadzacaCRM));
-                //foreach (Klient k in o.ListaKlientow)
-                //{
-                //    k.ListaDoStosu();
-                //    foreach (Umowa u in k.TransakcjeList)
-                //    {
-                //        for (int i = 0; i < u.IlosciKupionychProduktow.Count(); ++i)
-                //        {
-                //            u.KupioneProdukty.Add(u.ListaKupionychProduktow[i], u.IlosciKupionychProduktow[i]);
-                //            Console.WriteLine(u.KupioneProdukty);
-                //        }
-                //    }
-                //}
-                return o;
-            }
+            // read file into a string and deserialize JSON to a type
+            OrgProwadzacaCRM o = JsonConvert.DeserializeObject<OrgProwadzacaCRM>(File.ReadAllText(nazwa));
+
+            //using (StreamReader sw = new StreamReader(nazwa))
+            //{
+            //    string orgString = sw.ReadToEnd();
+            //    Console.WriteLine(orgString);
+
+            //    OrgProwadzacaCRM o = new JavaScriptSerializer().Deserialize<OrgProwadzacaCRM>(orgString);
+            //    o = new JavaScriptSerializer().Deserialize<OrgProwadzacaCRM>(orgString);
+            //    foreach (Klient k in o.ListaKlientow)
+            //    {
+            //        k.ListaDoStosu();
+            //        foreach (Umowa u in k.TransakcjeList)
+            //        {
+            //            for (int i = 0; i < u.IlosciKupionychProduktow.Count(); ++i)
+            //            {
+            //                u.KupioneProdukty.Add(u.ListaKupionychProduktow[i], u.IlosciKupionychProduktow[i]);
+            //                Console.WriteLine(u.KupioneProdukty);
+            //            }
+            //        }
+            //    }
+            //    return o;
+            //}
+            return o;
         }
         #endregion
         #region Funkcje wypisujace
