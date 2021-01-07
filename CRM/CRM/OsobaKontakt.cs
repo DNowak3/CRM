@@ -14,7 +14,7 @@ namespace CRM
     /// Klasa definiująca osobę, z którą się kontaktujemy. Dziedziczy po klasie Osoba.
     /// </summary>
     [Serializable]
-    public class OsobaKontakt :Osoba,IEquatable<OsobaKontakt>, ICloneable,IZapisywalna
+    public class OsobaKontakt :Osoba,IEquatable<OsobaKontakt>, ICloneable
     {
         /// <summary>
         /// Telefon do osoby, z którą się kontaktujemy.
@@ -29,10 +29,11 @@ namespace CRM
         /// </summary>
         string _notatki;
 
+        #region Wlasciwosci
         public string Telefon { get => _telefon; set => _telefon = PoprawnyTelefon(value); }
         public string Mail { get => _mail; set => _mail = PoprawnyEmail(value); }
         public string Notatki { get => _notatki; set => _notatki = value; }
-
+        #endregion
         #region Konstruktory
         public OsobaKontakt():base()
         {
@@ -58,8 +59,8 @@ namespace CRM
         /// Funkacja sprawdzająca, czy podany numer telefonu jest poprawny.
         /// </summary>
         /// <param name="telefon">Telefon osoby, z którą się kontaktujemy.</param>
-        /// <returns>null, jeżeli numer jest niepoprawny
-        /// telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie</returns>
+        /// <returns>Null, jeżeli numer jest niepoprawny
+        /// telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie.</returns>
         string PoprawnyTelefon(string telefon)
         {
             string maska = @"^\d{3}[ -]?\d{3}[ -]?\d{3}$";
@@ -73,8 +74,8 @@ namespace CRM
         /// Funkacja sprawdzająca, czy podany email jest poprawny.
         /// </summary>
         /// <param name="email">Email osoby, z którą się kontaktujemy.</param>
-        /// <returns>null, jeżeli email jest niepoprawny
-        /// email (czyli wpisany napis), jeżeli email został podany poprawnie</returns>
+        /// <returns>Null, jeżeli email jest niepoprawny,
+        /// email (czyli wpisany napis), jeżeli email został podany poprawnie.</returns>
         string PoprawnyEmail(string email)
         {
             //\w - oznacza to samo co to: [a-zA-Z0-9_]
@@ -109,6 +110,7 @@ namespace CRM
         }
         /// <summary>
         /// Funkcja sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
+        /// Porównuje ich Imiei Nazwisko oraz Telefon i Mail, jeśli te nie są nullami.
         /// </summary>
         /// <param name="other">Osoba, z którą porównujemy.</param>
         /// <returns>Prawda, jeśli są,
@@ -126,77 +128,18 @@ namespace CRM
             return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko));
         }
         /// <summary>
-        /// Funkcja tworzy kopię osoby, z którą się kontaktujemy.
+        /// Funkcja tworzy kopię obiektu osoby, z którą się kontaktujemy.
         /// </summary>
-        /// <returns>Kopia osoby, z którą się kontaktujemy.</returns>
+        /// <returns>Kopia obiektu OsobaKontakt.</returns>
         public object Clone()
         {
             return MemberwiseClone();
         }
         #endregion
-        #region Zapis/Odczyt
         /// <summary>
-        /// Funkcja zapisuje dane osoby kontaktowej do pliku XML.
+        /// Funkcja tworzy i zwraca napis z danymi osoby do kontaktu.
         /// </summary>
-        /// <param name="nazwa">nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
-        public virtual void ZapiszXML(string nazwa)
-        {
-            using (StreamWriter sw = new StreamWriter(nazwa))
-            {
-                XmlSerializer xml = new XmlSerializer(typeof(OsobaKontakt));
-                xml.Serialize(sw, this);
-            }
-        }
-        /// <summary>
-        /// Funkcja odczytująca dane osoby kontaktowej z pliku XML.
-        /// </summary>
-        /// <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-        /// <returns>Odczytany plik jako obiekt klasy OsobaKontaktowa</returns>
-        public static OsobaKontakt OdczytajXML(string nazwa)
-        {
-            if (!File.Exists(nazwa))
-            {
-                return null;
-            }
-            using (StreamReader sr = new StreamReader(nazwa))
-            {
-                XmlSerializer xml = new XmlSerializer(typeof(OsobaKontakt));
-                return (OsobaKontakt)xml.Deserialize(sr);
-            }
-        }
-        /// <summary>
-        /// Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
-        /// </summary>
-        /// <param name="nazwa"> nazwa pliku </param>
-        public void ZapiszJSON(string nazwa)
-        {
-            using (StreamWriter sw = new StreamWriter(nazwa))
-            {
-                JavaScriptSerializer json = new JavaScriptSerializer();
-                sw.WriteLine(json.Serialize(this));
-            }
-        }
-        /// <summary>
-        /// Funkcja odczytująca dane osoby kontaktowej z pliku JSON
-        /// </summary>
-        /// <param name="nazwa"> nazwa pliku</param>
-        /// <returns></returns>
-        public static OsobaKontakt OdczytajJSON(string nazwa)
-        {
-            if (!File.Exists(nazwa))
-                return null;
-            using (StreamReader sw = new StreamReader(nazwa))
-            {
-                JavaScriptSerializer json = new JavaScriptSerializer();
-                string z = sw.ReadToEnd();
-                return (OsobaKontakt)json.Deserialize(z, typeof(OsobaKontakt));
-            }
-        }
-        #endregion
-        /// <summary>
-        /// Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
-        /// </summary>
-        /// <returns>Napis zawierający dane osoby do kontaktu</returns>
+        /// <returns>Napis zawierający dane osoby do kontaktu.</returns>
         public override string ToString()
         {
             string napis = Telefon == null ? "" : $", nr telefonu: {Telefon}";
@@ -204,7 +147,5 @@ namespace CRM
             napis+= $"\n\tNotatki: {Notatki}";
             return base.ToString() + napis;
         }
-
-
     }
 }

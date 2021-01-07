@@ -11,7 +11,7 @@ namespace CRM
     /// </summary>
     public enum Stanowiska { sekretariat, dyrekcja, konsultant, sprzedawca, inne};
     /// <summary>
-    /// Typ wyliczeniowy, zawiera rodzaje plci.
+    /// Typ wyliczeniowy, zawiera płcie.
     /// </summary>
     public enum Plcie { K, M,Nieznana };
 
@@ -22,7 +22,7 @@ namespace CRM
     public abstract class Osoba: IComparable<Osoba>
     {
         /// <summary>
-        /// Imie osoby.
+        /// Imię osoby.
         /// </summary>
         string _imie;
         /// <summary>
@@ -34,15 +34,15 @@ namespace CRM
         /// </summary>
         Plcie _plec;
         /// <summary>
-        /// Stanowisko jakie piastuje osoba.
+        /// Stanowisko jakie zajmuje osoba.
         /// </summary>
         Stanowiska _stanowisko;
-
+        #region Wlasciwosci
         public string Imie { get => _imie; set => _imie = FormatZWielkiej(value); }
         public string Nazwisko { get => _nazwisko; set => _nazwisko = FormatZWielkiej(value); }
         public Plcie Plec { get => _plec; set => _plec = value; }
         public Stanowiska Stanowisko { get => _stanowisko; set => _stanowisko = value; }
-
+        #endregion
         #region Konstruktory
         protected Osoba()
         {

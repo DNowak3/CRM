@@ -1201,7 +1201,7 @@
         </member>
         <member name="T:CRM.Plcie">
             <summary>
-            Typ wyliczeniowy, zawiera rodzaje plci.
+            Typ wyliczeniowy, zawiera płcie.
             </summary>
         </member>
         <member name="T:CRM.Osoba">
@@ -1211,7 +1211,7 @@
         </member>
         <member name="F:CRM.Osoba._imie">
             <summary>
-            Imie osoby.
+            Imię osoby.
             </summary>
         </member>
         <member name="F:CRM.Osoba._nazwisko">
@@ -1226,7 +1226,7 @@
         </member>
         <member name="F:CRM.Osoba._stanowisko">
             <summary>
-            Stanowisko jakie piastuje osoba.
+            Stanowisko jakie zajmuje osoba.
             </summary>
         </member>
         <member name="M:CRM.Osoba.FormatZWielkiej(System.String)">
@@ -1279,16 +1279,16 @@
             Funkacja sprawdzająca, czy podany numer telefonu jest poprawny.
             </summary>
             <param name="telefon">Telefon osoby, z którą się kontaktujemy.</param>
-            <returns>null, jeżeli numer jest niepoprawny
-            telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie</returns>
+            <returns>Null, jeżeli numer jest niepoprawny
+            telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.PoprawnyEmail(System.String)">
             <summary>
             Funkacja sprawdzająca, czy podany email jest poprawny.
             </summary>
             <param name="email">Email osoby, z którą się kontaktujemy.</param>
-            <returns>null, jeżeli email jest niepoprawny
-            email (czyli wpisany napis), jeżeli email został podany poprawnie</returns>
+            <returns>Null, jeżeli email jest niepoprawny,
+            email (czyli wpisany napis), jeżeli email został podany poprawnie.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.PoprawnoscRegex(System.String,System.String)">
             <summary>
@@ -1302,6 +1302,7 @@
         <member name="M:CRM.OsobaKontakt.Equals(CRM.OsobaKontakt)">
             <summary>
             Funkcja sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
+            Porównuje ich Imiei Nazwisko oraz Telefon i Mail, jeśli te nie są nullami.
             </summary>
             <param name="other">Osoba, z którą porównujemy.</param>
             <returns>Prawda, jeśli są,
@@ -1309,41 +1310,15 @@
         </member>
         <member name="M:CRM.OsobaKontakt.Clone">
             <summary>
-            Funkcja tworzy kopię osoby, z którą się kontaktujemy.
+            Funkcja tworzy kopię obiektu osoby, z którą się kontaktujemy.
             </summary>
-            <returns>Kopia osoby, z którą się kontaktujemy.</returns>
-        </member>
-        <member name="M:CRM.OsobaKontakt.ZapiszXML(System.String)">
-            <summary>
-            Funkcja zapisuje dane osoby kontaktowej do pliku XML.
-            </summary>
-            <param name="nazwa">nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
-        </member>
-        <member name="M:CRM.OsobaKontakt.OdczytajXML(System.String)">
-            <summary>
-            Funkcja odczytująca dane osoby kontaktowej z pliku XML.
-            </summary>
-            <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-            <returns>Odczytany plik jako obiekt klasy OsobaKontaktowa</returns>
-        </member>
-        <member name="M:CRM.OsobaKontakt.ZapiszJSON(System.String)">
-            <summary>
-            Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
-            </summary>
-            <param name="nazwa"> nazwa pliku </param>
-        </member>
-        <member name="M:CRM.OsobaKontakt.OdczytajJSON(System.String)">
-            <summary>
-            Funkcja odczytująca dane osoby kontaktowej z pliku JSON
-            </summary>
-            <param name="nazwa"> nazwa pliku</param>
-            <returns></returns>
+            <returns>Kopia obiektu OsobaKontakt.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.ToString">
             <summary>
-            Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
+            Funkcja tworzy i zwraca napis z danymi osoby do kontaktu.
             </summary>
-            <returns>Napis zawierający dane osoby do kontaktu</returns>
+            <returns>Napis zawierający dane osoby do kontaktu.</returns>
         </member>
         <member name="T:CRM.Pracownik">
             <summary>
@@ -1352,40 +1327,40 @@
         </member>
         <member name="F:CRM.Pracownik._dataRozpoczeciaPracy">
             <summary>
-            Data, kiedy pracownik zaczął pracę w firmie, którra prowadzi CRM.
+            Data, kiedy pracownik zaczął pracę w firmie prowadzącej CRM.
             </summary>
         </member>
         <member name="M:CRM.Pracownik.ZapiszXML(System.String)">
             <summary>
             Funkcja zapisuje dane pracownika do pliku XML.
             </summary>
-            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
+            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
         </member>
         <member name="M:CRM.Pracownik.OdczytajXML(System.String)">
             <summary>
             Funkcja odczytująca dane pracownika z pliku XML.
             </summary>
-            <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-            <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
+            <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         </member>
         <member name="M:CRM.Pracownik.ZapiszJSON(System.String)">
             <summary>
-            Funckja zapisująca dane pracownika do pliku JSON
+            Funckja zapisująca dane pracownika do pliku JSON.
             </summary>
-            <param name="nazwa"> nazwa pliku </param>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         </member>
         <member name="M:CRM.Pracownik.OdczytajJSON(System.String)">
             <summary>
-            Funkcja odczytująca dane pracownika z pliku JSON
+            Funkcja odczytująca dane pracownika z pliku JSON.
             </summary>
-            <param name="nazwa"> nazwa pliku </param>
-            <returns></returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
+            <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         </member>
         <member name="M:CRM.Pracownik.ToString">
             <summary>
             Funkcja tworzy i zwraca napis z danymi pracownika.
             </summary>
-            <returns>Napis zawierający dane pracownika</returns>
+            <returns>Napis zawierający dane pracownika.</returns>
         </member>
         <member name="T:CRM.ProductNotFoundException">
             <summary>

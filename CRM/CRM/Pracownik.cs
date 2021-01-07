@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,11 +18,12 @@ namespace CRM
     public class Pracownik:OsobaKontakt,IZapisywalna
     {
         /// <summary>
-        /// Data, kiedy pracownik zaczął pracę w firmie, którra prowadzi CRM.
+        /// Data, kiedy pracownik zaczął pracę w firmie prowadzącej CRM.
         /// </summary>
         DateTime _dataRozpoczeciaPracy;
+        #region Wlasciwosci
         public DateTime DataRozpoczeciaPracy { get => _dataRozpoczeciaPracy; set => _dataRozpoczeciaPracy = value; }
-
+        #endregion
         #region Konstruktory
         public Pracownik() : base()
         {
@@ -50,8 +52,8 @@ namespace CRM
         /// <summary>
         /// Funkcja zapisuje dane pracownika do pliku XML.
         /// </summary>
-        /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
-        public override void ZapiszXML(string nazwa)
+        /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
+        public void ZapiszXML(string nazwa)
         {
             using (StreamWriter sw = new StreamWriter(nazwa))
             {
@@ -62,8 +64,8 @@ namespace CRM
         /// <summary>
         /// Funkcja odczytująca dane pracownika z pliku XML.
         /// </summary>
-        /// <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-        /// <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
+        /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
+        /// <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         public static Pracownik OdczytajXML(string nazwa)
         {
             if (!File.Exists(nazwa))
@@ -77,9 +79,9 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funckja zapisująca dane pracownika do pliku JSON
+        /// Funckja zapisująca dane pracownika do pliku JSON.
         /// </summary>
-        /// <param name="nazwa"> nazwa pliku </param>
+        /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         public void ZapiszJSON(string nazwa)
         {
             using (StreamWriter sw = new StreamWriter(nazwa))
@@ -89,26 +91,21 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja odczytująca dane pracownika z pliku JSON
+        /// Funkcja odczytująca dane pracownika z pliku JSON.
         /// </summary>
-        /// <param name="nazwa"> nazwa pliku </param>
-        /// <returns></returns>
+        /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
+        /// <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         public static Pracownik OdczytajJSON(string nazwa)
         {
             if (!File.Exists(nazwa))
                 return null;
-            using (StreamReader sw = new StreamReader(nazwa))
-            {
-                JavaScriptSerializer json = new JavaScriptSerializer();
-                string z = sw.ReadToEnd();
-                return (Pracownik)json.Deserialize(z, typeof(Pracownik));
-            }
+            return JsonConvert.DeserializeObject<Pracownik>(File.ReadAllText(nazwa));
         }
         #endregion
         /// <summary>
         /// Funkcja tworzy i zwraca napis z danymi pracownika.
         /// </summary>
-        /// <returns>Napis zawierający dane pracownika</returns>
+        /// <returns>Napis zawierający dane pracownika.</returns>
         public override string ToString()
         {
             return $"({DataRozpoczeciaPracy.ToString("dd-MM-yyyy")}) "+base.ToString();
