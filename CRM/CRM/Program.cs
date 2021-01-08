@@ -365,10 +365,10 @@ namespace CRM
 
             NaszaFirma.DodajKonkurenta(k);
             NaszaFirma.DodajKonkurenta(k2);
-            NaszaFirma.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne));
-            NaszaFirma.DodajKonkurenta(new Konkurent("Wish", Branże.Inne));
-            NaszaFirma.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja));
-            NaszaFirma.DodajKonkurenta(new Konkurent("Media Expert", Branże.Elektronika));
+            NaszaFirma.DodajKonkurenta(new Konkurent("AliExpress", Branże.Inne, "781-324-92-32","Chiny","Pekin","23-05-2007",Konkurent.StopienZagrozenia.Wysoki));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Wish", Branże.Inne, "610-392-54-23","USA","Nowy Jork","13-01-2010",Konkurent.StopienZagrozenia.BardzoNiski));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Motorola", Branże.Telekomunikacja, "430-429-01-09","USA","Chicago","05-12-1928",Konkurent.StopienZagrozenia.Niski));
+            NaszaFirma.DodajKonkurenta(new Konkurent("Media Expert", Branże.Elektronika, "880-719-21-00","Polska","Poznań","12-06-2002",Konkurent.StopienZagrozenia.BardzoWysoki));
 
             Klient fb = new Klient("Facebook", Branże.Media, "456-456-56-56", "USA", "New York", "20.05.2003", "12.01.2021", "Ważny klient", Status.stały);
             Klient castorama = new Klient("Castorama", Branże.Inne, "456-457-56-56", "Francja", "Paryż", "20.05.1996", "10.01.2021", "", Status.były);

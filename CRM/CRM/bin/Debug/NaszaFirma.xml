@@ -95,40 +95,52 @@
       <Zagrozenie>Niski</Zagrozenie>
     </Konkurent>
     <Konkurent>
+      <Nip>781-324-92-32</Nip>
       <Nazwa>AliExpress</Nazwa>
       <Branza>Inne</Branza>
+      <Kraj>Chiny</Kraj>
+      <Miasto>Pekin</Miasto>
       <Adres />
       <KodPocztowy />
       <Notatki />
-      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
-      <Zagrozenie>Niski</Zagrozenie>
+      <DataZalozenia>2007-05-23T00:00:00</DataZalozenia>
+      <Zagrozenie>Wysoki</Zagrozenie>
     </Konkurent>
     <Konkurent>
+      <Nip>610-392-54-23</Nip>
       <Nazwa>Wish</Nazwa>
       <Branza>Inne</Branza>
+      <Kraj>USA</Kraj>
+      <Miasto>Nowy Jork</Miasto>
       <Adres />
       <KodPocztowy />
       <Notatki />
-      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
-      <Zagrozenie>Niski</Zagrozenie>
+      <DataZalozenia>2010-01-13T00:00:00</DataZalozenia>
+      <Zagrozenie>BardzoNiski</Zagrozenie>
     </Konkurent>
     <Konkurent>
+      <Nip>430-429-01-09</Nip>
       <Nazwa>Motorola</Nazwa>
       <Branza>Telekomunikacja</Branza>
+      <Kraj>USA</Kraj>
+      <Miasto>Chicago</Miasto>
       <Adres />
       <KodPocztowy />
       <Notatki />
-      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
+      <DataZalozenia>1928-12-05T00:00:00</DataZalozenia>
       <Zagrozenie>Niski</Zagrozenie>
     </Konkurent>
     <Konkurent>
+      <Nip>880-719-21-00</Nip>
       <Nazwa>Media Expert</Nazwa>
       <Branza>Elektronika</Branza>
+      <Kraj>Polska</Kraj>
+      <Miasto>Poznań</Miasto>
       <Adres />
       <KodPocztowy />
       <Notatki />
-      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
-      <Zagrozenie>Niski</Zagrozenie>
+      <DataZalozenia>2002-06-12T00:00:00</DataZalozenia>
+      <Zagrozenie>BardzoWysoki</Zagrozenie>
     </Konkurent>
   </ListaKonkurentow>
   <ListaKlientow>
@@ -220,8 +232,8 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/07.01.2021/204</NrUmowy>
-          <DataUmowy>2021-01-07T00:00:00+01:00</DataUmowy>
+          <NrUmowy>U/08.01.2021/204</NrUmowy>
+          <DataUmowy>2021-01-08T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
             <Nazwisko>Nowak</Nazwisko>
