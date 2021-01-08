@@ -312,7 +312,15 @@ namespace CRM
                 return _listaProduktow.FindAll(p => p.Cena > porownywalnaCena);
             }
         }
-
+        /// <summary>
+        /// Funkcja wyszukuje wszystkie produkty o podanym kodzie.
+        /// </summary>
+        /// <param name="kod">Jednostka.</param>
+        /// <returns>Listę produktów o danym kodzie.</returns>
+        public List<Produkt> ZnajdzProduktKod(string kod)
+        {
+            return _listaProduktow.FindAll(p => p.Kod == kod);
+        }
         /// <summary>
         /// Funkcja wyszukuje wszystkie produkty oferowane przez organizację, które sprzedawane są w podanej jednostce.
         /// </summary>

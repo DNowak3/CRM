@@ -150,3 +150,6 @@ C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM\obj\Debug\CRM.pdb
+D:\GitFork\CRM\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
+D:\GitFork\CRM\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
+D:\GitFork\CRM\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete

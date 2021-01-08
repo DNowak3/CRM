@@ -455,3 +455,5 @@ C:\Users\kycia\Source\Repos\CRM16\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CoreCompi
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM_GUI\obj\Debug\CRM_GUI.csproj.CopyComplete
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
 C:\Users\kycia\Source\Repos\CRM16\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb
+D:\GitFork\CRM\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.dll
+D:\GitFork\CRM\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.xml
