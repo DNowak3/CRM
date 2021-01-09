@@ -54,9 +54,9 @@ namespace CRM
             Notatki = notatki;
         }
         #endregion
-        #region Funkcje
+        #region Metody
         /// <summary>
-        /// Funkacja sprawdzająca, czy podany numer telefonu jest poprawny.
+        /// Metoda sprawdzająca, czy podany numer telefonu jest poprawny.
         /// </summary>
         /// <param name="telefon">Telefon osoby, z którą się kontaktujemy.</param>
         /// <returns>Null, jeżeli numer jest niepoprawny
@@ -71,7 +71,7 @@ namespace CRM
             return null;
         }
         /// <summary>
-        /// Funkacja sprawdzająca, czy podany email jest poprawny.
+        /// Metoda sprawdzająca, czy podany email jest poprawny.
         /// </summary>
         /// <param name="email">Email osoby, z którą się kontaktujemy.</param>
         /// <returns>Null, jeżeli email jest niepoprawny,
@@ -93,7 +93,7 @@ namespace CRM
             return null;
         }
         /// <summary>
-        /// Funkcja sprawdzająca, czy podany napis jest zgodny z podaną do niego maską.
+        /// Metoda sprawdzająca, czy podany napis jest zgodny z podaną do niego maską.
         /// </summary>
         /// <param name="napis">Napis, który chcemy zwalidować.</param>
         /// <param name="maska">Sposób, w jaki napis powinien być zapisany.</param>
@@ -109,7 +109,7 @@ namespace CRM
             return wyrReg.IsMatch(napis);
         }
         /// <summary>
-        /// Funkcja sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
+        /// Metoda sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
         /// Porównuje ich Imiei Nazwisko oraz Telefon i Mail, jeśli te nie są nullami.
         /// </summary>
         /// <param name="other">Osoba, z którą porównujemy.</param>
@@ -128,7 +128,7 @@ namespace CRM
             return (Imie.Equals(other.Imie) && Nazwisko.Equals(other.Nazwisko));
         }
         /// <summary>
-        /// Funkcja tworzy kopię obiektu osoby, z którą się kontaktujemy.
+        /// Metoda tworzy kopię obiektu osoby, z którą się kontaktujemy.
         /// </summary>
         /// <returns>Kopia obiektu OsobaKontakt.</returns>
         public object Clone()
@@ -137,7 +137,7 @@ namespace CRM
         }
         #endregion
         /// <summary>
-        /// Funkcja tworzy i zwraca napis z danymi osoby do kontaktu.
+        /// Metoda tworzy i zwraca napis z danymi osoby do kontaktu.
         /// </summary>
         /// <returns>Napis zawierający dane osoby do kontaktu.</returns>
         public override string ToString()

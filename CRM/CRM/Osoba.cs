@@ -61,9 +61,9 @@ namespace CRM
             Stanowisko = stanowisko;
         }
         #endregion
-        #region Funkcje
+        #region Metody
         /// <summary>
-        /// Funkcja gwarantująca, że wpisany napis będzie zaczynał się z wielkiej litery, a wszystkie następujące litery będą małe.
+        /// Metoda gwarantująca, że wpisany napis będzie zaczynał się z wielkiej litery, a wszystkie następujące litery będą małe.
         /// </summary>
         /// <param name="napis">Napis, który chcemy zmienić.</param>
         /// <returns>Podany napis zaczynający się z wielkiej litery, a wszystkie litery potem są małe</returns>
@@ -101,7 +101,7 @@ namespace CRM
         }
         #endregion
         /// <summary>
-        /// Funkcja tworzy i zwraca napis z danymi osoby.
+        /// Metoda tworzy i zwraca napis z danymi osoby.
         /// </summary>
         /// <returns>Napis zawierający dane osoby</returns>
         public override string ToString()

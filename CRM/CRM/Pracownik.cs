@@ -50,7 +50,7 @@ namespace CRM
         #endregion
         #region Zapis/Odczyt
         /// <summary>
-        /// Funkcja zapisuje dane pracownika do pliku XML.
+        /// Metoda zapisuje dane pracownika do pliku XML.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
         public void ZapiszXML(string nazwa)
@@ -62,7 +62,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja odczytująca dane pracownika z pliku XML.
+        /// Metoda odczytująca dane pracownika z pliku XML.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
         /// <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
@@ -79,7 +79,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funckja zapisująca dane pracownika do pliku JSON.
+        /// Metoda zapisująca dane pracownika do pliku JSON.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         public void ZapiszJSON(string nazwa)
@@ -91,7 +91,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja odczytująca dane pracownika z pliku JSON.
+        /// Metoda odczytująca dane pracownika z pliku JSON.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         /// <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
@@ -103,7 +103,7 @@ namespace CRM
         }
         #endregion
         /// <summary>
-        /// Funkcja tworzy i zwraca napis z danymi pracownika.
+        /// Metoda tworzy i zwraca napis z danymi pracownika.
         /// </summary>
         /// <returns>Napis zawierający dane pracownika.</returns>
         public override string ToString()

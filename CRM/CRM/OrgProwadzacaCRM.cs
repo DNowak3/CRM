@@ -70,9 +70,9 @@ namespace CRM
             _listaKonkurentow = new List<Konkurent>();
         }
         #endregion
-        #region Funkcje Pracownicy
+        #region Metody Pracownicy
         /// <summary>
-        /// Funkcja dodająca obiekt Pracownik do listy pracowników organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// Metoda dodająca obiekt Pracownik do listy pracowników organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
         /// </summary>
         /// <param name="p">Obiekt Pracownik.</param>
         public void DodajPracownika(Pracownik p)
@@ -84,7 +84,7 @@ namespace CRM
             _listaPracownikow.Add(p);
         }
         /// <summary>
-        /// Funkcja usuwając pracownika z listy pracowników organizacji.
+        /// Metoda usuwając pracownika z listy pracowników organizacji.
         /// </summary>
         /// <param name="imie">Imie pracownika.</param>
         /// <param name="nazwisko">Nazwisko pracownika.</param>
@@ -101,7 +101,7 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwając pracownika z listy pracowników organizacji.
+        /// Metoda usuwając pracownika z listy pracowników organizacji.
         /// </summary>
         /// <param name="p">Obiekt Pracownik.</param>
         /// <returns>Prawdę, jeśli taki pracownik był na liście i go usunięto,
@@ -116,14 +116,14 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwa wszystkich pracowników z listy.
+        /// Metoda usuwa wszystkich pracowników z listy.
         /// </summary>
         public void UsunWszystkichPracownikow()
         {
             _listaPracownikow.Clear();
         }
         /// <summary>
-        /// Funkcja podaje liczbę pracowników pracujących w organizacji.
+        /// Metoda podaje liczbę pracowników pracujących w organizacji.
         /// </summary>
         /// <returns>Liczba pracowników.
         /// -1 jeśli taka lista nie istnieje.</returns>
@@ -136,7 +136,7 @@ namespace CRM
             return _listaPracownikow.Count();
         }
         /// <summary>
-        /// Funkcja sprawdza, czy podany obiekt Pracownik znajduje się na liście pracowników.
+        /// Metoda sprawdza, czy podany obiekt Pracownik znajduje się na liście pracowników.
         /// </summary>
         /// <param name="p">Obiekt Pracownik</param>
         /// <returns>Prawdę, jeśli obiekt Pracownik jest pracownikiem oraganizacji prowadzącej CRM,
@@ -146,7 +146,7 @@ namespace CRM
             return _listaPracownikow.Contains(p);
         }
         /// <summary>
-        /// Funkcja sprawdza, czy pracownik o podanym Imeiniu, Nazwisku i Stanowisku znajduje się na liście pracowników.
+        /// Metoda sprawdza, czy pracownik o podanym Imeiniu, Nazwisku i Stanowisku znajduje się na liście pracowników.
         /// </summary>
         /// <param name="imie">Imie pracownika.</param>
         /// <param name="nazwisko">Nazwisko pracownika.</param>
@@ -158,7 +158,7 @@ namespace CRM
             return _listaPracownikow.Exists(p => p.Imie == imie && p.Nazwisko == nazwisko && p.Stanowisko == stanowisko);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich pracowników organizacji znajdujących się na podanym stanowisku.
+        /// Metoda wyszukuje wszystkich pracowników organizacji znajdujących się na podanym stanowisku.
         /// </summary>
         /// <param name="stanowisko">Stanowisko.</param>
         /// <returns>Lista pracowników, znajdujących się na podanym stanowisku.</returns>
@@ -167,7 +167,7 @@ namespace CRM
             return _listaPracownikow.FindAll(p => p.Stanowisko == stanowisko);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich pracowników organizacji o podane płci.
+        /// Metoda wyszukuje wszystkich pracowników organizacji o podane płci.
         /// </summary>
         /// <param name="plec">Płeć.</param>
         /// <returns>Lista pracowników, o podanej płci.</returns>
@@ -176,7 +176,7 @@ namespace CRM
             return _listaPracownikow.FindAll(p => p.Plec == plec);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich pracowników organizacji, którzy zaczeli w niej pracować przed podaną datą.
+        /// Metoda wyszukuje wszystkich pracowników organizacji, którzy zaczeli w niej pracować przed podaną datą.
         /// </summary>
         /// <param name="dataRozpoczecia">Data.</param>
         /// <returns>Lista pracowników, którzy zostali zatrudnieni przed podaną datą.</returns>
@@ -188,14 +188,14 @@ namespace CRM
             return _listaPracownikow.FindAll(p => p.DataRozpoczeciaPracy < DataRozpoczecia);
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich pracowników alfabetycznie, najpierw po nazwisku, potem po imieniu.
+        /// Metoda sortuje wszystkich pracowników alfabetycznie, najpierw po nazwisku, potem po imieniu.
         /// </summary>
         public void PracownicySortujAlfabetycznie()
         {
             _listaPracownikow.Sort();
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich pracowników po dacie zatrudnienia. 
+        /// Metoda sortuje wszystkich pracowników po dacie zatrudnienia. 
         /// </summary>
         /// <param name="rosnaco">True oznacza sortowanie od najwcześniejszego zatrudnienia do najpóźniejszego,
         /// False oznacza sortowanie od najpóźniejszego zatrudnienia do najwcześniejszego.</param>
@@ -212,9 +212,9 @@ namespace CRM
             }
         }
         #endregion
-        #region Funkcje Produkty
+        #region Metody Produkty
         /// <summary>
-        /// Funkcja dodająca obiekt Produkt do listy produktów jakie oferuje organizacja. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// Metoda dodająca obiekt Produkt do listy produktów jakie oferuje organizacja. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
         /// </summary>
         /// <param name="p">Obiekt Produkt.</param>
         public void DodajProdukt(Produkt p)
@@ -226,7 +226,7 @@ namespace CRM
             _listaProduktow.Add(p);
         }
         /// <summary>
-        /// Funkcja usuwająca produkt z listy produktów, jakie oferuje organizacja, po podanym kodzie produktu.
+        /// Metoda usuwająca produkt z listy produktów, jakie oferuje organizacja, po podanym kodzie produktu.
         /// </summary>
         /// <param name="kod">Kod.</param>
         /// <returns>Prawdę, jeśli taki produkt był na liście i go usunięto,
@@ -241,7 +241,7 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwając obiekt Produkt z listy produktów, jakie oferuje organizacja.
+        /// Metoda usuwając obiekt Produkt z listy produktów, jakie oferuje organizacja.
         /// </summary>
         /// <param name="p">Obiekt Produkt.</param>
         /// <returns>Prawdę, jeśli taki produkt był na liście i go usunięto,
@@ -256,14 +256,14 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwa wszystkie produkty z listy produktów.
+        /// Metoda usuwa wszystkie produkty z listy produktów.
         /// </summary>
         public void UsunWszystkieProdukty()
         {
             _listaProduktow.Clear();
         }
         /// <summary>
-        /// Funkcja oblicza liczbę produktów oferowanych przez organizację.
+        /// Metoda oblicza liczbę produktów oferowanych przez organizację.
         /// </summary>
         /// <returns>Liczba produktów.
         /// -1 jeśli taka lista nie istnieje.</returns>
@@ -276,7 +276,7 @@ namespace CRM
             return _listaProduktow.Count();
         }
         /// <summary>
-        /// Funkcja sprawdza, czy podany obiekt Produkt znajduje się na liście produktów organizacji.
+        /// Metoda sprawdza, czy podany obiekt Produkt znajduje się na liście produktów organizacji.
         /// </summary>
         /// <param name="p">Obiekt Produkt.</param>
         /// <returns>Prawdę, jeśli obiekt Produkt jest produktem oferowanym przez organizację prowadzącą CRM,
@@ -286,7 +286,7 @@ namespace CRM
             return _listaProduktow.Contains(p);
         }
         /// <summary>
-        /// Funkcja sprawdza, czy produkt o podanym kodzie znajduje się na liście produktó organizacji.
+        /// Metoda sprawdza, czy produkt o podanym kodzie znajduje się na liście produktó organizacji.
         /// </summary>
         /// <param name="kod">Kod produktu.</param>
         /// <returns>Prawdę, jeśli obiekt o takim kodzie jest produktem oferowanym przez oraganizację prowadzącą CRM,
@@ -296,7 +296,7 @@ namespace CRM
             return _listaProduktow.Exists(p => p.Kod == kod);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkie produkty oferowane przez organizację prowadzącą CRM poniżej lub powyżej podanej ceny.
+        /// Metoda wyszukuje wszystkie produkty oferowane przez organizację prowadzącą CRM poniżej lub powyżej podanej ceny.
         /// </summary>
         /// <param name="porownywalnaCena">Cena wobec której porównywane są produkty.</param>
         /// <param name="tansze">Parametr służący do opisania, czy chcemy zobaczyć produkty tańsze czy droższe. True oznacza, że chcemy uzyskać produkty tańsze (co też jest domyślną wartością), a false, że produkty droższe od podanej ceny.</param>
@@ -313,7 +313,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkie produkty o podanym kodzie.
+        /// Metoda wyszukuje wszystkie produkty o podanym kodzie.
         /// </summary>
         /// <param name="kod">Jednostka.</param>
         /// <returns>Listę produktów o danym kodzie.</returns>
@@ -322,7 +322,7 @@ namespace CRM
             return _listaProduktow.FindAll(p => p.Kod == kod);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkie produkty oferowane przez organizację, które sprzedawane są w podanej jednostce.
+        /// Metoda wyszukuje wszystkie produkty oferowane przez organizację, które sprzedawane są w podanej jednostce.
         /// </summary>
         /// <param name="jednostka">Jednostka.</param>
         /// <returns>Listę produktów o danej jednostce.</returns>
@@ -331,7 +331,7 @@ namespace CRM
             return _listaProduktow.FindAll(p => p.Jednostka == jednostka);
         }
         /// <summary>
-        /// Funkcja sortująca produkty oferowane przez organizację prowadzącą CRM według ceny. 
+        /// Metoda sortująca produkty oferowane przez organizację prowadzącą CRM według ceny. 
         /// </summary>
         /// <param name="rosnaco">True, produkty sortowane są rosnąco wg ceny; False, produkty sortowane są malejąco wg ceny.</param>
         public void ProduktySortujPoCenie(bool rosnaco=true)
@@ -347,16 +347,16 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich produkty alfabetycznie po ich kodzie.
+        /// Metoda sortuje wszystkich produkty alfabetycznie po ich kodzie.
         /// </summary>
         public void ProduktySortujPoKodzie()
         {
             _listaProduktow.Sort();
         }
         #endregion
-        #region Funkcje Konkurenci
+        #region Metody Konkurenci
         /// <summary>
-        /// Funkcja dodająca obiekt Konkurent do listy konkurentów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// Metoda dodająca obiekt Konkurent do listy konkurentów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
         /// </summary>
         /// <param name="k">Obiekt Konkurent</param>
         public void DodajKonkurenta(Konkurent k)
@@ -368,7 +368,7 @@ namespace CRM
             _listaKonkurentow.Add(k);
         }
         /// <summary>
-        /// Funkcja usuwająca konkurenta z listy konkurentów organizacji po jego Nazwie.
+        /// Metoda usuwająca konkurenta z listy konkurentów organizacji po jego Nazwie.
         /// </summary>
         /// <param name="nazwa">Nazwa organizacji konkurencyjnej.</param>
         /// <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
@@ -383,7 +383,7 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwając konkurenta z listy konkurentów organizacji.
+        /// Metoda usuwając konkurenta z listy konkurentów organizacji.
         /// </summary>
         /// <param name="k">Obiekt Konkurent.</param>
         /// <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
@@ -398,7 +398,7 @@ namespace CRM
             return false; 
         }
         /// <summary>
-        /// Funkcja usuwa wszystkich konkurentoów z listy konkurentów organizacji.
+        /// Metoda usuwa wszystkich konkurentoów z listy konkurentów organizacji.
         /// </summary>
         public void UsunWszystkichKonkurentow()
         {
@@ -418,7 +418,7 @@ namespace CRM
             return _listaKonkurentow.Count();
         }
         /// <summary>
-        /// Funkcja sprawdza, czy podany obiekt Konkurent znajduje się na liście konkurentów.
+        /// Metoda sprawdza, czy podany obiekt Konkurent znajduje się na liście konkurentów.
         /// </summary>
         /// <param name="k">Obiekt Konkurent.</param>
         /// <returns>Prawdę, jeśli obiekt Konkurent jest konkurentem oraganizacji prowadzącej CRM,
@@ -428,7 +428,7 @@ namespace CRM
             return _listaKonkurentow.Contains(k);
         }
         /// <summary>
-        /// Funkcja sprawdza, czy konkurent o podanej nazwie znajduje się na liście konkurentów.
+        /// Metoda sprawdza, czy konkurent o podanej nazwie znajduje się na liście konkurentów.
         /// </summary>
         /// <param name="nazwa">Nazwa szukanej konkurencyjnej organizacji.</param>
         /// <returns>Prawdę, jeśli obiekt o takich parametrach jest konkurentem oraganizacji prowadzącej CRM,
@@ -438,7 +438,7 @@ namespace CRM
             return _listaKonkurentow.Exists(k => k.Nazwa == nazwa);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym stopiu zagrożenia.
+        /// Metoda wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym stopiu zagrożenia.
         /// </summary>
         /// <param name="zagrozenie">Stopień zagrożenia.</param>
         /// <returns>Listę konkurentów, o podanym stopniu zagrożenia.</returns>
@@ -447,7 +447,7 @@ namespace CRM
             return _listaKonkurentow.FindAll(k => k.Zagrozenie == zagrozenie);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM znajdujących się w podanym kraju.
+        /// Metoda wyszukuje wszystkich konkurentów organizacji prowadzącej CRM znajdujących się w podanym kraju.
         /// </summary>
         /// <param name="kraj"></param>
         /// <returns>Listę konkurentów, znajdujących się w podanym kraju.</returns>
@@ -456,23 +456,23 @@ namespace CRM
             return _listaKonkurentow.FindAll(k => k.Kraj == kraj);
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
+        /// Metoda sortuje wszystkich konkurentów alfabetycznie po nazwie.
         /// </summary>
         public void KonkurenciSortujAlfabetycznie()
         {
             _listaKonkurentow.Sort();
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich konkurentów według daty założenia organizacji.
+        /// Metoda sortuje wszystkich konkurentów według daty założenia organizacji.
         /// </summary>
         public void KonkurenciSortujDataZalozenia()
         {
             _listaKonkurentow.Sort((x, y) => y.DataZalozenia.CompareTo(x.DataZalozenia));
         }
         #endregion
-        #region Funkcje Klienci
+        #region Metody Klienci
         /// <summary>
-        /// Funkcja dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+        /// Metoda dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
         /// </summary>
         /// <param name="k">Obiekt Klient</param>
         public void DodajKlienta(Klient k)
@@ -484,7 +484,7 @@ namespace CRM
             _listaKlientow.Add(k);
         }
         /// <summary>
-        /// Funkcja usuwająca klienta z listy klientów organizacji po jego nazwie.
+        /// Metoda usuwająca klienta z listy klientów organizacji po jego nazwie.
         /// </summary>
         /// <param name="nazwa">Nazwa.</param>
         /// <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
@@ -499,7 +499,7 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwająca obiekt Klient z listy klientów organizacji prowadzącej CRM.
+        /// Metoda usuwająca obiekt Klient z listy klientów organizacji prowadzącej CRM.
         /// </summary>
         /// <param name="k">Obiekt Klient.</param>
         /// <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
@@ -514,7 +514,7 @@ namespace CRM
             return false;
         }
         /// <summary>
-        /// Funkcja usuwa wszystkich klientów z listy klientów organizacji.
+        /// Metoda usuwa wszystkich klientów z listy klientów organizacji.
         /// </summary>
         public void UsunWszystkichKlientow()
         {
@@ -534,7 +534,7 @@ namespace CRM
             return _listaKlientow.Count();
         }
         /// <summary>
-        /// Funkcja sprawdza, czy podany obiekt Klient znajduje się na liście klientów organizcji prowadzącej CRM.
+        /// Metoda sprawdza, czy podany obiekt Klient znajduje się na liście klientów organizcji prowadzącej CRM.
         /// </summary>
         /// <param name="k">Obiekt Klient.</param>
         /// <returns>Prawdę, jeśli obiekt Klient jest klientem oraganizacji prowadzącej CRM,
@@ -544,7 +544,7 @@ namespace CRM
             return _listaKlientow.Contains(k);
         }
         /// <summary>
-        /// Funkcja sprawdza, czy klient o podanej Nazwie znajduje się na liście klientów organizacji prowadzącej CRM.
+        /// Metoda sprawdza, czy klient o podanej Nazwie znajduje się na liście klientów organizacji prowadzącej CRM.
         /// </summary>
         /// <param name="nazwa">Nazwa szukanego klienta.</param>
         /// <returns>Prawdę, jeśli obiekt o takiej nazwie jest klientem oraganizacji prowadzącej CRM,
@@ -554,7 +554,7 @@ namespace CRM
             return _listaKlientow.Exists(k => k.Nazwa == nazwa);
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi planowany kontakt ma odbyć się za podaną liczbę dni. Domyślnie wyszukuje klientów, z którymi planowany kontakt jest ustawiony na dzisiaj.
+        /// Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi planowany kontakt ma odbyć się za podaną liczbę dni. Domyślnie wyszukuje klientów, z którymi planowany kontakt jest ustawiony na dzisiaj.
         /// </summary>
         /// <param name="ZaIleDni">Liczba dni, za którą ma się odbyć planowany kontakt z klientem.</param>
         /// <returns>Listę klientów, z którymi planowany kontakt jest ustawiony za podaną liczbę dni.</returns>
@@ -563,7 +563,7 @@ namespace CRM
             return _listaKlientow.FindAll(k => k.DataPlanowanegoKontaktu == DateTime.Today.AddDays(ZaIleDni));
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi ostatnio kontaktowano się podaną liczbę dni temu. Domyślnie wyszukuje klientów, z którymi osatnio kontaktowano się 2 tygodnie temu.
+        /// Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi ostatnio kontaktowano się podaną liczbę dni temu. Domyślnie wyszukuje klientów, z którymi osatnio kontaktowano się 2 tygodnie temu.
         /// </summary>
         /// <param name="IleDniTemu">Liczba dni jaka minęła odkąd kontaktowano się z klientem.</param>
         /// <returns>Listę klientów, z którymi kontaktowano się ustaloną liczbę dni temu.</returns>
@@ -572,7 +572,7 @@ namespace CRM
             return _listaKlientow.FindAll(k => k.OstatniKontakt() <= DateTime.Today.AddDays(-IleDniTemu));
         }
         /// <summary>
-        /// Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
+        /// Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
         /// </summary>
         /// <param name="status">Status.</param>
         /// <returns>Listę klientów, o podanym statusie.</returns>
@@ -581,21 +581,21 @@ namespace CRM
             return _listaKlientow.FindAll(k => k.Status == status);
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich klientów alfabetycznie po nazwie organizacji.
+        /// Metoda sortuje wszystkich klientów alfabetycznie po nazwie organizacji.
         /// </summary>
         public void KlienciSortujAlfabetycznie()
         {
             _listaKlientow.Sort();
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich klientów według daty planowanego kontaktu.
+        /// Metoda sortuje wszystkich klientów według daty planowanego kontaktu.
         /// </summary>
         public void KlienciSortujDataPlanowanegoKontaktu()
         {
             _listaKlientow.Sort((x, y) => y.DataPlanowanegoKontaktu.CompareTo(x.DataPlanowanegoKontaktu));
         }
         /// <summary>
-        /// Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
+        /// Metoda sortuje wszystkich klientów według daty ostatniego kontaktu.
         /// </summary>
         public void KlienciSortujDataOstatniegoKontaktu()
         {
@@ -626,7 +626,7 @@ namespace CRM
         #endregion
         #region Zapis/Odczyt
         /// <summary>
-        /// Funkcja zapisuje dane organizacji, która prowadzi CRM do pliku XML.
+        /// Metoda zapisuje dane organizacji, która prowadzi CRM do pliku XML.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
         public override void ZapiszXML(string nazwa)
@@ -653,7 +653,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja odczytująca dane organizacji, która prowadzi CRM z pliku XML.
+        /// Metoda odczytująca dane organizacji, która prowadzi CRM z pliku XML.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
         /// <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM.</returns>
@@ -682,7 +682,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja zapisuje dane organizacji, która prowadzi CRM do pliku JSON.
+        /// Metoda zapisuje dane organizacji, która prowadzi CRM do pliku JSON.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".json".</param>
         public override void ZapiszJSON(string nazwa)
@@ -694,7 +694,7 @@ namespace CRM
             }
         }
         /// <summary>
-        /// Funkcja odczytująca dane organizacji, która prowadzi CRM z pliku JSON.
+        /// Metoda odczytująca dane organizacji, która prowadzi CRM z pliku JSON.
         /// </summary>
         /// <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         /// <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM.</returns>
@@ -704,12 +704,24 @@ namespace CRM
             {
                 return null;
             }
-            return JsonConvert.DeserializeObject<OrgProwadzacaCRM>(File.ReadAllText(nazwa));
+            OrgProwadzacaCRM o = JsonConvert.DeserializeObject<OrgProwadzacaCRM>(File.ReadAllText(nazwa));
+            foreach (Klient k in o.ListaKlientow)
+            {
+                k.ListaDoStosu();
+                foreach (Umowa u in k.TransakcjeList)
+                {
+                    for (int i = 0; i < u.IlosciKupionychProduktow.Count(); ++i)
+                    {
+                        u.KupioneProdukty.Add(u.ListaKupionychProduktow[i], u.IlosciKupionychProduktow[i]);
+                    }
+                }
+            }
+            return o;
         }
         #endregion
-        #region Funkcje wypisujace
+        #region Metody wypisujace
         /// <summary>
-        /// Funkcja wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
+        /// Metoda wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
         /// </summary>
         /// <returns>Napis zawierający informacje o wszystkich produktach z listy produktów organizacji.</returns>
         public string WypiszProdukty()
@@ -727,7 +739,7 @@ namespace CRM
             return napis.ToString();
         }
         /// <summary>
-        /// Funkcja wypisująca na konsolę wszystkich pracowników organizacji prowadzącej CRM.
+        /// Metoda wypisująca na konsolę wszystkich pracowników organizacji prowadzącej CRM.
         /// </summary>
         /// <returns>Napis zawierający informacje o wszystkich pracownikach organizacji.</returns>
         public string WypiszPracownikow()
@@ -745,7 +757,7 @@ namespace CRM
             return napis.ToString();
         }
         /// <summary>
-        /// Funkcja wypisująca na konsolę wszystkich konkurentów organizacji prowadzącej CRM.
+        /// Metoda wypisująca na konsolę wszystkich konkurentów organizacji prowadzącej CRM.
         /// </summary>
         /// <returns>Napis zawierający informacje o wszystkich konkurentach organizacji.</returns>
         public string WypiszKonkurentow()
@@ -763,7 +775,7 @@ namespace CRM
             return napis.ToString();
         }
         /// <summary>
-        /// Funkcja wypisująca na konsolę wszystkich klientów organizacji prowadzącej CRM.
+        /// Metoda wypisująca na konsolę wszystkich klientów organizacji prowadzącej CRM.
         /// </summary>
         /// <returns>Napis zawierający informacje o wszystkich klientach organizacji.</returns>
         public string WypiszKlientow()
@@ -781,7 +793,7 @@ namespace CRM
             return napis.ToString();
         }
         /// <summary>
-        /// Funkcja wypisująca na konsolę wszystkie informacje o organizacji prowadzącej CRM oraz jej pracowników, konkurentów, klientów i produkty, które oferuje.
+        /// Metoda wypisująca na konsolę wszystkie informacje o organizacji prowadzącej CRM oraz jej pracowników, konkurentów, klientów i produkty, które oferuje.
         /// </summary>
         /// <returns>Napis zawierający informacje o całej organizacji prowadzącej CRM.</returns>
         public override string ToString()
