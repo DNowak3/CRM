@@ -167,3 +167,6 @@ C:\Users\kycia\Source\Repos\CRM18\CRM\CRM\obj\Debug\CRM.pdb
 C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete

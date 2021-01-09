@@ -58,6 +58,7 @@ namespace CRM_GUI
             {
                 string nazwa = txtNazwa.Text;
                 double cena = 0;
+                int t = 0;
                 Jednostki j = Jednostki.szt;
                 try
                 {
@@ -68,6 +69,7 @@ namespace CRM_GUI
                     MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
+                        t = 1;
                         DialogResult = false;
                     }
                     else
@@ -81,6 +83,7 @@ namespace CRM_GUI
                     MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna cena. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
+                        t = 1;
                         DialogResult = false;
                     }
                     else
@@ -97,6 +100,7 @@ namespace CRM_GUI
                     MessageBoxResult m = MessageBox.Show("Dodawanie produktu nie powiodło się. Niepoprawna jednostka. Czy chcesz kontynuować mimo to?", "Uwaga!", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (m == MessageBoxResult.Yes)
                     {
+                        t = 1;
                         DialogResult = false;
                     }
                     else
@@ -104,6 +108,7 @@ namespace CRM_GUI
                         return;
                     }
                 }
+                
                 if (!_p.Kod.Equals(string.Empty))
                 {
                     _p.Nazwa = nazwa;
@@ -117,7 +122,10 @@ namespace CRM_GUI
                     _p.Jednostka = j;
                     _p.Kod = $"{_p.Nazwa[0]}{DateTime.Now.Year}{Produkt.AktualnyNumer}";
                 }
-                DialogResult = true;
+                if (t == 0)
+                {
+                    DialogResult = true;
+                }
             }
             else
             {

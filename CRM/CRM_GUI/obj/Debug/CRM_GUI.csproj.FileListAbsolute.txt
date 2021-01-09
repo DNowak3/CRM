@@ -509,3 +509,6 @@ C:\Users\kycia\Source\Repos\CRM18\CRM\CRM_GUI\obj\Debug\CRM_GUI.exe
 C:\Users\kycia\Source\Repos\CRM18\CRM\CRM_GUI\obj\Debug\CRM_GUI.pdb
 C:\Users\Magda\Desktop\ProjektPO\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Magda\Desktop\ProjektPO\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.xml
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\CRM_GUI.xml
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.dll
+F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.xml

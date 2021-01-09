@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CRM_GUI</name>
+    </assembly>
+    <members>
+        <member name="T:CRM_GUI.UmowaWindow">
+            <summary>
+            Logika interakcji dla klasy UmowaWindow.xaml
+            </summary>
+            <summary>
+            UmowaWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.UmowaWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.UmowyWindow">
+            <summary>
+            Logika interakcji dla klasy UmowyWindow.xaml
+            </summary>
+            <summary>
+            UmowyWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.UmowyWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.DzialaniaWindow">
+            <summary>
+            Logika interakcji dla klasy DzialaniaWindow.xaml
+            </summary>
+            <summary>
+            DzialaniaWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.DzialaniaWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.DzialanieWindow">
+            <summary>
+            Logika interakcji dla klasy DzialanieWindow.xaml
+            </summary>
+            <summary>
+            DzialanieWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.DzialanieWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.KlienciWindow">
+            <summary>
+            Logika interakcji dla klasy KlienciWindow.xaml
+            </summary>
+            <summary>
+            KlienciWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.KlienciWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.KlientWindow">
+            <summary>
+            Logika interakcji dla klasy KlientWindow.xaml
+            </summary>
+            <summary>
+            KlientWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.KlientWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.KonkurenciWindow">
+            <summary>
+            Logika interakcji dla klasy KonkurenciWindow.xaml
+            </summary>
+            <summary>
+            KonkurenciWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.KonkurenciWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.KonkurentWindow">
+            <summary>
+            Logika interakcji dla klasy KonkurentWindow.xaml
+            </summary>
+            <summary>
+            KonkurentWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.KonkurentWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.OsobaKontaktowaWindow">
+            <summary>
+            Logika interakcji dla klasy OsobaKontaktowaWindow.xaml
+            </summary>
+            <summary>
+            OsobaKontaktowaWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.OsobaKontaktowaWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.OsobyKontaktoweWindow">
+            <summary>
+            Logika interakcji dla klasy OsobyKontaktoweWindow.xaml
+            </summary>
+            <summary>
+            OsobyKontaktoweWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.OsobyKontaktoweWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.PracownicyWindow">
+            <summary>
+            Interaction logic for PracownicyWindow.xaml
+            </summary>
+            <summary>
+            PracownicyWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.PracownicyWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.PracownikWindow">
+            <summary>
+            Interaction logic for PracownikWindow.xaml
+            </summary>
+            <summary>
+            PracownikWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.PracownikWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.ProduktWindow">
+            <summary>
+            Logika interakcji dla klasy ProduktWindow.xaml
+            </summary>
+            <summary>
+            ProduktWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.ProduktWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.ProduktyWindow">
+            <summary>
+            Logika interakcji dla klasy ProduktyWindow.xaml
+            </summary>
+            <summary>
+            ProduktyWindow
+            </summary>
+        </member>
+        <member name="M:CRM_GUI.ProduktyWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CRM_GUI.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CRM_GUI.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CRM_GUI.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
