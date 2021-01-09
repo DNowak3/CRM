@@ -36,6 +36,7 @@
             <ComboBoxItem Content="Osoby do kontaktu" HorizontalAlignment="Left" Width="205" FontSize="15"/>
             <ComboBoxItem Content="Transakcje" HorizontalAlignment="Left" Width="205" FontSize="15"/>
         </ComboBox>
+        <Button x:Name="buttonAktualizujPlanKontakt" Content="Aktualizuj planowany konatkt" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="288,514,0,0" VerticalAlignment="Top" Width="267" Height="35" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonAktualizujDate_Click"/>
         <Grid x:Name="InputBox" Visibility="Collapsed" Margin="0,0,0,0.333">
             <Grid Background="Black" Opacity="0.5"/>
             <Border
@@ -61,6 +62,5 @@
                 </StackPanel>
             </Border>
         </Grid>
-        <Button x:Name="buttonAktualizujPlanKontakt" Content="Aktualizuj planowany konatkt" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="288,514,0,0" VerticalAlignment="Top" Width="267" Height="35" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White" Click="buttonAktualizujDate_Click"/>
     </Grid>
 </Window>
