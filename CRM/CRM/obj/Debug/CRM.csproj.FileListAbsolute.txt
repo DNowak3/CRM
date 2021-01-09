@@ -164,3 +164,6 @@ C:\Users\kycia\Source\Repos\CRM18\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs
 C:\Users\kycia\Source\Repos\CRM18\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete
 C:\Users\kycia\Source\Repos\CRM18\CRM\CRM\obj\Debug\CRM.exe
 C:\Users\kycia\Source\Repos\CRM18\CRM\CRM\obj\Debug\CRM.pdb
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete

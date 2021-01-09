@@ -16,11 +16,11 @@
         </ObjectDataProvider>
     </Window.Resources>
     <Grid>
-        <Label x:Name="labNazwa" Content="Nazwa organizacji" HorizontalAlignment="Left" Height="33" Margin="35,52,0,0" VerticalAlignment="Top" Width="140" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labBranza" Content="Branża" HorizontalAlignment="Left" Height="33" Margin="35,90,0,0" VerticalAlignment="Top" Width="140" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labNIP" Content="NIP" HorizontalAlignment="Left" Height="33" Margin="35,128,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labDataZal" Content="Data założenia" HorizontalAlignment="Left" Height="33" Margin="35,166,0,0" VerticalAlignment="Top" Width="143" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labKraj" Content="Kraj" HorizontalAlignment="Left" Height="33" Margin="35,204,0,0" VerticalAlignment="Top" Width="141" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="labNazwa" Content="Nazwa organizacji" HorizontalAlignment="Left" Height="33" Margin="35,52,0,0" VerticalAlignment="Top" Width="155" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labBranza" Content="Branża" HorizontalAlignment="Left" Height="33" Margin="35,90,0,0" VerticalAlignment="Top" Width="140" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labNIP" Content="NIP" HorizontalAlignment="Left" Height="33" Margin="35,128,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labDataZal" Content="Data założenia" HorizontalAlignment="Left" Height="33" Margin="35,166,0,0" VerticalAlignment="Top" Width="143" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labKraj" Content="Kraj" HorizontalAlignment="Left" Height="33" Margin="35,204,0,0" VerticalAlignment="Top" Width="141" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,22 +30,22 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="labMiasto" Content="Miasto" HorizontalAlignment="Left" Height="33" Margin="35,242,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labAdres" Content="Adres" HorizontalAlignment="Left" Height="33" Margin="35,280,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labKodPoczt" Content="Kod pocztowy" HorizontalAlignment="Left" Height="33" Margin="35,318,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="33" Margin="35,356,0,0" VerticalAlignment="Top" Width="109" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="15"/>
-        <TextBox x:Name="txtKodPoczt" HorizontalAlignment="Left" Height="33" Margin="194,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="33" Margin="194,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" Height="33" Margin="194,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" Height="33" Margin="194,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" Height="33" Margin="194,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" Height="33" Margin="194,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
-        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Height="33" Margin="195,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontWeight="Bold"/>
-        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" Height="97" Margin="194,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="625" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontStyle="Italic"/>
-        <Button x:Name="butProdukty" Content="Produkty" HorizontalAlignment="Left" Height="71" Margin="629,204,0,0" VerticalAlignment="Top" Width="190" FontWeight="Bold" FontSize="18" BorderBrush="#FF006674" Background="#FF04535E" Foreground="White" Click="butProdukty_Click"/>
-        <Button x:Name="butPracownicy" Content="Pracownicy" HorizontalAlignment="Left" Height="71" Margin="629,128,0,0" VerticalAlignment="Top" Width="190" Click="butPracownicy_Click" FontWeight="Bold" FontSize="18" BorderBrush="#FF006674" Background="#FF006674" Foreground="White"/>
-        <Button x:Name="butKlienci" Content="Klienci" HorizontalAlignment="Left" Height="71" Margin="629,52,0,0" VerticalAlignment="Top" Width="190" Click="butKlienci_Click" FontWeight="Bold" FontSize="18" BorderBrush="#FF006674" Background="#FF047382" Foreground="White"/>
-        <Button x:Name="butKonkurenci" Content="Konkurenci" HorizontalAlignment="Left" Height="71" Margin="629,280,0,0" VerticalAlignment="Top" Width="190" FontWeight="Bold" FontSize="18" BorderBrush="#FF006674" Background="#FF05464F" Foreground="White" Click="butKonkurenci_Click"/>
+        <Label x:Name="labMiasto" Content="Miasto" HorizontalAlignment="Left" Height="33" Margin="35,242,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labAdres" Content="Adres" HorizontalAlignment="Left" Height="33" Margin="35,280,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labKodPoczt" Content="Kod pocztowy" HorizontalAlignment="Left" Height="33" Margin="35,318,0,0" VerticalAlignment="Top" Width="139" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="labNotatki" Content="Notatki" HorizontalAlignment="Left" Height="33" Margin="35,356,0,0" VerticalAlignment="Top" Width="109" Background="{x:Null}" Foreground="#FF00525E" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="txtKodPoczt" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtAdres" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtMiasto" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtKraj" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtDataZal" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtNIP" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="194,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B"/>
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" FontSize="18" Height="33" Margin="195,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontWeight="Bold"/>
+        <TextBox x:Name="txtNotatki" HorizontalAlignment="Left" FontSize="16" Height="100" Margin="194,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="625" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontStyle="Italic"/>
+        <Button x:Name="butProdukty" Content="Produkty" HorizontalAlignment="Left" Height="71" Margin="629,204,0,0" VerticalAlignment="Top" Width="190" FontWeight="Bold" FontSize="25" BorderBrush="#FF006674" Background="#FF04535E" Foreground="White" Click="butProdukty_Click"/>
+        <Button x:Name="butPracownicy" Content="Pracownicy" HorizontalAlignment="Left" Height="71" Margin="629,128,0,0" VerticalAlignment="Top" Width="190" Click="butPracownicy_Click" FontWeight="Bold" FontSize="25" BorderBrush="#FF006674" Background="#FF006674" Foreground="White"/>
+        <Button x:Name="butKlienci" Content="Klienci" HorizontalAlignment="Left" Height="71" Margin="629,52,0,0" VerticalAlignment="Top" Width="190" Click="butKlienci_Click" FontWeight="Bold" FontSize="25" BorderBrush="#FF006674" Background="#FF047382" Foreground="White"/>
+        <Button x:Name="butKonkurenci" Content="Konkurenci" HorizontalAlignment="Left" Height="71" Margin="629,280,0,0" VerticalAlignment="Top" Width="190" FontWeight="Bold" FontSize="25" BorderBrush="#FF006674" Background="#FF05464F" Foreground="White" Click="butKonkurenci_Click"/>
         <Menu HorizontalAlignment="Stretch" Height="46" VerticalAlignment="Top" Margin="2,0,-1.667,0" Background="#FF006674" Foreground="White" BorderBrush="#FF003E46">
             <MenuItem Header="Menu" FontSize="20" BorderBrush="#FF006674" Foreground="White" Background="#FF006674" Height="46" Width="102">
                 <MenuItem x:Name="Wczytaj" Header="Wczytaj z pliku"  Click="menuWczytaj_Click" Background="#FF006674" BorderBrush="#FF003E46" FontSize="18" />
@@ -54,8 +54,8 @@
             </MenuItem>
         </Menu>
 
-        <ComboBox x:Name="cmbBranza" HorizontalAlignment="Left" Height="33" Margin="195,90,0,0" VerticalAlignment="Top" Width="399"
-                  ItemsSource="{Binding Source={StaticResource dataFromEnum}}" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontWeight="Bold">
+        <ComboBox x:Name="cmbBranza" HorizontalAlignment="Left" FontSize="16" Height="33" Margin="195,90,0,0" VerticalAlignment="Top" Width="399"
+                  ItemsSource="{Binding Source={StaticResource dataFromEnum}}" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF02262B" FontWeight="SemiBold">
         </ComboBox>
     </Grid>
 </Window>

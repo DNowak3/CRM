@@ -279,19 +279,19 @@
         </member>
         <member name="M:CRM.Klient.#ctor">
             <summary>
-            Podstawowy konstruktor nieparametryczny.
+            Konstruktor nieparametryczny.
             </summary>
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże)">
             <summary>
-            Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+            Konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
-            Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+            Szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
@@ -302,7 +302,7 @@
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
             <summary>
-            Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
+            Konstruktor dla wszstkich pol.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
@@ -644,6 +644,12 @@
             <param name="nazwa"> nazwa pliku </param>
             <returns></returns>
         </member>
+        <member name="M:CRM.Konkurent.Clone">
+            <summary>
+            Metoda klonująca obiekt klasy Konkurent
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CRM.Konkurent.ToString">
             <summary>
             Metoda nadpisywana z klasy Organizacja, wypisuje czytelny opis obiektów klasy Konkurent
@@ -798,216 +804,219 @@
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajPracownika(CRM.Pracownik)">
             <summary>
-            Funkcja dodająca obiekt Pracownik do listy pracowników organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+            Metoda dodająca obiekt Pracownik do listy pracowników organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
             </summary>
-            <param name="p">Obiekt Pracownik</param>
+            <param name="p">Obiekt Pracownik.</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunPracownika(System.String,System.String,CRM.Stanowiska)">
             <summary>
-            Funkcja usuwając pracownika z listy pracowników organizacji.
+            Metoda usuwając pracownika z listy pracowników organizacji.
             </summary>
-            <param name="imie">Imie pracownika do usunięcia.</param>
-            <param name="nazwisko">Nazwisko pracownika do usunięcia.</param>
-            <param name="stanowisko">Stanowisko pracownika do usunięcia</param>
+            <param name="imie">Imie pracownika.</param>
+            <param name="nazwisko">Nazwisko pracownika.</param>
+            <param name="stanowisko">Stanowisko pracownika.</param>
             <returns>Prawdę, jeśli taki pracownik był na liście i go usunięto,
             Fałsz, jeśli takiego pracownika nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunPracownika(CRM.Pracownik)">
             <summary>
-            Funkcja usuwając pracownika z listy pracowników organizacji.
+            Metoda usuwając pracownika z listy pracowników organizacji.
             </summary>
-            <param name="p">Obiekt Pracownik przeznaczony do usunięcia.</param>
+            <param name="p">Obiekt Pracownik.</param>
             <returns>Prawdę, jeśli taki pracownik był na liście i go usunięto,
             Fałsz, jeśli takiego pracownika nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunWszystkichPracownikow">
             <summary>
-            Funkcja usuwa wszystkich pracowników z listy.
+            Metoda usuwa wszystkich pracowników z listy.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PodajIloscPracownikow">
             <summary>
-            Podaje liczbę pracowników pracujących w organizacji.
+            Metoda podaje liczbę pracowników pracujących w organizacji.
             </summary>
-            <returns>Zwraca liczbę pracowników.</returns>
+            <returns>Liczba pracowników.
+            -1 jeśli taka lista nie istnieje.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestPracownikiem(CRM.Pracownik)">
             <summary>
-            Funkcja sprawdza, czy podany obiekt Pracownik znajduje się na liście pracowników.
+            Metoda sprawdza, czy podany obiekt Pracownik znajduje się na liście pracowników.
             </summary>
-            <param name="p">Obiekt pracownik, którego szukamy na liście pracowników.</param>
+            <param name="p">Obiekt Pracownik</param>
             <returns>Prawdę, jeśli obiekt Pracownik jest pracownikiem oraganizacji prowadzącej CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestPracownikiem(System.String,System.String,CRM.Stanowiska)">
             <summary>
-            Funkcja sprawdza, czy pracownik o podanym imeiniu, nazwisku i stanowisku znajduje się na liście pracowników.
+            Metoda sprawdza, czy pracownik o podanym Imeiniu, Nazwisku i Stanowisku znajduje się na liście pracowników.
             </summary>
-            <param name="imie">Imie pracownika, który jest szukany.</param>
-            <param name="nazwisko">Nazwisko pracownika, który jest szukany.</param>
-            <param name="stanowisko">Stanowisko pracownika, który jest szukany.</param>
+            <param name="imie">Imie pracownika.</param>
+            <param name="nazwisko">Nazwisko pracownika.</param>
+            <param name="stanowisko">Stanowisko pracownika.</param>
             <returns>Prawdę, jeśli obiekt o takich parametrach jest pracownikiem oraganizacji prowadzącej CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichPracownikowStanowisko(CRM.Stanowiska)">
             <summary>
-            Funkcja wyszukuje wszystkich pracowników organizacji prowadzącej CRM znajdujących się na podanym stanowisku.
+            Metoda wyszukuje wszystkich pracowników organizacji znajdujących się na podanym stanowisku.
             </summary>
-            <param name="stanowisko">Stanowisko, na którym szukamy pracowników.</param>
-            <returns>Listę pracowników, znajdujących się na podanym stanowisku.</returns>
+            <param name="stanowisko">Stanowisko.</param>
+            <returns>Lista pracowników, znajdujących się na podanym stanowisku.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichPracownikowPlec(CRM.Plcie)">
             <summary>
-            Funkcja wyszukuje wszystkich pracowników organizacji prowadzącej CRM o podane płci.
+            Metoda wyszukuje wszystkich pracowników organizacji o podane płci.
             </summary>
-            <param name="plec">Płeć, jaką mają szukani pracownicy.</param>
-            <returns>Listę pracowników, o podanej płci.</returns>
+            <param name="plec">Płeć.</param>
+            <returns>Lista pracowników, o podanej płci.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichPracownikowPracaPrzed(System.String)">
             <summary>
-            Funkcja wyszukuje wszystkich pracowników organizacji prowadzącej CRM, którzy zaczeli w niej pracować przed podaną datą.
+            Metoda wyszukuje wszystkich pracowników organizacji, którzy zaczeli w niej pracować przed podaną datą.
             </summary>
-            <param name="dataRozpoczecia">Data, przed którą zostali zatrudnieni szukani pracownicy.</param>
-            <returns>Listę pracowników, którzy zostali zatrudnieni przed podaną datą.</returns>
+            <param name="dataRozpoczecia">Data.</param>
+            <returns>Lista pracowników, którzy zostali zatrudnieni przed podaną datą.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PracownicySortujAlfabetycznie">
             <summary>
-            Funkcja sortuje wszystkich pracowników alfabetycznie, najpierw po nazwisku, potem po imieniu.
+            Metoda sortuje wszystkich pracowników alfabetycznie, najpierw po nazwisku, potem po imieniu.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PracownicySortujPoDacieZatrudnienia(System.Boolean)">
             <summary>
-            Funkcja sortuje wszystkich pracowników po dacie zatrudnienia. 
+            Metoda sortuje wszystkich pracowników po dacie zatrudnienia. 
             </summary>
             <param name="rosnaco">True oznacza sortowanie od najwcześniejszego zatrudnienia do najpóźniejszego,
             False oznacza sortowanie od najpóźniejszego zatrudnienia do najwcześniejszego.</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajProdukt(CRM.Produkt)">
             <summary>
-            Funkcja dodająca obiekt Produktów do listy produktów jakie oferuje organizacja. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+            Metoda dodająca obiekt Produkt do listy produktów jakie oferuje organizacja. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
             </summary>
-            <param name="p">Obiekt Produkt</param>
+            <param name="p">Obiekt Produkt.</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunProdukt(System.String)">
             <summary>
-            Funkcja usuwając produkt z listy produktów, jakie oferuje organizacja.
+            Metoda usuwająca produkt z listy produktów, jakie oferuje organizacja, po podanym kodzie produktu.
             </summary>
-            <param name="kod">Kod produktu do usunięcia.</param>
+            <param name="kod">Kod.</param>
             <returns>Prawdę, jeśli taki produkt był na liście i go usunięto,
             Fałsz, jeśli takiego produktu nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunProdukt(CRM.Produkt)">
             <summary>
-            Funkcja usuwając produkt z listy produktów, jakie oferuje organizacja.
+            Metoda usuwając obiekt Produkt z listy produktów, jakie oferuje organizacja.
             </summary>
-            <param name="p">Obiekt Produkt do usunięcia.</param>
+            <param name="p">Obiekt Produkt.</param>
             <returns>Prawdę, jeśli taki produkt był na liście i go usunięto,
             Fałsz, jeśli takiego produktu nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunWszystkieProdukty">
             <summary>
-            Funkcja usuwa wszystkie produkty z listy produktów.
+            Metoda usuwa wszystkie produkty z listy produktów.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PodajIloscProduktow">
             <summary>
-            Funkcja oblicza liczbę produktów oferowanych przez organizację.
+            Metoda oblicza liczbę produktów oferowanych przez organizację.
             </summary>
-            <returns>Zwraca liczbę produktów.</returns>
+            <returns>Liczba produktów.
+            -1 jeśli taka lista nie istnieje.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestProduktem(CRM.Produkt)">
             <summary>
-            Funkcja sprawdza, czy podany obiekt Produkt znajduje się na liście produktów organizacji.
+            Metoda sprawdza, czy podany obiekt Produkt znajduje się na liście produktów organizacji.
             </summary>
-            <param name="p">Obiekt produkt, którego szukamy na liście produktów.</param>
+            <param name="p">Obiekt Produkt.</param>
             <returns>Prawdę, jeśli obiekt Produkt jest produktem oferowanym przez organizację prowadzącą CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestProduktem(System.String)">
             <summary>
-            Funkcja sprawdza, czy produkt o podanym kodzie znajduje się na liście produktó organizacji.
+            Metoda sprawdza, czy produkt o podanym kodzie znajduje się na liście produktó organizacji.
             </summary>
-            <param name="kod">Kod produktu, który jest szukany.</param>
+            <param name="kod">Kod produktu.</param>
             <returns>Prawdę, jeśli obiekt o takim kodzie jest produktem oferowanym przez oraganizację prowadzącą CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkieProduktyCena(System.Double,System.Boolean)">
             <summary>
-            Funkcja wyszukuje wszystkie produkty oferowane przez organizację prowadzącą CRM poniżej lub powyżej podanej ceny.
+            Metoda wyszukuje wszystkie produkty oferowane przez organizację prowadzącą CRM poniżej lub powyżej podanej ceny.
             </summary>
             <param name="porownywalnaCena">Cena wobec której porównywane są produkty.</param>
-            <param name="tansze">Parametr służący do opisania, czy chcemy sobaczyć produkty tańsze czy droższe. True oznacza, że chcemy uzyskać produkty tańsze (co też jest domyślną wartością), a false, że produkty droższe od podanej ceny.</param>
+            <param name="tansze">Parametr służący do opisania, czy chcemy zobaczyć produkty tańsze czy droższe. True oznacza, że chcemy uzyskać produkty tańsze (co też jest domyślną wartością), a false, że produkty droższe od podanej ceny.</param>
             <returns>Listę produktów tańszych/droższych od podanej ceny.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzProduktKod(System.String)">
             <summary>
-            Znajduje listę produktów o podanym kodzie.
+            Metoda wyszukuje wszystkie produkty o podanym kodzie.
             </summary>
-            <param name="kod">Szukany kod produktu</param>
-            <returns>Lista produktów o podanym kodzie</returns>
+            <param name="kod">Jednostka.</param>
+            <returns>Listę produktów o danym kodzie.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkieProduktyJednostka(CRM.Jednostki)">
             <summary>
-            Funkcja wyszukuje wszystkie pprodukty oferowane przez organizację prowadzącą CRM, które sprzedawane są w podanej jednostce.
+            Metoda wyszukuje wszystkie produkty oferowane przez organizację, które sprzedawane są w podanej jednostce.
             </summary>
-            <param name="jednostka">Jednostka, w jakiej sprzedawane są produkty, których szukamy.</param>
+            <param name="jednostka">Jednostka.</param>
             <returns>Listę produktów o danej jednostce.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ProduktySortujPoCenie(System.Boolean)">
             <summary>
-            Funkcja sortująca produkty oferowane przez organizację prowadzącą CRM według ceny. 
+            Metoda sortująca produkty oferowane przez organizację prowadzącą CRM według ceny. 
             </summary>
-            <param name="rosnaco">True, produkty sortowane są rosnąco wg ceny, False, produkty sortowane są malejąco wg ceny.</param>
+            <param name="rosnaco">True, produkty sortowane są rosnąco wg ceny; False, produkty sortowane są malejąco wg ceny.</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ProduktySortujPoKodzie">
             <summary>
-            Funkcja sortuje wszystkich produkty alfabetycznie po ich nazwie.
+            Metoda sortuje wszystkich produkty alfabetycznie po ich kodzie.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajKonkurenta(CRM.Konkurent)">
             <summary>
-            Funkcja dodająca obiekt Konkurent do listy konkurentów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+            Metoda dodająca obiekt Konkurent do listy konkurentów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
             </summary>
             <param name="k">Obiekt Konkurent</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunKonkurenta(System.String)">
             <summary>
-            Funkcja usuwająca konkurenta z listy konkurentów organizacji.
+            Metoda usuwająca konkurenta z listy konkurentów organizacji po jego Nazwie.
             </summary>
-            <param name="nazwa">Nazwa organizacji przeznaczonej do usunięcia z listy konkurentów.</param>
+            <param name="nazwa">Nazwa organizacji konkurencyjnej.</param>
             <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
             Fałsz, jeśli takiego konkurenta nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunKonkurenta(CRM.Konkurent)">
             <summary>
-            Funkcja usuwając konkurenta z listy konkurentów organizacji.
+            Metoda usuwając konkurenta z listy konkurentów organizacji.
             </summary>
-            <param name="k">Obiekt Konkurent przeznaczony do usunięcia.</param>
+            <param name="k">Obiekt Konkurent.</param>
             <returns>Prawdę, jeśli taki konkurent był na liście i go usunięto,
-            Fałsz, jeśli takiego pracownika nie było.</returns>
+            Fałsz, jeśli takiego konkurenta nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunWszystkichKonkurentow">
             <summary>
-            Funkcja usuwa wszystkich konkurentoów z listy konkurentów organizacji.
+            Metoda usuwa wszystkich konkurentoów z listy konkurentów organizacji.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PodajIloscKonkurentow">
             <summary>
             Podaje liczbę konkurentów organizacji prowadzącej CRM.
             </summary>
-            <returns>Zwraca liczbę konkurentów.</returns>
+            <returns>Liczba konkurentów.
+            -1 jeśli taka lista nie istnieje.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestKonkurentem(CRM.Konkurent)">
             <summary>
-            Funkcja sprawdza, czy podany obiekt Konkurent znajduje się na liście konkurentów.
+            Metoda sprawdza, czy podany obiekt Konkurent znajduje się na liście konkurentów.
             </summary>
-            <param name="k">Obiekt Konkurent, którego szukamy na liście konkurentów.</param>
+            <param name="k">Obiekt Konkurent.</param>
             <returns>Prawdę, jeśli obiekt Konkurent jest konkurentem oraganizacji prowadzącej CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestKonkurentem(System.String)">
             <summary>
-            Funkcja sprawdza, czy konkurent o podanej nazwie znajduje się na liście konkurentów.
+            Metoda sprawdza, czy konkurent o podanej nazwie znajduje się na liście konkurentów.
             </summary>
             <param name="nazwa">Nazwa szukanej konkurencyjnej organizacji.</param>
             <returns>Prawdę, jeśli obiekt o takich parametrach jest konkurentem oraganizacji prowadzącej CRM,
@@ -1015,72 +1024,73 @@
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKonkurentowZagrozenie(CRM.Konkurent.StopienZagrozenia)">
             <summary>
-            Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym stopiu zagrożenia.
+            Metoda wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym stopiu zagrożenia.
             </summary>
-            <param name="zagrozenie">Stopień zagrożenia szukanych konkurentów.</param>
+            <param name="zagrozenie">Stopień zagrożenia.</param>
             <returns>Listę konkurentów, o podanym stopniu zagrożenia.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKonkurentowKraj(System.String)">
             <summary>
-            Funkcja wyszukuje wszystkich konkurentów organizacji prowadzącej CRM o podanym kraju.
+            Metoda wyszukuje wszystkich konkurentów organizacji prowadzącej CRM znajdujących się w podanym kraju.
             </summary>
             <param name="kraj"></param>
-            <returns></returns>
+            <returns>Listę konkurentów, znajdujących się w podanym kraju.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujAlfabetycznie">
             <summary>
-            Funkcja sortuje wszystkich konkurentów alfabetycznie po nazwie.
+            Metoda sortuje wszystkich konkurentów alfabetycznie po nazwie.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.KonkurenciSortujDataZalozenia">
             <summary>
-            Funkcja sortuje wszystkich konkurentów według daty założenia organizacji.
+            Metoda sortuje wszystkich konkurentów według daty założenia organizacji.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.DodajKlienta(CRM.Klient)">
             <summary>
-            Funkcja dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
+            Metoda dodająca obiekt Klient do listy klientów organizacji. Powoduje wyrzucenie wyjątku AlreadyInListException(), jeżeli taki obiekt już znajduje się na liście.
             </summary>
             <param name="k">Obiekt Klient</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunKlienta(System.String)">
             <summary>
-            Funkcja usuwająca klient z listy klientów organizacji.
+            Metoda usuwająca klienta z listy klientów organizacji po jego nazwie.
             </summary>
-            <param name="nazwa">Nazwa organizacji klienta przeznaczonej do usunięcia z listy klientoów.</param>
+            <param name="nazwa">Nazwa.</param>
             <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
             Fałsz, jeśli takiego konkurenta nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunKlienta(CRM.Klient)">
             <summary>
-            Funkcja usuwająca klienta z listy klientów organizacji prowadzącej CRM.
+            Metoda usuwająca obiekt Klient z listy klientów organizacji prowadzącej CRM.
             </summary>
-            <param name="k">Obiekt Klient przeznaczony do usunięcia.</param>
+            <param name="k">Obiekt Klient.</param>
             <returns>Prawdę, jeśli taki klient był na liście i go usunięto,
-            Fałsz, jeśli takiego pracownika nie było.</returns>
+            Fałsz, jeśli takiego klienta nie było.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.UsunWszystkichKlientow">
             <summary>
-            Funkcja usuwa wszystkich klientów z listy klientów organizacji.
+            Metoda usuwa wszystkich klientów z listy klientów organizacji.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.PodajIloscKlientow">
             <summary>
             Podaje liczbę klientów organizacji prowadzącej CRM.
             </summary>
-            <returns>Zwraca liczbę klientów.</returns>
+            <returns>Liczba klientów.
+            -1 jeśli taka lista nie istnieje.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestKlientem(CRM.Klient)">
             <summary>
-            Funkcja sprawdza, czy podany obiekt Klient znajduje się na liście klientów organizcji prowadzącej CRM.
+            Metoda sprawdza, czy podany obiekt Klient znajduje się na liście klientów organizcji prowadzącej CRM.
             </summary>
-            <param name="k">Obiekt Klient, którego szukamy na liście klientów.</param>
+            <param name="k">Obiekt Klient.</param>
             <returns>Prawdę, jeśli obiekt Klient jest klientem oraganizacji prowadzącej CRM,
             Fałsz, jeśli nie jest.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.JestKlientem(System.String)">
             <summary>
-            Funkcja sprawdza, czy klient o podanej nazwie organizacji znajduje się na liście klientów organizacji prowadzącej CRM.
+            Metoda sprawdza, czy klient o podanej Nazwie znajduje się na liście klientów organizacji prowadzącej CRM.
             </summary>
             <param name="nazwa">Nazwa szukanego klienta.</param>
             <returns>Prawdę, jeśli obiekt o takiej nazwie jest klientem oraganizacji prowadzącej CRM,
@@ -1088,38 +1098,38 @@
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKlientowPlanowanyKontakt(System.Int32)">
             <summary>
-            Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi planowany kontakt ma odbyć się za podaną liczbę dni. Domyślnie wyszukuje klientów, z którymi planowany kontakt jest ustawiony na dzisiaj.
+            Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi planowany kontakt ma odbyć się za podaną liczbę dni. Domyślnie wyszukuje klientów, z którymi planowany kontakt jest ustawiony na dzisiaj.
             </summary>
             <param name="ZaIleDni">Liczba dni, za którą ma się odbyć planowany kontakt z klientem.</param>
             <returns>Listę klientów, z którymi planowany kontakt jest ustawiony za podaną liczbę dni.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKlientowOstatniKontakt(System.Int32)">
             <summary>
-            Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi ostatnio kontaktowano się podaną liczbę dni temu. Domyślnie wyszukuje klientów, z którymi osatnio kontaktowano się 2 tygodnie temu.
+            Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM, z którymi ostatnio kontaktowano się podaną liczbę dni temu. Domyślnie wyszukuje klientów, z którymi osatnio kontaktowano się 2 tygodnie temu.
             </summary>
             <param name="IleDniTemu">Liczba dni jaka minęła odkąd kontaktowano się z klientem.</param>
             <returns>Listę klientów, z którymi kontaktowano się ustaloną liczbę dni temu.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZnajdzWszystkichKlientowStatus(CRM.Status)">
             <summary>
-            Funkcja wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
+            Metoda wyszukuje wszystkich klientów organizacji prowadzącej CRM o podanym statusie.
             </summary>
-            <param name="status">Status wyszukiwanych klientów.</param>
+            <param name="status">Status.</param>
             <returns>Listę klientów, o podanym statusie.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.KlienciSortujAlfabetycznie">
             <summary>
-            Funkcja sortuje wszystkich klientów alfabetycznie po nazwie organizacji.
+            Metoda sortuje wszystkich klientów alfabetycznie po nazwie organizacji.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.KlienciSortujDataPlanowanegoKontaktu">
             <summary>
-            Funkcja sortuje wszystkich klientów według daty planowanego kontaktu.
+            Metoda sortuje wszystkich klientów według daty planowanego kontaktu.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.KlienciSortujDataOstatniegoKontaktu">
             <summary>
-            Funkcja sortuje wszystkich klientów według daty ostatniego kontaktu.
+            Metoda sortuje wszystkich klientów według daty ostatniego kontaktu.
             </summary>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.AktualizujStatusKlientow">
@@ -1134,59 +1144,65 @@
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszXML(System.String)">
             <summary>
-            Funkcja zapisuje dane dane organizacji, która prowadzi CRM do pliku XML.
+            Metoda zapisuje dane organizacji, która prowadzi CRM do pliku XML.
             </summary>
-            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
+            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.OdczytajXML(System.String)">
             <summary>
-            Funkcja odczytująca dane organizacji, która prowadzi CRM z pliku XML.
+            Metoda odczytująca dane organizacji, która prowadzi CRM z pliku XML.
             </summary>
-            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-            <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM</returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
+            <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ZapiszJSON(System.String)">
             <summary>
-            Funkcja zapisuje dane organizacji do pliku JSON
+            Metoda zapisuje dane organizacji, która prowadzi CRM do pliku JSON.
             </summary>
-            <param name="nazwa"></param>
+            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".json".</param>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.OdczytajJSON(System.String)">
             <summary>
-            Funkcja odczytująca dane organizacji z pliku JSON
+            Metoda odczytująca dane organizacji, która prowadzi CRM z pliku JSON.
             </summary>
-            <param name="nazwa"></param>
-            <returns></returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
+            <returns>Odczytany plik jako obiekt klasy OrgProwadzacaCRM.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszProdukty">
             <summary>
-            Funkcja wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
+            Metoda wypisująca na konsolę wszystkie produkty, jakie oferuje organizacja prowadząca CRM.
             </summary>
             <returns>Napis zawierający informacje o wszystkich produktach z listy produktów organizacji.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszPracownikow">
             <summary>
-            Funkcja wypisująca na konsolę wszystkich pracowników organizacji prowadzącej CRM.
+            Metoda wypisująca na konsolę wszystkich pracowników organizacji prowadzącej CRM.
             </summary>
             <returns>Napis zawierający informacje o wszystkich pracownikach organizacji.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszKonkurentow">
             <summary>
-            Funkcja wypisująca na konsolę wszystkich konkurentów organizacji prowadzącej CRM.
+            Metoda wypisująca na konsolę wszystkich konkurentów organizacji prowadzącej CRM.
             </summary>
             <returns>Napis zawierający informacje o wszystkich konkurentach organizacji.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.WypiszKlientow">
             <summary>
-            Funkcja wypisująca na konsolę wszystkich klientów organizacji prowadzącej CRM.
+            Metoda wypisująca na konsolę wszystkich klientów organizacji prowadzącej CRM.
             </summary>
             <returns>Napis zawierający informacje o wszystkich klientach organizacji.</returns>
         </member>
         <member name="M:CRM.OrgProwadzacaCRM.ToString">
             <summary>
-            Funkcja wypisująca na konsolę wszystkie informacje o organizacji prowadzącej CRM oraz jej pracowników, konkurentów, klientów oraz produkty, które oferuje.
+            Metoda wypisująca na konsolę wszystkie informacje o organizacji prowadzącej CRM oraz jej pracowników, konkurentów, klientów i produkty, które oferuje.
             </summary>
             <returns>Napis zawierający informacje o całej organizacji prowadzącej CRM.</returns>
+        </member>
+        <member name="M:CRM.OrgProwadzacaCRM.Clone">
+            <summary>
+            Metoda tworzy kopię bieżącego obiektu klasy OrgProwadzacaCRM.
+            </summary>
+            <returns>Obiekt OrgProwadzacaCRM będący kopią bieżącego produktu</returns>
         </member>
         <member name="T:CRM.Stanowiska">
             <summary>
@@ -1195,7 +1211,7 @@
         </member>
         <member name="T:CRM.Plcie">
             <summary>
-            Typ wyliczeniowy, zawiera rodzaje plci.
+            Typ wyliczeniowy, zawiera płcie.
             </summary>
         </member>
         <member name="T:CRM.Osoba">
@@ -1205,7 +1221,7 @@
         </member>
         <member name="F:CRM.Osoba._imie">
             <summary>
-            Imie osoby.
+            Imię osoby.
             </summary>
         </member>
         <member name="F:CRM.Osoba._nazwisko">
@@ -1220,12 +1236,12 @@
         </member>
         <member name="F:CRM.Osoba._stanowisko">
             <summary>
-            Stanowisko jakie piastuje osoba.
+            Stanowisko jakie zajmuje osoba.
             </summary>
         </member>
         <member name="M:CRM.Osoba.FormatZWielkiej(System.String)">
             <summary>
-            Funkcja gwarantująca, że wpisany napis będzie zaczynał się z wielkiej litery, a wszystkie następujące litery będą małe.
+            Metoda gwarantująca, że wpisany napis będzie zaczynał się z wielkiej litery, a wszystkie następujące litery będą małe.
             </summary>
             <param name="napis">Napis, który chcemy zmienić.</param>
             <returns>Podany napis zaczynający się z wielkiej litery, a wszystkie litery potem są małe</returns>
@@ -1244,7 +1260,7 @@
         </member>
         <member name="M:CRM.Osoba.ToString">
             <summary>
-            Funkcja tworzy i zwraca napis z danymi osoby.
+            Metoda tworzy i zwraca napis z danymi osoby.
             </summary>
             <returns>Napis zawierający dane osoby</returns>
         </member>
@@ -1270,23 +1286,23 @@
         </member>
         <member name="M:CRM.OsobaKontakt.PoprawnyTelefon(System.String)">
             <summary>
-            Funkacja sprawdzająca, czy podany numer telefonu jest poprawny.
+            Metoda sprawdzająca, czy podany numer telefonu jest poprawny.
             </summary>
             <param name="telefon">Telefon osoby, z którą się kontaktujemy.</param>
-            <returns>null, jeżeli numer jest niepoprawny
-            telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie</returns>
+            <returns>Null, jeżeli numer jest niepoprawny
+            telefon (czyli wpisany napis), jeżeli telefon został podany poprawnie.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.PoprawnyEmail(System.String)">
             <summary>
-            Funkacja sprawdzająca, czy podany email jest poprawny.
+            Metoda sprawdzająca, czy podany email jest poprawny.
             </summary>
             <param name="email">Email osoby, z którą się kontaktujemy.</param>
-            <returns>null, jeżeli email jest niepoprawny
-            email (czyli wpisany napis), jeżeli email został podany poprawnie</returns>
+            <returns>Null, jeżeli email jest niepoprawny,
+            email (czyli wpisany napis), jeżeli email został podany poprawnie.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.PoprawnoscRegex(System.String,System.String)">
             <summary>
-            Funkcja sprawdzająca, czy podany napis jest zgodny z podaną do niego maską.
+            Metoda sprawdzająca, czy podany napis jest zgodny z podaną do niego maską.
             </summary>
             <param name="napis">Napis, który chcemy zwalidować.</param>
             <param name="maska">Sposób, w jaki napis powinien być zapisany.</param>
@@ -1295,7 +1311,8 @@
         </member>
         <member name="M:CRM.OsobaKontakt.Equals(CRM.OsobaKontakt)">
             <summary>
-            Funkcja sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
+            Metoda sprawdza, czy dwie osoby kontaktowe są tą samą osobą kontaktową.
+            Porównuje ich Imiei Nazwisko oraz Telefon i Mail, jeśli te nie są nullami.
             </summary>
             <param name="other">Osoba, z którą porównujemy.</param>
             <returns>Prawda, jeśli są,
@@ -1303,41 +1320,15 @@
         </member>
         <member name="M:CRM.OsobaKontakt.Clone">
             <summary>
-            Funkcja tworzy kopię osoby, z którą się kontaktujemy.
+            Metoda tworzy kopię obiektu osoby, z którą się kontaktujemy.
             </summary>
-            <returns>Kopia osoby, z którą się kontaktujemy.</returns>
-        </member>
-        <member name="M:CRM.OsobaKontakt.ZapiszXML(System.String)">
-            <summary>
-            Funkcja zapisuje dane osoby kontaktowej do pliku XML.
-            </summary>
-            <param name="nazwa">nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
-        </member>
-        <member name="M:CRM.OsobaKontakt.OdczytajXML(System.String)">
-            <summary>
-            Funkcja odczytująca dane osoby kontaktowej z pliku XML.
-            </summary>
-            <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-            <returns>Odczytany plik jako obiekt klasy OsobaKontaktowa</returns>
-        </member>
-        <member name="M:CRM.OsobaKontakt.ZapiszJSON(System.String)">
-            <summary>
-            Funkcja zapisuje dane osoby kontaktowej dane osoby kontaktowej do pliku JSON
-            </summary>
-            <param name="nazwa"> nazwa pliku </param>
-        </member>
-        <member name="M:CRM.OsobaKontakt.OdczytajJSON(System.String)">
-            <summary>
-            Funkcja odczytująca dane osoby kontaktowej z pliku JSON
-            </summary>
-            <param name="nazwa"> nazwa pliku</param>
-            <returns></returns>
+            <returns>Kopia obiektu OsobaKontakt.</returns>
         </member>
         <member name="M:CRM.OsobaKontakt.ToString">
             <summary>
-            Funkcja tworzy i zwraca napis z danymi osobą do kontaktu.
+            Metoda tworzy i zwraca napis z danymi osoby do kontaktu.
             </summary>
-            <returns>Napis zawierający dane osoby do kontaktu</returns>
+            <returns>Napis zawierający dane osoby do kontaktu.</returns>
         </member>
         <member name="T:CRM.Pracownik">
             <summary>
@@ -1346,40 +1337,40 @@
         </member>
         <member name="F:CRM.Pracownik._dataRozpoczeciaPracy">
             <summary>
-            Data, kiedy pracownik zaczął pracę w firmie, którra prowadzi CRM.
+            Data, kiedy pracownik zaczął pracę w firmie prowadzącej CRM.
             </summary>
         </member>
         <member name="M:CRM.Pracownik.ZapiszXML(System.String)">
             <summary>
-            Funkcja zapisuje dane pracownika do pliku XML.
+            Metoda zapisuje dane pracownika do pliku XML.
             </summary>
-            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml"</param>
+            <param name="nazwa">Nazwa pliku do którego zapisujemy dane, musi się kończyć na ".xml".</param>
         </member>
         <member name="M:CRM.Pracownik.OdczytajXML(System.String)">
             <summary>
-            Funkcja odczytująca dane pracownika z pliku XML.
+            Metoda odczytująca dane pracownika z pliku XML.
             </summary>
-            <param name="nazwa">nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml"</param>
-            <returns>Odczytany plik jako obiekt klasy Pracownik</returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".xml".</param>
+            <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         </member>
         <member name="M:CRM.Pracownik.ZapiszJSON(System.String)">
             <summary>
-            Funckja zapisująca dane pracownika do pliku JSON
+            Metoda zapisująca dane pracownika do pliku JSON.
             </summary>
-            <param name="nazwa"> nazwa pliku </param>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
         </member>
         <member name="M:CRM.Pracownik.OdczytajJSON(System.String)">
             <summary>
-            Funkcja odczytująca dane pracownika z pliku JSON
+            Metoda odczytująca dane pracownika z pliku JSON.
             </summary>
-            <param name="nazwa"> nazwa pliku </param>
-            <returns></returns>
+            <param name="nazwa">Nazwa pliku z którego odczytujemy dane, musi się kończyć na ".json".</param>
+            <returns>Odczytany plik jako obiekt klasy Pracownik.</returns>
         </member>
         <member name="M:CRM.Pracownik.ToString">
             <summary>
-            Funkcja tworzy i zwraca napis z danymi pracownika.
+            Metoda tworzy i zwraca napis z danymi pracownika.
             </summary>
-            <returns>Napis zawierający dane pracownika</returns>
+            <returns>Napis zawierający dane pracownika.</returns>
         </member>
         <member name="T:CRM.ProductNotFoundException">
             <summary>

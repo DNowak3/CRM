@@ -78,3 +78,5 @@ C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe
 C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.csproj.CopyComplete
 C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.dll
 C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\obj\Debug\TestyJednostkowe.pdb
+C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Magda\Desktop\ProjektPO\CRM\TestyJednostkowe\bin\Debug\Newtonsoft.Json.xml

@@ -279,19 +279,19 @@
         </member>
         <member name="M:CRM.Klient.#ctor">
             <summary>
-            Podstawowy konstruktor nieparametryczny.
+            Konstruktor nieparametryczny.
             </summary>
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże)">
             <summary>
-            Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+            Konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String)">
             <summary>
-            Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+            Szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>
@@ -302,7 +302,7 @@
         </member>
         <member name="M:CRM.Klient.#ctor(System.String,CRM.Branże,System.String,System.String,System.String,System.String,System.String,System.String,CRM.Status)">
             <summary>
-            Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
+            Konstruktor dla wszstkich pol.
             </summary>
             <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
             <param name="branza">Branza w jakiej dziala firma</param>

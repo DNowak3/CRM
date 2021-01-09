@@ -23,7 +23,7 @@
       <Nazwa>Telefon</Nazwa>
       <Cena>456.89</Cena>
       <Jednostka>szt</Jednostka>
-      <Kod>T20218</Kod>
+      <Kod>T20216</Kod>
     </Produkt>
   </ListaProduktow>
   <ListaKonkurentow>
@@ -33,7 +33,7 @@
       <Adres />
       <KodPocztowy />
       <Notatki />
-      <DataZalozenia>2021-01-07T00:00:00+01:00</DataZalozenia>
+      <DataZalozenia>2021-01-09T00:00:00+01:00</DataZalozenia>
       <Zagrozenie>Niski</Zagrozenie>
     </Konkurent>
   </ListaKonkurentow>

@@ -43,13 +43,28 @@ namespace CRM
 
         #region wlasciwosci i konstruktory
         /// <summary>
-        /// Wlasciwosci.
+        /// Wlasciwosc do prywatnego pola _nazwa
         /// </summary>
         public string Nazwa { get => _nazwa; set => _nazwa = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _data
+        /// </summary>
         public DateTime Data { get => _data; set => _data = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _opis
+        /// </summary>
         public string Opis { get => _opis; set => _opis = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _pracownik
+        /// </summary>
         public Pracownik Pracownik { get => _pracownik; set => _pracownik = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _osobaKontaktowa
+        /// </summary>
         public OsobaKontakt OsobaKontaktowa { get => _osobaKontaktowa; set => _osobaKontaktowa = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _wynik
+        /// </summary>
         public WynikDzialania Wynik { get => _wynik; set => _wynik = value; }
 
         /// <summary>

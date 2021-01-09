@@ -56,7 +56,7 @@ namespace CRM
 
         #region konstruktory i właściwości
         /// <summary>
-        /// Podstawowy konstruktor nieparametryczny.
+        /// Konstruktor nieparametryczny.
         /// </summary>
         public Klient()
         {
@@ -65,10 +65,11 @@ namespace CRM
             _transakcje = new Stack<Umowa>();
             _transakcjeList = new List<Umowa>();
             _dzialaniaList = new List<Dzialanie>();
+            _dataPlanowanegoKontaktu = DateTime.Today;
         }
 
         /// <summary>
-        /// Ogolny konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+        /// Konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
         /// </summary>
         /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
         /// <param name="branza">Branza w jakiej dziala firma</param>
@@ -82,7 +83,7 @@ namespace CRM
         }
 
         /// <summary>
-        /// Bardziej szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
+        /// Szczegolowy konsruktor parametryczny odwolujacy sie do konstruktora klasy bazowej.
         /// </summary>
         /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
         /// <param name="branza">Branza w jakiej dziala firma</param>
@@ -102,7 +103,7 @@ namespace CRM
 
 
         /// <summary>
-        /// Konsruktor ustawiajacy wartosci wszystkim polom, odwolujacy sie do poprzedniego konstruktora.
+        /// Konstruktor dla wszstkich pol.
         /// </summary>
         /// <param name="nazwa">Nazwa firmy, bedacej naszym klientem</param>
         /// <param name="branza">Branza w jakiej dziala firma</param>
@@ -125,13 +126,28 @@ namespace CRM
         }
 
         /// <summary>
-        /// Wlasciwosci.
+        /// Wlasciwosc do prywatnego pola _dataPlanowanegoKontaktu
         /// </summary>
         public DateTime DataPlanowanegoKontaktu { get => _dataPlanowanegoKontaktu; set => _dataPlanowanegoKontaktu = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _uwagi
+        /// </summary>
         public string Uwagi { get => _uwagi; set => _uwagi = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _status
+        /// </summary>
         public Status Status { get => _status; set => _status = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _listaKontaktow
+        /// </summary>
         public List<OsobaKontakt> ListaKontaktow { get => _listaKontaktow; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _listaTransakcji
+        /// </summary>
         public List<Umowa> TransakcjeList { get => _transakcjeList; set => _transakcjeList = value; }
+        /// <summary>
+        /// Wlasciwosc do prywatnego pola _listaDzialan
+        /// </summary>
         public List<Dzialanie> DzialaniaList { get => _dzialaniaList; set => _dzialaniaList = value; }
         #endregion
 
