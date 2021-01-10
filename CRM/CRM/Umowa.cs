@@ -83,7 +83,7 @@ namespace CRM
             PracownikOdp = null;
         }
         /// <summary>
-        /// Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp
+        /// Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp według informacji podanych przez użytkownika.
         /// </summary>
         /// <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
         public Umowa(Pracownik pracownik) : this()
@@ -92,7 +92,7 @@ namespace CRM
             PracownikOdp = pracownik;
         }
         /// <summary>
-        /// Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp
+        /// Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp według informacji podanych przez użytkownika.
         /// </summary>
         /// <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
         /// <param name="data">Data zawarcia umowy</param>
@@ -248,7 +248,7 @@ namespace CRM
         {
             if (KupioneProdukty.ContainsKey(produkt))
             {
-                KupioneProdukty[produkt] = ilosc;
+                KupioneProdukty[produkt] = Math.Abs(ilosc);
                 return true;
             }
             else
@@ -267,7 +267,7 @@ namespace CRM
             try
             {
                 Produkt produkt = ZnajdzProdukt(kod);
-                KupioneProdukty[produkt] = ilosc;
+                KupioneProdukty[produkt] = Math.Abs(ilosc);
                 return true;
             }
             catch (ProductNotFoundException)

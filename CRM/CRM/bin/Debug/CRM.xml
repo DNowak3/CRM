@@ -1517,7 +1517,7 @@
         </member>
         <member name="M:CRM.Produkt.Clone">
             <summary>
-            Metoda tworzy obiekt klasy Produkt bedacy kopia biezacego produktu.
+            Metoda tworzy obiekt klasy Produkt bedacy kopia bieżącego produktu.
             </summary>
             <returns>Zwraca nowy produkt będący kopią bieżącego produktu</returns>
         </member>
@@ -1599,13 +1599,13 @@
         </member>
         <member name="M:CRM.Umowa.#ctor(CRM.Pracownik)">
             <summary>
-            Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp
+            Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp według informacji podanych przez użytkownika.
             </summary>
             <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
         </member>
         <member name="M:CRM.Umowa.#ctor(CRM.Pracownik,System.String)">
             <summary>
-            Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp
+            Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp według informacji podanych przez użytkownika.
             </summary>
             <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
             <param name="data">Data zawarcia umowy</param>

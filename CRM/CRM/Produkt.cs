@@ -116,7 +116,7 @@ namespace CRM
             return Kod.CompareTo(other.Kod);
         }
         /// <summary>
-        /// Metoda tworzy obiekt klasy Produkt bedacy kopia biezacego produktu.
+        /// Metoda tworzy obiekt klasy Produkt bedacy kopia bieżącego produktu.
         /// </summary>
         /// <returns>Zwraca nowy produkt będący kopią bieżącego produktu</returns>
         public object Clone()

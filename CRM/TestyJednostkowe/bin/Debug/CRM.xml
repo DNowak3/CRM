@@ -56,7 +56,32 @@
         </member>
         <member name="P:CRM.Dzialanie.Nazwa">
             <summary>
-            Wlasciwosci.
+            Wlasciwosc do prywatnego pola _nazwa
+            </summary>
+        </member>
+        <member name="P:CRM.Dzialanie.Data">
+            <summary>
+            Wlasciwosc do prywatnego pola _data
+            </summary>
+        </member>
+        <member name="P:CRM.Dzialanie.Opis">
+            <summary>
+            Wlasciwosc do prywatnego pola _opis
+            </summary>
+        </member>
+        <member name="P:CRM.Dzialanie.Pracownik">
+            <summary>
+            Wlasciwosc do prywatnego pola _pracownik
+            </summary>
+        </member>
+        <member name="P:CRM.Dzialanie.OsobaKontaktowa">
+            <summary>
+            Wlasciwosc do prywatnego pola _osobaKontaktowa
+            </summary>
+        </member>
+        <member name="P:CRM.Dzialanie.Wynik">
+            <summary>
+            Wlasciwosc do prywatnego pola _wynik
             </summary>
         </member>
         <member name="M:CRM.Dzialanie.#ctor">
@@ -316,7 +341,32 @@
         </member>
         <member name="P:CRM.Klient.DataPlanowanegoKontaktu">
             <summary>
-            Wlasciwosci.
+            Wlasciwosc do prywatnego pola _dataPlanowanegoKontaktu
+            </summary>
+        </member>
+        <member name="P:CRM.Klient.Uwagi">
+            <summary>
+            Wlasciwosc do prywatnego pola _uwagi
+            </summary>
+        </member>
+        <member name="P:CRM.Klient.Status">
+            <summary>
+            Wlasciwosc do prywatnego pola _status
+            </summary>
+        </member>
+        <member name="P:CRM.Klient.ListaKontaktow">
+            <summary>
+            Wlasciwosc do prywatnego pola _listaKontaktow
+            </summary>
+        </member>
+        <member name="P:CRM.Klient.TransakcjeList">
+            <summary>
+            Wlasciwosc do prywatnego pola _listaTransakcji
+            </summary>
+        </member>
+        <member name="P:CRM.Klient.DzialaniaList">
+            <summary>
+            Wlasciwosc do prywatnego pola _listaDzialan
             </summary>
         </member>
         <member name="M:CRM.Klient.DodajDzialanie(CRM.Dzialanie)">
@@ -1467,7 +1517,7 @@
         </member>
         <member name="M:CRM.Produkt.Clone">
             <summary>
-            Metoda tworzy obiekt klasy Produkt bedacy kopia biezacego produktu.
+            Metoda tworzy obiekt klasy Produkt bedacy kopia bieżącego produktu.
             </summary>
             <returns>Zwraca nowy produkt będący kopią bieżącego produktu</returns>
         </member>
@@ -1549,13 +1599,13 @@
         </member>
         <member name="M:CRM.Umowa.#ctor(CRM.Pracownik)">
             <summary>
-            Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp
+            Konstruktor parametryczny Umowy. Ustawia numer umowy oraz PracownikaOdp według informacji podanych przez użytkownika.
             </summary>
             <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
         </member>
         <member name="M:CRM.Umowa.#ctor(CRM.Pracownik,System.String)">
             <summary>
-            Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp
+            Konstruktor parametryczny Umowy. Ustawia datę zawarcia umowy oraz PracownikOdp według informacji podanych przez użytkownika.
             </summary>
             <param name="pracownik">Pracownik z organizacji prowadzącej CRM odpowiedzialny za podpisanie umowy</param>
             <param name="data">Data zawarcia umowy</param>
