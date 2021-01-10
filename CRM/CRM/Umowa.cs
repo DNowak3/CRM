@@ -191,7 +191,7 @@ namespace CRM
 
         public void DodajProdukt(Produkt produkt, double ilosc)
         {
-            ilosc = JesliSztuki(produkt, ilosc);
+            ilosc = Math.Abs(JesliSztuki(produkt, ilosc));
             if (!KupioneProdukty.ContainsKey(produkt))
             {
                 KupioneProdukty.Add(produkt, ilosc);

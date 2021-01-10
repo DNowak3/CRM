@@ -78,7 +78,7 @@ namespace CRM
         public Produkt(string nazwa, double cena) : this()
         {
             Nazwa = nazwa;
-            Cena = cena;
+            Cena = Math.Abs(cena);
             _kod = $"{Nazwa[0]}{DateTime.Now.Year}{AktualnyNumer}";
         }
         /// <summary>

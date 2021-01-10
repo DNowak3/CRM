@@ -112,13 +112,13 @@ namespace CRM_GUI
                 if (!_p.Kod.Equals(string.Empty))
                 {
                     _p.Nazwa = nazwa;
-                    _p.Cena = cena;
+                    _p.Cena = Math.Abs(cena);
                     _p.Jednostka = j;
                 }
                 else
                 {
                     _p.Nazwa = nazwa;
-                    _p.Cena = cena;
+                    _p.Cena = Math.Abs(cena);
                     _p.Jednostka = j;
                     _p.Kod = $"{_p.Nazwa[0]}{DateTime.Now.Year}{Produkt.AktualnyNumer}";
                 }
