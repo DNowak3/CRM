@@ -24,7 +24,7 @@ namespace CRM_GUI
         OrgProwadzacaCRM _orgCRM;
         public MainWindow()
         {
-            _orgCRM = new OrgProwadzacaCRM();
+
             InitializeComponent();
         }
         private void menuWyjdz_Click(object sender, RoutedEventArgs e)
@@ -52,6 +52,7 @@ namespace CRM_GUI
 
                 if (txtNazwa.Text != "" && cmbBranza.Text != "")
                 {
+                    _orgCRM = new OrgProwadzacaCRM();
                     Enum.TryParse<Branże>(cmbBranza.Text, out Branże pom);
                     _orgCRM.Nazwa = txtNazwa.Text;
                     _orgCRM.Branza=pom;
