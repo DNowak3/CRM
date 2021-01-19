@@ -22,9 +22,9 @@ namespace CRM_GUI
     public partial class MainWindow : Window
     {
         OrgProwadzacaCRM _orgCRM;
-        OrgProwadzacaCRM _orgZPliku;
         public MainWindow()
         {
+            _orgCRM = new OrgProwadzacaCRM();
             InitializeComponent();
         }
         private void menuWyjdz_Click(object sender, RoutedEventArgs e)
@@ -80,7 +80,6 @@ namespace CRM_GUI
                     {
                         _orgCRM.ZapiszJSON(nazwaPliku);
                     }
-                    _orgZPliku = (OrgProwadzacaCRM)_orgCRM.Clone();
                 }
                 catch (Exception)
                 {

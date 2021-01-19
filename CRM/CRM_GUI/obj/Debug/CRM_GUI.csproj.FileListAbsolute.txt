@@ -512,3 +512,4 @@ C:\Users\Magda\Desktop\ProjektPO\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.xml
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\CRM_GUI.xml
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.dll
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM_GUI\bin\Debug\Newtonsoft.Json.xml
+D:\GitFork\CRM\CRM\CRM_GUI\bin\Debug\CRM_GUI.xml
