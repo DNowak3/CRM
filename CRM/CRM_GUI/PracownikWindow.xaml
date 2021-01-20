@@ -19,7 +19,7 @@
         <Label x:Name="labImie" Content="Imię" HorizontalAlignment="Left" Height="33" Margin="28,52,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
         <Label x:Name="labNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Height="33" Margin="28,90,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
         <Label x:Name="labDatRozp" Content="Data rozpoczęcia pracy" HorizontalAlignment="Left" Height="33" Margin="28,128,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>
-        <TextBox x:Name="txtDataRozp" HorizontalAlignment="Left" Height="33" Margin="206,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21"/>
+        <TextBox x:Name="txtDataRozp" VerticalContentAlignment="Center" Padding="0" HorizontalAlignment="Left" Height="33" Margin="206,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontSize="14"/>
         <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="33" Margin="206,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold"/>
         <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="33" Margin="206,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Background="#FFDAFAFF" BorderBrush="#FF006674" Foreground="#FF001D21" FontWeight="Bold"/>
         <Label x:Name="labPlec" Content="Płeć" HorizontalAlignment="Left" Height="33" Margin="28,166,0,0" VerticalAlignment="Top" Width="164" Foreground="#FF00525E" FontSize="15"/>

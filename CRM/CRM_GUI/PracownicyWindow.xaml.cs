@@ -150,8 +150,7 @@ namespace CRM_GUI
                 lstPracownicy.ItemsSource = new ObservableCollection<Pracownik>(_orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(txtBoxData.Text));
                 txtBoxLiczbaPrac.Text = _orgCRM.ZnajdzWszystkichPracownikowPracaPrzed(txtBoxData.Text).Count().ToString();
 
-                InputBox.Visibility = System.Windows.Visibility.Collapsed;
-                txtData.Visibility = System.Windows.Visibility.Collapsed;
+                txtBoxData.Visibility = System.Windows.Visibility.Collapsed;
                 txtBoxData.Text = String.Empty;
             }
         }
