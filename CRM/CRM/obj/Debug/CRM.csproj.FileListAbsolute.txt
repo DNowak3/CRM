@@ -170,3 +170,14 @@ C:\Users\Magda\Desktop\ProjektPO\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
 F:\Justyna\PO 2020\Nowy folder (2)\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\CRM.exe.config
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\CRM.xml
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\CRM.exe
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\CRM.pdb
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\obj\Debug\CRM.csprojAssemblyReference.cache
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\obj\Debug\CRM.csproj.CoreCompileInputs.cache
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\obj\Debug\CRM.csproj.CopyComplete
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\obj\Debug\CRM.exe
+C:\Users\Magda\Desktop\Projekt_PO\CRM\CRM\obj\Debug\CRM.pdb

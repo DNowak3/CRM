@@ -60,7 +60,7 @@
             VerticalAlignment="Center">
                 <StackPanel>
                     <StackPanel>
-                        <TextBlock Margin="120,10,80,5" Text="Wybierz osobę, z którą się skontaktowano:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie_2"  Visibility="Collapsed" Height="30"/>
+                        <TextBlock Margin="120,10,80,5" Text="Wybierz osobę kontaktową:" FontWeight="SemiBold" Foreground="White" FontSize="15" x:Name="txtPolecenie_2"  Visibility="Collapsed" Height="30"/>
                         <ListBox x:Name="lstOsobyKontaktowe" Margin="20" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="350" Background="#FFDAFAFF"  Visibility="Collapsed" BorderBrush="#FF006674" Foreground="#FF001E22"/>
 
                     </StackPanel>
