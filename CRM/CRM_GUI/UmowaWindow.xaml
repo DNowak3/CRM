@@ -8,8 +8,6 @@
         Title="Umowa Dodaj/Edytuj" Height="336.192" Width="725.436">
     <Grid>
         <Rectangle Fill="#FF006674" HorizontalAlignment="Stretch" Height="35" VerticalAlignment="Top" Margin="0,0,0.2,0"/>
-
-        <TextBlock x:Name="txtKlient" HorizontalAlignment="Left" Height="34" Margin="20,5,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="500" FontSize="25" FontWeight="SemiBold" Foreground="White" FontStretch="Expanded"/>
         <Label x:Name='labLista' Content="Zakupione produkty:" HorizontalAlignment="Left" Height="32" Margin="415,56,0,0" VerticalAlignment="Top" Width="190" FontSize="18" FontWeight="Bold" Foreground="#FF006674"/>
         <Label x:Name='labNumer' Content="Numer umowy:" HorizontalAlignment="Left" Height="32" Margin="18,56,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
         <Label x:Name='labData' Content="Data zawarcia:" HorizontalAlignment="Left" Height="32" Margin="18,94,0,0" VerticalAlignment="Top" Width="139" FontSize="15" />
