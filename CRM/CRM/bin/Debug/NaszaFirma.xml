@@ -36,7 +36,7 @@
       <Stanowisko>sekretariat</Stanowisko>
       <Telefon>100-400-789</Telefon>
       <Mail>j.kot@gmail.com</Mail>
-      <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+      <DataRozpoczeciaPracy>2020-01-01T00:00:00</DataRozpoczeciaPracy>
     </Pracownik>
     <Pracownik>
       <Imie>Anna</Imie>
@@ -46,7 +46,7 @@
       <Telefon>100-400-300</Telefon>
       <Mail>a.lis@gmail.com</Mail>
       <Notatki>Sumienny pracownik</Notatki>
-      <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+      <DataRozpoczeciaPracy>2021-01-24T00:00:00+01:00</DataRozpoczeciaPracy>
     </Pracownik>
   </ListaPracownikow>
   <ListaProduktow>
@@ -169,7 +169,7 @@
       </ListaKontaktow>
       <TransakcjeList>
         <Umowa>
-          <NrUmowy>U/11.01.2019/206</NrUmowy>
+          <NrUmowy>U/11-Jan-19/206</NrUmowy>
           <DataUmowy>2019-01-11T00:00:00</DataUmowy>
           <PracownikOdp>
             <Imie>Julia</Imie>
@@ -178,7 +178,7 @@
             <Stanowisko>sekretariat</Stanowisko>
             <Telefon>100-400-789</Telefon>
             <Mail>j.kot@gmail.com</Mail>
-            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+            <DataRozpoczeciaPracy>2020-01-01T00:00:00</DataRozpoczeciaPracy>
           </PracownikOdp>
           <ListaKupionychProduktow>
             <Produkt>
@@ -193,7 +193,7 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/06.10.2020/205</NrUmowy>
+          <NrUmowy>U/06-Oct-20/205</NrUmowy>
           <DataUmowy>2020-10-06T00:00:00</DataUmowy>
           <PracownikOdp>
             <Imie>Witold</Imie>
@@ -232,8 +232,8 @@
           </IlosciKupionychProduktow>
         </Umowa>
         <Umowa>
-          <NrUmowy>U/09.01.2021/204</NrUmowy>
-          <DataUmowy>2021-01-09T00:00:00+01:00</DataUmowy>
+          <NrUmowy>U/24-Jan-21/204</NrUmowy>
+          <DataUmowy>2021-01-24T00:00:00+01:00</DataUmowy>
           <PracownikOdp>
             <Imie>Adam</Imie>
             <Nazwisko>Nowak</Nazwisko>
@@ -288,7 +288,7 @@
             <Telefon>100-400-300</Telefon>
             <Mail>a.lis@gmail.com</Mail>
             <Notatki>Sumienny pracownik</Notatki>
-            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+            <DataRozpoczeciaPracy>2021-01-24T00:00:00+01:00</DataRozpoczeciaPracy>
           </Pracownik>
           <OsobaKontaktowa>
             <Imie>Piotr</Imie>
@@ -393,7 +393,7 @@
             <Telefon>100-400-300</Telefon>
             <Mail>a.lis@gmail.com</Mail>
             <Notatki>Sumienny pracownik</Notatki>
-            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+            <DataRozpoczeciaPracy>2021-01-24T00:00:00+01:00</DataRozpoczeciaPracy>
           </Pracownik>
           <OsobaKontaktowa>
             <Imie>Patrycja</Imie>
@@ -474,7 +474,7 @@
             <Stanowisko>sekretariat</Stanowisko>
             <Telefon>100-400-789</Telefon>
             <Mail>j.kot@gmail.com</Mail>
-            <DataRozpoczeciaPracy>0001-01-01T00:00:00</DataRozpoczeciaPracy>
+            <DataRozpoczeciaPracy>2020-01-01T00:00:00</DataRozpoczeciaPracy>
           </Pracownik>
           <OsobaKontaktowa>
             <Imie>Mateusz</Imie>

@@ -355,7 +355,7 @@ namespace CRM
             OrgProwadzacaCRM NaszaFirma = new OrgProwadzacaCRM("Allegro", Branże.Inne, "454-454-56-56", "Polska", "Poznań", "ul. Szeroka 1", "30-250", "Najpopularniejszy serwis aukcyjny w Polsce", "01.01.1999");
             Pracownik pracownik1 = new Pracownik("Adam", "Nowak", Plcie.M, Stanowiska.dyrekcja, "21-11-2020", "123-456-789", "a.nowak@gmail.com");
             Pracownik pracownik2 = new Pracownik("Witold", "Kowalski", Plcie.M, Stanowiska.konsultant, "21-10-2020", "123-400-789", "w.kowalski@gmail.com", "Spóźnia się do pracy");
-            Pracownik pracownik3 = new Pracownik("Julia", "Kot", Plcie.K, Stanowiska.sekretariat, "01.01-2020", "100-400-789", "j.kot@gmail.com");
+            Pracownik pracownik3 = new Pracownik("Julia", "Kot", Plcie.K, Stanowiska.sekretariat, "01.01.2020", "100-400-789", "j.kot@gmail.com");
             Pracownik pracownik4 = new Pracownik("Anna", "Lis", Plcie.K, Stanowiska.sprzedawca, "01.01-2019", "100-400-300", "a.lis@gmail.com", "Sumienny pracownik");
             NaszaFirma.DodajPracownika(pracownik1);
             NaszaFirma.DodajPracownika(pracownik2);
